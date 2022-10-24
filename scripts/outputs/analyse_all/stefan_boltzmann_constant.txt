@@ -1,0 +1,18 @@
+Search the target:
+	5.670374E-8 kg/K⁴/s³
+in terms of the given:
+	physical constants:     ['speed_of_light', 'planck_constant', 'boltzmann_constant', 'elementary_charge', 'vacuum_permittivity', 'electron_mass', 'avogadro_constant']
+	mathematical constants: ['pi', 'eulers_number', '2', '3', '5']
+by using brute_force methodology...
+
+Found 4 candidates the resultant unit matched with the target's unit:
+	[ kg/K⁴/s³ ] = [ boltzmann_constant⁴ ⋅ elementary_charge² / (speed_of_light³ ⋅ planck_constant⁴ ⋅ vacuum_permittivity) ]
+	[ kg/K⁴/s³ ] = [ boltzmann_constant⁴ / (speed_of_light² ⋅ planck_constant³) ]
+	[ kg/K⁴/s³ ] = [ boltzmann_constant⁴ ⋅ vacuum_permittivity / (speed_of_light ⋅ planck_constant² ⋅ elementary_charge²) ]
+	[ kg/K⁴/s³ ] = [ boltzmann_constant⁴ ⋅ vacuum_permittivity² / (planck_constant ⋅ elementary_charge⁴) ]
+
+Totally, unique 161051 mathematical multiplications are calculated & cached!
+
+
+Results matched the target:
+	5.670374E-8 kg/K⁴/s³ ≈ 2 ⋅ pi⁵ ⋅ boltzmann_constant⁴ / (3 ⋅ 5 ⋅ speed_of_light² ⋅ planck_constant³)

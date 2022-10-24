@@ -1,0 +1,19 @@
+Search the target:
+	8.3144626E+0 kg·m²/K/mol/s²
+in terms of the given:
+	physical constants:     ['speed_of_light', 'planck_constant', 'boltzmann_constant', 'elementary_charge', 'vacuum_permittivity', 'electron_mass', 'avogadro_constant']
+	mathematical constants: ['pi', 'eulers_number', '2', '3', '5']
+by using brute_force methodology...
+
+Found 5 candidates the resultant unit matched with the target's unit:
+	[ kg·m²/K/mol/s² ] = [ boltzmann_constant ⋅ elementary_charge⁴ ⋅ avogadro_constant / (speed_of_light² ⋅ planck_constant² ⋅ vacuum_permittivity²) ]
+	[ kg·m²/K/mol/s² ] = [ boltzmann_constant ⋅ elementary_charge² ⋅ avogadro_constant / (speed_of_light ⋅ planck_constant ⋅ vacuum_permittivity) ]
+	[ kg·m²/K/mol/s² ] = [ boltzmann_constant ⋅ avogadro_constant ]
+	[ kg·m²/K/mol/s² ] = [ speed_of_light ⋅ planck_constant ⋅ boltzmann_constant ⋅ vacuum_permittivity ⋅ avogadro_constant / elementary_charge² ]
+	[ kg·m²/K/mol/s² ] = [ speed_of_light² ⋅ planck_constant² ⋅ boltzmann_constant ⋅ vacuum_permittivity² ⋅ avogadro_constant / elementary_charge⁴ ]
+
+Totally, unique 161051 mathematical multiplications are calculated & cached!
+
+
+Results matched the target:
+	8.3144626E+0 kg·m²/K/mol/s² ≈ boltzmann_constant ⋅ avogadro_constant

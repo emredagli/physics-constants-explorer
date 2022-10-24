@@ -1,0 +1,17 @@
+Search the target:
+	6.6743E-11 m³/kg/s²
+in terms of the given:
+	physical constants:     ['speed_of_light', 'planck_constant', 'boltzmann_constant', 'elementary_charge', 'vacuum_permittivity', 'electron_mass', 'avogadro_constant']
+	mathematical constants: ['pi', 'eulers_number', '2', '3', '5']
+by using brute_force methodology...
+
+Found 5 candidates the resultant unit matched with the target's unit:
+	[ m³/kg/s² ] = [ elementary_charge⁴ / (speed_of_light ⋅ planck_constant ⋅ vacuum_permittivity² ⋅ electron_mass²) ]
+	[ m³/kg/s² ] = [ elementary_charge² / (vacuum_permittivity ⋅ electron_mass²) ]
+	[ m³/kg/s² ] = [ speed_of_light ⋅ planck_constant / electron_mass² ]
+	[ m³/kg/s² ] = [ speed_of_light² ⋅ planck_constant² ⋅ vacuum_permittivity / (elementary_charge² ⋅ electron_mass²) ]
+	[ m³/kg/s² ] = [ speed_of_light³ ⋅ planck_constant³ ⋅ vacuum_permittivity² / (elementary_charge⁴ ⋅ electron_mass²) ]
+
+Totally, unique 161051 mathematical multiplications are calculated & cached!
+
+No results were found that matching with the target!
