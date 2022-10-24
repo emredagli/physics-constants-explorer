@@ -35,7 +35,7 @@ So as you see, σ was [theoretically proofed](https://en.wikipedia.org/wiki/Stef
 
 Now, let's think oppositely & assume we have a function which takes:
 
-* Target value: 5.67037E-8
+* Target value: 5.670374E-8
 * Target unit: $\mathrm{kg}\,\mathrm{s}^{-3}\,\mathrm{K}^{-4}$
 * List of physical constants with their units & their power range (k, h, c, ...)
 * List of mathematical constants & their power range (π, e, ...)
@@ -54,7 +54,7 @@ target_unit = "kg/(s^3 K^4)"
 ```
 Output:
 ```
-2⋅pi⁵⋅k⁴ / (3⋅5⋅c²⋅h³)
+2 ⋅ pi⁵ ⋅ boltzmann_constant⁴ / (3 ⋅ 5 ⋅ speed_of_light² ⋅ planck_constant³)
 ```
 
 Would it be possible & useful?
@@ -62,6 +62,8 @@ Would it be possible & useful?
 Yes it is possible. To be honest, I am not definitely sure about its usefulness!
 
 But I would like to start this study with the excitement of opportunity of being the first person to see the possible formulation of some famous physical constants.
+
+And I know that this methodology can be expanded to wider scope with distributed calculation methods.
 
 ## Methodology
 
@@ -79,12 +81,9 @@ I wanted to start with a simple and clear methodologies:
    * Represent physical constants
    * Convert physical constants & multiplications to base SI units
    * Correctly calculate the multiplication of physical & mathematical constants
-3. Using dictionaries to:
-   * Hold precalculated multiplication of prime numbers & mathematical constants
-   * Speed up fetching the multiplication results as O(1)
-4. Using [decimal](https://docs.python.org/3/library/decimal.html) & [fractions](https://docs.python.org/3/library/fractions.html) libraries to
-   * Represent prime number multiplications
-   * Not to use `float` type (which has max 15 decimal precision) in `pint` library
+3. Using [decimal](https://docs.python.org/3/library/decimal.html) library to
+   * Represent numbers with high significant digits (50 is set as default precision)
+4. Truncating the resultant multiplication to the target precision
 
 ## Install
 
@@ -169,7 +168,7 @@ For example:
 > python main.py --target-value "5.670374E-8" --target-unit "kg/(s^3 K^4)"
 ```
 
-To get more info about the usage & input formats:
+To get more info about the program usage & input formats:
 ```shell
 > python main.py --help
 ```
