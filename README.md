@@ -71,8 +71,8 @@ All my Physics teacher and the lecturers in Pysics Department, said that the res
 
 This is the main methodology that I have followed:
 
-1. Find the multiplication of physical constants which matched the target unit
-2. Search the combination of the prime numbers & mathematical constant multiplications so that target value is within the error range.
+1. Prepare the candidate list by calculating the multiplication of physical constants which matched the target unit.
+2. Iterate the candidate list by searching the combination of the prime numbers & mathematical constant multiplications so that target value is within the error range.
 
 I wanted to start with a simple and clear methodologies:
 
