@@ -8,14 +8,21 @@ from src.explore_constant import ExploreConstant
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description='It will search the nearest physical & mathematical representation of '
-                                                 'the target value in terms of the given scope & range',
+                                                 'the dimensional target physical value '
+                                                 'in terms of the given scope & range.',
                                      formatter_class=RawTextHelpFormatter)
     parser.add_argument('-v',
                         '--target-value',
                         required=True,
                         metavar='\b',
                         help='Target value with scientific notation.\n'
-                             'Examples: "5.6560E-8", "8.9875517873681764E+16", "1.000042E+0"')
+                             'To specify target value with measurement error:\n '
+                             'For example (1.23±0.06)×10^−5, please provide it in "concise form" like 1.23(6)E-5.\n'
+                             'Examples with error: "1.23(6)E-5", "8.9875(15)E+16", "4.2(3)E+0"\n'
+                             'The target can be provided without error:\n'
+                             'Examples without error: "1.23E-5", "8.9875E+16", "4.2E+0"\n'
+                             'If you provide without error, it is equal to:\n'
+                             '"1.23E-5" ≈ "1.235(5)E-5"')
 
     parser.add_argument('-u',
                         '--target-unit',

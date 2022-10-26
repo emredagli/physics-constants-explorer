@@ -1,18 +1,24 @@
 # Physics Constants Explorer
 
-This repo contains the research to find the physics constant formulations numerically in terms of other physical & mathematical constants.
+This work contains research to find physical constants numerically in terms of other physical & mathematical constants within a given scope.
 
 ## Motivation & Concept
 
 Most of the physical constants are observed from experiments & measured by devices within the given error range.
 
-Like Stefan-Boltzmann Constant, [Mr. Josef Stefan](https://en.wikipedia.org/wiki/Josef_Stefan) had found the relation between power and temperature of black body radiation:
+Like Stefan-Boltzmann Constant, [Prof. Dr. Josef Stefan](https://en.wikipedia.org/wiki/Josef_Stefan) had found the relation between radiation power and temperature of the black body radiation problem:
 
 ```math
 j^{\star} = \sigma T^{4}
 ```
 
-Theoretical formulation of σ was done by [Mr. Ludwig Eduard Boltzmann](https://en.wikipedia.org/wiki/Ludwig_Boltzmann):
+where,
+
+* $j^{\star}$ is radiated power per unit area
+* $T^{4}$ is 4. power of radiated material's temperature 
+* $\sigma$ is a __physical constant__ (known as Stefan–Boltzmann constant) 
+
+Theoretical formulation of `σ` was done by [Prof. Dr. Ludwig Eduard Boltzmann](https://en.wikipedia.org/wiki/Ludwig_Boltzmann):
 
 ```math
 {\displaystyle \sigma ={\frac {2\pi ^{5}k^{4}}{15c^{2}h^{3}}}=5.670374\times 10^{-8}\,\mathrm{kg}\,\mathrm{s}^{-3}\,\mathrm{K}^{-4}}
@@ -20,9 +26,9 @@ Theoretical formulation of σ was done by [Mr. Ludwig Eduard Boltzmann](https://
 
 where
 
-* k is the [Boltzmann constant](https://en.wikipedia.org/wiki/Boltzmann_constant) (physical constant)
-* h is the [Planck constant](https://en.wikipedia.org/wiki/Planck_constant) (physical constant)
-* c is the speed of light in vacuum (physical constant)
+* $k$ is the [Boltzmann constant](https://en.wikipedia.org/wiki/Boltzmann_constant) (another physical constant)
+* $h$ is the [Planck constant](https://en.wikipedia.org/wiki/Planck_constant) (another physical constant)
+* $c$ is the speed of light in vacuum (another physical constant)
 * π is the ratio of a circle's circumference to its diameter (mathematical constant)
 
 with SI base units:
@@ -31,7 +37,7 @@ with SI base units:
 * s is second
 * K is Kelvin
 
-So as you see, σ was [theoretically proofed](https://en.wikipedia.org/wiki/Stefan%E2%80%93Boltzmann_law) & formulated by the other physical & mathematical constants.
+Formulation of `σ` was [theoretically derived](https://edisciplinas.usp.br/pluginfile.php/48089/course/section/16461/qsp_chapter10-plank.pdf) by using the other physical & mathematical constants.
 
 Now, let's think oppositely & assume we have a function which takes:
 
@@ -46,13 +52,13 @@ and returns the matched formula(s), so that:
 * the target unit is "exactly" matched with the unit of formula and,
 * the target value is matched with the resultant numeric value (with in the same significant digit of the target).
 
-For example:
-Input: 
+For example, input is: 
 ```
 target_value = "5.670374E-8" 
 target_unit = "kg/(s^3 K^4)"
 ```
-Output:
+
+And the output:
 ```
 2 ⋅ pi⁵ ⋅ boltzmann_constant⁴ / (3 ⋅ 5 ⋅ speed_of_light² ⋅ planck_constant³)
 ```
@@ -67,23 +73,23 @@ And I know that this methodology can be expanded to wider scope with distributed
 
 ## Methodology
 
-All my Physics teacher and the lecturers in Pysics Department, said that the resultant physical unit on the right and left side of the equations must be the same.
+It is a well-known fact that the resultant physical unit on the right side of the equations must match the left side.
 
 This is the main methodology that I have followed:
 
-1. Prepare the candidate list by calculating the multiplication of physical constants which matched the target unit.
-2. Iterate the candidate list by searching the combination of the prime numbers & mathematical constant multiplications so that target value is within the error range.
+1. Prepare the candidate list by calculating the combination of physical constants which matched the target unit.
+2. Iterate the candidates, looking for a combination of dimensionless mathematical constants, such that the resulting multiplication places within the desired error range.
 
 I wanted to start with a simple and clear methodologies:
 
 1. Brute force algorithm for all multiplication combinations
-2. Using a unit library [pint](https://pint.readthedocs.io/en/stable/) to:
-   * Represent physical constants
+2. Using a unit library ([pint](https://pint.readthedocs.io/en/stable/)) to:
+   * Represent physical dimensional constants
    * Convert physical constants & multiplications to base SI units
    * Correctly calculate the multiplication of physical & mathematical constants
 3. Using [decimal](https://docs.python.org/3/library/decimal.html) library to
    * Represent numbers with high significant digits (50 is set as default precision)
-4. Truncating the resultant multiplication to the target precision
+4. Truncating the resultant multiplication to the target precision to check error range
 
 ## Install
 
@@ -112,7 +118,7 @@ The shell code above is doing pretty standard Python initialization for a projec
 ### Configuration
 The program is using 2 files:
 
-* Physical & mathematical constants definition file: [definition/constants_en.txt](definition/constants_en.txt)
+* Constants definition file: [definition/constants_en.txt](definition/constants_en.txt)
 * The config file: [config.json](config.json)
 
 The config file format in JSON:
@@ -121,40 +127,35 @@ The config file format in JSON:
   "physical_constants": {
     "method": "brute_force",
     "constants_and_powers": {
-      "speed_of_light": 4,
+      "speed_of_light": [-4, 4],
        ...
     }
   },
   "mathematical_constants": {
     "numbers_and_powers": {
-      "2": 5,
+      "2": [-4, 4],
       ...
     },
     "constants_and_powers": {
-      "pi": 5,
-      "eulers_number": 5
+      "pi": [-5, 5],
+      "eulers_number": [-5, 5]
     }
   }
 }
 ```
 
-The config file has:
+The config file format:
 
-"`key`" (string): `value` (integer) pairs. 
+| Root Setting           | Sub Setting          | Key                                                                                                                        | Value                                                                                                                                                                                                                                                                                                                                              |
+|------------------------|----------------------|----------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| physical_constants     | method               |                                                                                                                            | The only value: "brute_force".                                                                                                                                                                                                                                                                                                                     |
+| physical_constants     | constants_and_powers | Dimensional physical constant name. It must be defined on [the definition file](./definition/constants_en.txt).            | The value represents the power range. You can provide this value with 2 ways:<br/>* `Array`: `[min, max]`. The program converts it as all integer values in this range e.g. `[min, ..., max]`. It adds `0` into the power range, if `0` does not exist in the calculated range.<br/>* `Integer`: the program converts it as `[-value, ..., value]` |
+| mathematical_constants | numbers_and_powers   | Prime numbers in string format like "2"                                                                                    | The value represents the power range. The format is the same as above.                                                                                                                                                                                                                                                                             |
+| mathematical_constants | constants_and_powers | Dimensionless mathematical constant name. It must be defined on [the same definition file](./definition/constants_en.txt). | The value represents the power range. The format is the same as above.                                                                                                                                                                                                                                                                             |
 
-The `value` part defines max power value. The program calculates & considers `[-value, ..., value]` integer power ranges.
 
-The result of the calculation is represented in terms of `key` values & powers in the given ranges (the last line of the output [stefan_boltzmann_constant.txt](scripts/outputs/analyse_all/stefan_boltzmann_constant.txt))
 
-The file composed of:
-* `physical_constants`, contains __dimensional__ physical constants.
-  * `constants_and_powers`
-    * `key` values must be defined under [the definition file](definition/constants_en.txt).
-* `mathematical_constants`, contains __dimensionless__ mathematical values & constants
-  * `numbers_and_powers`
-    * `key` values are prime numbers
-  * `constants_and_powers`
-    * `key` values must be defined under [the same definition file](definition/constants_en.txt) given above.
+The result of the calculation is represented in terms of `key` values (please check a result on the last line [stefan_boltzmann_constant.txt](scripts/outputs/analyse_all/stefan_boltzmann_constant.txt))
 
 
 ### Run the Program
@@ -207,6 +208,7 @@ The script above executes the following physical constants and stores the result
 * [Newtonian Constant of Gravitation](scripts/outputs/analyse_all/newtonian_constant_of_gravitation.txt)
 * [Molar Gas Constant](scripts/outputs/analyse_all/molar_gas_constant.txt)
 * [Vacuum Permeability](scripts/outputs/analyse_all/vacuum_permeability.txt)
+* [Wien Frequency Displacement Law Constant](scripts/outputs/analyse_all/wien_frequency_displacement_law_constant.txt)
 
 ## Tests
 
@@ -221,9 +223,10 @@ Test folder is [here](src/tests). You can run tests on the project root:
 ### Libraries & Documentation
 * [pint](https://pint.readthedocs.io/en/stable/)
   * [pint repo](https://github.com/hgrecco/pint/tree/master/pint)
-  * [Default Pint constants definition file](https://github.com/hgrecco/pint/blob/master/pint/constants_en.txt)
+  * [pint default constants definition file](https://github.com/hgrecco/pint/blob/master/pint/constants_en.txt)
   * [pint Developer reference](https://pint.readthedocs.io/en/stable/developers_reference.html)
   * [pint tutorıal](https://pint.readthedocs.io/en/stable/tutorial.html)
+* [jsonschema](https://python-jsonschema.readthedocs.io/en/stable/)
 * [Latex Mathematics](https://en.wikibooks.org/wiki/LaTeX/Mathematics)
   * [Writing mathematical expressions](https://docs.github.com/en/get-started/writing-on-github/working-with-advanced-formatting/writing-mathematical-expressions)
 
@@ -235,15 +238,16 @@ Test folder is [here](src/tests). You can run tests on the project root:
 
 I would like to express my gratitude to my teachers:
 
-* Physics Teacher Aykut Gumuc (R.I.P), Eskisehir Science High School, EFFL
-* Prof. Dr. Oleg Fedorovich Kabardin (R.I.P), International Physics Olympiad (IPhO)
 * Prof. Dr. İbrahim Günal (R.I.P), METU-Physics
 * Prof. Dr. Ordal Demokan (R.I.P), METU-Physics
-* Physics Teacher Rafet Kamer, International Physics Olympiad (IPhO)
+* Physics Teacher Aykut Gümüç (R.I.P), Eskisehir Science High School
+* Prof. Dr. Oleg Fedorovich Kabardin (R.I.P), Physics Olympiads
+
+
+* Physics Teacher Rafet Kamer, Physics Olympiads
 * Prof. Dr. K. Sinan Bilikmen, METU-Physics
 * Prof. Dr. Mehmet Tomak, METU-Physics
-* Prof. Dr. Göktürk Üçoluk, METU-Computer Engineering
-* Prof. Dr. Ali Demirsoy, Hacettepe University
+
 
 & to my genius and big-hearted friends who always enjoy supporting me:
 * Dr. İnanç Kanık

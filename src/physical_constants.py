@@ -13,17 +13,20 @@ class PhysicalConstants:
         self.ur = unit_registry
         self.matched = dict()
 
-    def get_keys(self):
-        return list(self.pcp.keys())
+    def get_keys_definition(self, spacing='\n\t\t'):
+        result = ""
+        for key, power_setting in self.pcp.items():
+            result += spacing + key + " ^ " + str(get_power_range(power_setting))
+        return result
 
     def _get_power_values(self, values):
         result = list()
-        for key, max_power in values.items():
+        for key, power_setting in values.items():
             result.append([{
                 "s": get_symbol(key, power),
                 "v": self.ur(key + "^" + str(power)).to_base_units().magnitude,
                 "d": self.ur(key + "^" + str(power)).to_base_units().dimensionality
-            } for power in get_power_range(max_power)])
+            } for power in get_power_range(power_setting)])
         return result
 
     def _find_matched_by_brute_force(self, target_unit):
@@ -56,10 +59,9 @@ class PhysicalConstants:
         if match_count > 0:
             print(f"Found {match_count} candidates the resultant unit matched with the target's unit:")
             for symbol in self.matched.values():
-                v = self.ur(symbol).to_base_units()
-                print(f"\t[ {v.u:~P} ] = [ {get_formatted_symbol(symbol)} ]")
+                candidate_unit = f"{self.ur(symbol).to_base_units().u:~P}"
+                candidate_unit = candidate_unit if candidate_unit else "dimensionless"
+                print(f"\t[ {candidate_unit} ] = [ {get_formatted_symbol(symbol)} ]")
             print("")
         else:
             print("Could not find physical constants combination that is matched target's unit!")
-
-

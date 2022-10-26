@@ -1,5 +1,5 @@
 Search the target:
-	(7.297352565 ± 0.000000005)✕10⁻³ dimensionless
+	(5.87892575765 ± 0.00000000005)✕10¹⁰ 1/K/s
 in terms of the given:
 	physical constants:     
 		speed_of_light ^ [-2, -1, 0, 1, 2]
@@ -18,13 +18,13 @@ in terms of the given:
 by using brute_force methodology...
 
 Found 5 candidates the resultant unit matched with the target's unit:
-	[ dimensionless ] = [ elementary_charge⁴ / (speed_of_light² ⋅ planck_constant² ⋅ vacuum_permittivity²) ]
-	[ dimensionless ] = [ elementary_charge² / (speed_of_light ⋅ planck_constant ⋅ vacuum_permittivity) ]
-	[ dimensionless ] = [ 1 ]
-	[ dimensionless ] = [ speed_of_light ⋅ planck_constant ⋅ vacuum_permittivity / elementary_charge² ]
-	[ dimensionless ] = [ speed_of_light² ⋅ planck_constant² ⋅ vacuum_permittivity² / elementary_charge⁴ ]
+	[ 1/K/s ] = [ boltzmann_constant ⋅ elementary_charge⁴ / (speed_of_light² ⋅ planck_constant³ ⋅ vacuum_permittivity²) ]
+	[ 1/K/s ] = [ boltzmann_constant ⋅ elementary_charge² / (speed_of_light ⋅ planck_constant² ⋅ vacuum_permittivity) ]
+	[ 1/K/s ] = [ boltzmann_constant / planck_constant ]
+	[ 1/K/s ] = [ speed_of_light ⋅ boltzmann_constant ⋅ vacuum_permittivity / elementary_charge² ]
+	[ 1/K/s ] = [ speed_of_light² ⋅ planck_constant ⋅ boltzmann_constant ⋅ vacuum_permittivity² / elementary_charge⁴ ]
 
 Totally, unique 2079 mathematical multiplications are calculated & cached!
 
 Results matched the target:
-	(7.297352565 ± 0.000000005)✕10⁻³ dimensionless ≈ elementary_charge² / (2 ⋅ speed_of_light ⋅ planck_constant ⋅ vacuum_permittivity)
+	(5.87892575765 ± 0.00000000005)✕10¹⁰ 1/K/s ≈ wien_u ⋅ boltzmann_constant / planck_constant

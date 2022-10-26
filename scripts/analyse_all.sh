@@ -12,3 +12,5 @@ python ./main.py --target-value "6.6743e-11" --target-unit "m^3/(kg s^2)" > ./sc
 python ./main.py --target-value "1.256637062e-6" --target-unit "m kg/(A^2 s^2)" > ./scripts/outputs/analyse_all/vacuum_permeability.txt &
 # molar_gas_constant
 python ./main.py --target-value "8.3144626E0" --target-unit "(kg m^2)/(K mol s^2)" > ./scripts/outputs/analyse_all/molar_gas_constant.txt &
+# wien_frequency_displacement_law_constant
+python ./main.py --target-value "5.8789257576E+10" --target-unit "1/(K s)" > ./scripts/outputs/analyse_all/wien_frequency_displacement_law_constant.txt &
