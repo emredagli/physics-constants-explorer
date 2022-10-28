@@ -72,4 +72,5 @@ class MathematicalConstants:
 
         self.constants = constants
         self._set_bounds()
+
         print(f"Totally, unique {len(self.constants.items())} mathematical multiplications are calculated & cached!")

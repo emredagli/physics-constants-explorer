@@ -180,7 +180,14 @@ options:
   -h, --help            show this help message and exit
   -v, --target-value 
                         Target value with scientific notation.
-                        Examples: "5.6560E-8", "8.9875517873681764E+16", "1.000042E+0"
+                        To specify target value with measurement error:
+                        For example (1.23±0.06)×10^−5, please provide it in "concise form" like 1.23(6)E-5.
+                        Examples with error: "1.23(6)E-5", "8.9875(15)E+16", "4.2(3)E+0"
+                        
+                        The target value can also be provided without error specification:
+                        Examples without error: "1.23E-5", "8.9875E+16", "4.2E+0"
+                        If you provide target value without error, it equals to:
+                        "1.23E-5" ≈ "1.235(5)E-5"
   -u, --target-unit 
                         Target unit expression in terms of SI base units symbols.
                         Length - meter (m)
@@ -192,6 +199,10 @@ options:
                         Mass - kilogram (kg)
                         Use ^ symbol to represent power.
                         Examples: "kg/(s^3 K^4)", "kg s^-3 K^-4", "m/s"
+  -c, --config-path 
+                        Config file relative path.
+                        If it is not provided the program will try to read ./config.json
+
 ```
 
 ### Exploring Well-known Physical Constants
@@ -200,15 +211,31 @@ options:
 > ./scripts/analyse_all.sh
 ```
 
-The script above executes the following physical constants and stores the results:
+The [script](scripts/analyse_all.sh) above executes the following physical constants and stores the results.
 
+Found results:
 * [Stefan Boltzmann Constant](scripts/outputs/analyse_all/stefan_boltzmann_constant.txt)
 * [Rydberg Constant](scripts/outputs/analyse_all/rydberg_constant.txt)
 * [Fine Structure Constant](scripts/outputs/analyse_all/fine_structure_constant.txt)
-* [Newtonian Constant of Gravitation](scripts/outputs/analyse_all/newtonian_constant_of_gravitation.txt)
 * [Molar Gas Constant](scripts/outputs/analyse_all/molar_gas_constant.txt)
-* [Vacuum Permeability](scripts/outputs/analyse_all/vacuum_permeability.txt)
+* [Magnetic Constant (Vacuum Permeability)](scripts/outputs/analyse_all/magnetic_constant.txt)
 * [Wien Frequency Displacement Law Constant](scripts/outputs/analyse_all/wien_frequency_displacement_law_constant.txt)
+* [Impedance of Free Space](scripts/outputs/analyse_all/impedance_of_free_space.txt)
+
+
+Not found results:
+* [Newtonian Constant of Gravitation](scripts/outputs/analyse_all/newtonian_constant_of_gravitation.txt)
+
+Notes about [config.json](config.json) file while calculating these constants:
+* config.json file expanded progressively to cover all constants above
+* Since there is a [direct relation](https://en.wikipedia.org/wiki/Speed_of_light#Propagation_of_light) between speed of light, electric constant $\varepsilon _{0}$ and the magnetic constant $\mu _{0}$ 
+
+```math
+{\displaystyle c={\frac {1}{\sqrt {\varepsilon _{0}\mu _{0}}}}\ .}
+```
+
+only "electric_constant" is included into the config.json file to reduce the resultant space on the analysis above.
+
 
 ## Tests
 
@@ -224,15 +251,19 @@ Test folder is [here](src/tests). You can run tests on the project root:
 * [pint](https://pint.readthedocs.io/en/stable/)
   * [pint repo](https://github.com/hgrecco/pint/tree/master/pint)
   * [pint default constants definition file](https://github.com/hgrecco/pint/blob/master/pint/constants_en.txt)
-  * [pint Developer reference](https://pint.readthedocs.io/en/stable/developers_reference.html)
+  * [pint developer reference](https://pint.readthedocs.io/en/stable/developers_reference.html)
   * [pint tutorıal](https://pint.readthedocs.io/en/stable/tutorial.html)
 * [jsonschema](https://python-jsonschema.readthedocs.io/en/stable/)
 * [Latex Mathematics](https://en.wikibooks.org/wiki/LaTeX/Mathematics)
   * [Writing mathematical expressions](https://docs.github.com/en/get-started/writing-on-github/working-with-advanced-formatting/writing-mathematical-expressions)
 
 ### Physical Constants
-* [Fundamental Physical Constants](https://www.ge.infn.it/apetrolini/FisGen/doc-fis2-01.pdf)
+* [Fundamental Physical Constants — Extensive Listing](https://physics.nist.gov/cuu/pdf/all.pdf)
+* [Fundamental Physical Constants - https://physics.nist.gov/](https://physics.nist.gov/cuu/Constants/index.html)
 
+## TODOs
+
+* Implement error calculation on multiplications. [uncertainties library](https://uncertainties-python-package.readthedocs.io/en/latest/) seems to be a good candidate 
 
 ## My Gratitude  
 

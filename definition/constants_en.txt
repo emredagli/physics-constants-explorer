@@ -15,7 +15,12 @@ wien_x = 4.9651142317442763036987591313228939440555849867973      # solution to 
 wien_u = 2.8214393721220788934031913302944851953458817440731      # solution to (u-3)*exp(u)+3 = 0 => u = W(3/exp(3))+3
 eulers_number = 2.71828182845904523536028747135266249775724709369995
 golden_ratio = 1.6180339887498948482045868343656381177203091798057
-sqrt2  = 1.4142135623730950488016887242096980785696718753769
+
+sqrt_2  = 1.4142135623730950488016887242096980785696718753769
+sqrt_3  = 1.7320508075688772935274463415058723669428052538104
+sqrt_5  = 2.2360679774997896964091736687312762354406183596115
+sqrt_pi = 1.7724538509055160272981674833411451827975494561223
+sqrt_eulers_number = 1.6487212707001281468486507878141635716537761007101
 
 #### DEFINED EXACT CONSTANTS ####
 
@@ -76,3 +81,16 @@ classical_electron_radius = α * hbar / (m_e * c) = r_e
 thomson_cross_section = 8 / 3 * π * r_e ** 2 = σ_e = sigma_e
 
 proton_to_electron_mass_ratio = m_p / m_e
+atomic_mass_to_electron_mass_ratio = m_u / m_e
+electron_g_factor_positive = -1 * electron_g_factor
+
+faraday_constant_womol = faraday_constant / avogadro_constant
+
+sqrt_electron_mass = electron_mass ** 0.5
+sqrt_elementary_charge = elementary_charge ** 0.5
+sqrt_magnetic_constant = magnetic_constant ** 0.5
+sqrt_planck_constant = planck_constant ** 0.5
+sqrt_rydberg_constant = rydberg_constant ** 0.5
+sqrt_speed_of_light = speed_of_light ** 0.5
+
+dirac_large_number = e ** 2 / (4 * π * ε_0 * gravitational_constant * m_e * m_p)

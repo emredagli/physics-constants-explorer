@@ -3,8 +3,8 @@ from decimal import Decimal
 from functools import reduce
 from itertools import product
 from tqdm import tqdm
-from src.common_library import get_symbol, get_power_range, get_formatted_symbol
-
+from src.common_library import get_symbol, get_power_range, get_formatted_symbol, get_decimal_with_power_10
+import collections
 
 class PhysicalConstants:
     def __init__(self, config, unit_registry):
@@ -47,7 +47,7 @@ class PhysicalConstants:
                     "v": a.get("v") * b.get("v")
                 }, list(combination), {"s": "", "v": Decimal(1)})
                 matched.setdefault(resultant["v"], resultant["s"])
-        self.matched = matched
+        self.matched = collections.OrderedDict(sorted(matched.items()))
 
     def find_matched_multiplications(self, target_unit):
         if self.method == "brute_force":
@@ -55,13 +55,36 @@ class PhysicalConstants:
         else:
             raise ValueError("Search method (config.physical_constants.method) is invalid!")
 
+        if len(self.matched.items()) == 0:
+            print("Could not find physical constants combination that is matched target's unit!")
+
+    def print_matched_results(self, target, math_min, math_max):
         match_count = len(self.matched.items())
         if match_count > 0:
             print(f"Found {match_count} candidates the resultant unit matched with the target's unit:")
             for symbol in self.matched.values():
-                candidate_unit = f"{self.ur(symbol).to_base_units().u:~P}"
+                candidate = self.ur(symbol).to_base_units()
+                candidate_unit = f"{candidate.u:~P}"
                 candidate_unit = candidate_unit if candidate_unit else "dimensionless"
-                print(f"\t[ {candidate_unit} ] = [ {get_formatted_symbol(symbol)} ]")
+                print(f"\t[ M ] [ {candidate_unit} ] = {get_formatted_symbol(symbol)}")
+                print(f"{self.get_candidate_value_info(candidate.m, target, math_min, math_max)}")
             print("")
+
+    def get_candidate_value_info(self, candidate_value, target, math_min, math_max):
+        r_max = target / math_min
+        r_min = target / math_max
+        r_max_str = f"Max (~{get_decimal_with_power_10(r_max, 0)})"
+        r_min_str = f"Min (~{get_decimal_with_power_10(r_min, 0)})"
+        candidate_str = f"M (~{get_decimal_with_power_10(candidate_value, 0)})"
+        in_range_info = "👎 Not in range."
+        if candidate_value > r_min:
+            if candidate_value < r_max:
+                in_range_info = "👍 In range!"
+                candidate_info = f"{r_min_str} < {candidate_str} < {r_max_str}"
+            else:
+                candidate_info = f"{r_min_str} < {r_max_str} < {candidate_str}"
         else:
-            print("Could not find physical constants combination that is matched target's unit!")
+            candidate_info = f"{candidate_str} < {r_min_str} < {r_max_str}"
+
+        return f"\t  ├── {in_range_info}\n" \
+               f"\t  └── {candidate_info}\n"

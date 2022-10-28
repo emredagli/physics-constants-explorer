@@ -1,5 +1,5 @@
 Search the target:
-	(5.6703744195 ± 0.0000000005)✕10⁻⁸ kg/K⁴/s³
+	(1.25663706212 ± 0.00000000019)✕10⁻⁶ kg·m/A²/s²
 in terms of the given:
 	physical constants:     
 		speed_of_light ^ [-2, -1, 0, 1, 2]
@@ -19,18 +19,18 @@ by using brute_force methodology...
 
 Totally, unique 2079 mathematical multiplications are calculated & cached!
 Found 3 candidates the resultant unit matched with the target's unit:
-	[ M ] [ kg/K⁴/s³ ] = boltzmann_constant⁴ / (speed_of_light² ⋅ planck_constant³)
+	[ M ] [ kg·m/A²/s² ] = 1 / (speed_of_light² ⋅ electric_constant)
 	  ├── 👍 In range!
-	  └── Min (~5✕10⁻¹³) < M (~1✕10⁻⁹) < Max (~6✕10⁻³)
+	  └── Min (~1✕10⁻¹¹) < M (~1✕10⁻⁶) < Max (~1✕10⁻¹)
 
-	[ M ] [ kg/K⁴/s³ ] = boltzmann_constant⁴ ⋅ electric_constant / (speed_of_light ⋅ planck_constant² ⋅ elementary_charge²)
+	[ M ] [ kg·m/A²/s² ] = planck_constant / (speed_of_light ⋅ elementary_charge²)
 	  ├── 👍 In range!
-	  └── Min (~5✕10⁻¹³) < M (~1✕10⁻⁷) < Max (~6✕10⁻³)
+	  └── Min (~1✕10⁻¹¹) < M (~9✕10⁻⁵) < Max (~1✕10⁻¹)
 
-	[ M ] [ kg/K⁴/s³ ] = boltzmann_constant⁴ ⋅ electric_constant² / (planck_constant ⋅ elementary_charge⁴)
+	[ M ] [ kg·m/A²/s² ] = planck_constant² ⋅ electric_constant / elementary_charge⁴
 	  ├── 👍 In range!
-	  └── Min (~5✕10⁻¹³) < M (~7✕10⁻⁶) < Max (~6✕10⁻³)
+	  └── Min (~1✕10⁻¹¹) < M (~6✕10⁻³) < Max (~1✕10⁻¹)
 
 
 Results matched the target:
-	(5.6703744195 ± 0.0000000005)✕10⁻⁸ kg/K⁴/s³  ≈  2 ⋅ pi⁵ ⋅ boltzmann_constant⁴ / (3 ⋅ 5 ⋅ speed_of_light² ⋅ planck_constant³)
+	(1.25663706212 ± 0.00000000019)✕10⁻⁶ kg·m/A²/s²  ≈  1 / (speed_of_light² ⋅ electric_constant)

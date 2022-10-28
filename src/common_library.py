@@ -1,5 +1,6 @@
 import re
 from decimal import Decimal
+import json
 
 
 def get_symbol(key, power):
@@ -25,13 +26,35 @@ power_map = str.maketrans({
     "-": "⁻", "+": ""})
 
 
-def get_explanation(current, number, power):
-    multiplication_str = "." if current else ""
+def get_suggested_physical_constants_config(candidates_in_range):
+    suggested_config = dict()
+    for symbol in candidates_in_range:
+        pairs = symbol.strip().split()
+        for pair in pairs:
+            pair_split = pair.split('^')
+            constant = pair_split[0]
+            if len(pair_split) < 2:
+                power = "1"
+            else:
+                power = pair_split[1]
+            power = int(power)
+            suggested = suggested_config.get(constant)
+            if suggested is None:
+                suggested_config[constant] = [power, power]
+            else:
+                [min_val, max_val] = suggested
+                suggested_config[constant] = [min(min_val, power), max(max_val, power)]
+    return json.dumps(suggested_config, sort_keys=True).replace("],", "],\n")
 
+
+def get_constant_with_power(constant, power):
+    if constant.startswith("sqrt_") and power % 2 == 0:
+        constant = constant.replace("sqrt_", "")
+        power = int(power / int(2))
     if power == 1:
-        return current + multiplication_str + str(number)
-
-    return current + multiplication_str + str(number) + str(power).translate(power_map)
+        return constant
+    else:
+        return constant + str(power).translate(power_map)
 
 
 def get_formatted_symbol(symbol):
@@ -40,18 +63,24 @@ def get_formatted_symbol(symbol):
     numerator = []
     denominator = []
     for pair in pairs:
-        value_pair = pair.split('^')
-        if len(value_pair) == 2:
-            power = int(value_pair[1])
-            if power < 0:
-                if power == -1:
-                    denominator.append(value_pair[0])
-                else:
-                    denominator.append(value_pair[0] + str(abs(power)).translate(power_map))
-            else:
-                numerator.append(value_pair[0] + str(value_pair[1]).translate(power_map))
+        pair_split = pair.split('^')
+        constant = pair_split[0]
+        if len(pair_split) < 2:
+            power = "1"
         else:
-            numerator.append(value_pair[0])
+            power = pair_split[1]
+        power = int(power)
+
+        if power < 0:
+            if power == -1:
+                denominator.append(constant)
+            else:
+                denominator.append(get_constant_with_power(constant, abs(power)))
+        else:
+            if power == 1:
+                numerator.append(constant)
+            else:
+                numerator.append(get_constant_with_power(constant, power))
 
     formatted_numerator = "1"
     if len(numerator) > 0:
@@ -67,6 +96,15 @@ def get_formatted_symbol(symbol):
         formatted = formatted_numerator
 
     return formatted
+
+
+def get_decimal_with_power_10(value, decimal):
+    str_scientific = f"{value:.{decimal}E}"
+    numeric_val, power_val = str_scientific.split("E")
+    if power_val == 0:
+        return numeric_val
+    else:
+        return numeric_val + "✕10" + power_val.translate(power_map)
 
 
 def get_measurement_error_form(value, error_concise):

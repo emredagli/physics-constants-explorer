@@ -1,12 +1,12 @@
 Search the target:
-	(1.097373155 ± 0.000000005)✕10⁷ 1/m
+	(1.0973731568160 ± 0.0000000000021)✕10⁷ 1/m
 in terms of the given:
 	physical constants:     
 		speed_of_light ^ [-2, -1, 0, 1, 2]
 		planck_constant ^ [-3, -2, -1, 0, 1, 2, 3]
 		boltzmann_constant ^ [-4, -3, -2, -1, 0, 1, 2, 3, 4]
 		elementary_charge ^ [-4, -3, -2, -1, 0, 1, 2, 3, 4]
-		vacuum_permittivity ^ [-2, -1, 0, 1, 2]
+		electric_constant ^ [-2, -1, 0, 1, 2]
 		electron_mass ^ [-2, -1, 0, 1, 2]
 		avogadro_constant ^ [-1, 0, 1]
 	mathematical constants: 
@@ -17,13 +17,24 @@ in terms of the given:
 		5 ^ [-1, 0, 1]
 by using brute_force methodology...
 
-Found 4 candidates the resultant unit matched with the target's unit:
-	[ 1/m ] = [ elementary_charge⁴ ⋅ electron_mass / (speed_of_light ⋅ planck_constant³ ⋅ vacuum_permittivity²) ]
-	[ 1/m ] = [ elementary_charge² ⋅ electron_mass / (planck_constant² ⋅ vacuum_permittivity) ]
-	[ 1/m ] = [ speed_of_light ⋅ electron_mass / planck_constant ]
-	[ 1/m ] = [ speed_of_light² ⋅ vacuum_permittivity ⋅ electron_mass / elementary_charge² ]
-
 Totally, unique 2079 mathematical multiplications are calculated & cached!
+Found 4 candidates the resultant unit matched with the target's unit:
+	[ M ] [ 1/m ] = elementary_charge⁴ ⋅ electron_mass / (speed_of_light ⋅ planck_constant³ ⋅ electric_constant²)
+	  ├── 👍 In range!
+	  └── Min (~1✕10²) < M (~9✕10⁷) < Max (~1✕10¹²)
+
+	[ M ] [ 1/m ] = elementary_charge² ⋅ electron_mass / (planck_constant² ⋅ electric_constant)
+	  ├── 👍 In range!
+	  └── Min (~1✕10²) < M (~6✕10⁹) < Max (~1✕10¹²)
+
+	[ M ] [ 1/m ] = speed_of_light ⋅ electron_mass / planck_constant
+	  ├── 👍 In range!
+	  └── Min (~1✕10²) < M (~4✕10¹¹) < Max (~1✕10¹²)
+
+	[ M ] [ 1/m ] = speed_of_light² ⋅ electric_constant ⋅ electron_mass / elementary_charge²
+	  ├── 👎 Not in range.
+	  └── Min (~1✕10²) < Max (~1✕10¹²) < M (~3✕10¹³)
+
 
 Results matched the target:
-	(1.097373155 ± 0.000000005)✕10⁷ 1/m ≈ elementary_charge⁴ ⋅ electron_mass / (2³ ⋅ speed_of_light ⋅ planck_constant³ ⋅ vacuum_permittivity²)
+	(1.0973731568160 ± 0.0000000000021)✕10⁷ 1/m  ≈  elementary_charge⁴ ⋅ electron_mass / (2³ ⋅ speed_of_light ⋅ planck_constant³ ⋅ electric_constant²)

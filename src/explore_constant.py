@@ -2,7 +2,8 @@ from decimal import Decimal
 
 from jsonschema.exceptions import ValidationError
 from tqdm import tqdm
-from src.common_library import get_formatted_symbol, config_schema, get_value_from_scientific_notation
+from src.common_library import get_formatted_symbol, config_schema, get_value_from_scientific_notation, \
+    get_suggested_physical_constants_config
 from src.mathematical_constants import MathematicalConstants
 from src.physical_constants import PhysicalConstants
 from jsonschema import validate
@@ -93,13 +94,17 @@ class ExploreConstant:
 
         self.pc.find_matched_multiplications(self.target_dimensional.dimensionality)
 
+        candidates_in_range = []
         if len(self.pc.matched.items()) > 0:
             self.mc.prepare_mathematical_constants()
+
+            self.pc.print_matched_results(self.target, self.mc.min_value, self.mc.max_value)
 
             for pc_value, pc_symbol in tqdm(self.pc.matched.items(),
                                             desc="Iterating the candidates",
                                             leave=True):
                 if self.mc.is_in_range(self.target / pc_value):
+                    candidates_in_range.append(pc_symbol)
                     for mc_value, mc_symbol in tqdm(self.mc.constants.items(),
                                                     desc="Iterating the mathematical constants",
                                                     leave=False):
@@ -112,11 +117,20 @@ class ExploreConstant:
 
         # Display the results
         if len(results) > 0:
-            print(f"\nResults matched the target:")
+            # print("\nReduced 'physical_constants.constants_and_powers' config for candidates:\n")
+            # print(f"{get_suggested_physical_constants_config(candidates_in_range)}\n")
+
+            print(f"Results matched the target:")
             for _, _, formatted_symbol in results:
-                print(f"\t{self.target_str} ≈ {formatted_symbol}")
+                print(f"\t{self.target_str}  ≈  {formatted_symbol}")
         else:
-            print("No results were found that matching with the target!")
+            print("No results were found that matching with the target!\n")
+            if len(candidates_in_range) > 0:
+                print("But the following candidates were in the given mathematical range:")
+                for pc_symbol in candidates_in_range:
+                    print(f"\t{get_formatted_symbol(pc_symbol)}")
+                print("\nReduced 'physical_constants.constants_and_powers' config for these candidates:\n")
+                print(f"{get_suggested_physical_constants_config(candidates_in_range)}")
 
     def _init_target(self, target_value, target_unit):
         value = get_value_from_scientific_notation(target_value)

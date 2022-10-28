@@ -16,12 +16,12 @@ if __name__ == '__main__':
                         required=True,
                         metavar='\b',
                         help='Target value with scientific notation.\n'
-                             'To specify target value with measurement error:\n '
+                             'To specify target value with measurement error:\n'
                              'For example (1.23±0.06)×10^−5, please provide it in "concise form" like 1.23(6)E-5.\n'
-                             'Examples with error: "1.23(6)E-5", "8.9875(15)E+16", "4.2(3)E+0"\n'
-                             'The target can be provided without error:\n'
+                             'Examples with error: "1.23(6)E-5", "8.9875(15)E+16", "4.2(3)E+0"\n\n'
+                             'The target value can also be provided without error specification:\n'
                              'Examples without error: "1.23E-5", "8.9875E+16", "4.2E+0"\n'
-                             'If you provide without error, it is equal to:\n'
+                             'If you provide target value without error, it equals to:\n'
                              '"1.23E-5" ≈ "1.235(5)E-5"')
 
     parser.add_argument('-u',
@@ -39,13 +39,21 @@ if __name__ == '__main__':
                              'Use ^ symbol to represent power.\n'
                              'Examples: "kg/(s^3 K^4)", "kg s^-3 K^-4", "m/s"')
 
+    parser.add_argument('-c',
+                        '--config-path',
+                        required=False,
+                        default='./config.json',
+                        metavar='\b',
+                        help='Config file relative path.\n'
+                             'If it is not provided the program will try to read ./config.json')
+
     args = parser.parse_args()
 
     # Setting Decimal precision
     getcontext().prec = 50
 
     # Reading config
-    with open('config.json') as f:
+    with open(args.config_path) as f:
         config = json.load(f)
 
     # pint customization can be done on this file
