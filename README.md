@@ -99,7 +99,7 @@ This is the main methodology that I have followed:
 2. Iterate the candidates, looking for a combination of dimensionless mathematical constants, such that the resulting multiplication places within the desired error range.
 
 
-<iframe frameborder="0" style="width:100%;height:584px;" src="https://viewer.diagrams.net/?tags=%7B%7D&highlight=0000ff&edit=_blank&layers=1&nav=1&title=Flowchart%20of%20Physical%20Constants%20Explorer.drawio#Uhttps%3A%2F%2Fdrive.google.com%2Fuc%3Fid%3D1Is0OBQgccJF-kAGTxuqwc6j_mwC7dACk%26export%3Ddownload"></iframe>
+![Flowchart of Physical Constants Explorer](./img/Flowchart_of_Physical_Constants_Explorer.drawio.svg)
 
 I wanted to start with a simple and clear methodologies:
 
