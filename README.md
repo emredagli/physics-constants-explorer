@@ -1,12 +1,12 @@
 # Physics Constants Explorer
 
-This work contains research & a python program to explore physical constants formulation in terms of given other physical & mathematical constants.
+This work contains research and a python program to explore physical constants formulation in terms of given other physical & mathematical constants.
 
 <!-- TOC -->
 * [Motivation & Concept](#motivation--concept)
 * [Methodology](#methodology)
 * [Python Install](#python-install)
-* [Run the Program](#run-the-program)
+* [Running the Program](#run-the-program)
   * [Constants Definition File](#constants-definition-file)
   * [The Config File](#the-config-file)
   * [The Program Inputs](#the-program-inputs)
@@ -29,7 +29,7 @@ This work contains research & a python program to explore physical constants for
 
 ## Motivation & Concept
 
-Most of the physical constants are observed from experiments & measured by devices within the given error range.
+Most of the physical constants are observed from experiments and measured by instruments within the given error range.
 
 Like Stefan-Boltzmann Constant, [Prof. Dr. Josef Stefan](https://en.wikipedia.org/wiki/Josef_Stefan) had found the relation between radiation power and temperature of the black body radiation problem:
 
@@ -53,7 +53,7 @@ where
 
 * $k$ is the [Boltzmann constant](https://en.wikipedia.org/wiki/Boltzmann_constant) (another physical constant)
 * $h$ is the [Planck constant](https://en.wikipedia.org/wiki/Planck_constant) (another physical constant)
-* $c$ is the speed of light in vacuum (another physical constant)
+* $c$ is the [Speed of Light](https://en.wikipedia.org/wiki/Speed_of_light) in vacuum (physical constant)
 * $\pi$ is the ratio of a circle's circumference to its diameter (mathematical constant)
 
 with SI base units:
@@ -62,12 +62,12 @@ with SI base units:
 * s is second
 * K is Kelvin
 
-Formulation of `σ` was [theoretically derived](https://edisciplinas.usp.br/pluginfile.php/48089/course/section/16461/qsp_chapter10-plank.pdf) by using the other physical & mathematical constants.
+Formulation of `σ` was [theoretically derived](https://edisciplinas.usp.br/pluginfile.php/48089/course/section/16461/qsp_chapter10-plank.pdf) by using the other physical and mathematical constants.
 
-Now, let's think oppositely & assume we have a function which takes:
+Now, let's think oppositely amd assume we have a function which takes:
 
-* Target value: 5.670374E-8
-* Target unit: $\mathrm{kg}\ \mathrm{s}^{-3}\ \mathrm{K}^{-4}$
+* Target value: 5.670374E-8 (in [Scientific Notation](https://en.wikipedia.org/wiki/Scientific_notation))
+* Target unit: $\mathrm{kg}\\times\mathrm{s}^{-3}\\times\mathrm{K}^{-4}$
 * List of physical constants with their units ($k$, $h$, $c$, ...)
 * List of mathematical constants ($\pi$, $e$, ...)
 * List of prime numbers (2, 3, 5, ...)
@@ -75,19 +75,19 @@ Now, let's think oppositely & assume we have a function which takes:
 and returns the matched formula(s), so that:
 
 * The target unit is "exactly" matched with the unit of formula and,
-* The target value is matched with the resultant numeric value (with in the given error range).
+* The target value is matched with the resultant numeric value (within the given error range).
 
-Like,
+Example Output:
 ```text
 (5.6703744195 ± 0.0000000005)✕10⁻⁸ kg/K⁴/s³  ≈  2 ⋅ pi⁵ ⋅ boltzmann_constant⁴ / (3 ⋅ 5 ⋅ speed_of_light² ⋅ planck_constant³)
 ```
 
-Would it be possible & useful?
+Would it be possible and useful?
 
 Yes it is possible. To be honest, I am not definitely sure about its usefulness!
 
 But I would like to start this study with the excitement of opportunity of being the first person to see the possible formulation of some famous physical constants. 
-And I know that this methodology can be expanded to wider scope with distributed calculation methods.
+And I know that this methodology can be expanded to a wider scope with distributed calculation methods.
 
 ## Methodology
 
@@ -96,29 +96,28 @@ It is a well-known fact that the resultant physical unit on the right side of th
 This is the main methodology that I have followed:
 
 1. Prepare the candidate list by calculating the combination of physical constants which matched the target unit.
-2. Iterate the candidates, looking for a combination of dimensionless mathematical constants, such that the resulting multiplication places within the desired error range.
-
+2. Iterate over the candidates, looking for a combination of dimensionless mathematical constants, such that the resulting multiplication places within the desired error range.
 
 ![Flowchart of Physical Constants Explorer](./img/Flowchart_of_Physical_Constants_Explorer.drawio.svg)
 
-I wanted to start with a simple and clear methodologies:
+I wanted to apply a simple and clear set of methodologies:
 
 1. Brute force algorithm for all multiplication combinations
 2. Using a unit library ([pint](https://pint.readthedocs.io/en/stable/)) to:
    * Represent physical dimensional constants
-   * Convert physical constants & multiplications to base SI units
-   * Correctly calculate the multiplication of physical & mathematical constants
+   * Convert physical constants and multiplications to base SI units
+   * Correctly calculate the multiplication of physical and mathematical constants
 3. Using scientific notation with the ["concise form"](https://en.wikipedia.org/wiki/Scientific_notation#Estimated_final_digits) for input target values. 
-4. Ignore errors on the right side of the equation (multiplications). 
+4. Ignore errors on the right side of the equation, i.e. resultant error of the combination of the calculated multiplications. 
 5. Using [decimal](https://docs.python.org/3/library/decimal.html) library to represent numbers with high significant digits (50 is set as default precision)
 
-## Python Install
+## Python Installation
 
 The implementation is done by using Python 3.9.13
 
 If python is not installed, I suggest using one of "Python Version Manager" (Anaconda, pyenv, etc.)
 
-Please execute the following code on the project root folder:
+Please execute the following code on the projects root folder:
 
 ```shell
 > python -m venv ./venv
@@ -127,17 +126,14 @@ Please execute the following code on the project root folder:
 > pip install -r ./requirements.txt
 ```
 
-## Run the Program
+## Running the Program
 
 ### Constants Definition File
-The program is using [pint](https://pint.readthedocs.io/en/stable/) library to use & operate on physical (dimensional) & mathematical (dimensionless) constants.
+The program is using [pint](https://pint.readthedocs.io/en/stable/) library to use and operate on physical (dimensional) & mathematical (dimensionless) constants.
 
 You can override to modify [pint default constants definition file](https://github.com/hgrecco/pint/blob/master/pint/constants_en.txt).
 
-The overriden file is located [definition/constants_en.txt](definition/constants_en.txt). 
-
-You can also change this file to add & modify the constant definitions. 
-
+The overriden file is located [definition/constants_en.txt](definition/constants_en.txt). You can also change this file to add and modify the constant definitions. 
 
 ### The Config File 
 
@@ -172,12 +168,9 @@ The file holds the constants and their power ranges that the program will consid
 |--------------------------|------------------------|----------------------------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | "physical_constants"     | "method"               |                                                                                                                            | "brute_force"                                                                                                                                                                                                                       |
 | "physical_constants"     | "constants_and_powers" | Dimensional physical constant name. It must be defined on [the definition file](./definition/constants_en.txt).            | The power range. <br/>* `Array`: `[min, max]`. The program converts it as integer range e.g. `[min, ..., max]`. It adds `0`, if `0` does not exist in the range.<br/>* `Integer`: the program converts it as `[-value, ..., value]` |
-| "mathematical_constants" | "numbers_and_powers"   | Prime numbers in string format like "2"                                                                                    | The power range. The format is the same as above.                                                                                                                                                                                   |
+| "mathematical_constants" | "numbers_and_powers"   | Prime numbers in string format e.g. "2"                                                                                    | The power range. The format is the same as above.                                                                                                                                                                                   |
 | "mathematical_constants" | "constants_and_powers" | Dimensionless mathematical constant name. It must be defined on [the same definition file](./definition/constants_en.txt). | The power range. The format is the same as above.                                                                                                                                                                                   |
-
-
-The result of the calculation is in terms of `key` values for constant names.
-
+The result of the calculation is represented in terms of `key` values.
 
 ### The Program Inputs
 
@@ -252,7 +245,6 @@ The [script](scripts/analyse_all.sh) below executed the following physical const
 * [Target value reference](https://physics.nist.gov/cgi-bin/cuu/Value?ryd|search_for=rydberg+constant)
 * [More info about the constant](https://en.wikipedia.org/wiki/Rydberg_constant)
 
-
 ### Fine Structure Constant
 
 ```shell
@@ -280,7 +272,6 @@ The [script](scripts/analyse_all.sh) below executed the following physical const
 * [Target value reference](https://physics.nist.gov/cgi-bin/cuu/Value?mu0|search_for=vacuum+permeability)
 * [More info about the constant](https://en.wikipedia.org/wiki/Vacuum_permeability)
 
-
 ### Wien Frequency Displacement Law Constant
 
 ```shell
@@ -290,7 +281,6 @@ The [script](scripts/analyse_all.sh) below executed the following physical const
 * [Target value reference](https://physics.nist.gov/cgi-bin/cuu/Value?bpwien|search_for=wien_frequency+displacement+law+constant)
 * [More info about the constant](https://en.wikipedia.org/wiki/Wien%27s_displacement_law)
 
-
 ### Impedance of Free Space
 
 ```shell
@@ -299,7 +289,6 @@ The [script](scripts/analyse_all.sh) below executed the following physical const
 * [The output of the program](scripts/outputs/analyse_all/impedance_of_free_space.txt)
 * [Target value reference](https://physics.nist.gov/cgi-bin/cuu/Value?z0|search_for=characteristic+impedance+of+vacuum)
 * [More info about the constant](https://en.wikipedia.org/wiki/Impedance_of_free_space)
-
 
 ### Newtonian Constant of Gravitation
 
@@ -311,7 +300,6 @@ The [script](scripts/analyse_all.sh) below executed the following physical const
 * [More info about the constant](https://en.wikipedia.org/wiki/Gravitational_constant)
 
 Unfortunately, there is no meaningfully results are found for `Newtonian Constant of Gravitation` yet!
-
 
 ## Program Tests
 
@@ -347,26 +335,24 @@ Test folder is [here](src/tests). To run the all test:
 * Implement error calculation on multiplications & in the definition file. [uncertainties library](https://uncertainties-python-package.readthedocs.io/en/latest/) can be a good candidate! 
 * Since only `Boltzman` constant has `K` Kelvin dimension space in its unit, check another independent physical constant which contains `K` on its units!
 
-## My Gratitude  
+## Gratitudes
 
 I would like to express my gratitude to my teachers:
+* Physics Teacher Rafet Kamer, Physics Olympiads
+* Prof. Dr. K. Sinan Bilikmen, METU-Physics
+* Prof. Dr. Mehmet Tomak, METU-Physics
 
+And who are not with us:
 * Prof. Dr. İbrahim Günal (R.I.P), METU-Physics
 * Prof. Dr. Ordal Demokan (R.I.P), METU-Physics
 * Physics Teacher Aykut Gümüç (R.I.P), Eskisehir Science High School
 * Prof. Dr. Oleg Fedorovich Kabardin (R.I.P), Physics Olympiads
 
-<br/>
-
-* Physics Teacher Rafet Kamer, Physics Olympiads
-* Prof. Dr. K. Sinan Bilikmen, METU-Physics
-* Prof. Dr. Mehmet Tomak, METU-Physics
-
-
-& to my genius and big-hearted friends who always enjoy supporting me:
+And special thanks to my genius and big-hearted friends who always enjoy supporting me:
 * Dr. İnanç Kanık
 * Dr. Özgür Sümer
 * Atılım Çetin
 * Osman Özgür
+* Ali Onur Geven
 
-& to my dear wife Ayşen and my dear children Ozan & Doruk!
+And to my beloved wife Ayşen and my dear children Ozan & Doruk!
