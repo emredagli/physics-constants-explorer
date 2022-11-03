@@ -2,11 +2,11 @@
   "physical_constants": {
     "method": "brute_force",
     "constants_and_powers": {
-      "speed_of_light": 5,
-      "planck_constant": 5,
-      "elementary_charge": 12,
-      "electron_mass": 5,
-      "mc_to_ec_ratio": 5
+      "speed_of_light": 8,
+      "planck_constant": 8,
+      "elementary_charge": 8,
+      "electron_mass": 8,
+      "sqrt_mc_to_ec_ratio": 8
     }
   },
   "mathematical_constants": {
@@ -18,7 +18,7 @@
     "constants_and_powers": {
       "pi": 4,
       "proton_to_electron_mass_ratio": 10,
-      "fine_structure_constant": 2
+      "fine_structure_constant": 4
     }
   }
 }

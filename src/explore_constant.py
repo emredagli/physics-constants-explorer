@@ -1,7 +1,9 @@
+from decimal import ROUND_HALF_UP
+
 from tqdm import tqdm
 
 from src.common_library import get_formatted_symbol, get_value_from_scientific_notation, \
-    get_suggested_physical_constants_config, get_decimal_with_power_10
+    get_decimal_with_power_10
 from src.mathematical_constants import MathematicalConstants
 from src.physical_constants import PhysicalConstants
 from src.validator_library import validate_input, validate_config
@@ -72,7 +74,8 @@ class ExploreConstant:
             print(f"Result(s) matched the target:")
             print(f"\t{self.target_str}")
             for resultant, formatted_symbol in results:
-                print(f"\t {get_decimal_with_power_10(resultant.quantize(self.target))} {self.unit_str} ≈ {formatted_symbol}")
+                print(
+                    f"\t {get_decimal_with_power_10(resultant.quantize(self.target, rounding=ROUND_HALF_UP))} {self.unit_str} ≈ {formatted_symbol}")
         else:
             print("No results were found that matching with the target!\n")
             if len(candidates_in_range) > 0:
