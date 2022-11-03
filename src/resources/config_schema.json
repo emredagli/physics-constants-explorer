@@ -1,0 +1,69 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "type": "object",
+    "required": [
+        "physical_constants",
+        "mathematical_constants"
+    ],
+    "additionalProperties": false,
+    "properties": {
+        "physical_constants": {
+            "type": "object",
+            "required": [
+                "method",
+                "constants_and_powers"
+            ],
+            "additionalProperties": false,
+            "properties": {
+                "method": {
+                    "enum": ["brute_force"],
+                    "additionalProperties": false
+                },
+                "constants_and_powers": {
+                    "type": "object",
+                    "minProperties": 1,
+                    "additionalProperties": {"$ref": "#/$defs/power_values"}
+                }
+            }
+        },
+        "mathematical_constants": {
+            "type": "object",
+            "required": [
+                "numbers_and_powers",
+                "constants_and_powers"
+            ],
+            "additionalProperties": false,
+            "properties": {
+                "numbers_and_powers": {
+                    "type": "object",
+                    "patternProperties": {
+                        "^[0-9]*$": {"$ref": "#/$defs/power_values"}
+                    },
+                    "additionalProperties": false
+                },
+                "constants_and_powers": {
+                    "type": "object",
+                    "additionalProperties": {"$ref": "#/$defs/power_values"}
+                }
+            }
+        }
+    },
+    "$defs": {
+        "power_values": {
+            "oneOf": [
+                {
+                    "type": "array",
+                    "items": {
+                        "type": "integer"
+                    },
+                    "minItems": 2,
+                    "maxItems": 2,
+                    "uniqueItems": false
+                }, {
+                    "type": "integer",
+                    "minimum": 1
+                }
+            ]
+        }
+    }
+}

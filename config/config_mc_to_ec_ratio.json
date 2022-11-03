@@ -1,0 +1,21 @@
+{
+  "physical_constants": {
+    "method": "brute_force",
+    "constants_and_powers": {
+      "sqrt_speed_of_light": 2,
+      "sqrt_planck_constant": 6,
+      "sqrt_elementary_charge": 8,
+      "sqrt_electron_mass": 2,
+      "sqrt_rydberg_constant": 2
+    }
+  },
+  "mathematical_constants": {
+    "numbers_and_powers": {},
+    "constants_and_powers": {
+      "sqrt_2": 8,
+      "sqrt_pi": 8,
+      "sqrt_proton_to_electron_mass_ratio": 4,
+      "sqrt_fine_structure_constant": 4
+    }
+  }
+}

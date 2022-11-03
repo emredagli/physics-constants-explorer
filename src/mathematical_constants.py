@@ -2,10 +2,13 @@ import operator
 from decimal import Decimal
 from functools import reduce
 from itertools import product
+
 from tqdm import tqdm
+
 from src.common_library import get_symbol, get_power_range
 
 
+# TODO: rename it to MathematicalOperator
 class MathematicalConstants:
     def __init__(self, config, unit_registry):
         self.np = config.get("numbers_and_powers")

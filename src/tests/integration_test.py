@@ -56,7 +56,7 @@ def test_well_known_targets(name, target_value, target_unit, expected):
     assert len(explorer.results) == 1, \
         f"Expected 1 result for {name}, but got {len(explorer.results)} results"
 
-    first_result = explorer.results[0][2]
+    first_result = explorer.results[0][1]
     assert first_result == expected, f"Expected {expected} for {name}, but got {first_result}"
 
 
@@ -100,5 +100,5 @@ def test_physical_constants_itself(name, target_value, target_unit):
     assert len(explorer.results) == 1, \
         f"Expected 1 result for {name}, but got {len(explorer.results)} results"
 
-    first_result = explorer.results[0][2]
+    first_result = explorer.results[0][1]
     assert first_result == name, f"Expected {name}, but got {first_result}"

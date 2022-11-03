@@ -5,8 +5,8 @@ This work contains research and a python program to explore physical constants f
 <!-- TOC -->
 * [Motivation & Concept](#motivation--concept)
 * [Methodology](#methodology)
-* [Python Install](#python-install)
-* [Running the Program](#run-the-program)
+* [Python Installation](#python-installation)
+* [Running the Program](#running-the-program)
   * [Constants Definition File](#constants-definition-file)
   * [The Config File](#the-config-file)
   * [The Program Inputs](#the-program-inputs)
@@ -18,20 +18,26 @@ This work contains research and a python program to explore physical constants f
   * [Vacuum Permeability (Magnetic Constant)](#vacuum-permeability--magnetic-constant-)
   * [Wien Frequency Displacement Law Constant](#wien-frequency-displacement-law-constant)
   * [Impedance of Free Space](#impedance-of-free-space)
-  * [Newtonian Constant of Gravitation](#newtonian-constant-of-gravitation)
-* [Program Tests](#program-tests)
+  * [Josephson Constant](#josephson-constant)
+  * [Von Klitzing Constant](#von-klitzing-constant)
+* [Exploring Measured But Unknown Physical Constants](#exploring-measured-but-unknown-physical-constants)
+  * [Magnetic Constant to Electric Constant Ratio](#magnetic-constant-to-electric-constant-ratio)
+  * [Newtonian Constant of Gravitation (G)](#newtonian-constant-of-gravitation--g-)
+    * [First Attempt](#first-attempt)
+    * [Second Attempt](#second-attempt)
+* [Tests](#tests)
 * [Resources](#resources)
   * [Libraries & Documentation](#libraries--documentation)
   * [Physical Constants](#physical-constants)
 * [Future Work](#future-work)
-* [My Gratitude](#my-gratitude)
+* [Gratitude](#gratitude)
 <!-- TOC -->
 
 ## Motivation & Concept
 
-Most of the physical constants are observed from experiments and measured by instruments within the given error range.
+Most of the relations in physics are observed from experiments and constants in the relations measured by instruments within the given error range.
 
-Like Stefan-Boltzmann Constant, [Prof. Dr. Josef Stefan](https://en.wikipedia.org/wiki/Josef_Stefan) had found the relation between radiation power and temperature of the black body radiation problem:
+For example Stefan-Boltzmann Constant, [Prof. Dr. Josef Stefan](https://en.wikipedia.org/wiki/Josef_Stefan) had found the relation between radiation power and temperature of the black body radiation problem:
 
 ```math
 j^{\star} = \sigma T^{4}
@@ -40,8 +46,8 @@ j^{\star} = \sigma T^{4}
 where,
 
 * $j^{\star}$ is radiated power per unit area
-* $T^{4}$ is 4. power of radiated material's temperature 
-* $\sigma$ is a __physical constant__ (known as Stefan–Boltzmann constant) 
+* $T^{4}$ is 4. power of radiated material's temperature
+* $\sigma$ is a __physical constant__ (known as Stefan–Boltzmann constant)
 
 Theoretical formulation of `σ` was done by [Prof. Dr. Ludwig Eduard Boltzmann](https://en.wikipedia.org/wiki/Ludwig_Boltzmann):
 
@@ -64,9 +70,9 @@ with SI base units:
 
 Formulation of `σ` was [theoretically derived](https://edisciplinas.usp.br/pluginfile.php/48089/course/section/16461/qsp_chapter10-plank.pdf) by using the other physical and mathematical constants.
 
-Now, let's think oppositely amd assume we have a function which takes:
+Now, let's think oppositely and assume we have a function which takes:
 
-* Target value: 5.670374E-8 (in [Scientific Notation](https://en.wikipedia.org/wiki/Scientific_notation))
+* Target value: 5.670374419E-8 (in [Scientific Notation](https://en.wikipedia.org/wiki/Scientific_notation))
 * Target unit: $\mathrm{kg}\\times\mathrm{s}^{-3}\\times\mathrm{K}^{-4}$
 * List of physical constants with their units ($k$, $h$, $c$, ...)
 * List of mathematical constants ($\pi$, $e$, ...)
@@ -78,6 +84,7 @@ and returns the matched formula(s), so that:
 * The target value is matched with the resultant numeric value (within the given error range).
 
 Example Output:
+
 ```text
 (5.6703744195 ± 0.0000000005)✕10⁻⁸ kg/K⁴/s³  ≈  2 ⋅ pi⁵ ⋅ boltzmann_constant⁴ / (3 ⋅ 5 ⋅ speed_of_light² ⋅ planck_constant³)
 ```
@@ -86,7 +93,7 @@ Would it be possible and useful?
 
 Yes it is possible. To be honest, I am not definitely sure about its usefulness!
 
-But I would like to start this study with the excitement of opportunity of being the first person to see the possible formulation of some famous physical constants. 
+But I would like to start this study with the excitement of opportunity of being the first person to see the possible formulation of some famous physical constants.
 And I know that this methodology can be expanded to a wider scope with distributed calculation methods.
 
 ## Methodology
@@ -107,8 +114,8 @@ I wanted to apply a simple and clear set of methodologies:
    * Represent physical dimensional constants
    * Convert physical constants and multiplications to base SI units
    * Correctly calculate the multiplication of physical and mathematical constants
-3. Using scientific notation with the ["concise form"](https://en.wikipedia.org/wiki/Scientific_notation#Estimated_final_digits) for input target values. 
-4. Ignore errors on the right side of the equation, i.e. resultant error of the combination of the calculated multiplications. 
+3. Using scientific notation with the ["concise form"](https://en.wikipedia.org/wiki/Scientific_notation#Estimated_final_digits) for input target values.
+4. Ignore errors on the right side of the equation (with assuming the left-hand side of the equation is the target), i.e. resultant error of the combination of the calculated multiplications.
 5. Using [decimal](https://docs.python.org/3/library/decimal.html) library to represent numbers with high significant digits (50 is set as default precision)
 
 ## Python Installation
@@ -129,15 +136,17 @@ Please execute the following code on the projects root folder:
 ## Running the Program
 
 ### Constants Definition File
+
 The program is using [pint](https://pint.readthedocs.io/en/stable/) library to use and operate on physical (dimensional) & mathematical (dimensionless) constants.
 
 You can override to modify [pint default constants definition file](https://github.com/hgrecco/pint/blob/master/pint/constants_en.txt).
 
-The overriden file is located [definition/constants_en.txt](definition/constants_en.txt). You can also change this file to add and modify the constant definitions. 
+The overriden file is located [definition/constants_en.txt](definition/constants_en.txt). You can also change this file to add and modify the constant definitions.
 
-### The Config File 
+### The Config File
 
-The config file is required to restrict the program scope. The default [./config.json](config.json)) file and its format:
+The config file is required to restrict the program scope. The default [config/config.json](config/config.json)) file and its format:
+
 ```json
 {
   "physical_constants": {
@@ -160,49 +169,52 @@ The config file is required to restrict the program scope. The default [./config
 }
 ```
 
-If you do not provide the config file separately in the program, the default [./config.json](config.json)) file is used.
-
 The file holds the constants and their power ranges that the program will consider & calculate.
 
-| Root Setting             | Sub Setting            | Keys                                                                                                                       | Values                                                                                                                                                                                                                              |
-|--------------------------|------------------------|----------------------------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| "physical_constants"     | "method"               |                                                                                                                            | "brute_force"                                                                                                                                                                                                                       |
-| "physical_constants"     | "constants_and_powers" | Dimensional physical constant name. It must be defined on [the definition file](./definition/constants_en.txt).            | The power range. <br/>* `Array`: `[min, max]`. The program converts it as integer range e.g. `[min, ..., max]`. It adds `0`, if `0` does not exist in the range.<br/>* `Integer`: the program converts it as `[-value, ..., value]` |
-| "mathematical_constants" | "numbers_and_powers"   | Prime numbers in string format e.g. "2"                                                                                    | The power range. The format is the same as above.                                                                                                                                                                                   |
-| "mathematical_constants" | "constants_and_powers" | Dimensionless mathematical constant name. It must be defined on [the same definition file](./definition/constants_en.txt). | The power range. The format is the same as above.                                                                                                                                                                                   |
-The result of the calculation is represented in terms of `key` values.
+
+| Root Setting                                                          | Sub Setting            | Keys                                                                                                                      | Values                                                                                                                                                                                                                             |
+| --------------------------------------------------------------------- | ---------------------- | ------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| "physical_constants"                                                  | "method"               |                                                                                                                           | "brute_force"                                                                                                                                                                                                                      |
+| "physical_constants"                                                  | "constants_and_powers" | Dimensional physical constant name. It must be defined on[the definition file](./definition/constants_en.txt).            | The power range.<br/>* `Array`: `[min, max]`. The program converts it as integer range e.g. `[min, ..., max]`. It adds `0`, if `0` does not exist in the range.<br/>* `Integer`: the program converts it as `[-value, ..., value]` |
+| "mathematical_constants"                                              | "numbers_and_powers"   | Prime numbers in string format e.g. "2"                                                                                   | The power range. The format is the same as above.                                                                                                                                                                                  |
+| "mathematical_constants"                                              | "constants_and_powers" | Dimensionless mathematical constant name. It must be defined on[the same definition file](./definition/constants_en.txt). | The power range. The format is the same as above.                                                                                                                                                                                  |
+| The result of the calculation is represented in terms of`key` values. |                        |                                                                                                                           |                                                                                                                                                                                                                                    |
 
 ### The Program Inputs
 
 The program `main.py` takes target value and unit with the following input names:
-* `--target-value` 
+
+* `--target-value`
 * `--target-unit`
 * `--config-path` (optional)
 
 As an example, exploring `Rydberg Constant`:
+
 ```shell
 > python ./main.py --target-value "1.0973731568160(21)e+7" --target-unit "1/m"
 ```
+
 <br />
 
-Please use `--help` option 
+Please use `--help` option
+
 ```shell
 > python ./main.py --help
 ```
+
 To get more info about the program usage:
+
 ```text
 options:
   -h, --help            show this help message and exit
   -v, --target-value 
                         Target value with scientific notation.
-                        To specify target value with measurement error:
-                        For example (1.23±0.06)×10^−5, please provide it in "concise form" like 1.23(6)E-5.
-                        Examples with error: "1.23(6)E-5", "8.9875(15)E+16", "4.2(3)E+0"
-                        
-                        The target value can also be provided without error specification:
-                        Examples without error: "1.23E-5", "8.9875E+16", "4.2E+0"
-                        If you provide target value without error, it equals to:
-                        "1.23E-5" ≈ "1.235(5)E-5"
+                        To specify target value with the standard uncertainty please use "concise form".
+                        For example to provide this value (1.23±0.06)×10^−5, enter "1.23(6)E-5".
+                        Some examples: "1.23(6)E-5", "8.9875(15)E+16", "4.2(3)E+0"
+                        The target value can also be provided without uncertainty specification:
+                        Some examples: "1.23E-5", "8.9875E+16", "4.2E+0"
+                        The program converts "1.23E-5" to "1.235(5)E-5"
   -u, --target-unit 
                         Target unit expression in terms of SI base units symbols.
                         Length - meter (m)
@@ -212,35 +224,83 @@ options:
                         Temperature - kelvin (K)
                         Luminous intensity - candela (cd)
                         Mass - kilogram (kg)
-                        Use ^ symbol to represent power.
-                        Examples: "kg/(s^3 K^4)", "kg s^-3 K^-4", "m/s"
+                        Please use ^ symbol to represent power and space for multiplication.
+                        Some examples: "kg/(s^3 K^4)", "kg s^-3 K^-4", "m/s"
   -c, --config-path 
                         Config file relative path.
-                        If it is not provided the program will try to read ./config.json
+                        If it is not provided the program will use default config file: config/config.json
 ```
 
 ## Exploring Well-known Physical Constants
 
-The [script](scripts/analyse_all.sh) below executed the following physical constants and stored the results.
+The script ([analyse_all.sh](scripts/analyse_all.sh)) executed the following physical constants and stored the results.
 
 ```shell
 > ./scripts/analyse_all.sh
 ```
 
+[CODATA](https://physics.nist.gov/cuu/Constants/international.html) values are used as `--target-value` (in concise form if a measurement error is specified).
+
 ### Stefan Boltzmann Constant
+
+[Target value reference](https://physics.nist.gov/cgi-bin/cuu/Value?sigma|search_for=stefan)
 
 ```shell
 > python ./main.py --target-value "5.670374419E-8" --target-unit "kg/(s^3 K^4)"
 ```
-* [The output of the program](scripts/outputs/analyse_all/stefan_boltzmann_constant.txt)
-* [Target value reference](https://physics.nist.gov/cgi-bin/cuu/Value?sigma|search_for=stefan)
-* [More info about the constant](https://en.wikipedia.org/wiki/Stefan%E2%80%93Boltzmann_constant)
+
+[The output of the program](scripts/outputs/analyse_all/stefan_boltzmann_constant.txt)
+
+```text
+(5.6703744195 ± 0.0000000005)✕10⁻⁸ kg/K⁴/s³  ≈  2 ⋅ pi⁵ ⋅ boltzmann_constant⁴ / (3 ⋅ 5 ⋅ speed_of_light² ⋅ planck_constant³)
+```
+
+[More info about the constant](https://en.wikipedia.org/wiki/Stefan%E2%80%93Boltzmann_constant)
+
+On the output of the program,
+
+```text
+...
+Found 3 candidates the resultant unit matched with the target's unit:
+	[ M ] [ kg/K⁴/s³ ] = boltzmann_constant⁴ / (speed_of_light² ⋅ planck_constant³)
+	  ├── 👍 In range!
+	  └──  Min (~5✕10⁻¹³) < M̲ ̲(̲~̲1̲✕̲1̲0̲⁻̲⁹̲)̲ < Max (~6✕10⁻³) 
+
+	[ M ] [ kg/K⁴/s³ ] = boltzmann_constant⁴ ⋅ electric_constant / (speed_of_light ⋅ planck_constant² ⋅ elementary_charge²)
+	  ├── 👍 In range!
+	  └──  Min (~5✕10⁻¹³) < M̲ ̲(̲~̲1̲✕̲1̲0̲⁻̲⁷̲)̲ < Max (~6✕10⁻³) 
+
+	[ M ] [ kg/K⁴/s³ ] = boltzmann_constant⁴ ⋅ electric_constant² / (planck_constant ⋅ elementary_charge⁴)
+	  ├── 👍 In range!
+	  └──  Min (~5✕10⁻¹³) < M̲ ̲(̲~̲7̲✕̲1̲0̲⁻̲⁶̲)̲ < Max (~6✕10⁻³) 
+...
+```
+
+The program calculated physical constant multiplications and represented its numerical value as `[ M ]`.
+
+```text
+...
+	  └──  Min (~5✕10⁻¹³) < M̲ ̲(̲~̲1̲✕̲1̲0̲⁻̲⁹̲)̲ < Max (~6✕10⁻³)
+...
+Here, the values inside of the brackets represent:
+M̲ ̲(̲...)̲ = The multiplication of physical constants
+Min (...) = Target value / [The maximum value of the mathematical multiplication combinations]
+Max (...) = Target value / [The minimum value of the mathematical multiplication combinations]
+```
+
+And finally,
+
+```text
+	  ├── 👍 In range!
+Highlights the candidate M value is in Min (...) and Max (...) range.
+```
 
 ### Rydberg Constant
 
 ```shell
 > python ./main.py --target-value "1.0973731568160(21)e+7" --target-unit "1/m"
 ```
+
 * [The output of the program](scripts/outputs/analyse_all/rydberg_constant.txt)
 * [Target value reference](https://physics.nist.gov/cgi-bin/cuu/Value?ryd|search_for=rydberg+constant)
 * [More info about the constant](https://en.wikipedia.org/wiki/Rydberg_constant)
@@ -250,6 +310,7 @@ The [script](scripts/analyse_all.sh) below executed the following physical const
 ```shell
 > python ./main.py --target-value "7.2973525693(11)E-3" --target-unit ""
 ```
+
 * [The output of the program](scripts/outputs/analyse_all/fine_structure_constant.txt)
 * [Target value reference](https://physics.nist.gov/cgi-bin/cuu/Value?alph|search_for=fine+structure+constant)
 * [More info about the constant](https://en.wikipedia.org/wiki/Fine-structure_constant)
@@ -259,6 +320,7 @@ The [script](scripts/analyse_all.sh) below executed the following physical const
 ```shell
 > python ./main.py --target-value "8.314462618E0" --target-unit "(kg m^2)/(K mol s^2)"
 ```
+
 * [The output of the program](scripts/outputs/analyse_all/molar_gas_constant.txt)
 * [Target value reference](https://physics.nist.gov/cgi-bin/cuu/Value?r|search_for=molar+gas+constant)
 * [More info about the constant](https://en.wikipedia.org/wiki/Gas_constant)
@@ -268,6 +330,7 @@ The [script](scripts/analyse_all.sh) below executed the following physical const
 ```shell
 > python ./main.py --target-value "1.25663706212(19)e-6" --target-unit "m kg/(A^2 s^2)"
 ```
+
 * [The output of the program](scripts/outputs/analyse_all/magnetic_constant.txt)
 * [Target value reference](https://physics.nist.gov/cgi-bin/cuu/Value?mu0|search_for=vacuum+permeability)
 * [More info about the constant](https://en.wikipedia.org/wiki/Vacuum_permeability)
@@ -277,6 +340,7 @@ The [script](scripts/analyse_all.sh) below executed the following physical const
 ```shell
 > python ./main.py --target-value "5.878925757E+10" --target-unit "1/(K s)"
 ```
+
 * [The output of the program](scripts/outputs/analyse_all/wien_frequency_displacement_law_constant.txt)
 * [Target value reference](https://physics.nist.gov/cgi-bin/cuu/Value?bpwien|search_for=wien_frequency+displacement+law+constant)
 * [More info about the constant](https://en.wikipedia.org/wiki/Wien%27s_displacement_law)
@@ -286,24 +350,212 @@ The [script](scripts/analyse_all.sh) below executed the following physical const
 ```shell
 > python ./main.py --target-value "3.76730313668(57)E+2" --target-unit "(kg m^2)/(s^3 A^2)"
 ```
+
 * [The output of the program](scripts/outputs/analyse_all/impedance_of_free_space.txt)
 * [Target value reference](https://physics.nist.gov/cgi-bin/cuu/Value?z0|search_for=characteristic+impedance+of+vacuum)
 * [More info about the constant](https://en.wikipedia.org/wiki/Impedance_of_free_space)
 
-### Newtonian Constant of Gravitation
+### Josephson Constant
 
+```shell
+> python ./main.py --target-value "4.835978484E+14" --target-unit "(A s^2)/(kg m^2)"
+```
+
+* [The output of the program](scripts/outputs/analyse_all/josephson_constant.txt)
+* [Target value reference](https://physics.nist.gov/cgi-bin/cuu/Value?kjos|search_for=josephson)
+* [More info about the constant](https://en.wikipedia.org/wiki/Magnetic_flux_quantum)
+
+### Von Klitzing Constant
+
+```shell
+> python ./main.py --target-value "2.581280745E+4" --target-unit "(kg m^2)/(A^2 s^3)"
+```
+
+* [The output of the program](scripts/outputs/analyse_all/von_klitzing_constant.txt)
+* [Target value reference](https://physics.nist.gov/cgi-bin/cuu/Value?rk|search_for=von+Klitzing+constant)
+* [More info about the constant](https://en.wikipedia.org/wiki/Quantum_Hall_effect#Applications)
+
+## Exploring Measured But Unknown Physical Constants
+
+After executing enough runs on the well-known physical constants, it is time to experiment on measured but not theoretically-proofed constants.
+
+Before making the experiments, I have added the following square root [definitions](definition/constants_en.txt) to increase the search space in unit dimension:
+
+* sqrt_speed_of_light = speed_of_light ** 0.5
+* sqrt_planck_constant = planck_constant ** 0.5
+* sqrt_electron_mass = electron_mass ** 0.5
+* ...
+
+And on the results, I have removed to `sqrt_` prefix for even powers by dividing the power by 2.
+
+Rather than giving direct results, I would like to explain how the final results were found:
+
+### Magnetic Constant to Electric Constant Ratio
+Definitions:
+* $\mu _{0}$, [Vacuum permeability (Magnetic Constant)](https://en.wikipedia.org/wiki/Vacuum_permeability)
+  $\mu _{0}=1.25663706212(19) \times 10^{-6} \, \mathrm{kg} \, \mathrm{m} \, \mathrm{A}^{-2} \, \mathrm{s}^{-2}$ ([CODATA value](https://physics.nist.gov/cgi-bin/cuu/Value?mu0|search_for=Vacuum+permeability))
+* $\varepsilon _{0}$, [Vacuum permittivity (Electric Constant)](https://en.wikipedia.org/wiki/Vacuum_permittivity)
+  $\varepsilon _{0}=8.8541878128(13) \times 10^{-12} \,\mathrm{A^{2}}\,\mathrm{s}^{4}\,\mathrm{kg}^{-1}\,\mathrm{m}^{-3}$ ([CODATA value](https://physics.nist.gov/cgi-bin/cuu/Value?ep0|search_for=Vacuum+permittivity))
+
+The target of this work will be the ratio of $\varepsilon _{0} / \mu _{0}$. There are several reasons to start investigating this value. 
+* There is no direct formulation of one of these values.
+* We only know the multiplication of these values, but not their ratios. 
+
+The following equations are the well-known relations that contain $\varepsilon _{0}$ and $\mu _{0}$:
+
+(1) c ([speed of light in vacuum](https://en.wikipedia.org/wiki/Speed_of_light#Propagation_of_light)) contains $\varepsilon _{0}$ and $\mu _{0}$:
+
+```math
+{\displaystyle c={\frac {1}{\sqrt {\varepsilon _{0}\mu _{0}}}}}
+```
+
+(2) $\alpha$ ([fine-structure constant](https://en.wikipedia.org/wiki/Fine-structure_constant)) contains $e$ (elementary charge), $h$ (plank constant), $\varepsilon _{0}$:
+
+```math
+{\displaystyle \alpha={\frac {e^{2}}{2\varepsilon _{0}hc}}}={\frac {e^{2}}{2h}}{\sqrt{\frac {\mu _{0}}{\varepsilon _{0}}}}
+```
+
+(3) $R_{\infty }$ ([Rydberg constant](https://en.wikipedia.org/wiki/Rydberg_constant)) contains $e$, $m_{\text{e}}$ (the rest mass of the electron), $h$, c:
+
+```math
+{\displaystyle R_{\infty }={\frac {m_{\text{e}}e^{4}}{8\varepsilon _{0}^{2}h^{3}c}}={\frac {m_{\text{e}}e^{4}c}{8h^{3}}}{\frac {\mu _{0}}{\varepsilon _{0}}}}
+```
+
+The goal is to find the relations given above and by targeting $\mu _{0}/\varepsilon _{0}$ ratio:
+```math
+{\displaystyle {\frac {\mu _{0}}{\varepsilon _{0}}}=1.4192572923(42) \times 10^{5} \, \mathrm{kg}^{2} \, \mathrm{m}^{4} \, \mathrm{A}^{-4} \, \mathrm{s}^{-6} }
+```
+The error of the ratio is calculated based on the relative errors.
+```shell
+> python ./main.py --target-value "1.4192572923(42)E+5" \
+                   --target-unit "(kg^2 m^4)/(A^4 s^6)" \
+                   --config-path "./config/config_mc_to_ec_ratio.json" \
+                   > ./scripts/outputs/analyse_all/mc_to_ec_ratio.txt
+```
+The program found 5 candidates ([output file](scripts/outputs/analyse_all/mc_to_ec_ratio.txt)) that the resultant unit matched with the target's unit with [config_mc_to_ec_ratio.json config file](config/config_mc_to_ec_ratio.json):
+```text
+	[ M ] [ kg²·m⁴/A⁴/s⁶ ] = planck_constant³ ⋅ rydberg_constant / (speed_of_light ⋅ elementary_charge⁴ ⋅ electron_mass)
+	  ├── 👍 In range!
+	  └──  Min (~1✕10⁻⁹) < M̲ ̲(̲~̲2̲✕̲1̲0̲⁴̲)̲ < Max (~1✕10¹⁹) 
+
+	[ M ] [ kg²·m⁴/A⁴/s⁶ ] = sqrt_planck_constant⁵ ⋅ sqrt_rydberg_constant / (sqrt_speed_of_light ⋅ elementary_charge⁴ ⋅ sqrt_electron_mass)
+	  ├── 👍 In range!
+	  └──  Min (~1✕10⁻⁹) < M̲ ̲(̲~̲3̲✕̲1̲0̲⁶̲)̲ < Max (~1✕10¹⁹) 
+
+	[ M ] [ kg²·m⁴/A⁴/s⁶ ] = planck_constant² / elementary_charge⁴
+	  ├── 👍 In range!
+	  └──  Min (~1✕10⁻⁹) < M̲ ̲(̲~̲7̲✕̲1̲0̲⁸̲)̲ < Max (~1✕10¹⁹) 
+
+	[ M ] [ kg²·m⁴/A⁴/s⁶ ] = sqrt_speed_of_light ⋅ sqrt_planck_constant³ ⋅ sqrt_electron_mass / (elementary_charge⁴ ⋅ sqrt_rydberg_constant)
+	  ├── 👍 In range!
+	  └──  Min (~1✕10⁻⁹) < M̲ ̲(̲~̲1̲✕̲1̲0̲¹̲¹̲)̲ < Max (~1✕10¹⁹) 
+
+	[ M ] [ kg²·m⁴/A⁴/s⁶ ] = speed_of_light ⋅ planck_constant ⋅ electron_mass / (elementary_charge⁴ ⋅ rydberg_constant)
+	  ├── 👍 In range!
+	  └──  Min (~1✕10⁻⁹) < M̲ ̲(̲~̲3̲✕̲1̲0̲¹̲³̲)̲ < Max (~1✕10¹⁹) 
+```
+And 3 of these numerically matched the target value:
+```text
+Result(s) matched the target:
+	(1.4192572923 ± 0.0000000042)✕10⁵ kg²·m⁴/A⁴/s⁶
+A)   1.4192572924✕10⁵ kg²·m⁴/A⁴/s⁶ ≈ 2³ ⋅ planck_constant³ ⋅ rydberg_constant / (speed_of_light ⋅ elementary_charge⁴ ⋅ electron_mass)
+B)	 1.4192572924✕10⁵ kg²·m⁴/A⁴/s⁶ ≈ sqrt_2⁵ ⋅ fine_structure_constant ⋅ sqrt_planck_constant⁵ ⋅ sqrt_rydberg_constant / (sqrt_speed_of_light ⋅ elementary_charge⁴ ⋅ sqrt_electron_mass)
+C)	 1.4192572924✕10⁵ kg²·m⁴/A⁴/s⁶ ≈ 2² ⋅ fine_structure_constant² ⋅ planck_constant² / elementary_charge⁴
+```
+As you see:
+* result (A) can be derived from (3) $R_{\infty }$, Rydberg constant formulation given above
+* result (B) ?????
+* result (C) can be derived from (2) $\alpha$, fine-structure constant formulation given above
+
+### Newtonian Constant of Gravitation (G)
+
+According to Newton's law of universal gravitation, the attractive force (F) between two point-like bodies is directly proportional to the product of their masses (m1 and m2) and inversely proportional to the square of the distance, r, between their centers of mass:
+```math
+{\displaystyle F=G{\frac {m_{1}m_{2}}{r^{2}}}.}
+```
+(Ref: [Gravitational constant - Wikipedia](https://en.wikipedia.org/wiki/Gravitational_constant))
+
+[Based on the latest measurements of the newtonian gravitational constant](https://physics.nist.gov/cgi-bin/cuu/Value?bg|search_for=newtonian+constant+of+gravitation) the following calculations were done!
+
+#### First Attempt
 ```shell
 > python ./main.py --target-value "6.67430(15)e-11" --target-unit "m^3/(kg s^2)"
 ```
-* [The output of the program](scripts/outputs/analyse_all/newtonian_constant_of_gravitation.txt)
-* [Target value reference](https://physics.nist.gov/cgi-bin/cuu/Value?bg|search_for=newtonian+constant+of+gravitation)
-* [More info about the constant](https://en.wikipedia.org/wiki/Gravitational_constant)
 
-Unfortunately, there is no meaningfully results are found for `Newtonian Constant of Gravitation` yet!
+The program found 4 candidates ([output file](scripts/outputs/analyse_all/newtonian_constant_of_gravitation.txt)) that the resultant unit matched with the target's unit by using the same config file [config/config.json](config/config.json):
+```text
+	[ M ] [ m³/kg/s² ] = elementary_charge⁴ / (speed_of_light ⋅ planck_constant ⋅ electric_constant² ⋅ electron_mass²)
+	  ├── 👎 Not in range.
+	  └──  Min (~6✕10⁻¹⁶) < Max (~7✕10⁻⁶) < M̲ ̲(̲~̲5̲✕̲1̲0̲³̲¹̲)̲ 
 
-## Program Tests
+	[ M ] [ m³/kg/s² ] = elementary_charge² / (electric_constant ⋅ electron_mass²)
+	  ├── 👎 Not in range.
+	  └──  Min (~6✕10⁻¹⁶) < Max (~7✕10⁻⁶) < M̲ ̲(̲~̲3̲✕̲1̲0̲³̲³̲)̲ 
 
-Test folder is [here](src/tests). To run the all test:
+	[ M ] [ m³/kg/s² ] = speed_of_light ⋅ planck_constant / electron_mass²
+	  ├── 👎 Not in range.
+	  └──  Min (~6✕10⁻¹⁶) < Max (~7✕10⁻⁶) < M̲ ̲(̲~̲2̲✕̲1̲0̲³̲⁵̲)̲ 
+
+	[ M ] [ m³/kg/s² ] = speed_of_light² ⋅ planck_constant² ⋅ electric_constant / (elementary_charge² ⋅ electron_mass²)
+	  ├── 👎 Not in range.
+	  └──  Min (~6✕10⁻¹⁶) < Max (~7✕10⁻⁶) < M̲ ̲(̲~̲2̲✕̲1̲0̲³̲⁷̲)̲ 
+```
+Unfortunately, there are no candidates in the mathematical range for the given scope ([config/config.json](config/config.json)).
+We need to add a big dimensionless constant(s) into our mathematical constants scope to place the "M" value in the range.
+One of the [Dirac's large number](https://en.wikipedia.org/wiki/Dirac_large_numbers_hypothesis) which is the ratio of the electrical to the gravitational forces between a proton and an electron:
+
+```math
+{\displaystyle {\frac {e^{2}}{4\pi \epsilon _{0}Gm_{\text{p}}m_{\text{e}}}}\approx 10^{40}.}
+```
+was also tried, but no satisfactory result was found!
+
+#### Second Attempt
+
+In this case, $\mu _{0}/\varepsilon _{0}$ is used ([config/config_g.json](config/config_g.json)).
+
+```shell
+> python ./main.py --target-value "6.67430(15)e-11" \
+                   --target-unit "m^3/(kg s^2)" \
+                   --config-path "./config/config_g.json" \
+                   > ./scripts/outputs/analyse_all/newtonian_constant_of_gravitation_with_results.txt
+```
+The program found 6 candidates ([output file](scripts/outputs/analyse_all/newtonian_constant_of_gravitation_with_results.txt)) that the resultant unit matched with the target's unit:
+```text
+	[ M ] [ m³/kg/s² ] = speed_of_light ⋅ elementary_charge¹² ⋅ mc_to_ec_ratio³ / (planck_constant⁵ ⋅ electron_mass²)
+	  ├── 👍 In range!
+	  └──  Min (~1✕10⁻⁵⁵) < M̲ ̲(̲~̲2̲✕̲1̲0̲²̲⁴̲)̲ < Max (~5✕10³⁴) 
+
+	[ M ] [ m³/kg/s² ] = speed_of_light ⋅ elementary_charge⁸ ⋅ mc_to_ec_ratio² / (planck_constant³ ⋅ electron_mass²)
+	  ├── 👍 In range!
+	  └──  Min (~1✕10⁻⁵⁵) < M̲ ̲(̲~̲1̲✕̲1̲0̲²̲⁸̲)̲ < Max (~5✕10³⁴) 
+
+	[ M ] [ m³/kg/s² ] = speed_of_light ⋅ elementary_charge⁴ ⋅ mc_to_ec_ratio / (planck_constant ⋅ electron_mass²)
+	  ├── 👍 In range!
+	  └──  Min (~1✕10⁻⁵⁵) < M̲ ̲(̲~̲5̲✕̲1̲0̲³̲¹̲)̲ < Max (~5✕10³⁴) 
+
+	[ M ] [ m³/kg/s² ] = speed_of_light ⋅ planck_constant / electron_mass²
+	  ├── 👎 Not in range.
+	  └──  Min (~1✕10⁻⁵⁵) < Max (~5✕10³⁴) < M̲ ̲(̲~̲2̲✕̲1̲0̲³̲⁵̲)̲ 
+
+	[ M ] [ m³/kg/s² ] = speed_of_light ⋅ planck_constant³ / (elementary_charge⁴ ⋅ electron_mass² ⋅ mc_to_ec_ratio)
+	  ├── 👎 Not in range.
+	  └──  Min (~1✕10⁻⁵⁵) < Max (~5✕10³⁴) < M̲ ̲(̲~̲1̲✕̲1̲0̲³̲⁹̲)̲ 
+
+	[ M ] [ m³/kg/s² ] = speed_of_light ⋅ planck_constant⁵ / (elementary_charge⁸ ⋅ electron_mass² ⋅ mc_to_ec_ratio²)
+	  ├── 👎 Not in range.
+	  └──  Min (~1✕10⁻⁵⁵) < Max (~5✕10³⁴) < M̲ ̲(̲~̲5̲✕̲1̲0̲⁴̲²̲)̲ 
+```
+And 2 numerically matched results:
+```text
+Result(s) matched the target:
+	(6.67430 ± 0.00015)✕10⁻¹¹ m³/kg/s²
+	 6.67422✕10⁻¹¹ m³/kg/s² ≈ speed_of_light ⋅ elementary_charge¹² ⋅ mc_to_ec_ratio³ / (2² ⋅ 3 ⋅ 5³ ⋅ pi⁴ ⋅ proton_to_electron_mass_ratio⁹ ⋅ planck_constant⁵ ⋅ electron_mass²)
+	 6.67422✕10⁻¹¹ m³/kg/s² ≈ fine_structure_constant² ⋅ speed_of_light ⋅ elementary_charge⁸ ⋅ mc_to_ec_ratio² / (3 ⋅ 5³ ⋅ pi⁴ ⋅ proton_to_electron_mass_ratio⁹ ⋅ planck_constant³ ⋅ electron_mass²)
+```
+
+## Tests
+
+Test folder is [src/tests](src/tests). To run the all test:
 
 ```shell
 > pytest
@@ -312,43 +564,52 @@ Test folder is [here](src/tests). To run the all test:
 ## Resources
 
 ### Libraries & Documentation
+
 * [pint](https://pint.readthedocs.io/en/stable/)
-  * [pint repo](https://github.com/hgrecco/pint/tree/master/pint)
+  * [pint repository](https://github.com/hgrecco/pint/tree/master/pint)
   * [pint default constants definition file](https://github.com/hgrecco/pint/blob/master/pint/constants_en.txt)
   * [pint developer reference](https://pint.readthedocs.io/en/stable/developers_reference.html)
   * [pint tutorıal](https://pint.readthedocs.io/en/stable/tutorial.html)
+* [decimal](https://docs.python.org/3/library/decimal.html)
 * [jsonschema](https://python-jsonschema.readthedocs.io/en/stable/)
+  * To validate config file
 * [Latex Mathematics](https://en.wikibooks.org/wiki/LaTeX/Mathematics)
   * [Writing mathematical expressions](https://docs.github.com/en/get-started/writing-on-github/working-with-advanced-formatting/writing-mathematical-expressions)
 
 ### Physical Constants
-* [The NIST Reference on Constants, Units, and Uncertainty](https://physics.nist.gov/cuu/Constants/index.html)
+
+* [The NIST Reference on Constants, Units, and Uncertainty (CODATA 2018 values)](https://physics.nist.gov/cuu/Constants/index.html)
 * [NIST, Fundamental Physical Constants — Extensive Listing](https://physics.nist.gov/cuu/pdf/all.pdf)
 
 ## Future Work
 
-* Is it possible to find all (known) physical constants with a single config file? Targeting `1.0000` with `dimensionless`, methodology can be usefully for this purpose, like:
+* For found results, display the previous and next mathematical values to understand how accurately the numerical values to the right of the equation fall within the target error range.
+* Investigate possibility of finding all (known) physical constants with a single config file? Targeting `1.0000` with `dimensionless`, methodology can be usefully for this purpose, like:
 ```shell
 > python ./main.py --target-value "1.00000E+0" --target-unit ""
 ```
+* Calculate error value on multiplications and show it on the result. To achieve that, define error values in the definition file. [uncertainties library](https://uncertainties-python-package.readthedocs.io/en/latest/) can be a good candidate!
+* Store mathematical calculation results to a file to speed up calculations.
+* Store results into the output file. Currently, results are printed to the console.
+* Use python [logging](https://docs.python.org/3/howto/logging.html) instead of `print`.
 
-* Implement error calculation on multiplications & in the definition file. [uncertainties library](https://uncertainties-python-package.readthedocs.io/en/latest/) can be a good candidate! 
-* Since only `Boltzman` constant has `K` Kelvin dimension space in its unit, check another independent physical constant which contains `K` on its units!
-
-## Gratitudes
+## Gratitude
 
 I would like to express my gratitude to my teachers:
+
 * Physics Teacher Rafet Kamer, Physics Olympiads
 * Prof. Dr. K. Sinan Bilikmen, METU-Physics
 * Prof. Dr. Mehmet Tomak, METU-Physics
 
 And who are not with us:
+
 * Prof. Dr. İbrahim Günal (R.I.P), METU-Physics
 * Prof. Dr. Ordal Demokan (R.I.P), METU-Physics
 * Physics Teacher Aykut Gümüç (R.I.P), Eskisehir Science High School
 * Prof. Dr. Oleg Fedorovich Kabardin (R.I.P), Physics Olympiads
 
 And special thanks to my genius and big-hearted friends who always enjoy supporting me:
+
 * Dr. İnanç Kanık
 * Dr. Özgür Sümer
 * Atılım Çetin

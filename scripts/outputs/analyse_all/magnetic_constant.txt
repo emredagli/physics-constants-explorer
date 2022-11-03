@@ -21,16 +21,17 @@ Totally, unique 2079 mathematical multiplications are calculated & cached!
 Found 3 candidates the resultant unit matched with the target's unit:
 	[ M ] [ kg·m/A²/s² ] = 1 / (speed_of_light² ⋅ electric_constant)
 	  ├── 👍 In range!
-	  └── Min (~1✕10⁻¹¹) < M (~1✕10⁻⁶) < Max (~1✕10⁻¹)
+	  └──  Min (~1✕10⁻¹¹) < M̲ ̲(̲~̲1̲✕̲1̲0̲⁻̲⁶̲)̲ < Max (~1✕10⁻¹) 
 
 	[ M ] [ kg·m/A²/s² ] = planck_constant / (speed_of_light ⋅ elementary_charge²)
 	  ├── 👍 In range!
-	  └── Min (~1✕10⁻¹¹) < M (~9✕10⁻⁵) < Max (~1✕10⁻¹)
+	  └──  Min (~1✕10⁻¹¹) < M̲ ̲(̲~̲9̲✕̲1̲0̲⁻̲⁵̲)̲ < Max (~1✕10⁻¹) 
 
 	[ M ] [ kg·m/A²/s² ] = planck_constant² ⋅ electric_constant / elementary_charge⁴
 	  ├── 👍 In range!
-	  └── Min (~1✕10⁻¹¹) < M (~6✕10⁻³) < Max (~1✕10⁻¹)
+	  └──  Min (~1✕10⁻¹¹) < M̲ ̲(̲~̲6̲✕̲1̲0̲⁻̲³̲)̲ < Max (~1✕10⁻¹) 
 
 
-Results matched the target:
-	(1.25663706212 ± 0.00000000019)✕10⁻⁶ kg·m/A²/s²  ≈  1 / (speed_of_light² ⋅ electric_constant)
+Result(s) matched the target:
+	(1.25663706212 ± 0.00000000019)✕10⁻⁶ kg·m/A²/s²
+	 1.25663706213✕10⁻⁶ kg·m/A²/s² ≈ 1 / (speed_of_light² ⋅ electric_constant)

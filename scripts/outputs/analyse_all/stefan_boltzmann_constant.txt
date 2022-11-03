@@ -21,16 +21,17 @@ Totally, unique 2079 mathematical multiplications are calculated & cached!
 Found 3 candidates the resultant unit matched with the target's unit:
 	[ M ] [ kg/K⁴/s³ ] = boltzmann_constant⁴ / (speed_of_light² ⋅ planck_constant³)
 	  ├── 👍 In range!
-	  └── Min (~5✕10⁻¹³) < M (~1✕10⁻⁹) < Max (~6✕10⁻³)
+	  └──  Min (~5✕10⁻¹³) < M̲ ̲(̲~̲1̲✕̲1̲0̲⁻̲⁹̲)̲ < Max (~6✕10⁻³) 
 
 	[ M ] [ kg/K⁴/s³ ] = boltzmann_constant⁴ ⋅ electric_constant / (speed_of_light ⋅ planck_constant² ⋅ elementary_charge²)
 	  ├── 👍 In range!
-	  └── Min (~5✕10⁻¹³) < M (~1✕10⁻⁷) < Max (~6✕10⁻³)
+	  └──  Min (~5✕10⁻¹³) < M̲ ̲(̲~̲1̲✕̲1̲0̲⁻̲⁷̲)̲ < Max (~6✕10⁻³) 
 
 	[ M ] [ kg/K⁴/s³ ] = boltzmann_constant⁴ ⋅ electric_constant² / (planck_constant ⋅ elementary_charge⁴)
 	  ├── 👍 In range!
-	  └── Min (~5✕10⁻¹³) < M (~7✕10⁻⁶) < Max (~6✕10⁻³)
+	  └──  Min (~5✕10⁻¹³) < M̲ ̲(̲~̲7̲✕̲1̲0̲⁻̲⁶̲)̲ < Max (~6✕10⁻³) 
 
 
-Results matched the target:
-	(5.6703744195 ± 0.0000000005)✕10⁻⁸ kg/K⁴/s³  ≈  2 ⋅ pi⁵ ⋅ boltzmann_constant⁴ / (3 ⋅ 5 ⋅ speed_of_light² ⋅ planck_constant³)
+Result(s) matched the target:
+	(5.6703744195 ± 0.0000000005)✕10⁻⁸ kg/K⁴/s³
+	 5.6703744192✕10⁻⁸ kg/K⁴/s³ ≈ 2 ⋅ pi⁵ ⋅ boltzmann_constant⁴ / (3 ⋅ 5 ⋅ speed_of_light² ⋅ planck_constant³)

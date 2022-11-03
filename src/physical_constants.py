@@ -1,11 +1,16 @@
+import collections
 import operator
 from decimal import Decimal
 from functools import reduce
 from itertools import product
-from tqdm import tqdm
-from src.common_library import get_symbol, get_power_range, get_formatted_symbol, get_decimal_with_power_10
-import collections
 
+from tqdm import tqdm
+
+from src.common_library import get_symbol, get_power_range, get_formatted_symbol, get_decimal_with_power_10, \
+    make_underlined
+
+
+# TODO: rename it to PhysicalOperator
 class PhysicalConstants:
     def __init__(self, config, unit_registry):
         self.pcp = config.get("constants_and_powers")
@@ -71,20 +76,20 @@ class PhysicalConstants:
             print("")
 
     def get_candidate_value_info(self, candidate_value, target, math_min, math_max):
-        r_max = target / math_min
-        r_min = target / math_max
-        r_max_str = f"Max (~{get_decimal_with_power_10(r_max, 0)})"
-        r_min_str = f"Min (~{get_decimal_with_power_10(r_min, 0)})"
-        candidate_str = f"M (~{get_decimal_with_power_10(candidate_value, 0)})"
+        ratio_max = target / math_min
+        ratio_min = target / math_max
+        ratio_max_info = f" Max (~{get_decimal_with_power_10(ratio_max, 0)}) "
+        ratio_min_info = f" Min (~{get_decimal_with_power_10(ratio_min, 0)}) "
+        candidate_info = make_underlined(f"M (~{get_decimal_with_power_10(candidate_value, 0)}) ")
         in_range_info = "👎 Not in range."
-        if candidate_value > r_min:
-            if candidate_value < r_max:
+        if candidate_value > ratio_min:
+            if candidate_value < ratio_max:
                 in_range_info = "👍 In range!"
-                candidate_info = f"{r_min_str} < {candidate_str} < {r_max_str}"
+                candidate_info = f"{ratio_min_info}< {candidate_info}<{ratio_max_info}"
             else:
-                candidate_info = f"{r_min_str} < {r_max_str} < {candidate_str}"
+                candidate_info = f"{ratio_min_info}<{ratio_max_info}< {candidate_info}"
         else:
-            candidate_info = f"{candidate_str} < {r_min_str} < {r_max_str}"
+            candidate_info = f" {candidate_info}<{ratio_min_info}<{ratio_max_info}"
 
         return f"\t  ├── {in_range_info}\n" \
                f"\t  └── {candidate_info}\n"

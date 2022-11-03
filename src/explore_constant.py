@@ -1,18 +1,17 @@
-from decimal import Decimal
-
-from jsonschema.exceptions import ValidationError
 from tqdm import tqdm
-from src.common_library import get_formatted_symbol, config_schema, get_value_from_scientific_notation, \
-    get_suggested_physical_constants_config
+
+from src.common_library import get_formatted_symbol, get_value_from_scientific_notation, \
+    get_suggested_physical_constants_config, get_decimal_with_power_10
 from src.mathematical_constants import MathematicalConstants
 from src.physical_constants import PhysicalConstants
-from jsonschema import validate
+from src.validator_library import validate_input, validate_config
 
 
 class ExploreConstant:
     def __init__(self, target_value, target_unit, config, unit_registry):
         self.ur = unit_registry
-        self._validate_input(target_value, target_unit, config)
+        validate_input(target_value, target_unit, unit_registry)
+        validate_config(config, unit_registry)
 
         if not target_unit.strip():
             target_unit = "dimensionless"
@@ -27,58 +26,9 @@ class ExploreConstant:
             config=config.get("mathematical_constants"),
             unit_registry=self.ur
         )
-        self.results = dict()
+        self.results = None
 
-    def _validate_input(self, target_value, target_unit, config):
-        try:
-            value = get_value_from_scientific_notation(target_value)
-            if value.get("value") * Decimal("0.1") < value.get("error"):
-                raise ValueError(f"Target error {value.get('error')} should be less that 0.1 * {value.get('value')}")
-        except Exception:
-            raise
-
-        try:
-            check_dimensionless = self.ur(target_unit).to_base_units() / self.ur(target_unit).to_base_units()
-            if str(check_dimensionless.dimensionality) != "dimensionless":
-                raise ValueError(f"unit/unit should be dimensionless, but it is {check_dimensionless.dimensionality}")
-        except Exception:
-            raise
-
-        try:
-            validate(instance=config, schema=config_schema)
-
-            pcp = config.get("physical_constants").get("constants_and_powers")
-            np = config.get("mathematical_constants").get("numbers_and_powers")
-            mcp = config.get("mathematical_constants").get("constants_and_powers")
-
-            def validate_min_max(key_val, arr_val):
-                if isinstance(arr_val, list):
-                    if arr_val[0] > arr_val[1]:
-                        raise ValidationError(f"Invalid {key_val} config value: {arr_val}. "
-                                              f"List values should be in the form: [min, max] and max >= min.")
-
-            for key, value in pcp.items():
-                try:
-                    self.ur(key).to_base_units()
-                except Exception:
-                    raise ValidationError(f"config.physical_constants.constants_and_powers.{key} is not defined under "
-                                          f"the definition file. Please check the definition file under Readme.md")
-                validate_min_max(key, value)
-
-            for key, value in np.items():
-                validate_min_max(key, value)
-
-            for key, value in mcp.items():
-                if str(self.ur(key).to_base_units().dimensionality) != 'dimensionless':
-                    raise ValidationError(f"Mathematical constants should be dimensionless")
-                validate_min_max(key, value)
-
-        except ValidationError:
-            raise
-        except Exception:
-            raise ValidationError(f"Config file is invalid! Please check the Readme.md")
-
-    def _is_equal_to_target(self, value):
+    def _is_within_the_target_error_range(self, value):
         return self.target_min <= value <= self.target_max
 
     def explore(self):
@@ -109,9 +59,8 @@ class ExploreConstant:
                                                     desc="Iterating the mathematical constants",
                                                     leave=False):
                         resultant = mc_value * pc_value
-                        if self._is_equal_to_target(resultant):
-                            formula = mc_symbol + " " + pc_symbol
-                            results.append((resultant, formula, get_formatted_symbol(formula)))
+                        if self._is_within_the_target_error_range(resultant):
+                            results.append((resultant, get_formatted_symbol(mc_symbol + " " + pc_symbol)))
 
         self.results = results
 
@@ -120,17 +69,18 @@ class ExploreConstant:
             # print("\nReduced 'physical_constants.constants_and_powers' config for candidates:\n")
             # print(f"{get_suggested_physical_constants_config(candidates_in_range)}\n")
 
-            print(f"Results matched the target:")
-            for _, _, formatted_symbol in results:
-                print(f"\t{self.target_str}  ≈  {formatted_symbol}")
+            print(f"Result(s) matched the target:")
+            print(f"\t{self.target_str}")
+            for resultant, formatted_symbol in results:
+                print(f"\t {get_decimal_with_power_10(resultant.quantize(self.target))} {self.unit_str} ≈ {formatted_symbol}")
         else:
             print("No results were found that matching with the target!\n")
             if len(candidates_in_range) > 0:
                 print("But the following candidates were in the given mathematical range:")
                 for pc_symbol in candidates_in_range:
                     print(f"\t{get_formatted_symbol(pc_symbol)}")
-                print("\nReduced 'physical_constants.constants_and_powers' config for these candidates:\n")
-                print(f"{get_suggested_physical_constants_config(candidates_in_range)}")
+                # print("\nReduced 'physical_constants.constants_and_powers' config for these candidates:\n")
+                # print(f"{get_suggested_physical_constants_config(candidates_in_range)}")
 
     def _init_target(self, target_value, target_unit):
         value = get_value_from_scientific_notation(target_value)
@@ -141,6 +91,7 @@ class ExploreConstant:
         self.target_dimensional = self.ur(str(self.target) + " " + target_unit).to_base_units()
 
         unit_str = f"{self.target_dimensional.u:~P}"
+        self.unit_str = unit_str
         unit_str = unit_str if unit_str else "dimensionless"
 
         self.target_str = f"{value.get('value_with_error_str')} {unit_str}"

@@ -1,5 +1,5 @@
 Search the target:
-	(3.76730313668 ± 0.00000000057)✕10² kg·m²/A²/s³
+	(2.5812807455 ± 0.0000000005)✕10⁴ kg·m²/A²/s³
 in terms of the given:
 	physical constants:     
 		speed_of_light ^ [-2, -1, 0, 1, 2]
@@ -21,21 +21,21 @@ Totally, unique 2079 mathematical multiplications are calculated & cached!
 Found 4 candidates the resultant unit matched with the target's unit:
 	[ M ] [ kg·m²/A²/s³ ] = elementary_charge² / (speed_of_light² ⋅ planck_constant ⋅ electric_constant²)
 	  ├── 👍 In range!
-	  └──  Min (~4✕10⁻³) < M̲ ̲(̲~̲5̲✕̲1̲0̲⁰̲)̲ < Max (~4✕10⁷) 
+	  └──  Min (~2✕10⁻¹) < M̲ ̲(̲~̲5̲✕̲1̲0̲⁰̲)̲ < Max (~3✕10⁹) 
 
 	[ M ] [ kg·m²/A²/s³ ] = 1 / (speed_of_light ⋅ electric_constant)
 	  ├── 👍 In range!
-	  └──  Min (~4✕10⁻³) < M̲ ̲(̲~̲4̲✕̲1̲0̲²̲)̲ < Max (~4✕10⁷) 
+	  └──  Min (~2✕10⁻¹) < M̲ ̲(̲~̲4̲✕̲1̲0̲²̲)̲ < Max (~3✕10⁹) 
 
 	[ M ] [ kg·m²/A²/s³ ] = planck_constant / elementary_charge²
 	  ├── 👍 In range!
-	  └──  Min (~4✕10⁻³) < M̲ ̲(̲~̲3̲✕̲1̲0̲⁴̲)̲ < Max (~4✕10⁷) 
+	  └──  Min (~2✕10⁻¹) < M̲ ̲(̲~̲3̲✕̲1̲0̲⁴̲)̲ < Max (~3✕10⁹) 
 
 	[ M ] [ kg·m²/A²/s³ ] = speed_of_light ⋅ planck_constant² ⋅ electric_constant / elementary_charge⁴
 	  ├── 👍 In range!
-	  └──  Min (~4✕10⁻³) < M̲ ̲(̲~̲2̲✕̲1̲0̲⁶̲)̲ < Max (~4✕10⁷) 
+	  └──  Min (~2✕10⁻¹) < M̲ ̲(̲~̲2̲✕̲1̲0̲⁶̲)̲ < Max (~3✕10⁹) 
 
 
 Result(s) matched the target:
-	(3.76730313668 ± 0.00000000057)✕10² kg·m²/A²/s³
-	 3.76730313668✕10² kg·m²/A²/s³ ≈ 1 / (speed_of_light ⋅ electric_constant)
+	(2.5812807455 ± 0.0000000005)✕10⁴ kg·m²/A²/s³
+	 2.5812807459✕10⁴ kg·m²/A²/s³ ≈ planck_constant / elementary_charge²

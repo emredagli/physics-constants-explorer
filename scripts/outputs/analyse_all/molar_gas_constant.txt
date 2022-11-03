@@ -21,24 +21,25 @@ Totally, unique 2079 mathematical multiplications are calculated & cached!
 Found 5 candidates the resultant unit matched with the target's unit:
 	[ M ] [ kg·m²/K/mol/s² ] = boltzmann_constant ⋅ elementary_charge⁴ ⋅ avogadro_constant / (speed_of_light² ⋅ planck_constant² ⋅ electric_constant²)
 	  ├── 👍 In range!
-	  └── Min (~8✕10⁻⁵) < M (~2✕10⁻³) < Max (~9✕10⁵)
+	  └──  Min (~8✕10⁻⁵) < M̲ ̲(̲~̲2̲✕̲1̲0̲⁻̲³̲)̲ < Max (~9✕10⁵) 
 
 	[ M ] [ kg·m²/K/mol/s² ] = boltzmann_constant ⋅ elementary_charge² ⋅ avogadro_constant / (speed_of_light ⋅ planck_constant ⋅ electric_constant)
 	  ├── 👍 In range!
-	  └── Min (~8✕10⁻⁵) < M (~1✕10⁻¹) < Max (~9✕10⁵)
+	  └──  Min (~8✕10⁻⁵) < M̲ ̲(̲~̲1̲✕̲1̲0̲⁻̲¹̲)̲ < Max (~9✕10⁵) 
 
 	[ M ] [ kg·m²/K/mol/s² ] = boltzmann_constant ⋅ avogadro_constant
 	  ├── 👍 In range!
-	  └── Min (~8✕10⁻⁵) < M (~8✕10⁰) < Max (~9✕10⁵)
+	  └──  Min (~8✕10⁻⁵) < M̲ ̲(̲~̲8̲✕̲1̲0̲⁰̲)̲ < Max (~9✕10⁵) 
 
 	[ M ] [ kg·m²/K/mol/s² ] = speed_of_light ⋅ planck_constant ⋅ boltzmann_constant ⋅ electric_constant ⋅ avogadro_constant / elementary_charge²
 	  ├── 👍 In range!
-	  └── Min (~8✕10⁻⁵) < M (~6✕10²) < Max (~9✕10⁵)
+	  └──  Min (~8✕10⁻⁵) < M̲ ̲(̲~̲6̲✕̲1̲0̲²̲)̲ < Max (~9✕10⁵) 
 
 	[ M ] [ kg·m²/K/mol/s² ] = speed_of_light² ⋅ planck_constant² ⋅ boltzmann_constant ⋅ electric_constant² ⋅ avogadro_constant / elementary_charge⁴
 	  ├── 👍 In range!
-	  └── Min (~8✕10⁻⁵) < M (~4✕10⁴) < Max (~9✕10⁵)
+	  └──  Min (~8✕10⁻⁵) < M̲ ̲(̲~̲4̲✕̲1̲0̲⁴̲)̲ < Max (~9✕10⁵) 
 
 
-Results matched the target:
-	(8.3144626185 ± 0.0000000005) kg·m²/K/mol/s²  ≈  boltzmann_constant ⋅ avogadro_constant
+Result(s) matched the target:
+	(8.3144626185 ± 0.0000000005) kg·m²/K/mol/s²
+	 8.3144626182✕10⁰ kg·m²/K/mol/s² ≈ boltzmann_constant ⋅ avogadro_constant

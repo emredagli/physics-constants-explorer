@@ -21,19 +21,19 @@ Totally, unique 2079 mathematical multiplications are calculated & cached!
 Found 4 candidates the resultant unit matched with the target's unit:
 	[ M ] [ m³/kg/s² ] = elementary_charge⁴ / (speed_of_light ⋅ planck_constant ⋅ electric_constant² ⋅ electron_mass²)
 	  ├── 👎 Not in range.
-	  └── Min (~6✕10⁻¹⁶) < Max (~7✕10⁻⁶) < M (~5✕10³¹)
+	  └──  Min (~6✕10⁻¹⁶) < Max (~7✕10⁻⁶) < M̲ ̲(̲~̲5̲✕̲1̲0̲³̲¹̲)̲ 
 
 	[ M ] [ m³/kg/s² ] = elementary_charge² / (electric_constant ⋅ electron_mass²)
 	  ├── 👎 Not in range.
-	  └── Min (~6✕10⁻¹⁶) < Max (~7✕10⁻⁶) < M (~3✕10³³)
+	  └──  Min (~6✕10⁻¹⁶) < Max (~7✕10⁻⁶) < M̲ ̲(̲~̲3̲✕̲1̲0̲³̲³̲)̲ 
 
 	[ M ] [ m³/kg/s² ] = speed_of_light ⋅ planck_constant / electron_mass²
 	  ├── 👎 Not in range.
-	  └── Min (~6✕10⁻¹⁶) < Max (~7✕10⁻⁶) < M (~2✕10³⁵)
+	  └──  Min (~6✕10⁻¹⁶) < Max (~7✕10⁻⁶) < M̲ ̲(̲~̲2̲✕̲1̲0̲³̲⁵̲)̲ 
 
 	[ M ] [ m³/kg/s² ] = speed_of_light² ⋅ planck_constant² ⋅ electric_constant / (elementary_charge² ⋅ electron_mass²)
 	  ├── 👎 Not in range.
-	  └── Min (~6✕10⁻¹⁶) < Max (~7✕10⁻⁶) < M (~2✕10³⁷)
+	  └──  Min (~6✕10⁻¹⁶) < Max (~7✕10⁻⁶) < M̲ ̲(̲~̲2̲✕̲1̲0̲³̲⁷̲)̲ 
 
 
 No results were found that matching with the target!

@@ -26,25 +26,8 @@ power_map = str.maketrans({
     "-": "⁻", "+": ""})
 
 
-def get_suggested_physical_constants_config(candidates_in_range):
-    suggested_config = dict()
-    for symbol in candidates_in_range:
-        pairs = symbol.strip().split()
-        for pair in pairs:
-            pair_split = pair.split('^')
-            constant = pair_split[0]
-            if len(pair_split) < 2:
-                power = "1"
-            else:
-                power = pair_split[1]
-            power = int(power)
-            suggested = suggested_config.get(constant)
-            if suggested is None:
-                suggested_config[constant] = [power, power]
-            else:
-                [min_val, max_val] = suggested
-                suggested_config[constant] = [min(min_val, power), max(max_val, power)]
-    return json.dumps(suggested_config, sort_keys=True).replace("],", "],\n")
+def make_underlined(val):
+    return "\u0332".join(val)
 
 
 def get_constant_with_power(constant, power):
@@ -98,8 +81,11 @@ def get_formatted_symbol(symbol):
     return formatted
 
 
-def get_decimal_with_power_10(value, decimal):
-    str_scientific = f"{value:.{decimal}E}"
+def get_decimal_with_power_10(value, decimal=None):
+    if decimal is None:
+        str_scientific = f"{value:E}"
+    else:
+        str_scientific = f"{value:.{decimal}E}"
     numeric_val, power_val = str_scientific.split("E")
     if power_val == 0:
         return numeric_val
@@ -148,72 +134,22 @@ def get_value_from_scientific_notation(value_str, value_name="Target Value"):
     }
 
 
-config_schema = {
-    "$schema": "http://json-schema.org/draft-04/schema#",
-    "type": "object",
-    "required": [
-        "physical_constants",
-        "mathematical_constants"
-    ],
-    "additionalProperties": False,
-    "properties": {
-        "physical_constants": {
-            "type": "object",
-            "required": [
-                "method",
-                "constants_and_powers"
-            ],
-            "additionalProperties": False,
-            "properties": {
-                "method": {
-                    "enum": ["brute_force"],
-                    "additionalProperties": False
-                },
-                "constants_and_powers": {
-                    "type": "object",
-                    "minProperties": 1,
-                    "additionalProperties": {"$ref": "#/$defs/power_values"}
-                }
-            }
-        },
-        "mathematical_constants": {
-            "type": "object",
-            "required": [
-                "numbers_and_powers",
-                "constants_and_powers"
-            ],
-            "additionalProperties": False,
-            "properties": {
-                "numbers_and_powers": {
-                    "type": "object",
-                    "patternProperties": {
-                        "^[0-9]*$": {"$ref": "#/$defs/power_values"}
-                    },
-                    "additionalProperties": False
-                },
-                "constants_and_powers": {
-                    "type": "object",
-                    "additionalProperties": {"$ref": "#/$defs/power_values"}
-                }
-            }
-        },
-    },
-    "$defs": {
-        "power_values": {
-            "oneOf": [
-                {
-                    "type": "array",
-                    "items": {
-                        "type": "integer"
-                    },
-                    "minItems": 2,
-                    "maxItems": 2,
-                    "uniqueItems": False
-                }, {
-                    "type": "integer",
-                    "minimum": 1
-                }
-            ]
-        }
-    }
-}
+def get_suggested_physical_constants_config(candidates_in_range):
+    suggested_config = dict()
+    for symbol in candidates_in_range:
+        pairs = symbol.strip().split()
+        for pair in pairs:
+            pair_split = pair.split('^')
+            constant = pair_split[0]
+            if len(pair_split) < 2:
+                power = "1"
+            else:
+                power = pair_split[1]
+            power = int(power)
+            suggested = suggested_config.get(constant)
+            if suggested is None:
+                suggested_config[constant] = [power, power]
+            else:
+                [min_val, max_val] = suggested
+                suggested_config[constant] = [min(min_val, power), max(max_val, power)]
+    return json.dumps(suggested_config, sort_keys=True).replace("],", "],\n")

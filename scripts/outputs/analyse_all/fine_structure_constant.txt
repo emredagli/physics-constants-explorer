@@ -21,24 +21,25 @@ Totally, unique 2079 mathematical multiplications are calculated & cached!
 Found 5 candidates the resultant unit matched with the target's unit:
 	[ M ] [ dimensionless ] = elementary_charge⁴ / (speed_of_light² ⋅ planck_constant² ⋅ electric_constant²)
 	  ├── 👍 In range!
-	  └── Min (~7✕10⁻⁸) < M (~2✕10⁻⁴) < Max (~8✕10²)
+	  └──  Min (~7✕10⁻⁸) < M̲ ̲(̲~̲2̲✕̲1̲0̲⁻̲⁴̲)̲ < Max (~8✕10²) 
 
 	[ M ] [ dimensionless ] = elementary_charge² / (speed_of_light ⋅ planck_constant ⋅ electric_constant)
 	  ├── 👍 In range!
-	  └── Min (~7✕10⁻⁸) < M (~1✕10⁻²) < Max (~8✕10²)
+	  └──  Min (~7✕10⁻⁸) < M̲ ̲(̲~̲1̲✕̲1̲0̲⁻̲²̲)̲ < Max (~8✕10²) 
 
 	[ M ] [ dimensionless ] = 1
 	  ├── 👍 In range!
-	  └── Min (~7✕10⁻⁸) < M (~1✕10⁰⁰) < Max (~8✕10²)
+	  └──  Min (~7✕10⁻⁸) < M̲ ̲(̲~̲1̲✕̲1̲0̲⁰̲⁰̲)̲ < Max (~8✕10²) 
 
 	[ M ] [ dimensionless ] = speed_of_light ⋅ planck_constant ⋅ electric_constant / elementary_charge²
 	  ├── 👍 In range!
-	  └── Min (~7✕10⁻⁸) < M (~7✕10¹) < Max (~8✕10²)
+	  └──  Min (~7✕10⁻⁸) < M̲ ̲(̲~̲7̲✕̲1̲0̲¹̲)̲ < Max (~8✕10²) 
 
 	[ M ] [ dimensionless ] = speed_of_light² ⋅ planck_constant² ⋅ electric_constant² / elementary_charge⁴
 	  ├── 👎 Not in range.
-	  └── Min (~7✕10⁻⁸) < Max (~8✕10²) < M (~5✕10³)
+	  └──  Min (~7✕10⁻⁸) < Max (~8✕10²) < M̲ ̲(̲~̲5̲✕̲1̲0̲³̲)̲ 
 
 
-Results matched the target:
-	(7.2973525693 ± 0.0000000011)✕10⁻³ dimensionless  ≈  elementary_charge² / (2 ⋅ speed_of_light ⋅ planck_constant ⋅ electric_constant)
+Result(s) matched the target:
+	(7.2973525693 ± 0.0000000011)✕10⁻³ dimensionless
+	 7.2973525693✕10⁻³  ≈ elementary_charge² / (2 ⋅ speed_of_light ⋅ planck_constant ⋅ electric_constant)
