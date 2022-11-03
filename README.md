@@ -41,7 +41,10 @@ Most of the relations in physics are observed from experiments and constants in 
 
 For example Stefan-Boltzmann Constant, [Prof. Dr. Josef Stefan](https://en.wikipedia.org/wiki/Josef_Stefan) had found the relation between radiation power and temperature of the black body radiation problem:
 
-$$j^{\star} = \sigma T^{4}$$
+$$
+j^{\star} = \sigma T^{4}
+
+$$
 
 where,
 
@@ -51,7 +54,10 @@ where,
 
 Theoretical formulation of $\sigma$ was done by [Prof. Dr. Ludwig Eduard Boltzmann](https://en.wikipedia.org/wiki/Ludwig_Boltzmann):
 
-$$\sigma ={\frac {2\pi ^{5}k^{4}}{15c^{2}h^{3}}} \approxeq 5.670374\times 10^{-8}\,\mathrm{kg}\,\mathrm{s}^{-3}\,\mathrm{K}^{-4}$$
+$$
+\sigma ={\frac {2\pi ^{5}k^{4}}{15c^{2}h^{3}}} \approxeq 5.670374\times 10^{-8}\,\mathrm{kg}\,\mathrm{s}^{-3}\,\mathrm{K}^{-4}
+
+$$
 
 where
 
@@ -235,7 +241,10 @@ The script ([analyse_all.sh](scripts/analyse_all.sh)) executed the all physical 
 
 ### Stefan Boltzmann Constant
 
-$$\sigma ={\frac {2\pi ^{5}k^{4}}{15c^{2}h^{3}}} \approxeq 5.670374\times 10^{-8}\,\mathrm{kg}\,\mathrm{s}^{-3}\,\mathrm{K}^{-4}$$
+$$
+\sigma ={\frac {2\pi ^{5}k^{4}}{15c^{2}h^{3}}} \approxeq 5.670374\times 10^{-8}\,\mathrm{kg}\,\mathrm{s}^{-3}\,\mathrm{K}^{-4}
+
+$$
 
 ```shell
 > python ./main.py --target-value "5.670374419E-8" --target-unit "kg/(s^3 K^4)"
@@ -289,7 +298,10 @@ Highlights the candidate M value is in Min (...) and Max (...) range.
 
 ### Rydberg Constant
 
-$$R_{\infty }={\frac {m_{\text{e}}e^{4}}{8\varepsilon _{0}^{2}h^{3}c}}$$
+$$
+R_{\infty }={\frac {m_{\text{e}}e^{4}}{8\varepsilon _{0}^{2}h^{3}c}}
+
+$$
 
 ```shell
 > python ./main.py --target-value "1.0973731568160(21)e+7" --target-unit "1/m"
@@ -305,7 +317,10 @@ Result(s) matched the target:
 
 ### Fine Structure Constant
 
-$$\alpha ={\frac {e^{2}}{2\varepsilon _{0}hc}}$$
+$$
+\alpha ={\frac {e^{2}}{2\varepsilon _{0}hc}}
+
+$$
 
 ```shell
 > python ./main.py --target-value "7.2973525693(11)E-3" --target-unit ""
@@ -321,7 +336,10 @@ Result(s) matched the target:
 
 ### Molar Gas Constant
 
-$$R=N_{\rm {A}}k_{\rm {B}}$$
+$$
+R=N_{\rm {A}}k_{\rm {B}}
+
+$$
 
 ```shell
 > python ./main.py --target-value "8.314462618E0" --target-unit "(kg m^2)/(K mol s^2)"
@@ -337,7 +355,10 @@ Result(s) matched the target:
 
 ### Vacuum Permeability (Magnetic Constant)
 
-$$\mu _{0}={1 \over {c^{2}\varepsilon _{0}}}$$
+$$
+\mu _{0}={1 \over {c^{2}\varepsilon _{0}}}
+
+$$
 
 ```shell
 > python ./main.py --target-value "1.25663706212(19)e-6" --target-unit "m kg/(A^2 s^2)"
@@ -353,7 +374,10 @@ Result(s) matched the target:
 
 ### Wien Frequency Displacement Law Constant
 
-$$\nu _{\text{peak}}={\alpha  \over h}kT\approx (5.879\times 10^{10}\ \mathrm {Hz/K} )\cdot T$$
+$$
+\nu _{\text{peak}}={\alpha  \over h}kT\approx (5.879\times 10^{10}\ \mathrm {Hz/K} )\cdot T
+
+$$
 
 ```shell
 > python ./main.py --target-value "5.878925757E+10" --target-unit "1/(K s)"
@@ -369,7 +393,10 @@ Result(s) matched the target:
 
 ### Impedance of Free Space
 
-$$Z_{0}={\frac {E}{H}}=\mu _{0}c={\sqrt {\frac {\mu _{0}}{\varepsilon _{0}}}}={\frac {1}{\varepsilon _{0}c}}$$
+$$
+Z_{0}={\frac {E}{H}}=\mu _{0}c={\sqrt {\frac {\mu _{0}}{\varepsilon _{0}}}}={\frac {1}{\varepsilon _{0}c}}
+
+$$
 
 ```shell
 > python ./main.py --target-value "3.76730313668(57)E+2" --target-unit "(kg m^2)/(s^3 A^2)"
@@ -385,7 +412,10 @@ Result(s) matched the target:
 
 ### Josephson Constant
 
-$$1 / \Phi _{B}={\frac {2e}{h}}$$
+$$
+1 / \Phi _{B}={\frac {2e}{h}}
+
+$$
 
 ```shell
 > python ./main.py --target-value "4.835978484E+14" --target-unit "(A s^2)/(kg m^2)"
@@ -401,7 +431,10 @@ Result(s) matched the target:
 
 ### Von Klitzing Constant
 
-$$\R_{K}={\frac {h}{e^{2}}}$$
+$$
+\R _{K}={\frac {h}{e^{2}}}
+
+$$
 
 ```shell
 > python ./main.py --target-value "2.581280745E+4" --target-unit "(kg m^2)/(A^2 s^3)"
@@ -445,19 +478,31 @@ The following equations are the well-known relations that contain $\varepsilon _
 
 (1) c ([speed of light in vacuum](https://en.wikipedia.org/wiki/Speed_of_light#Propagation_of_light)) contains $\varepsilon _{0}$ and $\mu _{0}$:
 
-$$c={\frac {1}{\sqrt {\varepsilon _{0}\mu _{0}}}}$$
+$$
+c={\frac {1}{\sqrt {\varepsilon _{0}\mu _{0}}}}
+
+$$
 
 (2) $\alpha$ ([fine-structure constant](https://en.wikipedia.org/wiki/Fine-structure_constant)) contains $e$ (elementary charge), $h$ (plank constant), $\varepsilon _{0}$:
 
-$$\alpha={\frac {e^{2}}{2\varepsilon _{0}hc}}={\frac {e^{2}}{2h}}{\sqrt{\frac {\mu _{0}}{\varepsilon _{0}}}}$$
+$$
+\alpha={\frac {e^{2}}{2\varepsilon _{0}hc}}={\frac {e^{2}}{2h}}{\sqrt{\frac {\mu _{0}}{\varepsilon _{0}}}}
+
+$$
 
 (3) $R_{\infty }$ ([Rydberg constant](https://en.wikipedia.org/wiki/Rydberg_constant)) contains $e$, $m_{\text{e}}$ (the rest mass of the electron), $h$, c:
 
-$$R_{\infty }={\frac {m_{\text{e}}e^{4}}{8\varepsilon _{0}^{2}h^{3}c}}={\frac {m_{\text{e}}e^{4}c}{8h^{3}}}{\frac {\mu _{0}}{\varepsilon _{0}}}$$
+$$
+R_{\infty }={\frac {m_{\text{e}}e^{4}}{8\varepsilon _{0}^{2}h^{3}c}}={\frac {m_{\text{e}}e^{4}c}{8h^{3}}}{\frac {\mu _{0}}{\varepsilon _{0}}}
+
+$$
 
 The goal is to find the relations given above and by targeting $\mu _{0}/\varepsilon _{0}$ ratio:
 
-$${\frac {\mu _{0}}{\varepsilon _{0}}}=1.4192572923(42) \times 10^{5} \, \mathrm{kg}^{2} \, \mathrm{m}^{4} \, \mathrm{A}^{-4} \, \mathrm{s}^{-6} $$
+$$
+{\frac {\mu _{0}}{\varepsilon _{0}}}=1.4192572923(42) \times 10^{5} \, \mathrm{kg}^{2} \, \mathrm{m}^{4} \, \mathrm{A}^{-4} \, \mathrm{s}^{-6}
+
+$$
 
 The error of the ratio is calculated based on the relative errors.
 
@@ -512,7 +557,10 @@ As you see:
 
 According to Newton's law of universal gravitation, the attractive force (F) between two point-like bodies is directly proportional to the product of their masses (m1 and m2) and inversely proportional to the square of the distance, r, between their centers of mass:
 
-$$F=G{\frac {m_{1}m_{2}}{r^{2}}}$$
+$$
+F=G{\frac {m_{1}m_{2}}{r^{2}}}
+
+$$
 
 (Ref: [Gravitational constant - Wikipedia](https://en.wikipedia.org/wiki/Gravitational_constant))
 
@@ -548,7 +596,10 @@ Unfortunately, there are no candidates in the mathematical range for the given s
 We need to add a big dimensionless constant(s) into our mathematical constants scope to place the "M" value in the range.
 One of the [Dirac's large number](https://en.wikipedia.org/wiki/Dirac_large_numbers_hypothesis) which is the ratio of the electrical to the gravitational forces between a proton and an electron:
 
-$${\frac {e^{2}}{4\pi \epsilon _{0}Gm_{\text{p}}m_{\text{e}}}}\approx 10^{40}$$
+$$
+{\frac {e^{2}}{4\pi \epsilon _{0}Gm_{\text{p}}m_{\text{e}}}}\approx 10^{40}
+
+$$
 
 was also tried, but no satisfactory result was found!
 
@@ -611,14 +662,17 @@ Let's look at the ratio of sequential candidates by taking the M(n) values from 
 
 It means that, the program actually found a single candidate not 6 different one. Let's formulate one of it for example (R3):
 
-$$ G \approx {\frac {2^{2}}{3\cdot5^{3}\cdot\pi^{4}}}\cdot{\frac {\alpha^{4} \,e^{4} \,c\,\mu _{0}}{h\,\varepsilon _{0}}\cdot{\frac {\\m_{e}^{7}}{\\m_{p}^{9}}}} $$
+$$
+G \approx {\frac {2^{2}}{3\cdot5^{3}\cdot\pi^{4}}}\cdot{\frac {\alpha^{4} \,e^{4} \,c\,\mu _{0}}{h\,\varepsilon _{0}}\cdot{\frac {\\m _{e}^{7}}{\\m _{p}^{9}}}}
+
+$$
 
 * $\alpha$ is the fine-structure constant
 * $h$ is the planck constant
 * $c$ is the speed of light in vacuum
 * $e$ is the elementary charge
-* $\\m_{e}$ is the mass of a stationary electron
-* $\\m_{p}$ is the mass of proton
+* $\\m _{e}$ is the mass of a stationary electron
+* $\\m _{p}$ is the mass of proton
 * $\mu _{0}$ is the vacuum permeability (magnetic constant)
 * $\varepsilon _{0}$ is the vacuum permittivity (electric constant)
 * $\pi$ is the ratio of a circle's circumference to its diameter (mathematical constant)
