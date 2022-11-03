@@ -1,18 +1,37 @@
 Search the target:
-	5.670374E-8 kg/K⁴/s³
+	(5.6703744195 ± 0.0000000005)✕10⁻⁸ kg/K⁴/s³
 in terms of the given:
-	physical constants:     ['speed_of_light', 'planck_constant', 'boltzmann_constant', 'elementary_charge', 'vacuum_permittivity', 'electron_mass', 'avogadro_constant']
-	mathematical constants: ['pi', 'eulers_number', '2', '3', '5']
+	physical constants:     
+		speed_of_light ^ [-2, -1, 0, 1, 2]
+		planck_constant ^ [-3, -2, -1, 0, 1, 2, 3]
+		boltzmann_constant ^ [-4, -3, -2, -1, 0, 1, 2, 3, 4]
+		elementary_charge ^ [-4, -3, -2, -1, 0, 1, 2, 3, 4]
+		electric_constant ^ [-2, -1, 0, 1, 2]
+		electron_mass ^ [-2, -1, 0, 1, 2]
+		avogadro_constant ^ [-1, 0, 1]
+	mathematical constants: 
+		pi ^ [-5, -4, -3, -2, -1, 0, 1, 2, 3, 4, 5]
+		wien_u ^ [-1, 0, 1]
+		2 ^ [-3, -2, -1, 0, 1, 2, 3]
+		3 ^ [-1, 0, 1]
+		5 ^ [-1, 0, 1]
 by using brute_force methodology...
 
-Found 4 candidates the resultant unit matched with the target's unit:
-	[ kg/K⁴/s³ ] = [ boltzmann_constant⁴ ⋅ elementary_charge² / (speed_of_light³ ⋅ planck_constant⁴ ⋅ vacuum_permittivity) ]
-	[ kg/K⁴/s³ ] = [ boltzmann_constant⁴ / (speed_of_light² ⋅ planck_constant³) ]
-	[ kg/K⁴/s³ ] = [ boltzmann_constant⁴ ⋅ vacuum_permittivity / (speed_of_light ⋅ planck_constant² ⋅ elementary_charge²) ]
-	[ kg/K⁴/s³ ] = [ boltzmann_constant⁴ ⋅ vacuum_permittivity² / (planck_constant ⋅ elementary_charge⁴) ]
+Totally, unique 2079 mathematical multiplications are calculated & cached!
+Found 3 candidates the resultant unit matched with the target's unit:
+	[ M ] [ kg/K⁴/s³ ] = boltzmann_constant⁴ / (speed_of_light² ⋅ planck_constant³)
+	  ├── 👍 In range!
+	  └──  Min (~5✕10⁻¹³) < M̲ ̲(̲~̲1̲✕̲1̲0̲⁻̲⁹̲)̲ < Max (~6✕10⁻³) 
 
-Totally, unique 161051 mathematical multiplications are calculated & cached!
+	[ M ] [ kg/K⁴/s³ ] = boltzmann_constant⁴ ⋅ electric_constant / (speed_of_light ⋅ planck_constant² ⋅ elementary_charge²)
+	  ├── 👍 In range!
+	  └──  Min (~5✕10⁻¹³) < M̲ ̲(̲~̲1̲✕̲1̲0̲⁻̲⁷̲)̲ < Max (~6✕10⁻³) 
+
+	[ M ] [ kg/K⁴/s³ ] = boltzmann_constant⁴ ⋅ electric_constant² / (planck_constant ⋅ elementary_charge⁴)
+	  ├── 👍 In range!
+	  └──  Min (~5✕10⁻¹³) < M̲ ̲(̲~̲7̲✕̲1̲0̲⁻̲⁶̲)̲ < Max (~6✕10⁻³) 
 
 
-Results matched the target:
-	5.670374E-8 kg/K⁴/s³ ≈ 2 ⋅ pi⁵ ⋅ boltzmann_constant⁴ / (3 ⋅ 5 ⋅ speed_of_light² ⋅ planck_constant³)
+Result(s) matched the target:
+	(5.6703744195 ± 0.0000000005)✕10⁻⁸ kg/K⁴/s³
+	 5.6703744192✕10⁻⁸ kg/K⁴/s³ ≈ 2 ⋅ pi⁵ ⋅ boltzmann_constant⁴ / (3 ⋅ 5 ⋅ speed_of_light² ⋅ planck_constant³)

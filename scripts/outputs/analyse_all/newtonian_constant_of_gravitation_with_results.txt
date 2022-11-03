@@ -1,0 +1,49 @@
+Search the target:
+	(6.67430 ± 0.00015)✕10⁻¹¹ m³/kg/s²
+in terms of the given:
+	physical constants:     
+		speed_of_light ^ [-5, -4, -3, -2, -1, 0, 1, 2, 3, 4, 5]
+		planck_constant ^ [-5, -4, -3, -2, -1, 0, 1, 2, 3, 4, 5]
+		elementary_charge ^ [-12, -11, -10, -9, -8, -7, -6, -5, -4, -3, -2, -1, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
+		electron_mass ^ [-5, -4, -3, -2, -1, 0, 1, 2, 3, 4, 5]
+		mc_to_ec_ratio ^ [-5, -4, -3, -2, -1, 0, 1, 2, 3, 4, 5]
+	mathematical constants: 
+		pi ^ [-4, -3, -2, -1, 0, 1, 2, 3, 4]
+		proton_to_electron_mass_ratio ^ [-10, -9, -8, -7, -6, -5, -4, -3, -2, -1, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+		fine_structure_constant ^ [-2, -1, 0, 1, 2]
+		2 ^ [-8, -7, -6, -5, -4, -3, -2, -1, 0, 1, 2, 3, 4, 5, 6, 7, 8]
+		3 ^ [-3, -2, -1, 0, 1, 2, 3]
+		5 ^ [-3, -2, -1, 0, 1, 2, 3]
+by using brute_force methodology...
+
+Totally, unique 787185 mathematical multiplications are calculated & cached!
+Found 6 candidates the resultant unit matched with the target's unit:
+	[ M ] [ m³/kg/s² ] = speed_of_light ⋅ elementary_charge¹² ⋅ mc_to_ec_ratio³ / (planck_constant⁵ ⋅ electron_mass²)
+	  ├── 👍 In range!
+	  └──  Min (~1✕10⁻⁵⁵) < M̲ ̲(̲~̲2̲✕̲1̲0̲²̲⁴̲)̲ < Max (~5✕10³⁴) 
+
+	[ M ] [ m³/kg/s² ] = speed_of_light ⋅ elementary_charge⁸ ⋅ mc_to_ec_ratio² / (planck_constant³ ⋅ electron_mass²)
+	  ├── 👍 In range!
+	  └──  Min (~1✕10⁻⁵⁵) < M̲ ̲(̲~̲1̲✕̲1̲0̲²̲⁸̲)̲ < Max (~5✕10³⁴) 
+
+	[ M ] [ m³/kg/s² ] = speed_of_light ⋅ elementary_charge⁴ ⋅ mc_to_ec_ratio / (planck_constant ⋅ electron_mass²)
+	  ├── 👍 In range!
+	  └──  Min (~1✕10⁻⁵⁵) < M̲ ̲(̲~̲5̲✕̲1̲0̲³̲¹̲)̲ < Max (~5✕10³⁴) 
+
+	[ M ] [ m³/kg/s² ] = speed_of_light ⋅ planck_constant / electron_mass²
+	  ├── 👎 Not in range.
+	  └──  Min (~1✕10⁻⁵⁵) < Max (~5✕10³⁴) < M̲ ̲(̲~̲2̲✕̲1̲0̲³̲⁵̲)̲ 
+
+	[ M ] [ m³/kg/s² ] = speed_of_light ⋅ planck_constant³ / (elementary_charge⁴ ⋅ electron_mass² ⋅ mc_to_ec_ratio)
+	  ├── 👎 Not in range.
+	  └──  Min (~1✕10⁻⁵⁵) < Max (~5✕10³⁴) < M̲ ̲(̲~̲1̲✕̲1̲0̲³̲⁹̲)̲ 
+
+	[ M ] [ m³/kg/s² ] = speed_of_light ⋅ planck_constant⁵ / (elementary_charge⁸ ⋅ electron_mass² ⋅ mc_to_ec_ratio²)
+	  ├── 👎 Not in range.
+	  └──  Min (~1✕10⁻⁵⁵) < Max (~5✕10³⁴) < M̲ ̲(̲~̲5̲✕̲1̲0̲⁴̲²̲)̲ 
+
+
+Result(s) matched the target:
+	(6.67430 ± 0.00015)✕10⁻¹¹ m³/kg/s²
+	 6.67422✕10⁻¹¹ m³/kg/s² ≈ speed_of_light ⋅ elementary_charge¹² ⋅ mc_to_ec_ratio³ / (2² ⋅ 3 ⋅ 5³ ⋅ pi⁴ ⋅ proton_to_electron_mass_ratio⁹ ⋅ planck_constant⁵ ⋅ electron_mass²)
+	 6.67422✕10⁻¹¹ m³/kg/s² ≈ fine_structure_constant² ⋅ speed_of_light ⋅ elementary_charge⁸ ⋅ mc_to_ec_ratio² / (3 ⋅ 5³ ⋅ pi⁴ ⋅ proton_to_electron_mass_ratio⁹ ⋅ planck_constant³ ⋅ electron_mass²)

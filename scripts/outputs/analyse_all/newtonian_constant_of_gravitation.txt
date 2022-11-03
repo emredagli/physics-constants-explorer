@@ -1,17 +1,40 @@
 Search the target:
-	6.6743E-11 m³/kg/s²
+	(6.67430 ± 0.00015)✕10⁻¹¹ m³/kg/s²
 in terms of the given:
-	physical constants:     ['speed_of_light', 'planck_constant', 'boltzmann_constant', 'elementary_charge', 'vacuum_permittivity', 'electron_mass', 'avogadro_constant']
-	mathematical constants: ['pi', 'eulers_number', '2', '3', '5']
+	physical constants:     
+		speed_of_light ^ [-2, -1, 0, 1, 2]
+		planck_constant ^ [-3, -2, -1, 0, 1, 2, 3]
+		boltzmann_constant ^ [-4, -3, -2, -1, 0, 1, 2, 3, 4]
+		elementary_charge ^ [-4, -3, -2, -1, 0, 1, 2, 3, 4]
+		electric_constant ^ [-2, -1, 0, 1, 2]
+		electron_mass ^ [-2, -1, 0, 1, 2]
+		avogadro_constant ^ [-1, 0, 1]
+	mathematical constants: 
+		pi ^ [-5, -4, -3, -2, -1, 0, 1, 2, 3, 4, 5]
+		wien_u ^ [-1, 0, 1]
+		2 ^ [-3, -2, -1, 0, 1, 2, 3]
+		3 ^ [-1, 0, 1]
+		5 ^ [-1, 0, 1]
 by using brute_force methodology...
 
-Found 5 candidates the resultant unit matched with the target's unit:
-	[ m³/kg/s² ] = [ elementary_charge⁴ / (speed_of_light ⋅ planck_constant ⋅ vacuum_permittivity² ⋅ electron_mass²) ]
-	[ m³/kg/s² ] = [ elementary_charge² / (vacuum_permittivity ⋅ electron_mass²) ]
-	[ m³/kg/s² ] = [ speed_of_light ⋅ planck_constant / electron_mass² ]
-	[ m³/kg/s² ] = [ speed_of_light² ⋅ planck_constant² ⋅ vacuum_permittivity / (elementary_charge² ⋅ electron_mass²) ]
-	[ m³/kg/s² ] = [ speed_of_light³ ⋅ planck_constant³ ⋅ vacuum_permittivity² / (elementary_charge⁴ ⋅ electron_mass²) ]
+Totally, unique 2079 mathematical multiplications are calculated & cached!
+Found 4 candidates the resultant unit matched with the target's unit:
+	[ M ] [ m³/kg/s² ] = elementary_charge⁴ / (speed_of_light ⋅ planck_constant ⋅ electric_constant² ⋅ electron_mass²)
+	  ├── 👎 Not in range.
+	  └──  Min (~6✕10⁻¹⁶) < Max (~7✕10⁻⁶) < M̲ ̲(̲~̲5̲✕̲1̲0̲³̲¹̲)̲ 
 
-Totally, unique 161051 mathematical multiplications are calculated & cached!
+	[ M ] [ m³/kg/s² ] = elementary_charge² / (electric_constant ⋅ electron_mass²)
+	  ├── 👎 Not in range.
+	  └──  Min (~6✕10⁻¹⁶) < Max (~7✕10⁻⁶) < M̲ ̲(̲~̲3̲✕̲1̲0̲³̲³̲)̲ 
+
+	[ M ] [ m³/kg/s² ] = speed_of_light ⋅ planck_constant / electron_mass²
+	  ├── 👎 Not in range.
+	  └──  Min (~6✕10⁻¹⁶) < Max (~7✕10⁻⁶) < M̲ ̲(̲~̲2̲✕̲1̲0̲³̲⁵̲)̲ 
+
+	[ M ] [ m³/kg/s² ] = speed_of_light² ⋅ planck_constant² ⋅ electric_constant / (elementary_charge² ⋅ electron_mass²)
+	  ├── 👎 Not in range.
+	  └──  Min (~6✕10⁻¹⁶) < Max (~7✕10⁻⁶) < M̲ ̲(̲~̲2̲✕̲1̲0̲³̲⁷̲)̲ 
+
 
 No results were found that matching with the target!
+

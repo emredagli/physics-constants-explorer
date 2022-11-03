@@ -2,10 +2,13 @@ import operator
 from decimal import Decimal
 from functools import reduce
 from itertools import product
+
 from tqdm import tqdm
+
 from src.common_library import get_symbol, get_power_range
 
 
+# TODO: rename it to MathematicalOperator
 class MathematicalConstants:
     def __init__(self, config, unit_registry):
         self.np = config.get("numbers_and_powers")
@@ -15,8 +18,12 @@ class MathematicalConstants:
         self.min_value = None
         self.max_value = None
 
-    def get_keys(self):
-        return list(self.mcp.keys()) + list(self.np.keys())
+    def get_keys_definition(self, spacing='\n\t\t'):
+        all_items = list(self.mcp.items()) + list(self.np.items())
+        result = ""
+        for key, power_setting in all_items:
+            result += spacing + key + " ^ " + str(get_power_range(power_setting))
+        return result
 
     def _get_decimal(self, key, power):
         ur_val = self.ur(key + "^" + str(power))
@@ -27,11 +34,11 @@ class MathematicalConstants:
 
     def _get_power_values(self, values):
         result = list()
-        for key, max_power in values.items():
+        for key, power_setting in values.items():
             result.append([{
                 "s": get_symbol(key, power),
                 "v": self._get_decimal(key, power)
-            } for power in get_power_range(max_power)])
+            } for power in get_power_range(power_setting)])
         return result
 
     def _set_bounds(self):
@@ -68,6 +75,5 @@ class MathematicalConstants:
 
         self.constants = constants
         self._set_bounds()
-        print(f"Totally, unique {len(self.constants.items())} mathematical multiplications are calculated & cached!\n")
 
-
+        print(f"Totally, unique {len(self.constants.items())} mathematical multiplications are calculated & cached!")

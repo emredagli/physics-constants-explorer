@@ -1,19 +1,45 @@
 Search the target:
-	8.3144626E+0 kg·m²/K/mol/s²
+	(8.3144626185 ± 0.0000000005) kg·m²/K/mol/s²
 in terms of the given:
-	physical constants:     ['speed_of_light', 'planck_constant', 'boltzmann_constant', 'elementary_charge', 'vacuum_permittivity', 'electron_mass', 'avogadro_constant']
-	mathematical constants: ['pi', 'eulers_number', '2', '3', '5']
+	physical constants:     
+		speed_of_light ^ [-2, -1, 0, 1, 2]
+		planck_constant ^ [-3, -2, -1, 0, 1, 2, 3]
+		boltzmann_constant ^ [-4, -3, -2, -1, 0, 1, 2, 3, 4]
+		elementary_charge ^ [-4, -3, -2, -1, 0, 1, 2, 3, 4]
+		electric_constant ^ [-2, -1, 0, 1, 2]
+		electron_mass ^ [-2, -1, 0, 1, 2]
+		avogadro_constant ^ [-1, 0, 1]
+	mathematical constants: 
+		pi ^ [-5, -4, -3, -2, -1, 0, 1, 2, 3, 4, 5]
+		wien_u ^ [-1, 0, 1]
+		2 ^ [-3, -2, -1, 0, 1, 2, 3]
+		3 ^ [-1, 0, 1]
+		5 ^ [-1, 0, 1]
 by using brute_force methodology...
 
+Totally, unique 2079 mathematical multiplications are calculated & cached!
 Found 5 candidates the resultant unit matched with the target's unit:
-	[ kg·m²/K/mol/s² ] = [ boltzmann_constant ⋅ elementary_charge⁴ ⋅ avogadro_constant / (speed_of_light² ⋅ planck_constant² ⋅ vacuum_permittivity²) ]
-	[ kg·m²/K/mol/s² ] = [ boltzmann_constant ⋅ elementary_charge² ⋅ avogadro_constant / (speed_of_light ⋅ planck_constant ⋅ vacuum_permittivity) ]
-	[ kg·m²/K/mol/s² ] = [ boltzmann_constant ⋅ avogadro_constant ]
-	[ kg·m²/K/mol/s² ] = [ speed_of_light ⋅ planck_constant ⋅ boltzmann_constant ⋅ vacuum_permittivity ⋅ avogadro_constant / elementary_charge² ]
-	[ kg·m²/K/mol/s² ] = [ speed_of_light² ⋅ planck_constant² ⋅ boltzmann_constant ⋅ vacuum_permittivity² ⋅ avogadro_constant / elementary_charge⁴ ]
+	[ M ] [ kg·m²/K/mol/s² ] = boltzmann_constant ⋅ elementary_charge⁴ ⋅ avogadro_constant / (speed_of_light² ⋅ planck_constant² ⋅ electric_constant²)
+	  ├── 👍 In range!
+	  └──  Min (~8✕10⁻⁵) < M̲ ̲(̲~̲2̲✕̲1̲0̲⁻̲³̲)̲ < Max (~9✕10⁵) 
 
-Totally, unique 161051 mathematical multiplications are calculated & cached!
+	[ M ] [ kg·m²/K/mol/s² ] = boltzmann_constant ⋅ elementary_charge² ⋅ avogadro_constant / (speed_of_light ⋅ planck_constant ⋅ electric_constant)
+	  ├── 👍 In range!
+	  └──  Min (~8✕10⁻⁵) < M̲ ̲(̲~̲1̲✕̲1̲0̲⁻̲¹̲)̲ < Max (~9✕10⁵) 
+
+	[ M ] [ kg·m²/K/mol/s² ] = boltzmann_constant ⋅ avogadro_constant
+	  ├── 👍 In range!
+	  └──  Min (~8✕10⁻⁵) < M̲ ̲(̲~̲8̲✕̲1̲0̲⁰̲)̲ < Max (~9✕10⁵) 
+
+	[ M ] [ kg·m²/K/mol/s² ] = speed_of_light ⋅ planck_constant ⋅ boltzmann_constant ⋅ electric_constant ⋅ avogadro_constant / elementary_charge²
+	  ├── 👍 In range!
+	  └──  Min (~8✕10⁻⁵) < M̲ ̲(̲~̲6̲✕̲1̲0̲²̲)̲ < Max (~9✕10⁵) 
+
+	[ M ] [ kg·m²/K/mol/s² ] = speed_of_light² ⋅ planck_constant² ⋅ boltzmann_constant ⋅ electric_constant² ⋅ avogadro_constant / elementary_charge⁴
+	  ├── 👍 In range!
+	  └──  Min (~8✕10⁻⁵) < M̲ ̲(̲~̲4̲✕̲1̲0̲⁴̲)̲ < Max (~9✕10⁵) 
 
 
-Results matched the target:
-	8.3144626E+0 kg·m²/K/mol/s² ≈ boltzmann_constant ⋅ avogadro_constant
+Result(s) matched the target:
+	(8.3144626185 ± 0.0000000005) kg·m²/K/mol/s²
+	 8.3144626182✕10⁰ kg·m²/K/mol/s² ≈ boltzmann_constant ⋅ avogadro_constant
