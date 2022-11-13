@@ -7,7 +7,7 @@ in terms of the given:
 		boltzmann_constant ^ [-4, -3, -2, -1, 0, 1, 2, 3, 4]
 		elementary_charge ^ [-4, -3, -2, -1, 0, 1, 2, 3, 4]
 		electric_constant ^ [-2, -1, 0, 1, 2]
-		electron_mass ^ [-2, -1, 0, 1, 2]
+		electron_mass ^ [-1, 0, 1]
 		avogadro_constant ^ [-1, 0, 1]
 	mathematical constants: 
 		pi ^ [-5, -4, -3, -2, -1, 0, 1, 2, 3, 4, 5]

@@ -3,7 +3,7 @@ from decimal import ROUND_HALF_UP
 from tqdm import tqdm
 
 from src.common_library import get_formatted_symbol, get_value_from_scientific_notation, \
-    get_decimal_with_power_10
+    get_decimal_with_power_10, print_suggested_physical_constants_config
 from src.mathematical_constants import MathematicalConstants
 from src.physical_constants import PhysicalConstants
 from src.validator_library import validate_input, validate_config
@@ -66,11 +66,9 @@ class ExploreConstant:
 
         self.results = results
 
+        # print_suggested_physical_constants_config(candidates_in_range)
         # Display the results
         if len(results) > 0:
-            # print("\nReduced 'physical_constants.constants_and_powers' config for candidates:\n")
-            # print(f"{get_suggested_physical_constants_config(candidates_in_range)}\n")
-
             print(f"Result(s) matched the target:")
             print(f"\t{self.target_str}")
             for resultant, formatted_symbol in results:
@@ -82,8 +80,6 @@ class ExploreConstant:
                 print("But the following candidates were in the given mathematical range:")
                 for pc_symbol in candidates_in_range:
                     print(f"\t{get_formatted_symbol(pc_symbol)}")
-                # print("\nReduced 'physical_constants.constants_and_powers' config for these candidates:\n")
-                # print(f"{get_suggested_physical_constants_config(candidates_in_range)}")
 
     def _init_target(self, target_value, target_unit):
         value = get_value_from_scientific_notation(target_value)

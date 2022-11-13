@@ -89,6 +89,7 @@ mc_to_ec_ratio = magnetic_constant / electric_constant
 
 sqrt_speed_of_light = speed_of_light ** 0.5
 sqrt_planck_constant = planck_constant ** 0.5
+sqrt_boltzmann_constant = boltzmann_constant ** 0.5
 sqrt_electron_mass = electron_mass ** 0.5
 sqrt_proton_mass = proton_mass ** 0.5
 sqrt_elementary_charge = elementary_charge ** 0.5
@@ -100,5 +101,19 @@ sqrt_mc_to_ec_ratio = mc_to_ec_ratio ** 0.5
 sqrt_fine_structure_constant = fine_structure_constant ** 0.5
 sqrt_proton_to_electron_mass_ratio = proton_to_electron_mass_ratio ** 0.5
 
+### Derived on Physical Constants Explorer
+plank_length = ((dirac_constant * newtonian_constant_of_gravitation) / ( speed_of_light ** 3)) ** 0.5
+plank_mass = ((dirac_constant * speed_of_light) / (newtonian_constant_of_gravitation)) ** 0.5
+plank_time = ((dirac_constant * newtonian_constant_of_gravitation) / (speed_of_light ** 5)) ** 0.5
+plank_temperature = ((dirac_constant * speed_of_light ** 5) / (newtonian_constant_of_gravitation * boltzmann_constant ** 2)) ** 0.5
+sqrt_plank_temperature = plank_temperature ** 0.5
+
+sqrt_stefan_boltzmann_constant = stefan_boltzmann_constant ** 0.5
 dirac_large_number = e ** 2 / (4 * π * ε_0 * newtonian_constant_of_gravitation * m_e * m_p)
 sqrt_dirac_large_number = dirac_large_number ** 0.5
+
+### Physics Problems
+mass_of_earth = 5.9722e24 kg
+mass_of_moon = 7.342e22 kg
+radius_of_earth = 6.367e6 m
+distance_earth_and_moon = 3.84e8 m

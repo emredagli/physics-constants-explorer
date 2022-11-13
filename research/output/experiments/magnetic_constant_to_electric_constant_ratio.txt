@@ -6,39 +6,30 @@ in terms of the given:
 		sqrt_planck_constant ^ [-6, -5, -4, -3, -2, -1, 0, 1, 2, 3, 4, 5, 6]
 		sqrt_elementary_charge ^ [-8, -7, -6, -5, -4, -3, -2, -1, 0, 1, 2, 3, 4, 5, 6, 7, 8]
 		sqrt_electron_mass ^ [-2, -1, 0, 1, 2]
-		sqrt_rydberg_constant ^ [-2, -1, 0, 1, 2]
+		sqrt_rydberg_constant ^ [-1, 0, 1]
 	mathematical constants: 
 		sqrt_2 ^ [-8, -7, -6, -5, -4, -3, -2, -1, 0, 1, 2, 3, 4, 5, 6, 7, 8]
 		sqrt_pi ^ [-8, -7, -6, -5, -4, -3, -2, -1, 0, 1, 2, 3, 4, 5, 6, 7, 8]
-		sqrt_proton_to_electron_mass_ratio ^ [-4, -3, -2, -1, 0, 1, 2, 3, 4]
-		sqrt_fine_structure_constant ^ [-4, -3, -2, -1, 0, 1, 2, 3, 4]
+		sqrt_fine_structure_constant ^ [-8, -7, -6, -5, -4, -3, -2, -1, 0, 1, 2, 3, 4, 5, 6, 7, 8]
 by using brute_force methodology...
 
-Totally, unique 23409 mathematical multiplications are calculated & cached!
-Found 5 candidates the resultant unit matched with the target's unit:
-	[ M ] [ kg²·m⁴/A⁴/s⁶ ] = planck_constant³ ⋅ rydberg_constant / (speed_of_light ⋅ elementary_charge⁴ ⋅ electron_mass)
-	  ├── 👍 In range!
-	  └──  Min (~1✕10⁻⁹) < M̲ ̲(̲~̲2̲✕̲1̲0̲⁴̲)̲ < Max (~1✕10¹⁹) 
-
+Totally, unique 4913 mathematical multiplications are calculated & cached!
+Found 3 candidates the resultant unit matched with the target's unit:
 	[ M ] [ kg²·m⁴/A⁴/s⁶ ] = sqrt_planck_constant⁵ ⋅ sqrt_rydberg_constant / (sqrt_speed_of_light ⋅ elementary_charge⁴ ⋅ sqrt_electron_mass)
 	  ├── 👍 In range!
-	  └──  Min (~1✕10⁻⁹) < M̲ ̲(̲~̲3̲✕̲1̲0̲⁶̲)̲ < Max (~1✕10¹⁹) 
+	  └──  Min (~3✕10⁻⁷) < M̲ ̲(̲~̲3̲✕̲1̲0̲⁶̲)̲ < Max (~8✕10¹⁶) 
 
 	[ M ] [ kg²·m⁴/A⁴/s⁶ ] = planck_constant² / elementary_charge⁴
 	  ├── 👍 In range!
-	  └──  Min (~1✕10⁻⁹) < M̲ ̲(̲~̲7̲✕̲1̲0̲⁸̲)̲ < Max (~1✕10¹⁹) 
+	  └──  Min (~3✕10⁻⁷) < M̲ ̲(̲~̲7̲✕̲1̲0̲⁸̲)̲ < Max (~8✕10¹⁶) 
 
 	[ M ] [ kg²·m⁴/A⁴/s⁶ ] = sqrt_speed_of_light ⋅ sqrt_planck_constant³ ⋅ sqrt_electron_mass / (elementary_charge⁴ ⋅ sqrt_rydberg_constant)
 	  ├── 👍 In range!
-	  └──  Min (~1✕10⁻⁹) < M̲ ̲(̲~̲1̲✕̲1̲0̲¹̲¹̲)̲ < Max (~1✕10¹⁹) 
-
-	[ M ] [ kg²·m⁴/A⁴/s⁶ ] = speed_of_light ⋅ planck_constant ⋅ electron_mass / (elementary_charge⁴ ⋅ rydberg_constant)
-	  ├── 👍 In range!
-	  └──  Min (~1✕10⁻⁹) < M̲ ̲(̲~̲3̲✕̲1̲0̲¹̲³̲)̲ < Max (~1✕10¹⁹) 
+	  └──  Min (~3✕10⁻⁷) < M̲ ̲(̲~̲1̲✕̲1̲0̲¹̲¹̲)̲ < Max (~8✕10¹⁶) 
 
 
 Result(s) matched the target:
 	(1.4192572923 ± 0.0000000042)✕10⁵ kg²·m⁴/A⁴/s⁶
-	 1.4192572924✕10⁵ kg²·m⁴/A⁴/s⁶ ≈ 2³ ⋅ planck_constant³ ⋅ rydberg_constant / (speed_of_light ⋅ elementary_charge⁴ ⋅ electron_mass)
 	 1.4192572924✕10⁵ kg²·m⁴/A⁴/s⁶ ≈ sqrt_2⁵ ⋅ fine_structure_constant ⋅ sqrt_planck_constant⁵ ⋅ sqrt_rydberg_constant / (sqrt_speed_of_light ⋅ elementary_charge⁴ ⋅ sqrt_electron_mass)
 	 1.4192572924✕10⁵ kg²·m⁴/A⁴/s⁶ ≈ 2² ⋅ fine_structure_constant² ⋅ planck_constant² / elementary_charge⁴
+	 1.4192572924✕10⁵ kg²·m⁴/A⁴/s⁶ ≈ sqrt_2³ ⋅ fine_structure_constant³ ⋅ sqrt_speed_of_light ⋅ sqrt_planck_constant³ ⋅ sqrt_electron_mass / (elementary_charge⁴ ⋅ sqrt_rydberg_constant)

@@ -1,0 +1,23 @@
+Search the target:
+	(5.391247 ± 0.000060)✕10⁻⁴⁴ s
+in terms of the given:
+	physical constants:     
+		sqrt_speed_of_light ^ [-5, -4, -3, -2, -1, 0, 1, 2, 3, 4, 5]
+		sqrt_planck_constant ^ [-2, -1, 0, 1, 2]
+		sqrt_newtonian_constant_of_gravitation ^ [-2, -1, 0, 1, 2]
+		sqrt_boltzmann_constant ^ [-2, -1, 0, 1, 2]
+	mathematical constants: 
+		sqrt_2 ^ [-4, -3, -2, -1, 0, 1, 2, 3, 4]
+		sqrt_pi ^ [-4, -3, -2, -1, 0, 1, 2, 3, 4]
+by using brute_force methodology...
+
+Totally, unique 81 mathematical multiplications are calculated & cached!
+Found 1 candidates the resultant unit matched with the target's unit:
+	[ M ] [ s ] = sqrt_planck_constant ⋅ sqrt_newtonian_constant_of_gravitation / sqrt_speed_of_light⁵
+	  ├── 👍 In range!
+	  └──  Min (~1✕10⁻⁴⁵) < M̲ ̲(̲~̲1̲✕̲1̲0̲⁻̲⁴̲³̲)̲ < Max (~2✕10⁻⁴²) 
+
+
+Result(s) matched the target:
+	(5.391247 ± 0.000060)✕10⁻⁴⁴ s
+	 5.391246✕10⁻⁴⁴ s ≈ sqrt_planck_constant ⋅ sqrt_newtonian_constant_of_gravitation / (sqrt_2 ⋅ sqrt_pi ⋅ sqrt_speed_of_light⁵)

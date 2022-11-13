@@ -1,0 +1,22 @@
+{
+  "physical_constants": {
+    "method": "brute_force",
+    "constants_and_powers": {
+      "speed_of_light": [-8, 8],
+      "planck_constant": [-5, 5],
+      "elementary_charge": [-5, 5],
+      "electric_constant": [-5, 5],
+      "newtonian_constant_of_gravitation": [-5, 5]
+    }
+  },
+  "mathematical_constants": {
+    "numbers_and_powers": {
+      "2": [-10, 10],
+      "3": [-10, 10],
+      "5": [-10, 10]
+    },
+    "constants_and_powers": {
+      "pi": [-10, 10]
+    }
+  }
+}

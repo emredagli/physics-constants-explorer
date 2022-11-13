@@ -134,7 +134,7 @@ def get_value_from_scientific_notation(value_str, value_name="Target Value"):
     }
 
 
-def get_suggested_physical_constants_config(candidates_in_range):
+def print_suggested_physical_constants_config(candidates_in_range):
     suggested_config = dict()
     for symbol in candidates_in_range:
         pairs = symbol.strip().split()
@@ -152,4 +152,7 @@ def get_suggested_physical_constants_config(candidates_in_range):
             else:
                 [min_val, max_val] = suggested
                 suggested_config[constant] = [min(min_val, power), max(max_val, power)]
-    return json.dumps(suggested_config, sort_keys=True).replace("],", "],\n")
+    if len(suggested_config.keys()) > 0:
+        print_results = json.dumps(suggested_config, sort_keys=True).replace("],", "],\n")
+        print("\nReduced 'physical_constants.constants_and_powers' config for candidates:\n")
+        print(f"{print_results}\n")

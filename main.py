@@ -7,9 +7,9 @@ from decimal import Decimal, getcontext
 from src.explore_constant import ExploreConstant
 
 if __name__ == '__main__':
-    parser = argparse.ArgumentParser(description='It will search the nearest physical & mathematical representation of '
-                                                 'the dimensional target physical value '
-                                                 'in terms of the given scope & range.',
+    parser = argparse.ArgumentParser(description='It will search the nearest physical and mathematical\n'
+                                                 'representation of the dimensional physical value target\n'
+                                                 'in terms of the given scope and power ranges.',
                                      formatter_class=RawTextHelpFormatter)
     parser.add_argument('-v',
                         '--target-value',
@@ -39,12 +39,30 @@ if __name__ == '__main__':
                              'Some examples: "kg/(s^3 K^4)", "kg s^-3 K^-4", "m/s"')
 
     parser.add_argument('-c',
-                        '--config-path',
+                        '--config-file',
                         required=False,
-                        default='./config/config.json',
+                        default='./src/resources/default_config.json',
                         metavar='\b',
-                        help='Config file relative path.\n'
-                             'If it is not provided the program will use default config file: config/config.json')
+                        help='The config file relative path.\n'
+                             'It is a JSON file that contains the list of physical and mathematical constants\n'
+                             'with their power ranges. This file is validated by "src/resources/config_schema.json"\n'
+                             'If it is not provided the program will use default config file:\n'
+                             './src/resources/default_config.json')
+
+    parser.add_argument('-d',
+                        '--definition-file',
+                        required=False,
+                        default=None,
+                        metavar='\b',
+                        help='Definition file relative path.\n'
+                             'If it is not provided the program use pint library default definition file:\n'
+                             'https://github.com/hgrecco/pint/blob/master/pint/default_en.txt\n'
+                             'And loads default physical constant definitions:\n'
+                             'https://github.com/hgrecco/pint/blob/master/pint/constants_en.txt\n'
+                             'To customize it, please copy these 2 files, make customization on constants_en.txt file\n'
+                             'and reference default_en.txt relative path for this parameter.\n'
+                             'Please look at the examples given on the Readme.md file'
+                        )
 
     args = parser.parse_args()
 
@@ -52,18 +70,19 @@ if __name__ == '__main__':
     getcontext().prec = 50
 
     # Reading config
-    with open(args.config_path) as f:
+    with open(args.config_file) as f:
         config = json.load(f)
 
-    # Enabling pint customization
-    unit_registry_override = 'definition/default_en.txt'
+    # pint customization
+    if args.definition_file is None:
+        unit_registry = pint.UnitRegistry(non_int_type=Decimal)
+    else:
+        unit_registry = pint.UnitRegistry(non_int_type=Decimal, filename=args.definition_file)
 
     explorer = ExploreConstant(
         target_value=args.target_value,
         target_unit=args.target_unit,
         config=config,
-        unit_registry=pint.UnitRegistry(
-            non_int_type=Decimal,
-            filename=unit_registry_override))
+        unit_registry=unit_registry)
 
     explorer.explore()
