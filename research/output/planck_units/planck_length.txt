@@ -1,23 +1,23 @@
-Search the target:
-	(1.616255 ± 0.000018)✕10⁻³⁵ m
+Explore the target quantity:
+	{ 1.616255(18) e-35 } [ m ] = Target
 in terms of the given:
-	physical constants:     
-		sqrt_speed_of_light ^ [-5, -4, -3, -2, -1, 0, 1, 2, 3, 4, 5]
-		sqrt_planck_constant ^ [-2, -1, 0, 1, 2]
-		sqrt_newtonian_constant_of_gravitation ^ [-2, -1, 0, 1, 2]
-		sqrt_boltzmann_constant ^ [-2, -1, 0, 1, 2]
-	mathematical constants: 
-		sqrt_2 ^ [-4, -3, -2, -1, 0, 1, 2, 3, 4]
-		sqrt_pi ^ [-4, -3, -2, -1, 0, 1, 2, 3, 4]
+	dimensional constants:   
+		speed_of_light_in_vacuum (c) ^ [-3, -5/2, -2, -3/2, -1, -1/2, 0, 1/2, 1, 3/2, 2, 5/2, 3]
+		planck_constant (ℎ) ^ [-1, -1/2, 0, 1/2, 1]
+		newtonian_constant_of_gravitation (G) ^ [-1, -1/2, 0, 1/2, 1]
+		boltzmann_constant (k) ^ [-1, -1/2, 0, 1/2, 1]
+	dimensionless constants: 
+		2 ^ [-2, -3/2, -1, -1/2, 0, 1/2, 1, 3/2, 2]
+		pi (π) ^ [-2, -3/2, -1, -1/2, 0, 1/2, 1, 3/2, 2]
 by using brute_force methodology...
 
-Totally, unique 81 mathematical multiplications are calculated & cached!
 Found 1 candidates the resultant unit matched with the target's unit:
-	[ M ] [ m ] = sqrt_planck_constant ⋅ sqrt_newtonian_constant_of_gravitation / sqrt_speed_of_light³
+	{ Q } [ m ] = ℎ¹ᐟ²⋅G¹ᐟ² / c³ᐟ²
 	  ├── 👍 In range!
-	  └──  Min (~4✕10⁻³⁷) < M̲ ̲(̲~̲4̲✕̲1̲0̲⁻̲³̲⁵̲)̲ < Max (~6✕10⁻³⁴) 
+	  └──  Min (~4E-37) < Q (~4E-35) < Max (~6E-34) 
 
+Totally, unique 81 dimensionless multiplications are calculated!
 
-Result(s) matched the target:
-	(1.616255 ± 0.000018)✕10⁻³⁵ m
-	 1.616255✕10⁻³⁵ m ≈ sqrt_planck_constant ⋅ sqrt_newtonian_constant_of_gravitation / (sqrt_2 ⋅ sqrt_pi ⋅ sqrt_speed_of_light³)
+Result(s) that overlap with the target:
+	{ 1.616255(18) e-35 } [ m ] = Target
+	{ 1.616255(18) e-35 } [ m ] = ℎ¹ᐟ²⋅G¹ᐟ² / (2¹ᐟ²⋅π¹ᐟ²⋅c³ᐟ²)

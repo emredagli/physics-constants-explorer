@@ -1,9 +1,11 @@
 import argparse
 import json
 from argparse import RawTextHelpFormatter
+from decimal import getcontext
+from fractions import Fraction
 
 import pint
-from decimal import Decimal, getcontext
+import src.common_library
 from src.explore_constant import ExploreConstant
 
 if __name__ == '__main__':
@@ -17,11 +19,11 @@ if __name__ == '__main__':
                         metavar='\b',
                         help='Target value with scientific notation.\n'
                              'To specify target value with the standard uncertainty please use "concise form".\n'
-                             'For example to provide this value (1.23±0.06)×10^−5, enter "1.23(6)E-5".\n'
-                             'Some examples: "1.23(6)E-5", "8.9875(15)E+16", "4.2(3)E+0"\n'
+                             'For example to execute (1.23±0.06)×10^−5, enter "1.23(6)E-5" or "1.230(60)E-5".\n'
+                             'Some valid examples: "1.23(6)E-5", "8.9875(15)E+16", "4.20(30)E+0"\n'
                              'The target value can also be provided without uncertainty specification:\n'
-                             'In this cae, the program converts "1.23E-5" to "1.235(5)E-5"\n'
-                             'Some examples: "1.23E-5", "8.9875E+16", "4.2E+0"')
+                             'In this cae, the program converts "1.23E-5" to "1.230(10)E-5"\n'
+                             'Some valid examples: "1.23E-5", "8.9875E+16", "4.2E+0"')
 
     parser.add_argument('-u',
                         '--target-unit',
@@ -36,7 +38,7 @@ if __name__ == '__main__':
                              'Luminous intensity - candela (cd)\n'
                              'Mass - kilogram (kg)\n'
                              'Please use ^ symbol to represent power and space for multiplication.\n'
-                             'Some examples: "kg/(s^3 K^4)", "kg s^-3 K^-4", "m/s"')
+                             'Some valid examples: "kg/(s^3 K^4)", "kg s^-3 K^-4", "m/s"')
 
     parser.add_argument('-c',
                         '--config-file',
@@ -52,16 +54,13 @@ if __name__ == '__main__':
     parser.add_argument('-d',
                         '--definition-file',
                         required=False,
-                        default=None,
+                        default='./src/resources/default_definition.json',
                         metavar='\b',
                         help='Definition file relative path.\n'
-                             'If it is not provided the program use pint library default definition file:\n'
-                             'https://github.com/hgrecco/pint/blob/master/pint/default_en.txt\n'
-                             'And loads default physical constant definitions:\n'
-                             'https://github.com/hgrecco/pint/blob/master/pint/constants_en.txt\n'
-                             'To customize it, please copy these 2 files, make customization on constants_en.txt file\n'
-                             'and reference default_en.txt relative path for this parameter.\n'
-                             'Please look at the examples given on the Readme.md file'
+                             'It is a JSON file that contains the definition of physical and mathematical constants.\n'
+                             'This file is validated by "src/resources/definition_schema.json"\n'
+                             'If it is not provided the program will use default definition file:\n'
+                             './src/resources/default_definition.json'
                         )
 
     args = parser.parse_args()
@@ -73,15 +72,24 @@ if __name__ == '__main__':
     with open(args.config_file) as f:
         config = json.load(f)
 
-    # pint customization
-    if args.definition_file is None:
-        unit_registry = pint.UnitRegistry(non_int_type=Decimal)
-    else:
-        unit_registry = pint.UnitRegistry(non_int_type=Decimal, filename=args.definition_file)
+    # Reading definition
+    with open(args.definition_file) as f:
+        definition = json.load(f)
+
+    # pint unit registry
+    unit_registry = pint.UnitRegistry(
+        non_int_type=Fraction,
+        # TODO: add settings for enabling and disabling the cache:
+        #  https://pint.readthedocs.io/en/develop/advanced/performance.html
+        # cache_folder=":auto:"
+        # TODO: check the following line needing
+        # auto_reduce_dimensions=True
+    )
 
     explorer = ExploreConstant(
         target_value=args.target_value,
         target_unit=args.target_unit,
+        definition=definition,
         config=config,
         unit_registry=unit_registry)
 

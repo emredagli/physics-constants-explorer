@@ -1,35 +1,35 @@
-Search the target:
-	(1.4192572923 ± 0.0000000042)✕10⁵ kg²·m⁴/A⁴/s⁶
+Explore the target quantity:
+	{ 1.4192572923(42) e+5 } [ kg²·m⁴/A⁴/s⁶ ] = Target
 in terms of the given:
-	physical constants:     
-		sqrt_speed_of_light ^ [-2, -1, 0, 1, 2]
-		sqrt_planck_constant ^ [-6, -5, -4, -3, -2, -1, 0, 1, 2, 3, 4, 5, 6]
-		sqrt_elementary_charge ^ [-8, -7, -6, -5, -4, -3, -2, -1, 0, 1, 2, 3, 4, 5, 6, 7, 8]
-		sqrt_electron_mass ^ [-2, -1, 0, 1, 2]
-		sqrt_rydberg_constant ^ [-1, 0, 1]
-	mathematical constants: 
-		sqrt_2 ^ [-8, -7, -6, -5, -4, -3, -2, -1, 0, 1, 2, 3, 4, 5, 6, 7, 8]
-		sqrt_pi ^ [-8, -7, -6, -5, -4, -3, -2, -1, 0, 1, 2, 3, 4, 5, 6, 7, 8]
-		sqrt_fine_structure_constant ^ [-8, -7, -6, -5, -4, -3, -2, -1, 0, 1, 2, 3, 4, 5, 6, 7, 8]
+	dimensional constants:   
+		speed_of_light_in_vacuum (c) ^ [-1, -1/2, 0, 1/2, 1]
+		planck_constant (ℎ) ^ [-3, -5/2, -2, -3/2, -1, -1/2, 0, 1/2, 1, 3/2, 2, 5/2, 3]
+		elementary_charge (e) ^ [-4, -7/2, -3, -5/2, -2, -3/2, -1, -1/2, 0, 1/2, 1, 3/2, 2, 5/2, 3, 7/2, 4]
+		electron_mass (m_e) ^ [-1, -1/2, 0, 1/2, 1]
+		rydberg_constant (R_inf) ^ [-1/2, 0, 1/2]
+	dimensionless constants: 
+		2 ^ [-4, -7/2, -3, -5/2, -2, -3/2, -1, -1/2, 0, 1/2, 1, 3/2, 2, 5/2, 3, 7/2, 4]
+		pi (π) ^ [-4, -7/2, -3, -5/2, -2, -3/2, -1, -1/2, 0, 1/2, 1, 3/2, 2, 5/2, 3, 7/2, 4]
+		fine_structure_constant (α) ^ [-4, -7/2, -3, -5/2, -2, -3/2, -1, -1/2, 0, 1/2, 1, 3/2, 2, 5/2, 3, 7/2, 4]
 by using brute_force methodology...
 
-Totally, unique 4913 mathematical multiplications are calculated & cached!
 Found 3 candidates the resultant unit matched with the target's unit:
-	[ M ] [ kg²·m⁴/A⁴/s⁶ ] = sqrt_planck_constant⁵ ⋅ sqrt_rydberg_constant / (sqrt_speed_of_light ⋅ elementary_charge⁴ ⋅ sqrt_electron_mass)
+	{ Q } [ kg²·m⁴/A⁴/s⁶ ] = ℎ⁵ᐟ²⋅R_inf¹ᐟ² / (c¹ᐟ²⋅e⁴⋅m_e¹ᐟ²)
 	  ├── 👍 In range!
-	  └──  Min (~3✕10⁻⁷) < M̲ ̲(̲~̲3̲✕̲1̲0̲⁶̲)̲ < Max (~8✕10¹⁶) 
+	  └──  Min (~3E-7) < Q (~3E+6) < Max (~8E+16) 
 
-	[ M ] [ kg²·m⁴/A⁴/s⁶ ] = planck_constant² / elementary_charge⁴
+	{ Q } [ kg²·m⁴/A⁴/s⁶ ] = ℎ² / e⁴
 	  ├── 👍 In range!
-	  └──  Min (~3✕10⁻⁷) < M̲ ̲(̲~̲7̲✕̲1̲0̲⁸̲)̲ < Max (~8✕10¹⁶) 
+	  └──  Min (~3E-7) < Q (~7E+8) < Max (~8E+16) 
 
-	[ M ] [ kg²·m⁴/A⁴/s⁶ ] = sqrt_speed_of_light ⋅ sqrt_planck_constant³ ⋅ sqrt_electron_mass / (elementary_charge⁴ ⋅ sqrt_rydberg_constant)
+	{ Q } [ kg²·m⁴/A⁴/s⁶ ] = c¹ᐟ²⋅ℎ³ᐟ²⋅m_e¹ᐟ² / (e⁴⋅R_inf¹ᐟ²)
 	  ├── 👍 In range!
-	  └──  Min (~3✕10⁻⁷) < M̲ ̲(̲~̲1̲✕̲1̲0̲¹̲¹̲)̲ < Max (~8✕10¹⁶) 
+	  └──  Min (~3E-7) < Q (~1E+11) < Max (~8E+16) 
 
+Totally, unique 4913 dimensionless multiplications are calculated!
 
-Result(s) matched the target:
-	(1.4192572923 ± 0.0000000042)✕10⁵ kg²·m⁴/A⁴/s⁶
-	 1.4192572924✕10⁵ kg²·m⁴/A⁴/s⁶ ≈ sqrt_2⁵ ⋅ fine_structure_constant ⋅ sqrt_planck_constant⁵ ⋅ sqrt_rydberg_constant / (sqrt_speed_of_light ⋅ elementary_charge⁴ ⋅ sqrt_electron_mass)
-	 1.4192572924✕10⁵ kg²·m⁴/A⁴/s⁶ ≈ 2² ⋅ fine_structure_constant² ⋅ planck_constant² / elementary_charge⁴
-	 1.4192572924✕10⁵ kg²·m⁴/A⁴/s⁶ ≈ sqrt_2³ ⋅ fine_structure_constant³ ⋅ sqrt_speed_of_light ⋅ sqrt_planck_constant³ ⋅ sqrt_electron_mass / (elementary_charge⁴ ⋅ sqrt_rydberg_constant)
+Result(s) that overlap with the target:
+	{ 1.4192572923(42) e+5 } [ kg²·m⁴/A⁴/s⁶ ] = Target
+	{ 1.41925729237(43) e+5 } [ kg²·m⁴/A⁴/s⁶ ] = 2⁵ᐟ²⋅α⋅ℎ⁵ᐟ²⋅R_inf¹ᐟ² / (c¹ᐟ²⋅e⁴⋅m_e¹ᐟ²)
+	{ 1.41925729236(43) e+5 } [ kg²·m⁴/A⁴/s⁶ ] = 2²⋅α²⋅ℎ² / e⁴
+	{ 1.41925729236(86) e+5 } [ kg²·m⁴/A⁴/s⁶ ] = 2³ᐟ²⋅α³⋅c¹ᐟ²⋅ℎ³ᐟ²⋅m_e¹ᐟ² / (e⁴⋅R_inf¹ᐟ²)

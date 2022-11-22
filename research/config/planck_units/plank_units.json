@@ -1,18 +1,13 @@
 {
-  "physical_constants": {
-    "method": "brute_force",
-    "constants_and_powers": {
-      "sqrt_speed_of_light": 5,
-      "sqrt_planck_constant": 2,
-      "sqrt_newtonian_constant_of_gravitation": 2,
-      "sqrt_boltzmann_constant": 2
-    }
+  "method": "brute_force",
+  "dimensional_constants": {
+    "speed_of_light_in_vacuum": {"range": [-3, 3], "step": "1/2"},
+    "planck_constant": {"range": [-1, 1], "step": "1/2"},
+    "newtonian_constant_of_gravitation": {"range": [-1, 1], "step": "1/2"},
+    "boltzmann_constant": {"range": [-1, 1], "step": "1/2"}
   },
-  "mathematical_constants": {
-    "numbers_and_powers": {},
-    "constants_and_powers": {
-      "sqrt_2": 4,
-      "sqrt_pi": 4
-    }
+  "dimensionless_constants": {
+    "2": {"range": [-2, 2], "step": "1/2"},
+    "pi": {"range": [-2, 2], "step": "1/2"}
   }
 }

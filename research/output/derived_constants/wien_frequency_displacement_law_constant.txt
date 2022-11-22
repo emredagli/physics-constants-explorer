@@ -1,45 +1,45 @@
-Search the target:
-	(5.8789257575 ± 0.0000000005)✕10¹⁰ 1/K/s
+Explore the target quantity:
+	{ 5.8789257570(10) e+10 } [ 1/K/s ] = Target
 in terms of the given:
-	physical constants:     
-		speed_of_light ^ [-2, -1, 0, 1, 2]
-		planck_constant ^ [-3, -2, -1, 0, 1, 2, 3]
-		boltzmann_constant ^ [-4, -3, -2, -1, 0, 1, 2, 3, 4]
-		elementary_charge ^ [-4, -3, -2, -1, 0, 1, 2, 3, 4]
-		electric_constant ^ [-2, -1, 0, 1, 2]
-		electron_mass ^ [-1, 0, 1]
-		avogadro_constant ^ [-1, 0, 1]
-	mathematical constants: 
-		pi ^ [-5, -4, -3, -2, -1, 0, 1, 2, 3, 4, 5]
-		wien_u ^ [-1, 0, 1]
+	dimensional constants:   
+		speed_of_light_in_vacuum (c) ^ [-2, -1, 0, 1, 2]
+		planck_constant (ℎ) ^ [-3, -2, -1, 0, 1, 2, 3]
+		boltzmann_constant (k) ^ [-4, -3, -2, -1, 0, 1, 2, 3, 4]
+		elementary_charge (e) ^ [-4, -3, -2, -1, 0, 1, 2, 3, 4]
+		vacuum_electric_permittivity (ε_0) ^ [-2, -1, 0, 1, 2]
+		electron_mass (m_e) ^ [-2, -1, 0, 1, 2]
+		avogadro_constant (N_A) ^ [-1, 0, 1]
+	dimensionless constants: 
 		2 ^ [-3, -2, -1, 0, 1, 2, 3]
 		3 ^ [-1, 0, 1]
 		5 ^ [-1, 0, 1]
+		pi (π) ^ [-5, -4, -3, -2, -1, 0, 1, 2, 3, 4, 5]
+		wien_u ^ [-1, 0, 1]
 by using brute_force methodology...
 
-Totally, unique 2079 mathematical multiplications are calculated & cached!
 Found 5 candidates the resultant unit matched with the target's unit:
-	[ M ] [ 1/K/s ] = boltzmann_constant ⋅ elementary_charge⁴ / (speed_of_light² ⋅ planck_constant³ ⋅ electric_constant²)
+	{ Q } [ 1/K/s ] = k⋅e⁴ / (c²⋅ℎ³⋅ε_0²)
 	  ├── 👍 In range!
-	  └──  Min (~6✕10⁵) < M̲ ̲(̲~̲4̲✕̲1̲0̲⁶̲)̲ < Max (~6✕10¹⁵) 
+	  └──  Min (~6E+5) < Q (~4E+6) < Max (~6E+15) 
 
-	[ M ] [ 1/K/s ] = boltzmann_constant ⋅ elementary_charge² / (speed_of_light ⋅ planck_constant² ⋅ electric_constant)
+	{ Q } [ 1/K/s ] = k⋅e² / (c⋅ℎ²⋅ε_0)
 	  ├── 👍 In range!
-	  └──  Min (~6✕10⁵) < M̲ ̲(̲~̲3̲✕̲1̲0̲⁸̲)̲ < Max (~6✕10¹⁵) 
+	  └──  Min (~6E+5) < Q (~3E+8) < Max (~6E+15) 
 
-	[ M ] [ 1/K/s ] = boltzmann_constant / planck_constant
+	{ Q } [ 1/K/s ] = k / ℎ
 	  ├── 👍 In range!
-	  └──  Min (~6✕10⁵) < M̲ ̲(̲~̲2̲✕̲1̲0̲¹̲⁰̲)̲ < Max (~6✕10¹⁵) 
+	  └──  Min (~6E+5) < Q (~2E+10) < Max (~6E+15) 
 
-	[ M ] [ 1/K/s ] = speed_of_light ⋅ boltzmann_constant ⋅ electric_constant / elementary_charge²
+	{ Q } [ 1/K/s ] = c⋅k⋅ε_0 / e²
 	  ├── 👍 In range!
-	  └──  Min (~6✕10⁵) < M̲ ̲(̲~̲1̲✕̲1̲0̲¹̲²̲)̲ < Max (~6✕10¹⁵) 
+	  └──  Min (~6E+5) < Q (~1E+12) < Max (~6E+15) 
 
-	[ M ] [ 1/K/s ] = speed_of_light² ⋅ planck_constant ⋅ boltzmann_constant ⋅ electric_constant² / elementary_charge⁴
+	{ Q } [ 1/K/s ] = c²⋅ℎ⋅k⋅ε_0² / e⁴
 	  ├── 👍 In range!
-	  └──  Min (~6✕10⁵) < M̲ ̲(̲~̲1̲✕̲1̲0̲¹̲⁴̲)̲ < Max (~6✕10¹⁵) 
+	  └──  Min (~6E+5) < Q (~1E+14) < Max (~6E+15) 
 
+Totally, unique 2079 dimensionless multiplications are calculated!
 
-Result(s) matched the target:
-	(5.8789257575 ± 0.0000000005)✕10¹⁰ 1/K/s
-	 5.8789257576✕10¹⁰ 1/K/s ≈ wien_u ⋅ boltzmann_constant / planck_constant
+Result(s) that overlap with the target:
+	{ 5.8789257570(10) e+10 } [ 1/K/s ] = Target
+	{ 5.8789257576468... e+10 (exact) } [ 1/K/s ] = wien_u⋅k / ℎ

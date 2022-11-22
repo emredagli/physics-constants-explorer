@@ -5,6 +5,7 @@ This work contains exploration of some well-known physical constants and experim
 ## Table of Content
 
 <!-- TOC -->
+
 * [Exploring Derived Physical Constants](#exploring-derived-physical-constants)
   * [Stefan–Boltzmann Constant](#stefanboltzmann-constant)
   * [Rydberg Constant](#rydberg-constant)
@@ -40,6 +41,7 @@ This work contains exploration of some well-known physical constants and experim
   * [Libraries & Documentation](#libraries--documentation)
   * [Physical Constants](#physical-constants)
 * [Notes](#notes)
+
 <!-- TOC -->
 
 ## Exploring Derived Physical Constants

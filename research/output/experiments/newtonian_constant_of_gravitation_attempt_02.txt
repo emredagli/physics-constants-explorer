@@ -1,62 +1,62 @@
-Search the target:
-	(6.67430 ± 0.00015)✕10⁻¹¹ m³/kg/s²
+Explore the target quantity:
+	{ 6.67430(15) e-11 } [ m³/kg/s² ] = Target
 in terms of the given:
-	physical constants:     
-		speed_of_light ^ [-8, -7, -6, -5, -4, -3, -2, -1, 0, 1, 2, 3, 4, 5, 6, 7, 8]
-		planck_constant ^ [-8, -7, -6, -5, -4, -3, -2, -1, 0, 1, 2, 3, 4, 5, 6, 7, 8]
-		elementary_charge ^ [-8, -7, -6, -5, -4, -3, -2, -1, 0, 1, 2, 3, 4, 5, 6, 7, 8]
-		electron_mass ^ [-8, -7, -6, -5, -4, -3, -2, -1, 0, 1, 2, 3, 4, 5, 6, 7, 8]
-		sqrt_mc_to_ec_ratio ^ [-8, -7, -6, -5, -4, -3, -2, -1, 0, 1, 2, 3, 4, 5, 6, 7, 8]
-	mathematical constants: 
-		pi ^ [-4, -3, -2, -1, 0, 1, 2, 3, 4]
-		proton_to_electron_mass_ratio ^ [-10, -9, -8, -7, -6, -5, -4, -3, -2, -1, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
-		fine_structure_constant ^ [-4, -3, -2, -1, 0, 1, 2, 3, 4]
+	dimensional constants:   
+		speed_of_light_in_vacuum (c) ^ [-8, -7, -6, -5, -4, -3, -2, -1, 0, 1, 2, 3, 4, 5, 6, 7, 8]
+		planck_constant (ℎ) ^ [-8, -7, -6, -5, -4, -3, -2, -1, 0, 1, 2, 3, 4, 5, 6, 7, 8]
+		elementary_charge (e) ^ [-8, -7, -6, -5, -4, -3, -2, -1, 0, 1, 2, 3, 4, 5, 6, 7, 8]
+		electron_mass (m_e) ^ [-8, -7, -6, -5, -4, -3, -2, -1, 0, 1, 2, 3, 4, 5, 6, 7, 8]
+		mc_to_ec_ratio ^ [-4, -7/2, -3, -5/2, -2, -3/2, -1, -1/2, 0, 1/2, 1, 3/2, 2, 5/2, 3, 7/2, 4]
+	dimensionless constants: 
 		2 ^ [-8, -7, -6, -5, -4, -3, -2, -1, 0, 1, 2, 3, 4, 5, 6, 7, 8]
 		3 ^ [-3, -2, -1, 0, 1, 2, 3]
 		5 ^ [-3, -2, -1, 0, 1, 2, 3]
+		pi (π) ^ [-4, -3, -2, -1, 0, 1, 2, 3, 4]
+		proton_electron_mass_ratio (μ) ^ [-10, -9, -8, -7, -6, -5, -4, -3, -2, -1, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+		fine_structure_constant (α) ^ [-4, -3, -2, -1, 0, 1, 2, 3, 4]
 by using brute_force methodology...
 
-Totally, unique 1416933 mathematical multiplications are calculated & cached!
 Found 9 candidates the resultant unit matched with the target's unit:
-	[ M ] [ m³/kg/s² ] = speed_of_light ⋅ elementary_charge⁸ ⋅ mc_to_ec_ratio² / (planck_constant³ ⋅ electron_mass²)
+	{ Q } [ m³/kg/s² ] = c⋅e⁸⋅mc_to_ec_ratio² / (ℎ³⋅m_e²)
 	  ├── 👍 In range!
-	  └──  Min (~5✕10⁻⁶⁰) < M̲ ̲(̲~̲1̲✕̲1̲0̲²̲⁸̲)̲ < Max (~9✕10³⁸) 
+	  └──  Min (~5E-60) < Q (~1E+28) < Max (~9E+38) 
 
-	[ M ] [ m³/kg/s² ] = speed_of_light ⋅ elementary_charge⁶ ⋅ sqrt_mc_to_ec_ratio³ / (planck_constant² ⋅ electron_mass²)
+	{ Q } [ m³/kg/s² ] = c⋅e⁶⋅mc_to_ec_ratio³ᐟ² / (ℎ²⋅m_e²)
 	  ├── 👍 In range!
-	  └──  Min (~5✕10⁻⁶⁰) < M̲ ̲(̲~̲7̲✕̲1̲0̲²̲⁹̲)̲ < Max (~9✕10³⁸) 
+	  └──  Min (~5E-60) < Q (~7E+29) < Max (~9E+38) 
 
-	[ M ] [ m³/kg/s² ] = speed_of_light ⋅ elementary_charge⁴ ⋅ mc_to_ec_ratio / (planck_constant ⋅ electron_mass²)
+	{ Q } [ m³/kg/s² ] = c⋅e⁴⋅mc_to_ec_ratio / (ℎ⋅m_e²)
 	  ├── 👍 In range!
-	  └──  Min (~5✕10⁻⁶⁰) < M̲ ̲(̲~̲5̲✕̲1̲0̲³̲¹̲)̲ < Max (~9✕10³⁸) 
+	  └──  Min (~5E-60) < Q (~5E+31) < Max (~9E+38) 
 
-	[ M ] [ m³/kg/s² ] = speed_of_light ⋅ elementary_charge² ⋅ sqrt_mc_to_ec_ratio / electron_mass²
+	{ Q } [ m³/kg/s² ] = c⋅e²⋅mc_to_ec_ratio¹ᐟ² / m_e²
 	  ├── 👍 In range!
-	  └──  Min (~5✕10⁻⁶⁰) < M̲ ̲(̲~̲3̲✕̲1̲0̲³̲³̲)̲ < Max (~9✕10³⁸) 
+	  └──  Min (~5E-60) < Q (~3E+33) < Max (~9E+38) 
 
-	[ M ] [ m³/kg/s² ] = speed_of_light ⋅ planck_constant / electron_mass²
+	{ Q } [ m³/kg/s² ] = c⋅ℎ / m_e²
 	  ├── 👍 In range!
-	  └──  Min (~5✕10⁻⁶⁰) < M̲ ̲(̲~̲2̲✕̲1̲0̲³̲⁵̲)̲ < Max (~9✕10³⁸) 
+	  └──  Min (~5E-60) < Q (~2E+35) < Max (~9E+38) 
 
-	[ M ] [ m³/kg/s² ] = speed_of_light ⋅ planck_constant² / (elementary_charge² ⋅ electron_mass² ⋅ sqrt_mc_to_ec_ratio)
+	{ Q } [ m³/kg/s² ] = c⋅ℎ² / (e²⋅m_e²⋅mc_to_ec_ratio¹ᐟ²)
 	  ├── 👍 In range!
-	  └──  Min (~5✕10⁻⁶⁰) < M̲ ̲(̲~̲2̲✕̲1̲0̲³̲⁷̲)̲ < Max (~9✕10³⁸) 
+	  └──  Min (~5E-60) < Q (~2E+37) < Max (~9E+38) 
 
-	[ M ] [ m³/kg/s² ] = speed_of_light ⋅ planck_constant³ / (elementary_charge⁴ ⋅ electron_mass² ⋅ mc_to_ec_ratio)
+	{ Q } [ m³/kg/s² ] = c⋅ℎ³ / (e⁴⋅m_e²⋅mc_to_ec_ratio)
 	  ├── 👎 Not in range.
-	  └──  Min (~5✕10⁻⁶⁰) < Max (~9✕10³⁸) < M̲ ̲(̲~̲1̲✕̲1̲0̲³̲⁹̲)̲ 
+	  └──  Min (~5E-60) < Max (~9E+38) < Q (~1E+39) 
 
-	[ M ] [ m³/kg/s² ] = speed_of_light ⋅ planck_constant⁴ / (elementary_charge⁶ ⋅ electron_mass² ⋅ sqrt_mc_to_ec_ratio³)
+	{ Q } [ m³/kg/s² ] = c⋅ℎ⁴ / (e⁶⋅m_e²⋅mc_to_ec_ratio³ᐟ²)
 	  ├── 👎 Not in range.
-	  └──  Min (~5✕10⁻⁶⁰) < Max (~9✕10³⁸) < M̲ ̲(̲~̲8̲✕̲1̲0̲⁴̲⁰̲)̲ 
+	  └──  Min (~5E-60) < Max (~9E+38) < Q (~8E+40) 
 
-	[ M ] [ m³/kg/s² ] = speed_of_light ⋅ planck_constant⁵ / (elementary_charge⁸ ⋅ electron_mass² ⋅ mc_to_ec_ratio²)
+	{ Q } [ m³/kg/s² ] = c⋅ℎ⁵ / (e⁸⋅m_e²⋅mc_to_ec_ratio²)
 	  ├── 👎 Not in range.
-	  └──  Min (~5✕10⁻⁶⁰) < Max (~9✕10³⁸) < M̲ ̲(̲~̲5̲✕̲1̲0̲⁴̲²̲)̲ 
+	  └──  Min (~5E-60) < Max (~9E+38) < Q (~5E+42) 
 
+Totally, unique 1416933 dimensionless multiplications are calculated!
 
-Result(s) matched the target:
-	(6.67430 ± 0.00015)✕10⁻¹¹ m³/kg/s²
-	 6.67422✕10⁻¹¹ m³/kg/s² ≈ fine_structure_constant² ⋅ speed_of_light ⋅ elementary_charge⁸ ⋅ mc_to_ec_ratio² / (3 ⋅ 5³ ⋅ pi⁴ ⋅ proton_to_electron_mass_ratio⁹ ⋅ planck_constant³ ⋅ electron_mass²)
-	 6.67422✕10⁻¹¹ m³/kg/s² ≈ 2 ⋅ fine_structure_constant³ ⋅ speed_of_light ⋅ elementary_charge⁶ ⋅ sqrt_mc_to_ec_ratio³ / (3 ⋅ 5³ ⋅ pi⁴ ⋅ proton_to_electron_mass_ratio⁹ ⋅ planck_constant² ⋅ electron_mass²)
-	 6.67422✕10⁻¹¹ m³/kg/s² ≈ 2² ⋅ fine_structure_constant⁴ ⋅ speed_of_light ⋅ elementary_charge⁴ ⋅ mc_to_ec_ratio / (3 ⋅ 5³ ⋅ pi⁴ ⋅ proton_to_electron_mass_ratio⁹ ⋅ planck_constant ⋅ electron_mass²)
+Result(s) that overlap with the target:
+	{ 6.67430(15) e-11 } [ m³/kg/s² ] = Target
+	{ 6.674224928(14) e-11 } [ m³/kg/s² ] = α²⋅c⋅e⁸⋅mc_to_ec_ratio² / (3⋅5³⋅π⁴⋅μ⁹⋅ℎ³⋅m_e²)
+	{ 6.674224928(14) e-11 } [ m³/kg/s² ] = 2⋅α³⋅c⋅e⁶⋅mc_to_ec_ratio³ᐟ² / (3⋅5³⋅π⁴⋅μ⁹⋅ℎ²⋅m_e²)
+	{ 6.674224928(14) e-11 } [ m³/kg/s² ] = 2²⋅α⁴⋅c⋅e⁴⋅mc_to_ec_ratio / (3⋅5³⋅π⁴⋅μ⁹⋅ℎ⋅m_e²)

@@ -1,41 +1,41 @@
-Search the target:
-	(3.76730313668 ± 0.00000000057)✕10² kg·m²/A²/s³
+Explore the target quantity:
+	{ 3.76730313668(57) e+2 } [ kg·m²/A²/s³ ] = Target
 in terms of the given:
-	physical constants:     
-		speed_of_light ^ [-2, -1, 0, 1, 2]
-		planck_constant ^ [-3, -2, -1, 0, 1, 2, 3]
-		boltzmann_constant ^ [-4, -3, -2, -1, 0, 1, 2, 3, 4]
-		elementary_charge ^ [-4, -3, -2, -1, 0, 1, 2, 3, 4]
-		electric_constant ^ [-2, -1, 0, 1, 2]
-		electron_mass ^ [-1, 0, 1]
-		avogadro_constant ^ [-1, 0, 1]
-	mathematical constants: 
-		pi ^ [-5, -4, -3, -2, -1, 0, 1, 2, 3, 4, 5]
-		wien_u ^ [-1, 0, 1]
+	dimensional constants:   
+		speed_of_light_in_vacuum (c) ^ [-2, -1, 0, 1, 2]
+		planck_constant (ℎ) ^ [-3, -2, -1, 0, 1, 2, 3]
+		boltzmann_constant (k) ^ [-4, -3, -2, -1, 0, 1, 2, 3, 4]
+		elementary_charge (e) ^ [-4, -3, -2, -1, 0, 1, 2, 3, 4]
+		vacuum_electric_permittivity (ε_0) ^ [-2, -1, 0, 1, 2]
+		electron_mass (m_e) ^ [-2, -1, 0, 1, 2]
+		avogadro_constant (N_A) ^ [-1, 0, 1]
+	dimensionless constants: 
 		2 ^ [-3, -2, -1, 0, 1, 2, 3]
 		3 ^ [-1, 0, 1]
 		5 ^ [-1, 0, 1]
+		pi (π) ^ [-5, -4, -3, -2, -1, 0, 1, 2, 3, 4, 5]
+		wien_u ^ [-1, 0, 1]
 by using brute_force methodology...
 
-Totally, unique 2079 mathematical multiplications are calculated & cached!
 Found 4 candidates the resultant unit matched with the target's unit:
-	[ M ] [ kg·m²/A²/s³ ] = elementary_charge² / (speed_of_light² ⋅ planck_constant ⋅ electric_constant²)
+	{ Q } [ kg·m²/A²/s³ ] = e² / (c²⋅ℎ⋅ε_0²)
 	  ├── 👍 In range!
-	  └──  Min (~4✕10⁻³) < M̲ ̲(̲~̲5̲✕̲1̲0̲⁰̲)̲ < Max (~4✕10⁷) 
+	  └──  Min (~4E-3) < Q (~5E+0) < Max (~4E+7) 
 
-	[ M ] [ kg·m²/A²/s³ ] = 1 / (speed_of_light ⋅ electric_constant)
+	{ Q } [ kg·m²/A²/s³ ] = 1 / (c⋅ε_0)
 	  ├── 👍 In range!
-	  └──  Min (~4✕10⁻³) < M̲ ̲(̲~̲4̲✕̲1̲0̲²̲)̲ < Max (~4✕10⁷) 
+	  └──  Min (~4E-3) < Q (~4E+2) < Max (~4E+7) 
 
-	[ M ] [ kg·m²/A²/s³ ] = planck_constant / elementary_charge²
+	{ Q } [ kg·m²/A²/s³ ] = ℎ / e²
 	  ├── 👍 In range!
-	  └──  Min (~4✕10⁻³) < M̲ ̲(̲~̲3̲✕̲1̲0̲⁴̲)̲ < Max (~4✕10⁷) 
+	  └──  Min (~4E-3) < Q (~3E+4) < Max (~4E+7) 
 
-	[ M ] [ kg·m²/A²/s³ ] = speed_of_light ⋅ planck_constant² ⋅ electric_constant / elementary_charge⁴
+	{ Q } [ kg·m²/A²/s³ ] = c⋅ℎ²⋅ε_0 / e⁴
 	  ├── 👍 In range!
-	  └──  Min (~4✕10⁻³) < M̲ ̲(̲~̲2̲✕̲1̲0̲⁶̲)̲ < Max (~4✕10⁷) 
+	  └──  Min (~4E-3) < Q (~2E+6) < Max (~4E+7) 
 
+Totally, unique 2079 dimensionless multiplications are calculated!
 
-Result(s) matched the target:
-	(3.76730313668 ± 0.00000000057)✕10² kg·m²/A²/s³
-	 3.76730313668✕10² kg·m²/A²/s³ ≈ 1 / (speed_of_light ⋅ electric_constant)
+Result(s) that overlap with the target:
+	{ 3.76730313668(57) e+2 } [ kg·m²/A²/s³ ] = Target
+	{ 3.76730313667(55) e+2 } [ kg·m²/A²/s³ ] = 1 / (c⋅ε_0)

@@ -1,40 +1,40 @@
-Search the target:
-	(6.67430 ± 0.00015)✕10⁻¹¹ m³/kg/s²
+Explore the target quantity:
+	{ 6.67430(15) e-11 } [ m³/kg/s² ] = Target
 in terms of the given:
-	physical constants:     
-		speed_of_light ^ [-2, -1, 0, 1, 2]
-		planck_constant ^ [-3, -2, -1, 0, 1, 2, 3]
-		boltzmann_constant ^ [-4, -3, -2, -1, 0, 1, 2, 3, 4]
-		elementary_charge ^ [-4, -3, -2, -1, 0, 1, 2, 3, 4]
-		electric_constant ^ [-2, -1, 0, 1, 2]
-		electron_mass ^ [-2, -1, 0, 1, 2]
-		avogadro_constant ^ [-1, 0, 1]
-	mathematical constants: 
-		pi ^ [-5, -4, -3, -2, -1, 0, 1, 2, 3, 4, 5]
-		wien_u ^ [-1, 0, 1]
+	dimensional constants:   
+		speed_of_light_in_vacuum (c) ^ [-2, -1, 0, 1, 2]
+		planck_constant (ℎ) ^ [-3, -2, -1, 0, 1, 2, 3]
+		boltzmann_constant (k) ^ [-4, -3, -2, -1, 0, 1, 2, 3, 4]
+		elementary_charge (e) ^ [-4, -3, -2, -1, 0, 1, 2, 3, 4]
+		vacuum_electric_permittivity (ε_0) ^ [-2, -1, 0, 1, 2]
+		electron_mass (m_e) ^ [-2, -1, 0, 1, 2]
+		avogadro_constant (N_A) ^ [-1, 0, 1]
+	dimensionless constants: 
 		2 ^ [-3, -2, -1, 0, 1, 2, 3]
 		3 ^ [-1, 0, 1]
 		5 ^ [-1, 0, 1]
+		pi (π) ^ [-5, -4, -3, -2, -1, 0, 1, 2, 3, 4, 5]
+		wien_u ^ [-1, 0, 1]
 by using brute_force methodology...
 
-Totally, unique 2079 mathematical multiplications are calculated & cached!
 Found 4 candidates the resultant unit matched with the target's unit:
-	[ M ] [ m³/kg/s² ] = elementary_charge⁴ / (speed_of_light ⋅ planck_constant ⋅ electric_constant² ⋅ electron_mass²)
+	{ Q } [ m³/kg/s² ] = e⁴ / (c⋅ℎ⋅ε_0²⋅m_e²)
 	  ├── 👎 Not in range.
-	  └──  Min (~6✕10⁻¹⁶) < Max (~7✕10⁻⁶) < M̲ ̲(̲~̲5̲✕̲1̲0̲³̲¹̲)̲ 
+	  └──  Min (~6E-16) < Max (~7E-6) < Q (~5E+31) 
 
-	[ M ] [ m³/kg/s² ] = elementary_charge² / (electric_constant ⋅ electron_mass²)
+	{ Q } [ m³/kg/s² ] = e² / (ε_0⋅m_e²)
 	  ├── 👎 Not in range.
-	  └──  Min (~6✕10⁻¹⁶) < Max (~7✕10⁻⁶) < M̲ ̲(̲~̲3̲✕̲1̲0̲³̲³̲)̲ 
+	  └──  Min (~6E-16) < Max (~7E-6) < Q (~3E+33) 
 
-	[ M ] [ m³/kg/s² ] = speed_of_light ⋅ planck_constant / electron_mass²
+	{ Q } [ m³/kg/s² ] = c⋅ℎ / m_e²
 	  ├── 👎 Not in range.
-	  └──  Min (~6✕10⁻¹⁶) < Max (~7✕10⁻⁶) < M̲ ̲(̲~̲2̲✕̲1̲0̲³̲⁵̲)̲ 
+	  └──  Min (~6E-16) < Max (~7E-6) < Q (~2E+35) 
 
-	[ M ] [ m³/kg/s² ] = speed_of_light² ⋅ planck_constant² ⋅ electric_constant / (elementary_charge² ⋅ electron_mass²)
+	{ Q } [ m³/kg/s² ] = c²⋅ℎ²⋅ε_0 / (e²⋅m_e²)
 	  ├── 👎 Not in range.
-	  └──  Min (~6✕10⁻¹⁶) < Max (~7✕10⁻⁶) < M̲ ̲(̲~̲2̲✕̲1̲0̲³̲⁷̲)̲ 
+	  └──  Min (~6E-16) < Max (~7E-6) < Q (~2E+37) 
 
+Totally, unique 2079 dimensionless multiplications are calculated!
 
 No results were found that matching with the target!
 

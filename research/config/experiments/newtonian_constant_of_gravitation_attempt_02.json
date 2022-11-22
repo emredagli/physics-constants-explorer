@@ -1,24 +1,18 @@
 {
-  "physical_constants": {
-    "method": "brute_force",
-    "constants_and_powers": {
-      "speed_of_light": 8,
-      "planck_constant": 8,
-      "elementary_charge": 8,
-      "electron_mass": 8,
-      "sqrt_mc_to_ec_ratio": 8
-    }
+  "method": "brute_force",
+  "dimensional_constants": {
+    "speed_of_light_in_vacuum": 8,
+    "planck_constant": 8,
+    "elementary_charge": 8,
+    "electron_mass": 8,
+    "mc_to_ec_ratio": {"range": [-4, 4], "step": "1/2"}
   },
-  "mathematical_constants": {
-    "numbers_and_powers": {
-      "2": 8,
-      "3": 3,
-      "5": 3
-    },
-    "constants_and_powers": {
-      "pi": 4,
-      "proton_to_electron_mass_ratio": 10,
-      "fine_structure_constant": 4
-    }
+  "dimensionless_constants": {
+    "2": 8,
+    "3": 3,
+    "5": 3,
+    "pi": 4,
+    "proton_electron_mass_ratio": 10,
+    "fine_structure_constant": 4
   }
 }

@@ -1,0 +1,68 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "type": "object",
+    "required": [
+        "dimensional_constants",
+        "dimensionless_constants"
+    ],
+    "properties": {
+        "dimensional_constants": {
+            "type": "object",
+            "minProperties": 1,
+            "additionalProperties": {"$ref": "#/$defs/dimensional_values"}
+        },
+        "dimensionless_constants": {
+            "type": "object",
+            "minProperties": 1,
+            "additionalProperties": {"$ref": "#/$defs/dimensionless_values"}
+        }
+    },
+    "$defs": {
+        "dimensional_values": {
+            "type": "object",
+            "required": [
+                "numeric_value",
+                "unit"
+            ],
+            "properties": {
+                "numeric_value": {
+                    "type": "string",
+                    "pattern": "^([1-9])(\\.\\d*)?(\\(\\d*\\))?([eE][+\\-]?\\d+)?$",
+                    "error_msg": "Please provide 'numeric_value' in scientific notation, for example '1.234(..)e3'"
+                },
+                "unit": {
+                    "type": "string",
+                    "minLength": 1,
+                    "error_msg": "Please provide a valid SI unit composition, for example 'A^2 s^3/kg/m^2'"
+                },
+                "symbol": {
+                   "type": "string"
+                },
+                "info": {
+                   "type": "string"
+                }
+            },
+            "additionalProperties": false
+        },
+        "dimensionless_values": {
+            "type": "object",
+            "required": [
+                "numeric_value"
+            ],
+            "properties": {
+                "numeric_value": {
+                    "type": "string",
+                    "pattern": "^([1-9])(\\.\\d*)?(\\(\\d*\\))?([eE][+\\-]?\\d+)?$",
+                    "error_msg": "Please provide 'numeric_value' in scientific notation, for example '1.234(..)e3'"
+                },
+                "symbol": {
+                   "type": "string"
+                },
+                "info": {
+                   "type": "string"
+                }
+            },
+            "additionalProperties": false
+        }
+    }
+}

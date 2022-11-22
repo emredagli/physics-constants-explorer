@@ -1,42 +1,38 @@
-Search the target:
-	(2.08266982225 ± 0.00000000005)✕10⁵⁶ kg·m³/s⁴
+Explore the target quantity:
+	{ 2.08266982220(10) e+56 } [ kg·m³/s⁴ ] = Target
 in terms of the given:
-	physical constants:     
-		speed_of_light ^ [-8, -7, -6, -5, -4, -3, -2, -1, 0, 1, 2, 3, 4, 5, 6, 7, 8]
-		planck_constant ^ [-5, -4, -3, -2, -1, 0, 1, 2, 3, 4, 5]
-		elementary_charge ^ [-5, -4, -3, -2, -1, 0, 1, 2, 3, 4, 5]
-		electric_constant ^ [-5, -4, -3, -2, -1, 0, 1, 2, 3, 4, 5]
-		newtonian_constant_of_gravitation ^ [-5, -4, -3, -2, -1, 0, 1, 2, 3, 4, 5]
-	mathematical constants: 
-		pi ^ [-10, -9, -8, -7, -6, -5, -4, -3, -2, -1, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+	dimensional constants:   
+		speed_of_light_in_vacuum (c) ^ [-6, -5, -4, -3, -2, -1, 0, 1, 2, 3, 4, 5, 6]
+		planck_constant (ℎ) ^ [-6, -5, -4, -3, -2, -1, 0, 1, 2, 3, 4, 5, 6]
+		elementary_charge (e) ^ [-6, -5, -4, -3, -2, -1, 0, 1, 2, 3, 4, 5, 6]
+		vacuum_electric_permittivity (ε_0) ^ [-6, -5, -4, -3, -2, -1, 0, 1, 2, 3, 4, 5, 6]
+		newtonian_constant_of_gravitation (G) ^ [-6, -5, -4, -3, -2, -1, 0, 1, 2, 3, 4, 5, 6]
+	dimensionless constants: 
 		2 ^ [-10, -9, -8, -7, -6, -5, -4, -3, -2, -1, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 		3 ^ [-10, -9, -8, -7, -6, -5, -4, -3, -2, -1, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
-		5 ^ [-10, -9, -8, -7, -6, -5, -4, -3, -2, -1, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+		5 ^ [-5, -4, -3, -2, -1, 0, 1, 2, 3, 4, 5]
+		pi (π) ^ [-5, -4, -3, -2, -1, 0, 1, 2, 3, 4, 5]
 by using brute_force methodology...
 
-Totally, unique 194481 mathematical multiplications are calculated & cached!
-Found 5 candidates the resultant unit matched with the target's unit:
-	[ M ] [ kg·m³/s⁴ ] = speed_of_light⁴ ⋅ elementary_charge⁴ / (planck_constant² ⋅ electric_constant² ⋅ newtonian_constant_of_gravitation)
+Found 4 candidates the resultant unit matched with the target's unit:
+	{ Q } [ kg·m³/s⁴ ] = c³⋅e⁶ / (ℎ³⋅ε_0³⋅G)
 	  ├── 👍 In range!
-	  └──  Min (~4✕10³⁶) < M̲ ̲(̲~̲2̲✕̲1̲0̲⁵̲⁷̲)̲ < Max (~1✕10⁷⁶) 
+	  └──  Min (~4E+42) < Q (~3E+55) < Max (~1E+70) 
 
-	[ M ] [ kg·m³/s⁴ ] = speed_of_light⁵ ⋅ elementary_charge² / (planck_constant ⋅ electric_constant ⋅ newtonian_constant_of_gravitation)
+	{ Q } [ kg·m³/s⁴ ] = c⁴⋅e⁴ / (ℎ²⋅ε_0²⋅G)
 	  ├── 👍 In range!
-	  └──  Min (~4✕10³⁶) < M̲ ̲(̲~̲2̲✕̲1̲0̲⁵̲⁹̲)̲ < Max (~1✕10⁷⁶) 
+	  └──  Min (~4E+42) < Q (~2E+57) < Max (~1E+70) 
 
-	[ M ] [ kg·m³/s⁴ ] = speed_of_light⁶ / newtonian_constant_of_gravitation
+	{ Q } [ kg·m³/s⁴ ] = c⁵⋅e² / (ℎ⋅ε_0⋅G)
 	  ├── 👍 In range!
-	  └──  Min (~4✕10³⁶) < M̲ ̲(̲~̲1̲✕̲1̲0̲⁶̲¹̲)̲ < Max (~1✕10⁷⁶) 
+	  └──  Min (~4E+42) < Q (~2E+59) < Max (~1E+70) 
 
-	[ M ] [ kg·m³/s⁴ ] = speed_of_light⁷ ⋅ planck_constant ⋅ electric_constant / (elementary_charge² ⋅ newtonian_constant_of_gravitation)
+	{ Q } [ kg·m³/s⁴ ] = c⁶ / G
 	  ├── 👍 In range!
-	  └──  Min (~4✕10³⁶) < M̲ ̲(̲~̲7̲✕̲1̲0̲⁶̲²̲)̲ < Max (~1✕10⁷⁶) 
+	  └──  Min (~4E+42) < Q (~1E+61) < Max (~1E+70) 
 
-	[ M ] [ kg·m³/s⁴ ] = speed_of_light⁸ ⋅ planck_constant² ⋅ electric_constant² / (elementary_charge⁴ ⋅ newtonian_constant_of_gravitation)
-	  ├── 👍 In range!
-	  └──  Min (~4✕10³⁶) < M̲ ̲(̲~̲5̲✕̲1̲0̲⁶̲⁴̲)̲ < Max (~1✕10⁷⁶) 
+Totally, unique 53361 dimensionless multiplications are calculated!
 
-
-Result(s) matched the target:
-	(2.08266982225 ± 0.00000000005)✕10⁵⁶ kg·m³/s⁴
-	 2.08266982228✕10⁵⁶ kg·m³/s⁴ ≈ 3 ⋅ speed_of_light⁶ / (2⁹ ⋅ pi⁵ ⋅ newtonian_constant_of_gravitation)
+Result(s) that overlap with the target:
+	{ 2.08266982220(10) e+56 } [ kg·m³/s⁴ ] = Target
+	{ 2.082670(47) e+56 } [ kg·m³/s⁴ ] = 3⋅c⁶ / (2⁹⋅π⁵⋅G)

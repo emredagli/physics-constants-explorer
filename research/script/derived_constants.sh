@@ -11,8 +11,8 @@ python ./main.py --target-value "1.0973731568160(21)e+7" --target-unit "1/m" > .
 # fine_structure_constant. Ref: https://physics.nist.gov/cgi-bin/cuu/Value?alph|search_for=fine+structure+constant
 python ./main.py --target-value "7.2973525693(11)E-3" --target-unit "" > ./$output_folder/fine_structure_constant.txt &
 
-# magnetic_constant. Ref: https://physics.nist.gov/cgi-bin/cuu/Value?mu0|search_for=vacuum+permeability
-python ./main.py --target-value "1.25663706212(19)e-6" --target-unit "m kg/(A^2 s^2)" > ./$output_folder/magnetic_constant.txt &
+# vacuum_magnetic_permeability. Ref: https://physics.nist.gov/cgi-bin/cuu/Value?mu0|search_for=vacuum+permeability
+python ./main.py --target-value "1.25663706212(19)e-6" --target-unit "m kg/(A^2 s^2)" > ./$output_folder/vacuum_magnetic_permeability.txt &
 
 # molar_gas_constant. Ref: https://physics.nist.gov/cgi-bin/cuu/Value?r|search_for=molar+gas+constant
 python ./main.py --target-value "8.314462618E0" --target-unit "(kg m^2)/(K mol s^2)" > ./$output_folder/molar_gas_constant.txt &

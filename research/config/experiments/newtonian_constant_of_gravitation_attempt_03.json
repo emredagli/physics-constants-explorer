@@ -1,0 +1,18 @@
+{
+  "method": "brute_force",
+  "dimensional_constants": {
+    "speed_of_light_in_vacuum": [-8,2],
+    "planck_constant": [-8, 1],
+    "elementary_charge": [8, 14],
+    "electron_mass": 2,
+    "proton_mass": [-9,0],
+    "vacuum_magnetic_permeability": [-1,5],
+    "vacuum_electric_permittivity": [-7,1]
+  },
+  "dimensionless_constants": {
+    "2": 8,
+    "3": 3,
+    "5": 3,
+    "pi": 4
+  }
+}

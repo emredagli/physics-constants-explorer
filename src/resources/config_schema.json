@@ -2,63 +2,55 @@
     "$schema": "http://json-schema.org/draft-04/schema#",
     "type": "object",
     "required": [
-        "physical_constants",
-        "mathematical_constants"
+        "method",
+        "dimensional_constants",
+        "dimensionless_constants"
     ],
     "additionalProperties": false,
     "properties": {
-        "physical_constants": {
-            "type": "object",
-            "required": [
-                "method",
-                "constants_and_powers"
-            ],
-            "additionalProperties": false,
-            "properties": {
-                "method": {
-                    "enum": ["brute_force"],
-                    "additionalProperties": false
-                },
-                "constants_and_powers": {
-                    "type": "object",
-                    "minProperties": 1,
-                    "additionalProperties": {"$ref": "#/$defs/power_values"}
-                }
-            }
+        "method": {
+            "enum": ["brute_force", "brute_force_with_memorization"],
+            "additionalProperties": false
         },
-        "mathematical_constants": {
+        "dimensional_constants": {
             "type": "object",
-            "required": [
-                "numbers_and_powers",
-                "constants_and_powers"
-            ],
-            "additionalProperties": false,
-            "properties": {
-                "numbers_and_powers": {
-                    "type": "object",
-                    "patternProperties": {
-                        "^[0-9]*$": {"$ref": "#/$defs/power_values"}
-                    },
-                    "additionalProperties": false
-                },
-                "constants_and_powers": {
-                    "type": "object",
-                    "additionalProperties": {"$ref": "#/$defs/power_values"}
-                }
-            }
+            "minProperties": 1,
+            "additionalProperties": {"$ref": "#/$defs/power_values"}
+        },
+        "dimensionless_constants": {
+            "type": "object",
+            "minProperties": 1,
+            "additionalProperties": {"$ref": "#/$defs/power_values"}
         }
     },
     "$defs": {
         "power_values": {
             "oneOf": [
                 {
+                    "type": "object",
+                    "properties": {
+                        "range": {
+                            "type": "array",
+                            "items": {
+                                "type": "number"
+                            },
+                            "minItems": 2,
+                            "maxItems": 2
+                        },
+                        "step": {
+                           "type": "string",
+                           "pattern": "^[\\d/]+$"
+                        },
+                        "additionalProperties": false
+                    }
+                },
+                {
                     "type": "array",
                     "items": {
                         "type": "integer"
                     },
                     "minItems": 2,
-                    "maxItems": 2,
-                    "uniqueItems": false
+                    "maxItems": 2
                 }, {
                     "type": "integer",
                     "minimum": 1
