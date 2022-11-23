@@ -11,7 +11,7 @@ from src.quantity import Quantity
 def validate_input(target_value, target_unit, unit_registry):
     try:
         target = Quantity(
-            numeric_value=target_value,
+            value=target_value,
             power=Fraction(1),
             unit=target_unit.strip(),
             constant_name="Target",

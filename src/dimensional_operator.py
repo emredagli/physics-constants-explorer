@@ -17,8 +17,7 @@ class DimensionalOperator:
         self.dimensionless_numeric_range = dimensionless_numeric_range
         self.matched = dict()
 
-    def _find_matched_by_brute_force(self):
-        powered_quantities = self.scope.powered_quantities.values()
+    def _find_matched_by_brute_force(self, powered_quantities):
         total_len = reduce(operator.mul, map(len, powered_quantities), 1)
         matched = dict()
         target_dimensionality = self.target.get_unit().dimensionality
@@ -34,20 +33,8 @@ class DimensionalOperator:
         self.matched = collections.OrderedDict(sorted(matched.items()))
 
     def _find_matched_by_brute_force_with_memorization(self):
-        grouped_powered_quantities = self.scope.get_grouped_powered_quantities()
-        total_len = reduce(operator.mul, map(len, grouped_powered_quantities), 1)
-        matched = dict()
-        target_dimensionality = self.target.get_unit().dimensionality
-        for quantities in tqdm(product(*grouped_powered_quantities),
-                               desc=f"Combinations of physical constants are being searched...",
-                               unit=" Iteration",
-                               total=total_len):
-            resultant_unit = self.multiply_quantity_units(quantities)
-
-            if resultant_unit == target_dimensionality:
-                expression = Expression(quantities=quantities)
-                matched.setdefault(expression.value, expression)
-        self.matched = collections.OrderedDict(sorted(matched.items()))
+        grouped_quantities = self.scope.get_grouped_quantities(group_max_multiplication_length=1000)
+        self._find_matched_by_brute_force(grouped_quantities)
 
     @staticmethod
     def multiply_quantity_units(quantities):
@@ -56,9 +43,10 @@ class DimensionalOperator:
 
     def find_matched_multiplications(self):
         if self.method == "brute_force":
-            self._find_matched_by_brute_force()
+            self._find_matched_by_brute_force(self.scope.powered_quantities.values())
         elif self.method == "brute_force_with_memorization":
             self._find_matched_by_brute_force_with_memorization()
+        else:
             raise ValueError("Search method (config.method) is invalid!")
 
         if len(self.matched.items()) == 0:
@@ -80,18 +68,18 @@ class DimensionalOperator:
         ratio_min = self.target.value / dimensionless_max
         ratio_max_info = f" Max (~{ratio_max:.0E}) "
         ratio_min_info = f" Min (~{ratio_min:.0E}) "
-        comparison_info = f" Q (~{candidate_value:.0E}) "
+        quantity_info = f" Q (~{candidate_value:.0E}) "
         in_range_info = "👎 Not in range."
         if candidate_value > ratio_min:
             if candidate_value < ratio_max:
                 in_range_info = "👍 In range!"
-                comparison_info = f"{ratio_min_info}<{comparison_info}<{ratio_max_info}"
+                quantity_info = f"{ratio_min_info}<{quantity_info}<{ratio_max_info}"
             else:
-                comparison_info = f"{ratio_min_info}<{ratio_max_info}<{comparison_info}"
+                quantity_info = f"{ratio_min_info}<{ratio_max_info}<{quantity_info}"
         else:
-            comparison_info = f" {comparison_info}<{ratio_min_info}<{ratio_max_info}"
+            quantity_info = f"{quantity_info}<{ratio_min_info}<{ratio_max_info}"
 
         return f"\t  ├── {in_range_info}\n" \
-               f"\t  └── {comparison_info}\n"
+               f"\t  └── {quantity_info}\n"
 
 

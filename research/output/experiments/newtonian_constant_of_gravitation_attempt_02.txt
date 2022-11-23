@@ -14,49 +14,49 @@ in terms of the given:
 		pi (π) ^ [-4, -3, -2, -1, 0, 1, 2, 3, 4]
 		proton_electron_mass_ratio (μ) ^ [-10, -9, -8, -7, -6, -5, -4, -3, -2, -1, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 		fine_structure_constant (α) ^ [-4, -3, -2, -1, 0, 1, 2, 3, 4]
-by using brute_force methodology...
+by using brute_force_with_memorization methodology...
 
 Found 9 candidates the resultant unit matched with the target's unit:
-	{ Q } [ m³/kg/s² ] = c⋅e⁸⋅mc_to_ec_ratio² / (ℎ³⋅m_e²)
+	{ Q } [ m³/kg/s² ] = c⋅mc_to_ec_ratio²⋅e⁸ / (ℎ³⋅m_e²)
 	  ├── 👍 In range!
-	  └──  Min (~5E-60) < Q (~1E+28) < Max (~9E+38) 
+	  └── Min (~5E-60) < Q (~1E+28) < Max (~9E+38)
 
-	{ Q } [ m³/kg/s² ] = c⋅e⁶⋅mc_to_ec_ratio³ᐟ² / (ℎ²⋅m_e²)
+	{ Q } [ m³/kg/s² ] = c⋅mc_to_ec_ratio³ᐟ²⋅e⁶ / (ℎ²⋅m_e²)
 	  ├── 👍 In range!
-	  └──  Min (~5E-60) < Q (~7E+29) < Max (~9E+38) 
+	  └── Min (~5E-60) < Q (~7E+29) < Max (~9E+38)
 
-	{ Q } [ m³/kg/s² ] = c⋅e⁴⋅mc_to_ec_ratio / (ℎ⋅m_e²)
+	{ Q } [ m³/kg/s² ] = c⋅mc_to_ec_ratio⋅e⁴ / (ℎ⋅m_e²)
 	  ├── 👍 In range!
-	  └──  Min (~5E-60) < Q (~5E+31) < Max (~9E+38) 
+	  └── Min (~5E-60) < Q (~5E+31) < Max (~9E+38)
 
-	{ Q } [ m³/kg/s² ] = c⋅e²⋅mc_to_ec_ratio¹ᐟ² / m_e²
+	{ Q } [ m³/kg/s² ] = c⋅mc_to_ec_ratio¹ᐟ²⋅e² / m_e²
 	  ├── 👍 In range!
-	  └──  Min (~5E-60) < Q (~3E+33) < Max (~9E+38) 
+	  └── Min (~5E-60) < Q (~3E+33) < Max (~9E+38)
 
 	{ Q } [ m³/kg/s² ] = c⋅ℎ / m_e²
 	  ├── 👍 In range!
-	  └──  Min (~5E-60) < Q (~2E+35) < Max (~9E+38) 
+	  └── Min (~5E-60) < Q (~2E+35) < Max (~9E+38)
 
-	{ Q } [ m³/kg/s² ] = c⋅ℎ² / (e²⋅m_e²⋅mc_to_ec_ratio¹ᐟ²)
+	{ Q } [ m³/kg/s² ] = c⋅ℎ² / (mc_to_ec_ratio¹ᐟ²⋅m_e²⋅e²)
 	  ├── 👍 In range!
-	  └──  Min (~5E-60) < Q (~2E+37) < Max (~9E+38) 
+	  └── Min (~5E-60) < Q (~2E+37) < Max (~9E+38)
 
-	{ Q } [ m³/kg/s² ] = c⋅ℎ³ / (e⁴⋅m_e²⋅mc_to_ec_ratio)
+	{ Q } [ m³/kg/s² ] = c⋅ℎ³ / (mc_to_ec_ratio⋅m_e²⋅e⁴)
 	  ├── 👎 Not in range.
-	  └──  Min (~5E-60) < Max (~9E+38) < Q (~1E+39) 
+	  └── Min (~5E-60) < Max (~9E+38) < Q (~1E+39)
 
-	{ Q } [ m³/kg/s² ] = c⋅ℎ⁴ / (e⁶⋅m_e²⋅mc_to_ec_ratio³ᐟ²)
+	{ Q } [ m³/kg/s² ] = c⋅ℎ⁴ / (mc_to_ec_ratio³ᐟ²⋅m_e²⋅e⁶)
 	  ├── 👎 Not in range.
-	  └──  Min (~5E-60) < Max (~9E+38) < Q (~8E+40) 
+	  └── Min (~5E-60) < Max (~9E+38) < Q (~8E+40)
 
-	{ Q } [ m³/kg/s² ] = c⋅ℎ⁵ / (e⁸⋅m_e²⋅mc_to_ec_ratio²)
+	{ Q } [ m³/kg/s² ] = c⋅ℎ⁵ / (mc_to_ec_ratio²⋅m_e²⋅e⁸)
 	  ├── 👎 Not in range.
-	  └──  Min (~5E-60) < Max (~9E+38) < Q (~5E+42) 
+	  └── Min (~5E-60) < Max (~9E+38) < Q (~5E+42)
 
 Totally, unique 1416933 dimensionless multiplications are calculated!
 
 Result(s) that overlap with the target:
 	{ 6.67430(15) e-11 } [ m³/kg/s² ] = Target
-	{ 6.674224928(14) e-11 } [ m³/kg/s² ] = α²⋅c⋅e⁸⋅mc_to_ec_ratio² / (3⋅5³⋅π⁴⋅μ⁹⋅ℎ³⋅m_e²)
-	{ 6.674224928(14) e-11 } [ m³/kg/s² ] = 2⋅α³⋅c⋅e⁶⋅mc_to_ec_ratio³ᐟ² / (3⋅5³⋅π⁴⋅μ⁹⋅ℎ²⋅m_e²)
-	{ 6.674224928(14) e-11 } [ m³/kg/s² ] = 2²⋅α⁴⋅c⋅e⁴⋅mc_to_ec_ratio / (3⋅5³⋅π⁴⋅μ⁹⋅ℎ⋅m_e²)
+	{ 6.674224928(14) e-11 } [ m³/kg/s² ] = α²⋅c⋅mc_to_ec_ratio²⋅e⁸ / (3⋅5³⋅π⁴⋅μ⁹⋅ℎ³⋅m_e²)
+	{ 6.674224928(14) e-11 } [ m³/kg/s² ] = 2⋅α³⋅c⋅mc_to_ec_ratio³ᐟ²⋅e⁶ / (3⋅5³⋅π⁴⋅μ⁹⋅ℎ²⋅m_e²)
+	{ 6.674224928(14) e-11 } [ m³/kg/s² ] = 2²⋅α⁴⋅c⋅mc_to_ec_ratio⋅e⁴ / (3⋅5³⋅π⁴⋅μ⁹⋅ℎ⋅m_e²)

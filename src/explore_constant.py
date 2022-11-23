@@ -20,7 +20,7 @@ class ExploreConstant:
 
         self.target = Expression(
             quantities=[Quantity(
-                numeric_value=target_value,
+                value=target_value,
                 power=Fraction(1),
                 unit=target_unit.strip(),
                 constant_name="Target",

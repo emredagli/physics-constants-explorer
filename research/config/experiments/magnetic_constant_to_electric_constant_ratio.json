@@ -1,5 +1,5 @@
 {
-  "method": "brute_force",
+  "method": "brute_force_with_memorization",
   "dimensional_constants": {
     "speed_of_light_in_vacuum": {"range": [-1, 1], "step": "1/2"},
     "planck_constant": {"range": [-3, 3], "step": "1/2"},

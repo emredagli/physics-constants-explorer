@@ -12,33 +12,34 @@ logger = logging.getLogger(__name__)
 
 
 @pytest.mark.parametrize(
-    "constant_name, target_value, target_unit, expected_unit, expected_expression",
+    "constant_name, target_value, target_unit, expected_unit, expected_expressions",
     [
         ("Stefan–Boltzmann constant", "5.670374419E-8", "kg/(s^3 K^4)",
-         "kg/K⁴/s³", "2⋅π⁵⋅k⁴ / (3⋅5⋅c²⋅ℎ³)"),
+         "kg/K⁴/s³", ["2⋅π⁵⋅k⁴ / (3⋅5⋅c²⋅ℎ³)", "2⋅π⁵⋅k⁴ / (3⋅5⋅ℎ³⋅c²)"]),
         ("Rydberg constant", "1.0973731568160(21)e+7", "1/m",
-         "1/m", "e⁴⋅m_e / (2³⋅c⋅ℎ³⋅ε_0²)"),
+         "1/m", ["e⁴⋅m_e / (2³⋅c⋅ℎ³⋅ε_0²)", "e⁴⋅m_e / (2³⋅ℎ³⋅ε_0²⋅c)"]),
         ("Fine structure constant", "7.2973525693(11)E-3", "",
-         "dimensionless", "e² / (2⋅c⋅ℎ⋅ε_0)"),
+         "dimensionless", ["e² / (2⋅c⋅ℎ⋅ε_0)", "e² / (2⋅ℎ⋅ε_0⋅c)"]),
         ("Vacuum magnetic permeability", "1.25663706212(19)e-6", "m kg/(A^2 s^2)",
-         "kg·m/A²/s²", "1 / (c²⋅ε_0)"),
+         "kg·m/A²/s²", ["1 / (c²⋅ε_0)", "1 / (ε_0⋅c²)"]),
         ("Molar gas constant", "8.314462618E0", "(kg m^2)/(K mol s^2)",
-         "kg·m²/K/mol/s²", "k⋅N_A"),
+         "kg·m²/K/mol/s²", ["k⋅N_A", "N_A⋅k"]),
         ("Wien frequency displacement law constant", "5.878925757E+10", "1/(K s)",
-         "1/K/s", "wien_u⋅k / ℎ"),
+         "1/K/s", ["wien_u⋅k / ℎ"]),
         ("Impedance of free space", "3.76730313668(57)E+2", "(kg m^2)/(s^3 A^2)",
-         "kg·m²/A²/s³", "1 / (c⋅ε_0)"),
+         "kg·m²/A²/s³", ["1 / (c⋅ε_0)", "1 / (ε_0⋅c)"]),
         ("Josephson constant", "4.835978484E+14", "(A s^2)/(kg m^2)",
-         "A·s²/kg/m²", "2⋅e / ℎ"),
+         "A·s²/kg/m²", ["2⋅e / ℎ"]),
         ("Von Klitzing constant", "2.581280745E+4", "(kg m^2)/(A^2 s^3)",
-         "kg·m²/A²/s³", "ℎ / e²"),
+         "kg·m²/A²/s³", ["ℎ / e²"]),
     ]
 )
-def test_derived_constants(constant_name, target_value, target_unit, expected_unit, expected_expression):
+@pytest.mark.parametrize("method", ["brute_force", "brute_force_with_memorization"])
+def test_derived_constants(constant_name, target_value, target_unit, expected_unit, expected_expressions, method):
     # GIVEN
     logger.info(f"Testing derived constants{constant_name}")
 
-    config, definition, unit_registry = get_test_resources()
+    config, definition, unit_registry = get_test_resources(method)
 
     # WHEN
     explorer = ExploreConstant(
@@ -61,8 +62,8 @@ def test_derived_constants(constant_name, target_value, target_unit, expected_un
         f"Expected unit for {constant_name} is {expected_unit} , but got {result_unit}"
 
     result_expression = result.get_expression_with_solidus()
-    assert result_expression == expected_expression, \
-        f"Expected expression for {constant_name} is {expected_expression}, but got {result_expression}"
+    assert result_expression in expected_expressions, \
+        f"Expected expression for {constant_name} is not in {expected_expressions}, but got {result_expression}"
 
 
 @pytest.mark.parametrize(
@@ -96,11 +97,12 @@ def test_derived_constants(constant_name, target_value, target_unit, expected_un
         ("wien_u", "2.8214393721220(42)", "")
     ]
 )
-def test_constants_itself(constant_name, target_value, target_unit):
+@pytest.mark.parametrize("method", ["brute_force", "brute_force_with_memorization"])
+def test_constants_itself(constant_name, target_value, target_unit, method):
     # GIVEN
     logger.info(f"Testing constants itself {constant_name}")
     config = {
-      "method": "brute_force",
+      "method": method,
       "dimensional_constants": {
         "speed_of_light_in_vacuum": 1,
         "planck_constant": 1,

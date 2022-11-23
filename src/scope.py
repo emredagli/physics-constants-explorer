@@ -1,12 +1,12 @@
 from decimal import Decimal
 from fractions import Fraction
 import copy
+from itertools import product
+
 from src.quantity import Quantity
 
 
 class Scope:
-    _MAX_GROUP_MULTIPLICATION_LENGTH = 500
-
     def __init__(self, constants, definition, allow_missing_definitions, unit_registry):
         self.ur = unit_registry
         self.powered_quantities = dict()
@@ -18,7 +18,7 @@ class Scope:
             for power in self._get_power_range(power_setting):
                 quantities.append(
                     Quantity(
-                        numeric_value=constant_definition.get('numeric_value'),
+                        value=constant_definition.get('numeric_value'),
                         constant_name=constant_name,
                         symbol=constant_definition.get('symbol', constant_name),
                         power=power,
@@ -55,25 +55,16 @@ class Scope:
     def get_summary(self, spacing='\n\t\t'):
         result = ""
         for constant_name, quantities in self.powered_quantities.items():
-            symbol = quantities[0].symbol
+            symbol = quantities[0].representation[0][1]
             symbol = "" if symbol == constant_name else f" ({symbol})"
-            powers = str(list(map(lambda q: str(q.power), quantities))).replace("'", "")
+            powers = str(list(map(lambda q: str(q.representation[0][2]), quantities))).replace("'", "")
             result += f"{spacing}{constant_name}{symbol} ^ {powers}"
         return result
 
-    def get_grouped_powered_quantities(self):
+    def get_grouped_quantities(self, group_max_multiplication_length):
         result = []
 
         # Step 1 Sort by len
-        # def compare_by_len(a, b):
-        #     if len(a) < len(b):
-        #         return -1
-        #     elif len(a) > len(b):
-        #         return 1
-        #     else:
-        #         return 0
-
-        # powered_quantities = copy.deepcopy(self.powered_quantities)
         quantities_values_list = list(self.powered_quantities.values())
         quantities_values_list.sort(key=len, reverse=True)
 
@@ -94,12 +85,17 @@ class Scope:
         # Step 3, prepare limited length multiplied_quantities
         curr_multiplication = 1
         curr_quantities = []
-        for quantities in powered_quantities_shuffled_reversely:
-            if curr_multiplication * len(quantities) < self._MAX_GROUP_MULTIPLICATION_LENGTH:
-                curr_quantities.append(quantities)
-            else:
-                result.append(self.get_multiped_quantities(curr_quantities))
-                curr_quantities = [quantities]
+        max_index = len(powered_quantities_shuffled_reversely) - 1
+        for index, quantities in enumerate(powered_quantities_shuffled_reversely):
+            curr_quantities.append(quantities)
+            curr_multiplication *= len(quantities)
+
+            if index + 1 <= max_index:
+                if curr_multiplication * len(
+                        powered_quantities_shuffled_reversely[index + 1]) > group_max_multiplication_length:
+                    result.append(self.get_multiped_quantities(curr_quantities))
+                    curr_multiplication = 1
+                    curr_quantities = []
 
         if len(curr_quantities) > 0:
             result.append(self.get_multiped_quantities(curr_quantities))
@@ -108,5 +104,8 @@ class Scope:
         return result
 
     def get_multiped_quantities(self, curr_quantities):
-
-        pass
+        result = []
+        for product_result in product(*curr_quantities):
+            new_quantity = Quantity(value=list(product_result), unit_registry=self.ur)
+            result.append(new_quantity)
+        return result

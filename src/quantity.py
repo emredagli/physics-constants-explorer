@@ -4,20 +4,20 @@ from decimal import Decimal
 
 
 class Quantity:
-    def __init__(self, numeric_value, power, unit_registry, unit, constant_name, symbol, uncertainty=None):
-        if isinstance(numeric_value, list):
-            self.init_with_quantities(numeric_value)
+    # TODO too mant input params
+    def __init__(self, value, power=None, unit_registry=None, unit=None, constant_name=None, symbol=None, uncertainty=None):
+        if isinstance(value, list):
+            self.init_with_quantities(value, unit_registry)
             return
 
-        numeric_value = numeric_value.lower()
-        regex_search = re.search(r"^(?:[1-9])(?:\.\d*)?(\(\d*\))?(?:[eE][+\-]?\d+)?$", numeric_value)
+        value_str = value.lower()
+        regex_search = re.search(r"^(?:[1-9])(?:\.\d*)?(\(\d*\))?(?:[eE][+\-]?\d+)?$", value_str)
 
         if regex_search is not None:
-            value_str = numeric_value
             error_concise = "0"
             error_in_concise_form = regex_search.group(1)
             if error_in_concise_form is not None:
-                value_str = numeric_value.replace(error_in_concise_form, '')
+                value_str = value_str.replace(error_in_concise_form, '')
                 error_concise = error_in_concise_form.replace('(', '').replace(')', '')
             elif uncertainty is not None:
                 last_digits, error_concise = uncertainty
@@ -26,12 +26,12 @@ class Quantity:
                 else:
                     value_str = value_str + last_digits
         else:
-            raise ValueError(f"{constant_name} ({numeric_value}) is not in scientific notation.")
+            raise ValueError(f"{constant_name} ({value_str}) is not in scientific notation.")
 
         power_decimal = Decimal(power.numerator) / Decimal(power.denominator)
-        value = Decimal(value_str)
-        delta = Decimal(error_concise) * Decimal("10") ** Decimal(value.as_tuple().exponent)
-        relative_error = delta / value
+        value_decimal = Decimal(value_str)
+        delta = Decimal(error_concise) * Decimal("10") ** Decimal(value_decimal.as_tuple().exponent)
+        relative_error = delta / value_decimal
 
         if not unit:
             unit = "dimensionless"
@@ -43,25 +43,18 @@ class Quantity:
                              f"(m, s, mol, A, K, cd, kg) or empty string "" for dimensionless targets")
 
         self.unit = q_unit.units ** power
-        self.power = power
-        self.value = value ** power_decimal
+        self.value = value_decimal ** power_decimal
         self.relative_error = relative_error * abs(power_decimal)
-        # TODO converts the following 2 lines to list type!!!!
-        self.constant_name = constant_name
-        # TODO no need to keep symbol
-        self.symbol = symbol
+        self.representation = [(constant_name, symbol, power)]
 
-    def init_with_quantities(self, list_of_quantities):
-        self.unit = list_of_quantities[0].unit
-        self.power = list_of_quantities[0].power
-        self.value = list_of_quantities[0].value
-        self.relative_error = list_of_quantities[0].relative_error
-
-        # for quantities in list_of_quantities[1:]:
-        #     self.unit = q_unit.units ** power
-        #     self.power = power
-        #     self.value = value ** power_decimal
-        #     self.relative_error = relative_error * abs(power_decimal)
-        #     self.constant_name = constant_name
-        #     self.symbol = symbol
+    def init_with_quantities(self, list_of_quantities, unit_registry):
+        self.unit = unit_registry("dimensionless").to_base_units().units
+        self.value = 1
+        self.relative_error = 0
+        self.representation = []
+        for quantity in list_of_quantities:
+            self.unit *= quantity.unit
+            self.value *= quantity.value
+            self.relative_error += quantity.relative_error
+            self.representation += quantity.representation
 

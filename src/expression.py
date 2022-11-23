@@ -66,16 +66,17 @@ class Expression:
         denominator = []
 
         for quantity in self.quantities:
-            symbol = quantity.symbol
-            power = quantity.power
-            if power == 0:
-                continue
-            power_str_abs = str(power).replace("-", "")
-            quantity_item = symbol if power_str_abs == "1" else symbol + power_str_abs.translate(self._POWER_MAP)
-            if power < 0:
-                denominator.append(quantity_item)
-            else:
-                numerator.append(quantity_item)
+            for representation in quantity.representation:
+                symbol = representation[1]
+                power = representation[2]
+                if power == 0:
+                    continue
+                power_str_abs = str(power).replace("-", "")
+                quantity_item = symbol if power_str_abs == "1" else symbol + power_str_abs.translate(self._POWER_MAP)
+                if power < 0:
+                    denominator.append(quantity_item)
+                else:
+                    numerator.append(quantity_item)
 
         numerator_str = "1"
         if len(numerator) > 0:
