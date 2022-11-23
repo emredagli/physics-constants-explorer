@@ -5,7 +5,8 @@ from itertools import product
 
 from tqdm import tqdm
 
-from src.expression import Expression
+from src.quantity import Quantity
+
 
 
 class DimensionalOperator:
@@ -20,7 +21,7 @@ class DimensionalOperator:
     def _find_matched_by_brute_force(self, powered_quantities):
         total_len = reduce(operator.mul, map(len, powered_quantities), 1)
         matched = dict()
-        target_dimensionality = self.target.get_unit().dimensionality
+        target_dimensionality = self.target.unit.dimensionality
         for quantities in tqdm(product(*powered_quantities),
                                desc=f"Combinations of physical constants are being searched...",
                                unit=" Iteration",
@@ -28,8 +29,8 @@ class DimensionalOperator:
             resultant_unit = self.multiply_quantity_units(quantities)
 
             if resultant_unit == target_dimensionality:
-                expression = Expression(quantities=quantities)
-                matched.setdefault(expression.value, expression)
+                quantity = Quantity(value=list(quantities), unit_registry=self.ur)
+                matched.setdefault(quantity.value, quantity)
         self.matched = collections.OrderedDict(sorted(matched.items()))
 
     def _find_matched_by_brute_force_with_memorization(self):

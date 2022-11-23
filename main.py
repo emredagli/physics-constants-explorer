@@ -78,12 +78,7 @@ if __name__ == '__main__':
 
     # pint unit registry
     unit_registry = pint.UnitRegistry(
-        non_int_type=Fraction,
-        # TODO: add settings for enabling and disabling the cache:
-        #  https://pint.readthedocs.io/en/develop/advanced/performance.html
-        # cache_folder=":auto:"
-        # TODO: check the following line needing
-        # auto_reduce_dimensions=True
+        non_int_type=Fraction
     )
 
     explorer = ExploreConstant(

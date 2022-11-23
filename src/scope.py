@@ -1,6 +1,5 @@
 from decimal import Decimal
 from fractions import Fraction
-import copy
 from itertools import product
 
 from src.quantity import Quantity

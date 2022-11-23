@@ -4,7 +4,6 @@ from tqdm import tqdm
 
 from src.dimensional_operator import DimensionalOperator
 from src.dimensionless_operator import DimensionlessOperator
-from src.expression import Expression
 from src.quantity import Quantity
 from src.scope import Scope
 from src.validator_library import validate_input, validate_definition, validate_config
@@ -18,16 +17,14 @@ class ExploreConstant:
         validate_definition(definition, unit_registry)
         validate_config(config, definition)
 
-        self.target = Expression(
-            quantities=[Quantity(
-                value=target_value,
-                power=Fraction(1),
-                unit=target_unit.strip(),
-                constant_name="Target",
-                symbol="Target",
-                uncertainty=("0", "10"),
-                unit_registry=unit_registry)]
-        )
+        self.target = Quantity(
+            value=target_value,
+            power=Fraction(1),
+            unit=target_unit.strip(),
+            constant_name="Target",
+            symbol="Target",
+            uncertainty=("0", "10"),
+            unit_registry=unit_registry)
 
         self.dimensionless = DimensionlessOperator(
             scope=Scope(
@@ -52,7 +49,7 @@ class ExploreConstant:
             unit_registry=self.ur
         )
 
-        self.candidates_in_range = []
+        self.candidates_in_range = None
         self.results = None
 
     def _is_within_the_target_error_range(self, numeric_value, relative_error):
@@ -71,6 +68,8 @@ class ExploreConstant:
 
         results = list()
 
+        self.candidates_in_range = []
+
         self.dimensional.find_matched_multiplications()
 
         self.dimensional.print_matched_results()
@@ -78,25 +77,26 @@ class ExploreConstant:
         if len(self.dimensional.matched.items()) > 0:
             self.dimensionless.prepare_dimensionless_constants()
 
-            for dimensional_numeric_value, dimensional_expression in tqdm(self.dimensional.matched.items(),
-                                                                          desc="Iterating the candidates",
-                                                                          leave=True):
-                if self.dimensionless.is_in_range(self.target.value / dimensional_numeric_value):
-                    self.candidates_in_range.append(dimensional_expression)
-                    for dimensionless_numeric_value, dimensionless_expression in tqdm(
+            for dimensional_value, dimensional_quantity in tqdm(self.dimensional.matched.items(),
+                                                                desc="Iterating the candidates",
+                                                                leave=True):
+                if self.dimensionless.is_in_range(self.target.value / dimensional_value):
+                    self.candidates_in_range.append(dimensional_quantity)
+                    for dimensionless_value, dimensionless_quantity in tqdm(
                             self.dimensionless.constants.items(),
                             desc="Iterating the dimensionless constants",
                             leave=False):
-                        relative_error = dimensionless_expression.relative_error + dimensional_expression.relative_error
-                        numeric_value = dimensionless_numeric_value * dimensional_numeric_value
-                        if self._is_within_the_target_error_range(numeric_value=numeric_value,
+                        relative_error = dimensionless_quantity.relative_error + dimensional_quantity.relative_error
+                        value = dimensionless_value * dimensional_value
+                        if self._is_within_the_target_error_range(numeric_value=value,
                                                                   relative_error=relative_error):
-                            results.append((numeric_value,
-                                            Expression.from_expressions(dimensionless_expression, dimensional_expression)))
+                            results.append((value, Quantity(
+                                value=[dimensionless_quantity, dimensional_quantity],
+                                unit_registry=self.ur
+                            )))
 
         self.results = results
 
-        # print_suggested_dimensional_constants_config(candidates_in_range)
         # Display the results
         if len(results) > 0:
             print(f"Result(s) that overlap with the target:")
@@ -105,8 +105,7 @@ class ExploreConstant:
                 print(f"\t{expression.to_string(self.target)}")
         else:
             print("No results were found that matching with the target!\n")
-            # TODO fix the following part
-            # if len(candidates_in_range) > 0:
-            #     print("But the following candidates were in the given dimensionless range:")
-            #     for dimensional_quantities in candidates_in_range:
-            #         print(f"\t{get_formatted_symbol(dimensional_quantities)}")
+            if len(self.candidates_in_range) > 0:
+                print("But the following candidates were in the given dimensionless range:")
+                for candidate in self.candidates_in_range:
+                    print(f"\t{candidate.}")

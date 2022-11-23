@@ -4,7 +4,8 @@ from itertools import product
 
 from tqdm import tqdm
 
-from src.expression import Expression
+from src.quantity import Quantity
+
 
 
 class DimensionlessOperator:
@@ -37,9 +38,9 @@ class DimensionlessOperator:
                                desc=f"Dimensionless set is being calculated...",
                                unit=" Iteration",
                                total=total_len):
-            expression = Expression(quantities=quantities)
+            quantity = Quantity(value=list(quantities), unit_registry=self.ur)
 
-            constants.setdefault(expression.value, expression)
+            constants.setdefault(quantity.value, quantity)
 
         self.constants = constants
 
