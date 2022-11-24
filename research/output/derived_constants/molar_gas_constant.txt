@@ -1,0 +1,45 @@
+Explore the target quantity:
+	{ 8.3144626180(10)  } [ kg·m²/K/mol/s² ] = Target
+in terms of the given:
+	dimensional constants:   
+		speed_of_light_in_vacuum (c) ^ [-2, -1, 0, 1, 2]
+		planck_constant (ℎ) ^ [-3, -2, -1, 0, 1, 2, 3]
+		boltzmann_constant (k) ^ [-4, -3, -2, -1, 0, 1, 2, 3, 4]
+		elementary_charge (e) ^ [-4, -3, -2, -1, 0, 1, 2, 3, 4]
+		vacuum_electric_permittivity (ε_0) ^ [-2, -1, 0, 1, 2]
+		electron_mass (m_e) ^ [-2, -1, 0, 1, 2]
+		avogadro_constant (N_A) ^ [-1, 0, 1]
+	dimensionless constants: 
+		2 ^ [-3, -2, -1, 0, 1, 2, 3]
+		3 ^ [-1, 0, 1]
+		5 ^ [-1, 0, 1]
+		pi (π) ^ [-5, -4, -3, -2, -1, 0, 1, 2, 3, 4, 5]
+		wien_u ^ [-1, 0, 1]
+by using brute_force methodology...
+
+Found 5 candidates the resultant unit matched with the target's unit:
+	{ Q } [ kg·m²/K/mol/s² ] = k⋅e⁴⋅N_A / (c²⋅ℎ²⋅ε_0²)
+	  ├── 👍 In range!
+	  └──  Min (~8E-5) < Q (~2E-3) < Max (~9E+5) 
+
+	{ Q } [ kg·m²/K/mol/s² ] = k⋅e²⋅N_A / (c⋅ℎ⋅ε_0)
+	  ├── 👍 In range!
+	  └──  Min (~8E-5) < Q (~1E-1) < Max (~9E+5) 
+
+	{ Q } [ kg·m²/K/mol/s² ] = k⋅N_A
+	  ├── 👍 In range!
+	  └──  Min (~8E-5) < Q (~8E+0) < Max (~9E+5) 
+
+	{ Q } [ kg·m²/K/mol/s² ] = c⋅ℎ⋅k⋅ε_0⋅N_A / e²
+	  ├── 👍 In range!
+	  └──  Min (~8E-5) < Q (~6E+2) < Max (~9E+5) 
+
+	{ Q } [ kg·m²/K/mol/s² ] = c²⋅ℎ²⋅k⋅ε_0²⋅N_A / e⁴
+	  ├── 👍 In range!
+	  └──  Min (~8E-5) < Q (~4E+4) < Max (~9E+5) 
+
+Totally, unique 2079 dimensionless multiplications are calculated!
+
+Result(s) that overlap with the target:
+	{ 8.3144626180(10)  } [ kg·m²/K/mol/s² ] = Target
+	{ 8.3144626181532...  (exact) } [ kg·m²/K/mol/s² ] = k⋅N_A

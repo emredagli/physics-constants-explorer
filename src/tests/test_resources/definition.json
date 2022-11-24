@@ -1,0 +1,49 @@
+{
+  "dimensional_constants": {
+    "speed_of_light_in_vacuum": {
+      "numeric_value": "2.99792458e+8",
+      "unit": "m/s",
+      "symbol": "c"
+    },
+    "planck_constant": {
+      "numeric_value": "6.62607015e-34",
+      "unit": "kg m^2/s",
+      "symbol": "ℎ"
+    },
+    "boltzmann_constant": {
+      "numeric_value": "1.380649e-23",
+      "unit": "kg m^2/K/s^2",
+      "symbol": "k"
+    },
+    "elementary_charge": {
+      "numeric_value": "1.602176634e-19",
+      "unit": "C",
+      "symbol": "e"
+    },
+    "vacuum_electric_permittivity": {
+      "numeric_value": "8.8541878128(13)e-12",
+      "unit": "A^2 s^4/kg/m^3",
+      "symbol": "ε_0"
+    },
+    "electron_mass": {
+      "numeric_value": "9.1093837015(28)e-31",
+      "unit": "kg",
+      "symbol": "m_e"
+    },
+    "avogadro_constant": {
+      "numeric_value": "6.02214076e+23",
+      "unit": "mol^-1",
+      "symbol": "N_A"
+    }
+  },
+  "dimensionless_constants": {
+    "pi": {
+      "numeric_value": "3.1415926535897932384626433832795028841971693993751",
+      "symbol": "π"
+    },
+    "wien_u": {
+      "numeric_value": "2.8214393721220788934031913302944851953458817440731",
+      "info": "solution to (u-3)*exp(u)+3 = 0 => u = W(3/exp(3))+3"
+    }
+  }
+}

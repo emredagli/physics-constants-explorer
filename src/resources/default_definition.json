@@ -1,0 +1,154 @@
+{
+  "TODO": [
+    "Check the symbol definitions from books",
+    "Check molar_gas_constant -> https://physics.nist.gov/cgi-bin/cuu/Value?r|search_for=molar_gas_constant",
+    "How eulers_number is represented on physical equations to differentiate elementary charge, some link: https://proofwiki.org/wiki/Symbols:E/Elementary_Charge",
+    "Check other fundamental Mathematical constants like: ",
+    "* https://en.wikipedia.org/wiki/Euler%27s_constant",
+    "* https://en.wikipedia.org/wiki/Euler%27s_constant#Exponential",
+    "like info field, link field can be added to related CODATA link",
+    "* mc_to_ec_ratio check this value representation"
+  ],
+  "dimensional_constants": {
+    "newtonian_constant_of_gravitation": {
+      "numeric_value": "6.67430(15)e-11",
+      "unit": "m^3/kg/s^2",
+      "symbol": "G"
+    },
+    "speed_of_light_in_vacuum": {
+      "numeric_value": "2.99792458e+8",
+      "unit": "m/s",
+      "symbol": "c"
+    },
+    "planck_constant": {
+      "numeric_value": "6.62607015e-34",
+      "unit": "kg m^2/s",
+      "symbol": "ℎ"
+    },
+    "elementary_charge": {
+      "numeric_value": "1.602176634e-19",
+      "unit": "C",
+      "symbol": "e"
+    },
+    "vacuum_magnetic_permeability": {
+      "numeric_value": "1.25663706212(19)e-6",
+      "unit": "kg m/A^2/s^2",
+      "symbol": "µ_0"
+    },
+    "vacuum_electric_permittivity": {
+      "numeric_value": "8.8541878128(13)e-12",
+      "unit": "A^2 s^4/kg/m^3",
+      "symbol": "ε_0"
+    },
+    "boltzmann_constant": {
+      "numeric_value": "1.380649e-23",
+      "unit": "kg m^2/K/s^2",
+      "symbol": "k"
+    },
+    "avogadro_constant": {
+      "numeric_value": "6.02214076e+23",
+      "unit": "mol^-1",
+      "symbol": "N_A"
+    },
+    "molar_gas_constant": {
+      "numeric_value": "8.31446261815324",
+      "unit": "kg m^2/K/mol/s^2",
+      "symbol": "R"
+    },
+    "faraday_constant": {
+      "numeric_value": "9.64853321233100184e+4",
+      "unit": "A s/mol",
+      "symbol": "F"
+    },
+    "rydberg_constant": {
+      "numeric_value": "1.0973731568160(21)e+7",
+      "unit": "m^-1",
+      "symbol": "R_inf"
+    },
+    "atomic_mass_constant": {
+      "numeric_value": "1.66053906660(50)e-27",
+      "unit": "kg",
+      "symbol": "m_u"
+    },
+    "electron_mass": {
+      "numeric_value": "9.1093837015(28)e-31",
+      "unit": "kg",
+      "symbol": "m_e"
+    },
+    "proton_mass": {
+      "numeric_value": "1.67262192369(51)e-27",
+      "unit": "kg",
+      "symbol": "m_p"
+    },
+    "characteristic_impedance_of_vacuum": {
+      "numeric_value": "3.76730313668(57)e+2",
+      "unit": "kg m^2/A^2/s^3",
+      "symbol": "Z_0"
+    },
+    "classical_electron_radius": {
+      "numeric_value": "2.8179403262(13)e-15",
+      "unit": "m",
+      "symbol": "r_e"
+    },
+    "thomson_cross_section": {
+      "numeric_value": "3.76730313668(57)e+2",
+      "unit": "m^2",
+      "symbol": "σ_e"
+    },
+    "josephson_constant": {
+      "numeric_value": "4.83597848416983632447658285054528135353351(1)e+14",
+      "unit": "A s^2/kg/m^2",
+      "symbol": "K_J"
+    },
+    "von_klitzing_constant": {
+      "numeric_value": "2.58128074593045066600455167060874430424572(1)e+4",
+      "unit": "kg m^2/A^2/s^3",
+      "symbol": "R_K"
+    },
+    "magnetic_flux_quantum": {
+      "numeric_value": "2.06783384846192932308111541214749734017154(1)e-15",
+      "unit": "kg m^2/A/s^2",
+      "symbol": "Phi_0"
+    },
+    "conductance_quantum": {
+      "numeric_value": "7.74809172986365064668082332330876394358728(1)e-5",
+      "unit": "A^2 s^3/kg/m^2",
+      "symbol": "G_0"
+    },
+    "mc_to_ec_ratio": {
+      "numeric_value": "1.41925729236(43)e+5",
+      "unit": "kg^2 m^4/A^4/s^6"
+    }
+  },
+  "dimensionless_constants": {
+    "pi": {
+      "numeric_value": "3.1415926535897932384626433832795028841971693993751",
+      "symbol": "π"
+    },
+    "eulers_number": {
+      "numeric_value": "2.7182818284590452353602874713526624977572470936999"
+    },
+    "wien_u": {
+      "numeric_value": "2.8214393721220788934031913302944851953458817440731",
+      "info": "solution to (u-3)*exp(u)+3 = 0 => u = W(3/exp(3))+3"
+    },
+    "fine_structure_constant": {
+      "numeric_value": "7.2973525693(11)e-3",
+      "symbol": "α"
+    },
+    "avogadro_number": {
+      "numeric_value": "6.02214076e+23",
+      "symbol": "N"
+    },
+    "proton_electron_mass_ratio": {
+      "numeric_value": "1.83615267343(11)e+3",
+      "symbol": "μ",
+      "info": "proton-to-electron mass ratio, μ or β"
+    },
+    "electron_g_factor": {
+      "numeric_value": "2.00231930436256(35)",
+      "symbol": "g_e",
+      "info": "Its absolute value is defined here."
+    }
+  }
+}

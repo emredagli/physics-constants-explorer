@@ -1,0 +1,15 @@
+{
+  "method": "brute_force_with_memorization",
+  "dimensional_constants": {
+    "speed_of_light_in_vacuum": {"range": [-1, 1], "step": "1/2"},
+    "planck_constant": {"range": [-3, 3], "step": "1/2"},
+    "elementary_charge": {"range": [-4, 4], "step": "1/2"},
+    "electron_mass": {"range": [-1, 1], "step": "1/2"},
+    "rydberg_constant": {"range": [-0.5, 0.5], "step": "1/2"}
+  },
+  "dimensionless_constants": {
+    "2": {"range": [-4, 4], "step": "1/2"},
+    "pi": {"range": [-4, 4], "step": "1/2"},
+    "fine_structure_constant": {"range": [-4, 4], "step": "1/2"}
+  }
+}

@@ -1,0 +1,45 @@
+Explore the target quantity:
+	{ 7.2973525693(11) e-3 } [ dimensionless ] = Target
+in terms of the given:
+	dimensional constants:   
+		speed_of_light_in_vacuum (c) ^ [-2, -1, 0, 1, 2]
+		planck_constant (ℎ) ^ [-3, -2, -1, 0, 1, 2, 3]
+		boltzmann_constant (k) ^ [-4, -3, -2, -1, 0, 1, 2, 3, 4]
+		elementary_charge (e) ^ [-4, -3, -2, -1, 0, 1, 2, 3, 4]
+		vacuum_electric_permittivity (ε_0) ^ [-2, -1, 0, 1, 2]
+		electron_mass (m_e) ^ [-2, -1, 0, 1, 2]
+		avogadro_constant (N_A) ^ [-1, 0, 1]
+	dimensionless constants: 
+		2 ^ [-3, -2, -1, 0, 1, 2, 3]
+		3 ^ [-1, 0, 1]
+		5 ^ [-1, 0, 1]
+		pi (π) ^ [-5, -4, -3, -2, -1, 0, 1, 2, 3, 4, 5]
+		wien_u ^ [-1, 0, 1]
+by using brute_force methodology...
+
+Found 5 candidates the resultant unit matched with the target's unit:
+	{ Q } [ dimensionless ] = e⁴ / (c²⋅ℎ²⋅ε_0²)
+	  ├── 👍 In range!
+	  └──  Min (~7E-8) < Q (~2E-4) < Max (~8E+2) 
+
+	{ Q } [ dimensionless ] = e² / (c⋅ℎ⋅ε_0)
+	  ├── 👍 In range!
+	  └──  Min (~7E-8) < Q (~1E-2) < Max (~8E+2) 
+
+	{ Q } [ dimensionless ] = 1
+	  ├── 👍 In range!
+	  └──  Min (~7E-8) < Q (~1E+0) < Max (~8E+2) 
+
+	{ Q } [ dimensionless ] = c⋅ℎ⋅ε_0 / e²
+	  ├── 👍 In range!
+	  └──  Min (~7E-8) < Q (~7E+1) < Max (~8E+2) 
+
+	{ Q } [ dimensionless ] = c²⋅ℎ²⋅ε_0² / e⁴
+	  ├── 👎 Not in range.
+	  └──  Min (~7E-8) < Max (~8E+2) < Q (~5E+3) 
+
+Totally, unique 2079 dimensionless multiplications are calculated!
+
+Result(s) that overlap with the target:
+	{ 7.2973525693(11) e-3 } [ dimensionless ] = Target
+	{ 7.2973525693(11) e-3 } [ dimensionless ] = e² / (2⋅c⋅ℎ⋅ε_0)

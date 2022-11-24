@@ -1,0 +1,16 @@
+{
+  "method": "brute_force",
+  "dimensional_constants": {
+    "speed_of_light_in_vacuum": [-6, 6],
+    "planck_constant": [-6, 6],
+    "elementary_charge": [-6, 6],
+    "vacuum_electric_permittivity": [-6, 6],
+    "newtonian_constant_of_gravitation": [-6, 6]
+  },
+  "dimensionless_constants": {
+    "2": [-10, 10],
+    "3": [-10, 10],
+    "5": [-5, 5],
+    "pi": [-5, 5]
+  }
+}

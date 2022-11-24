@@ -1,100 +1,111 @@
-from decimal import ROUND_HALF_UP
+from fractions import Fraction
 
 from tqdm import tqdm
 
-from src.common_library import get_formatted_symbol, get_value_from_scientific_notation, \
-    get_decimal_with_power_10
-from src.mathematical_constants import MathematicalConstants
-from src.physical_constants import PhysicalConstants
-from src.validator_library import validate_input, validate_config
+from src.dimensional_operator import DimensionalOperator
+from src.dimensionless_operator import DimensionlessOperator
+from src.quantity import Quantity
+from src.scope import Scope
+from src.validator_library import validate_input, validate_definition, validate_config
 
 
 class ExploreConstant:
-    def __init__(self, target_value, target_unit, config, unit_registry):
+    def __init__(self, target_value, target_unit, definition, config, unit_registry):
         self.ur = unit_registry
+
         validate_input(target_value, target_unit, unit_registry)
-        validate_config(config, unit_registry)
+        validate_definition(definition, unit_registry)
+        validate_config(config, definition)
 
-        if not target_unit.strip():
-            target_unit = "dimensionless"
+        self.target = Quantity(
+            value=target_value,
+            power=Fraction(1),
+            unit=target_unit.strip(),
+            constant_name="Target",
+            symbol="Target",
+            uncertainty=("0", "10"),
+            unit_registry=unit_registry)
 
-        self._init_target(target_value, target_unit)
-
-        self.pc = PhysicalConstants(
-            config=config.get("physical_constants"),
+        self.dimensionless = DimensionlessOperator(
+            scope=Scope(
+                constants=config.get("dimensionless_constants"),
+                definition=definition.get("dimensionless_constants"),
+                allow_missing_definitions=True,
+                unit_registry=unit_registry
+            ),
             unit_registry=self.ur
         )
-        self.mc = MathematicalConstants(
-            config=config.get("mathematical_constants"),
+
+        self.dimensional = DimensionalOperator(
+            method=config.get("method"),
+            scope=Scope(
+                constants=config.get("dimensional_constants"),
+                definition=definition.get("dimensional_constants"),
+                allow_missing_definitions=False,
+                unit_registry=unit_registry
+            ),
+            target=self.target,
+            dimensionless_numeric_range=self.dimensionless.numeric_range,
             unit_registry=self.ur
         )
+
+        self.candidates_in_range = None
         self.results = None
 
-    def _is_within_the_target_error_range(self, value):
-        return self.target_min <= value <= self.target_max
+    def _is_within_the_target_error_range(self, numeric_value, relative_error):
+        return 1 - relative_error - self.target.relative_error \
+               <= self.target.value / numeric_value <= \
+               1 + relative_error + self.target.relative_error
 
     def explore(self):
 
-        print(f"Search the target:\n"
-              f"\t{self.target_str}\n"
+        print(f"Explore the target quantity:\n"
+              f"\t{self.target.to_string()}\n"
               f"in terms of the given:\n"
-              f"\tphysical constants:     {self.pc.get_keys_definition()}\n"
-              f"\tmathematical constants: {self.mc.get_keys_definition()}\n"
-              f"by using {self.pc.method} methodology...\n")
+              f"\tdimensional constants:   {self.dimensional.scope.get_summary()}\n"
+              f"\tdimensionless constants: {self.dimensionless.scope.get_summary()}\n"
+              f"by using {self.dimensional.method} methodology...\n")
 
         results = list()
 
-        self.pc.find_matched_multiplications(self.target_dimensional.dimensionality)
+        self.candidates_in_range = []
 
-        candidates_in_range = []
-        if len(self.pc.matched.items()) > 0:
-            self.mc.prepare_mathematical_constants()
+        self.dimensional.find_matched_multiplications()
 
-            self.pc.print_matched_results(self.target, self.mc.min_value, self.mc.max_value)
+        self.dimensional.print_matched_results()
 
-            for pc_value, pc_symbol in tqdm(self.pc.matched.items(),
-                                            desc="Iterating the candidates",
-                                            leave=True):
-                if self.mc.is_in_range(self.target / pc_value):
-                    candidates_in_range.append(pc_symbol)
-                    for mc_value, mc_symbol in tqdm(self.mc.constants.items(),
-                                                    desc="Iterating the mathematical constants",
-                                                    leave=False):
-                        resultant = mc_value * pc_value
-                        if self._is_within_the_target_error_range(resultant):
-                            results.append((resultant, get_formatted_symbol(mc_symbol + " " + pc_symbol)))
+        if len(self.dimensional.matched.items()) > 0:
+            self.dimensionless.prepare_dimensionless_constants()
+
+            for dimensional_value, dimensional_quantity in tqdm(self.dimensional.matched.items(),
+                                                                desc="Iterating the candidates",
+                                                                leave=True):
+                if self.dimensionless.is_in_range(self.target.value / dimensional_value):
+                    self.candidates_in_range.append(dimensional_quantity)
+                    for dimensionless_value, dimensionless_quantity in tqdm(
+                            self.dimensionless.constants.items(),
+                            desc="Iterating the dimensionless constants",
+                            leave=False):
+                        relative_error = dimensionless_quantity.relative_error + dimensional_quantity.relative_error
+                        value = dimensionless_value * dimensional_value
+                        if self._is_within_the_target_error_range(numeric_value=value,
+                                                                  relative_error=relative_error):
+                            results.append((value, Quantity(
+                                value=[dimensionless_quantity, dimensional_quantity],
+                                unit_registry=self.ur
+                            )))
 
         self.results = results
 
         # Display the results
         if len(results) > 0:
-            # print("\nReduced 'physical_constants.constants_and_powers' config for candidates:\n")
-            # print(f"{get_suggested_physical_constants_config(candidates_in_range)}\n")
-
-            print(f"Result(s) matched the target:")
-            print(f"\t{self.target_str}")
-            for resultant, formatted_symbol in results:
-                print(
-                    f"\t {get_decimal_with_power_10(resultant.quantize(self.target, rounding=ROUND_HALF_UP))} {self.unit_str} ≈ {formatted_symbol}")
+            print(f"Result(s) that overlap with the target:")
+            print(f"\t{self.target.to_string()}")
+            for resultant_numeric_value, expression in results:
+                print(f"\t{expression.to_string(self.target)}")
         else:
             print("No results were found that matching with the target!\n")
-            if len(candidates_in_range) > 0:
-                print("But the following candidates were in the given mathematical range:")
-                for pc_symbol in candidates_in_range:
-                    print(f"\t{get_formatted_symbol(pc_symbol)}")
-                # print("\nReduced 'physical_constants.constants_and_powers' config for these candidates:\n")
-                # print(f"{get_suggested_physical_constants_config(candidates_in_range)}")
-
-    def _init_target(self, target_value, target_unit):
-        value = get_value_from_scientific_notation(target_value)
-        self.target = value.get("value")
-        self.target_error = value.get("error")
-        self.target_max = value.get("max")
-        self.target_min = value.get("min")
-        self.target_dimensional = self.ur(str(self.target) + " " + target_unit).to_base_units()
-
-        unit_str = f"{self.target_dimensional.u:~P}"
-        self.unit_str = unit_str
-        unit_str = unit_str if unit_str else "dimensionless"
-
-        self.target_str = f"{value.get('value_with_error_str')} {unit_str}"
+            if len(self.candidates_in_range) > 0:
+                print("But the following candidates were in the given dimensionless range:")
+                for candidate in self.candidates_in_range:
+                    print(f"\t{candidate.to_string()}")

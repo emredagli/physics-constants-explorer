@@ -159,8 +159,10 @@ cython_debug/
 #  option (not recommended) you can uncomment the following to ignore the entire idea folder.
 .idea/
 
-playground/
-playground/*
+# Ignored files & directories
+*-ignored.*
+*-ignored/
 
-scripts/experiments/
-scripts/experiments/*
+#.idea/
+.DS_STORE
+.pytest_cache

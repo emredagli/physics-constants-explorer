@@ -1,0 +1,38 @@
+Explore the target quantity:
+	{ 2.08266982220(10) e+56 } [ kg·m³/s⁴ ] = Target
+in terms of the given:
+	dimensional constants:   
+		speed_of_light_in_vacuum (c) ^ [-6, -5, -4, -3, -2, -1, 0, 1, 2, 3, 4, 5, 6]
+		planck_constant (ℎ) ^ [-6, -5, -4, -3, -2, -1, 0, 1, 2, 3, 4, 5, 6]
+		elementary_charge (e) ^ [-6, -5, -4, -3, -2, -1, 0, 1, 2, 3, 4, 5, 6]
+		vacuum_electric_permittivity (ε_0) ^ [-6, -5, -4, -3, -2, -1, 0, 1, 2, 3, 4, 5, 6]
+		newtonian_constant_of_gravitation (G) ^ [-6, -5, -4, -3, -2, -1, 0, 1, 2, 3, 4, 5, 6]
+	dimensionless constants: 
+		2 ^ [-10, -9, -8, -7, -6, -5, -4, -3, -2, -1, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+		3 ^ [-10, -9, -8, -7, -6, -5, -4, -3, -2, -1, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+		5 ^ [-5, -4, -3, -2, -1, 0, 1, 2, 3, 4, 5]
+		pi (π) ^ [-5, -4, -3, -2, -1, 0, 1, 2, 3, 4, 5]
+by using brute_force methodology...
+
+Found 4 candidates the resultant unit matched with the target's unit:
+	{ Q } [ kg·m³/s⁴ ] = c³⋅e⁶ / (ℎ³⋅ε_0³⋅G)
+	  ├── 👍 In range!
+	  └──  Min (~4E+42) < Q (~3E+55) < Max (~1E+70) 
+
+	{ Q } [ kg·m³/s⁴ ] = c⁴⋅e⁴ / (ℎ²⋅ε_0²⋅G)
+	  ├── 👍 In range!
+	  └──  Min (~4E+42) < Q (~2E+57) < Max (~1E+70) 
+
+	{ Q } [ kg·m³/s⁴ ] = c⁵⋅e² / (ℎ⋅ε_0⋅G)
+	  ├── 👍 In range!
+	  └──  Min (~4E+42) < Q (~2E+59) < Max (~1E+70) 
+
+	{ Q } [ kg·m³/s⁴ ] = c⁶ / G
+	  ├── 👍 In range!
+	  └──  Min (~4E+42) < Q (~1E+61) < Max (~1E+70) 
+
+Totally, unique 53361 dimensionless multiplications are calculated!
+
+Result(s) that overlap with the target:
+	{ 2.08266982220(10) e+56 } [ kg·m³/s⁴ ] = Target
+	{ 2.082670(47) e+56 } [ kg·m³/s⁴ ] = 3⋅c⁶ / (2⁹⋅π⁵⋅G)
