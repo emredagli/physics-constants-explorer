@@ -20,19 +20,19 @@ by using brute_force methodology...
 Found 4 candidates the resultant unit matched with the target's unit:
 	{ Q } [ 1/m ] = e⁴⋅m_e / (c⋅ℎ³⋅ε_0²)
 	  ├── 👍 In range!
-	  └──  Min (~1E+2) < Q (~9E+7) < Max (~1E+12) 
+	  └── Min (~1E+2) < Q (~9E+7) < Max (~1E+12) 
 
 	{ Q } [ 1/m ] = e²⋅m_e / (ℎ²⋅ε_0)
 	  ├── 👍 In range!
-	  └──  Min (~1E+2) < Q (~6E+9) < Max (~1E+12) 
+	  └── Min (~1E+2) < Q (~6E+9) < Max (~1E+12) 
 
 	{ Q } [ 1/m ] = c⋅m_e / ℎ
 	  ├── 👍 In range!
-	  └──  Min (~1E+2) < Q (~4E+11) < Max (~1E+12) 
+	  └── Min (~1E+2) < Q (~4E+11) < Max (~1E+12) 
 
 	{ Q } [ 1/m ] = c²⋅ε_0⋅m_e / e²
 	  ├── 👎 Not in range.
-	  └──  Min (~1E+2) < Max (~1E+12) < Q (~3E+13) 
+	  └── Min (~1E+2) < Max (~1E+12) < Q (~3E+13) 
 
 Totally, unique 2079 dimensionless multiplications are calculated!
 

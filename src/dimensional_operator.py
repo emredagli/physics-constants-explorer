@@ -23,7 +23,7 @@ class DimensionalOperator:
         matched = dict()
         target_dimensionality = self.target.unit.dimensionality
         for quantities in tqdm(product(*powered_quantities),
-                               desc=f"Combinations of physical constants are being searched...",
+                               desc=f"Combinations of dimensional constants are being searched...",
                                unit=" Iteration",
                                total=total_len):
             resultant_unit = self.multiply_quantity_units(quantities)
@@ -81,6 +81,6 @@ class DimensionalOperator:
             quantity_info = f"{quantity_info}<{ratio_min_info}<{ratio_max_info}"
 
         return f"\t  ├── {in_range_info}\n" \
-               f"\t  └── {quantity_info}\n"
+               f"\t  └──{quantity_info}\n"
 
 

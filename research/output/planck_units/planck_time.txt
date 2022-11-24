@@ -14,7 +14,7 @@ by using brute_force methodology...
 Found 1 candidates the resultant unit matched with the target's unit:
 	{ Q } [ s ] = ℎ¹ᐟ²⋅G¹ᐟ² / c⁵ᐟ²
 	  ├── 👍 In range!
-	  └──  Min (~1E-45) < Q (~1E-43) < Max (~2E-42) 
+	  └── Min (~1E-45) < Q (~1E-43) < Max (~2E-42) 
 
 Totally, unique 81 dimensionless multiplications are calculated!
 

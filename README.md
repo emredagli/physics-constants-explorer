@@ -1,38 +1,38 @@
 # Physics Constants Explorer
 
-This work contains research and a python program to explore physical constants formulation in terms of given other physical and mathematical constants.
+This work contains a python program to explore physical constants in terms of given dimensional and dimensionless constants. 
 
-The researches and explorations by using this program can be examined under [research](research) folder.
+The exploration of some well-known physical constants by using this program is summarized under [research](research) folder.
 
 ## Table of Content
 
 <!-- TOC -->
-* [Motivation & Concept](#motivation--concept)
-* [Methodology](#methodology)
-  * [Technical Reasons](#technical-reasons)
-* [Python Installation](#python-installation)
-* [Running the Program](#running-the-program)
-  * [The Definition File](#the-definition-file)
-    * [Dimensional Constants Collection](#dimensional-constants-collection)
-    * [Dimensionless Constants Collection](#dimensionless-constants-collection)
-  * [The Config File](#the-config-file)
-  * [The Program Inputs](#the-program-inputs)
-* [The Program Outputs](#the-program-outputs)
-  * [Store Results into a File](#store-results-into-a-file)
-  * [Output Format](#output-format)
-    * [Summarizing the Inputs](#summarizing-the-inputs)
-    * [Listing the Candidates](#listing-the-candidates)
-    * [Matched Results](#matched-results)
-* [Tests](#tests)
-* [Researches](#researches)
-* [Resources](#resources)
-  * [Libraries & Documentation](#libraries--documentation)
-* [Future Work](#future-work)
-* [Behind the Scene](#behind-the-scene)
-* [Acknowledgement & Gratitude](#acknowledgement--gratitude)
+* [1 Motivation & Concept](#1-motivation--concept)
+* [2 Methodology](#2-methodology)
+  * [2.1 Technical Problems & Solutions](#21-technical-problems--solutions)
+* [3 Python Installation](#3-python-installation)
+* [4 The Program Usage](#4-the-program-usage)
+  * [4.1 Running The Program](#41-running-the-program)
+    * [4.1.1 The Inputs](#411-the-inputs)
+  * [4.2 The Definition File](#42-the-definition-file)
+    * [4.2.1 Dimensional Constants Collection](#421-dimensional-constants-collection)
+    * [4.2.2 Dimensionless Constants Collection](#422-dimensionless-constants-collection)
+  * [4.3 The Config File](#43-the-config-file)
+    * [4.3.1 The Power Ranges](#431-the-power-ranges)
+    * [4.3.2 The Execution Method](#432-the-execution-method)
+* [5 The Program Outputs](#5-the-program-outputs)
+  * [5.1 Store Results into a File](#51-store-results-into-a-file)
+  * [5.2 Output Format](#52-output-format)
+    * [5.2.1 Summarizing the Inputs](#521-summarizing-the-inputs)
+    * [5.2.2 Listing the Candidates](#522-listing-the-candidates)
+    * [5.2.3 Matched Results](#523-matched-results)
+* [6 Tests](#6-tests)
+* [7 Researches](#7-researches)
+* [8 Resources & Libraries](#8-resources--libraries)
+* [9 Future Work](#9-future-work)
 <!-- TOC -->
 
-## Motivation & Concept
+## 1 Motivation & Concept
 
 Most of the relations in physics are observed from experiments and constants in the relations measured by instruments within the given error range.
 
@@ -72,15 +72,15 @@ Formulation of $\sigma$ was [theoretically derived](https://edisciplinas.usp.br/
 Now, let's think oppositely and assume we have a function which takes:
 
 * Target value: 5.670374419E-8 (in [Scientific Notation](https://en.wikipedia.org/wiki/Scientific_notation))
-* Target unit: $\mathrm{kg}\\times\mathrm{s}^{-3}\\times\mathrm{K}^{-4}$
+* Target unit: $\mathrm{kg}\cdot\mathrm{s}^{-3}\cdot\mathrm{K}^{-4}$
 * List of physical constants with their units ( $k$, $h$, $c$, ...)
 * List of mathematical constants ( $\pi$, $e$, ...)
 * List of prime numbers (2, 3, 5, ...)
 
-and returns the matched formula(s), so that:
+and returns the matched multiplications, so that:
 
 * The target unit is "exactly" matched with the unit of formula and,
-* The target value is matched with the resultant numeric value (within the given error range).
+* The target value overlaps with the resultant numeric value within the given error range.
 
 Example Output:
 
@@ -88,81 +88,89 @@ Example Output:
 { 5.6703744191844... e-8 (exact) } [ kg/K⁴/s³ ] = 2⋅π⁵⋅k⁴ / (3⋅5⋅c²⋅ℎ³)
 ```
 
-Would it be possible and useful?
+Would it be possible and "useful"?
 
-Yes it is possible. To be honest, I am not definitely sure about its usefulness!
+Yes, it is possible. The program explained here outputs the all calculation steps in detail. 
+So, exploring the dimensionally matched candidates may also support the experts on their researches.
 
-But I would like to start this study with the excitement of opportunity of being the first person to see the possible formulation of some famous physical constants.
-And I know that this methodology can be expanded to a wider scope with distributed calculation methods if this approach can be successful and be considered as useful.
+And the methodology can be expanded to a wider scope with distributed calculation methodologies.
 
-## Methodology
+## 2 Methodology
 
 It is a well-known fact that the resultant unit on the right side of the equations must match the left side.
 
+We can represent the equations with quantity definitions:
 ```text
 Quantity = {numeric value} ⋅ [unit]
 
 Q1 = {Q1} ⋅ [Q1]
 Q2 = {Q2} ⋅ [Q2]
-
-If Q1 = Q2 then units must be equal, [Q1] = [Q2].
 ```
-If we claim Q1 = Q2 then their numeric values should also overlap in their error ranges:
+
+If Q1 = Q2 then units must be equal ([Q1] = [Q2]) and their numeric values must also overlap in their error ranges:
+
 ```text
 Quantity = {numeric value ± error} ⋅ [unit]
 
 Q1 = {Q1 ± ΔQ1}⋅[Q1]
 Q2 = {Q2 ± ΔQ2}⋅[Q2]
-
-To claim Q1 = Q2:
-* [Q1] = [Q2], and
-* {Q1 + ΔQ1} >= {Q2 - ΔQ2}, and
-* {Q1 - ΔQ1} <= {Q2 + ΔQ2}
 ```
 
-In the program, we can assume `Q1` is the target (`T`) and it is searching set of `Q2`'s which are the candidates satisfying the conditions given above.
+If Q1 = Q2 then the following conditions must be fulfilled: 
+* Unit match: [Q1] = [Q2], and
+* Numeric value overlap with absolute error definitions:
+  * Q1 + ΔQ1 >= Q2 - ΔQ2, and
+  * Q1 - ΔQ1 <= Q2 + ΔQ2
 
-The program also takes config ([default](src/resources/default_config.json)) and definition ([default](src/resources/default_definition.json)) files to restrict and define its scope.
+Numeric value overlapping can also be expressed by using [relative error](https://de.wikipedia.org/wiki/Fehlerschranke) definitions:
+* 1 + δQ1 + δQ2 >= Q1/Q2, and
+* 1 - δQ1 - δQ2 <= Q1/Q2
 
-The main steps can be summarized as:
+where relative errors, δQ1 = ΔQ1 / Q1 and δQ2 = ΔQ2 / Q2.
 
-1. Preparing the candidate list by calculating the combination of dimensional constants from the given scope such that unit of `T` equals to unit of the candidates (e.g. `[T] = [Q]`)
-2. Iterating over the candidates, looking for a combination of dimensionless mathematical constants, such that the resulting multiplication places within the desired error range.
-3. Printing the results by using their symbols.
+Note: For physical constants, even if units are matched and quantities' numeric values are overlapped, we can not state directly the formulation of Q1 is equal to the Q2 expression! 
 
-![Flowchart of Physical Constants Explorer](./img/Flowchart_of_Physical_Constants_Explorer.drawio.svg)
+In the program, `Q1` is the target (`T`) and set of `Q2`'s which are the candidates satisfying conditions given above!
 
-I wanted to apply a simple and clear set of methodologies:
+The program also takes a config file ([default_config.json](src/resources/default_config.json)) and a definition file ([default_definition.json](src/resources/default_definition.json)) to restrict and define its scope.
+
+The main calculation steps can be summarized as:
+
+![Flowchart of Physics Constants Explorer](./img/Flowchart_of_Physical_Constants_Explorer.png)
+
+The simple and clear set of methodologies were applied:
 
 1. Brute force algorithm for all multiplication combinations
 2. Using a unit library ([pint](https://pint.readthedocs.io/en/stable/)) to:
    * Represent dimensional constants units in SI base units
    * Correctly calculate and compare the units of multiplication and power operations
 3. Using scientific notation with the ["concise form"](https://en.wikipedia.org/wiki/Scientific_notation#Estimated_final_digits).
-4. Calculating the relative errors.
+4. Calculating and using the relative errors.
 5. Using [decimal](https://docs.python.org/3/library/decimal.html) library to represent numeric values of quantities with high significant digits.
 6. Using [fractions](https://docs.python.org/3/library/fractions.html) library to represent the power of the quantities and its units.
 
-### Technical Reasons
+### 2.1 Technical Problems & Solutions
 
-* Python's Decimal library was used to calculate the mathematical operations of the numeric values of the quantities.
+Unfortunately, we cannot use the float type or Decimal library to calculate the powers of the units and compare the results with the target unit.
+
+So,
 * The "pint" library in conjunction with the Python's Fractions library was used to calculate the mathematical operations of the units part of the quantities.
+* Python's Decimal library was used to calculate the mathematical operations of the numeric values of the quantities.
 
 The main reasons about this technical decisions are:
-1. Python Fractions library we can make this kind of rational mathematical operations correctly: [$s^{2/3}$] ⋅ [$s^{4/3}$] ≟ [$s^{2}$]
-2. "pint" library has support for "Non integer types" (non_int_type) to set `Decimal` or `Fractions`. But, unfortunately I could not find a feature to set numeric and unit parts class types differently.  
-3. Decimal Library has nice set of features to represent high precision numbers and operate on it quickly.
-4. It is not wanted to use another library to handle the measurement error calculations of the numeric values. The main reason is to add less complexity. Only Python's built-in Libraries are used. So it can be implemented more robustly and more testable.
+1. With Python Fractions library, we can achieve units power multiplications correctly, such as:
+   * $s^{2/3}$ ⋅ $s^{4/3}$ ≟ $s^{2}$
+   * $s^{-1/6}$ ⋅ $s^{7/6}$ ≟ $s$
+2. "pint" library has support for "Non integer types" (non_int_type) to set `Decimal` or `Fractions`. But, unfortunately I could not find a way to set numeric and unit class types differently.  
+3. Decimal Library has nice set of features to represent numbers with high precision and operate on it quickly.
 
-Please do not hesitate to provide feedback if you have suggestions, thanks!
+## 3 Python Installation
 
-## Python Installation
-
-The implementation is done by using Python 3.9.13. The program should run Python >=3.9.13
+The implementation is done by using Python 3.9.13. The program should be run with Python >=3.9.13
 
 If python is not installed, I suggest using one of "Python Version Manager" (Anaconda, pyenv, etc.)
 
-Please execute the following code, line by line on the projects root folder after cloning this repository.
+After cloning this repository, to install the required libraries, the following shell codes can be executed line by line on the projects root folder:
 
 ```shell
 > python -m venv ./venv
@@ -171,25 +179,78 @@ Please execute the following code, line by line on the projects root folder afte
 > pip install -r ./requirements.txt
 ```
 
-## Running the Program
+## 4 The Program Usage
 
 The program takes:
-* The target quantity numeric value (mandatory)
-* The target quantity unit (mandatory)
-* The definition file (optional), that is a list of all dimensional and dimensionless constant definitions as a JSON file.
-* The config file (optional), that is the scope of the program. It is a list of dimensional and dimensionless constants and their power ranges as a JSON file.
+* The target quantity numeric value
+* The target quantity unit
+* The definition file, that is a list of all dimensional and dimensionless constant definitions in JSON format.
+* The config file, that is the scope of the program in JSON format. It is a list of dimensional and dimensionless constants power ranges.
 
 The program prints the results in descriptive format on the console.
 
-### The Definition File
+### 4.1 Running The Program
 
-All dimensional and dimensionless constants are defined under this JSON file. The program loads and considers only the constants selected from here.
+The program `main.py` takes the following parameters:
+
+* `--target-value` (mandatory)
+* `--target-unit` (mandatory)
+* `--config-file` (optional)
+* `--definition-file` (optional)
+
+As an example, the Rydberg constant can be explored: 
+
+```shell
+> python ./main.py --target-value "1.0973731568160(21)e+7" --target-unit "1/m"
+```
+
+Sample usages of the program can be accessible under the [research/script](research/script) folder.
+
+#### 4.1.1 The Inputs 
+
+The ` --help` option displays the inputs:
+
+```shell
+options:
+  -h, --help            show this help message and exit
+  -v, --target-value 
+                        Target value with scientific notation.
+                        To specify target value with the standard uncertainty please use "concise form".
+                        For example to execute (1.23±0.06)×10^−5, enter "1.23(6)E-5" or "1.230(60)E-5".
+                        Some valid examples: "1.23(6)E-5", "8.9875(15)E+16", "4.20(30)E+0"
+                        The target value can also be provided without uncertainty specification:
+                        In this cae, the program converts "1.23E-5" to "1.230(10)E-5"
+                        Some valid examples: "1.23E-5", "8.9875E+16", "4.2E+0"
+  -u, --target-unit 
+                        Target unit expression in terms of SI base units symbols.
+                        Length - meter (m)
+                        Time - second (s)
+                        Amount of substance - mole (mol)
+                        Electric current - ampere (A)
+                        Temperature - kelvin (K)
+                        Luminous intensity - candela (cd)
+                        Mass - kilogram (kg)
+                        Use ^ symbol to represent power and space for multiplication.
+                        Some valid examples: "kg/(s^3 K^4)", "kg s^-3 K^-4", "m/s"
+  -c, --config-file 
+                        Relative path of the config file.
+                        It is a JSON file that contains the list of dimensional and dimensionless constants
+                        with their power range. This file is validated by "src/resources/config_schema.json"
+                        If it is not provided the program uses the default config file, located:
+                        ./src/resources/default_config.json
+  -d, --definition-file 
+                        Relative path of the definition file.
+                        It is a JSON file that contains the definition of dimensional and dimensionless constants.
+                        This file is validated by "src/resources/definition_schema.json"
+                        If it is not provided the program uses the default definition file, located:
+                        ./src/resources/default_definition.json
+```
+
+### 4.2 The Definition File
+
+All dimensional and dimensionless constants are defined under this JSON file. The program can load and consider only the constants defined in this file.
 
 The program uses its [default definition file](src/resources/default_definition.json), if `--definition-file` parameter is not provided.
-The default definition file is prepared by using [CODATA](https://physics.nist.gov/cuu/Constants/index.html) values which are the latest experimented and defined values.
-If you want to add new constants or override the existing ones, please check [The Program Inputs](#the-program-inputs) section to get more info.
-
-To make the numeric values be consistent, only SI base units are allowed as units of dimensional constants.
 
 The definition file has 2 main collections:
 * `dimensional_constants`
@@ -215,52 +276,53 @@ Each collection has its own `key`, `value` pairs, for example:
   }
 }
 ```
-#### Dimensional Constants Collection
+#### 4.2.1 Dimensional Constants Collection
 
-This collection should only contain constants that have units.
+This collection should only contain constants that have unit.
 
 It has the following key-value pair definitions:
 * `key` values should contain a descriptive info (on the given example above it is `speed_of_light_in_vacuum`).
 * `value` object has the following kay-value pairs:
   * `"numeric_value": "..."` (mandatory). 
     * The values should be in scientific notation format.
-    * `"2.99792458e+8"`, if it is an exact value. The error will be 0 for the constants in this format.
-    * `"6.67430(15)e-11"`, if it has some error. The format is a combination of both scientific and concise notations. The program considers this value as `(6.67430 ± 0.00015)✕10⁻¹¹`
+    * `"2.99792458e+8"`, if it is an exact value, then the relative error will be 0.
+    * `"6.67430(15)e-11"`, if it has some measurement error. The format is a combination of both scientific and concise notations. The program considers this value as `(6.67430 ± 0.00015)✕10⁻¹¹`
   * `"unit": "..."` (mandatory). 
-    * Only SI base units are accepted: m, s, mol, A, K, cd, kg
+    * Only SI base units are allowed as units of dimensional constants which are: m, s, mol, A, K, cd, kg
     * The following characters can be used:
       * a single space for multiplication
       * `/` for divisions
       * `^` for powers
       * `(...)` parentheses for grouping
-    * The following examples which gives the same resultant unit for "Vacuum magnetic permittivity constant" :
+    * The following examples which gives the same resultant unit (for example the unit of "Vacuum magnetic permittivity constant"):
       * `A^2 s^4/kg/m^3` = `A^2 s^4/(kg m^3)` = `A^2 s^4 kg^-1 m^-3` 
   * `"symbol": "..."` (optional). 
     * The symbol is used on the results. If it is not provided the `key` value is used on the required places.
   * `"info": "..."` (optional). 
-    * If it is needed, this field can be used to enter more information.
+    * Can be used to provide more info about the constant.
 
-#### Dimensionless Constants Collection
+#### 4.2.2 Dimensionless Constants Collection
 
 This collection should only contain constants that have no units.
 
-It has the same key-value pairs with the same formats as the "Dimensional Constants Collection" except for `unit` definitions. It should not contain the `unit` definitions.
+It has the same key-value pairs with the same formats as the "Dimensional Constants Collection" except for `unit` definitions.
 
-### The Config File
+### 4.3 The Config File
 
-The configuration file determines which constants the program will use to find results close to the desired target value.
+The configuration file determines the scope of the program that will be used to find results.
 
-Within this file, the list of dimensional and dimensionless constants is defined along with their power ranges.
-In this file, a list of dimensional and dimensionless constants is entered along with their power ranges.
+In this file, the list of dimensional and dimensionless constants is given along with their power ranges.
 
-The program uses its [default config file](src/resources/default_config.json), if `--config-file` parameter is not provided. [The Program Inputs](#the-program-inputs) section gives the info about the usage of `--config-file` parameter.
+The program uses its [default config file](src/resources/default_config.json), if `--config-file` parameter is not provided.
 
-The default config file is prepared by exploring some derived physical constants. You can check the list of these derived constants under [the research document](/research).
+The default config file is prepared by exploring some physical constants. These explorations are located under [the research part](/research).
 
 The config file has the following parameters:
 * `method`
 * `dimensional_constants`
 * `dimensionless_constants`
+
+#### 4.3.1 The Power Ranges
 
 Each `constant` collection has its own `key`, `value` pairs, for example:
 ```json
@@ -279,7 +341,8 @@ Each `constant` collection has its own `key`, `value` pairs, for example:
 ```
 
 The `key` values (for example `speed_of_light_in_vacuum`) should match the `key` values on the provided definition file. 
-Besides this, you can also provide exact custom numeric values (such as prime numbers) under `dimensionless_constants` collection without defining it under the definition file. For example:
+
+Besides this, exact custom numeric values (such as prime numbers) can be used under `dimensionless_constants` collection __without defining under the definition file__. For example:
 ```json
 {
   ...
@@ -290,86 +353,43 @@ Besides this, you can also provide exact custom numeric values (such as prime nu
 ```
 
 Power range values can be in 3 format as given the example above:
-* List format (`[min, max]`)
-  * For example `[-2, 6]`, the program converts it as integer range e.g.[-2, 1, 0, 1, 2, 3, 4, 5, 6]. It adds `0`, if `0` does not exist in the range.
-* Integer format (Z). Z>0
-  * The program converts it as list format `[-Z, Z]` as explained above.
-* Object format (`{"range": [min, max], "step": "s"}`)
-  * For the given example above, program creates the powers ranges as, [0, 1/3, 2/3, 1, 4/3, 5/3, 2]
+* List format: `[min, max]`
+  * For example `[-2, 6]`, the program converts it as integer range e.g. [-2, 1, 0, 1, 2, 3, 4, 5, 6]. It adds `0`, if `0` does not exist in the range.
+* Integer format: Z
+  * The integer value must be greater than zero (Z > 0) 
+  * The program converts it as a list format `[-Z, Z]`.
+* Object format: `{"range": [min, max], "step": "s"}`
+  * For this example `{"range": [0, 2], "step": "1/3"}` the program creates the power range as: [0, 1/3, 2/3, 1, 4/3, 5/3, 2]
 
+If `0` is not given on the range (or in the converted ranges), the program adds `0` on the default. 
 
-### The Program Inputs
+#### 4.3.2 The Execution Method
 
-The program `main.py` takes target value and unit with the following input names:
+The `method` parameter can be set one of these:
+* "brute_force"
+  * It is a pure brute force implementation
+* "brute_force_with_memorization"
+  * It contains memorization implementation by pre-calculating the "some" group of quantities. The performance is better than `brute_force`.
 
-* `--target-value`
-* `--target-unit`
-* `--config-file` (optional)
-* `--definition-file` (optional)
-
-As an example, to explore `Rydberg Constant`:
-
-```shell
-> python ./main.py --target-value "1.0973731568160(21)e+7" --target-unit "1/m"
-```
-
-Please use `--help` option to get info about the program usage & input formats:
-
-```shell
-> python ./main.py --help
-
-options:
-  -h, --help            show this help message and exit
-  -v, --target-value 
-                        Target value with scientific notation.
-                        To specify target value with the standard uncertainty please use "concise form".
-                        For example to execute (1.23±0.06)×10^−5, enter "1.23(6)E-5" or "1.230(60)E-5".
-                        Some valid examples: "1.23(6)E-5", "8.9875(15)E+16", "4.20(30)E+0"
-                        The target value can also be provided without uncertainty specification:
-                        In this cae, the program converts "1.23E-5" to "1.230(10)E-5"
-                        Some valid examples: "1.23E-5", "8.9875E+16", "4.2E+0"
-  -u, --target-unit 
-                        Target unit expression in terms of SI base units symbols.
-                        Length - meter (m)
-                        Time - second (s)
-                        Amount of substance - mole (mol)
-                        Electric current - ampere (A)
-                        Temperature - kelvin (K)
-                        Luminous intensity - candela (cd)
-                        Mass - kilogram (kg)
-                        Please use ^ symbol to represent power and space for multiplication.
-                        Some valid examples: "kg/(s^3 K^4)", "kg s^-3 K^-4", "m/s"
-  -c, --config-file 
-                        The config file relative path.
-                        It is a JSON file that contains the list of dimensional and dimensionless constants
-                        with their power range. This file is validated by "src/resources/config_schema.json"
-                        If it is not provided the program will use the default config file:
-                        ./src/resources/default_config.json
-  -d, --definition-file 
-                        Definition file relative path.
-                        It is a JSON file that contains the definition of dimensional and dimensionless constants.
-                        This file is validated by "src/resources/definition_schema.json"
-                        If it is not provided the program will use default definition file:
-                        ./src/resources/default_definition.json
-```
-## The Program Outputs
+## 5 The Program Outputs
 
 The program prints the outputs to console. 
 
-### Store Results into a File
+### 5.1 Store Results into a File
 
-You can store the results into a file by executing the script like:
+The outputs can be stored into a file as shown below:
 
 ```shell
-> python ./main.py --target-value "1.0973731568160(21)e+7" --target-unit "1/m" > output_file_name.txt
+> python ./main.py ...  > output_file_name.txt
 ```
-It will store the results into `output_file_name.txt` file on the same folder that you execute the script.
 
-### Output Format
+It will store the results into `output_file_name.txt` file on the same folder that the script is executed.
 
-There are 3 sections on the output. The following part explains the sections of the `Rydberg Constant` exploration ([the output file](research/output/derived_constants/rydberg_constant.txt)):
+### 5.2 Output Format
 
-#### Summarizing the Inputs
+There are 3 sections on the output. The following sections explains the parts of the `Rydberg Constant` exploration [output file.](research/output/derived_constants/rydberg_constant.txt)
+
+#### 5.2.1 Summarizing the Inputs
 ```text
 Explore the target quantity:
 	{ 1.0973731568160(21) e+7 } [ 1/m ] = Target
@@ -391,7 +411,7 @@ in terms of the given:
 by using brute_force methodology...
 ```
 
-#### Listing the Candidates
+#### 5.2.2 Listing the Candidates
 After checking all combination of the dimensional constants given in the scope, the program prepares the candidates list whose resultant unit matches the target unit.
 
 ```text
@@ -413,7 +433,7 @@ Found 4 candidates the resultant unit matched with the target's unit:
 	  └──  Min (~1E+2) < Max (~1E+12) < Q (~3E+13) 
 ```
 
-If you look at the first candidate:
+At the first candidate,
 ```text
 ...
 	{ Q } [ 1/m ] = e⁴⋅m_e / (c⋅ℎ³⋅ε_0²)
@@ -426,19 +446,20 @@ The program calculated dimensional constants multiplication and represented its 
 
 `Min` and `Max` values are calculated as:
 
-`Min (...)` = [Target value] / [The maximum value of the dimensionless multiplication combinations]
+`Min (...)` = (Target value) / (The maximum value of the dimensionless multiplication combinations)
 
-`Max (...)` = [Target value] / [The minimum value of the dimensionless multiplication combinations]
+`Max (...)` = (Target value) / (The minimum value of the dimensionless multiplication combinations)
 
 So, the line:
 
 `	  └──  Min (~1E+2) < Q (~9E+7) < Max (~1E+12) `:
 
-represents: `Q` is in the range of dimensionless multiplication range. If it is not in range, this candidate will be ignored and its numerical value will not be investigated on the next steps.
+represents: `Q` is in the range of dimensionless multiplication range. 
+If it is not in range, this candidate will be ignored and its numerical value will not be investigated on the next steps.
 
 This distinction is highlighted as `👍 In range!` or `👎 Not in range.`.
 
-#### Matched Results
+#### 5.2.3 Matched Results
 
 At this step the program calculates all dimensionless multiplication combinations given in the scope.
 ```text
@@ -455,7 +476,7 @@ Result(s) that overlap with the target:
 	{ 1.09737315681(66) e+7 } [ 1/m ] = e⁴⋅m_e / (2³⋅c⋅ℎ³⋅ε_0²)
 ```
 
-## Tests
+## 6 Tests
 
 Test folder is [src/tests](src/tests). To run the all test:
 
@@ -463,15 +484,13 @@ Test folder is [src/tests](src/tests). To run the all test:
 > pytest
 ```
 
-## Researches
+## 7 Researches
 
 Some well-known physical constant values were explored and verified by using this program.
 
-Unknown physical constants like Newtonian Constant of Gravitation (G) were also explored under the same [./research](./research) folder.
+Some unknown (not derived) physical constants like Newtonian Constant of Gravitation (G) were also explored under the same [./research](./research) folder.
 
-## Resources
-
-### Libraries & Documentation
+## 8 Resources & Libraries
 
 * [pint](https://pint.readthedocs.io/en/stable/)
   * [pint repository](https://github.com/hgrecco/pint/tree/master/pint)
@@ -488,7 +507,7 @@ Unknown physical constants like Newtonian Constant of Gravitation (G) were also 
   * [Writing mathematical expressions](https://docs.github.com/en/get-started/writing-on-github/working-with-advanced-formatting/writing-mathematical-expressions)
 
 
-## Future Work
+## 9 Future Work
 
 * Explore possibility of finding all (known) physical constants with a single config file? Targeting `1.0000` with `dimensionless` methodology can be usefully for this purpose, like:
 
@@ -499,53 +518,3 @@ Unknown physical constants like Newtonian Constant of Gravitation (G) were also 
 * Implement caching
 * Store results into the output file. Currently, results are printed to the console.
 * Use python [logging](https://docs.python.org/3/howto/logging.html) instead of `print` after implementing the output file.
-
-
-## Behind the Scene
-
-I am a computer engineer with a background in Scientific Computing and Physics. 
-Last 4 years I am mainly working in big data related subjects and domains.  
-
-When I was in high school, I was selected to the Physics Olympic team of my home country. I was 2. on our team and won the honourable mention award in [IPhO 1996 (XXVII Oslo, Norway)](https://www.ipho-new.org/documentations/#statistics).
-
-In the same year, I won the Computer Engineering department in my country's university exam and I decided to study computer engineering.
-
-When I look back now, I was very happy to see that my physics knowledge was still not erased and that I could remember some of them with a short effort.
-
-To be honest, we talked about the feasibility of this program 20 years ago, in a conversation with my close friend Atilim Cetin. 
-
-In those years, I did not attempt to implement this program, and frankly, if there weren't libraries like the [pint](https://pint.readthedocs.io/en/stable/) quantity library which helps to deal with units parts of the quantities, I might not have enough energy to get into this. 
-
-I would like to thank all the team who have developed the pint library from here 👏!
-
-I don't know if a similar physical constant explorer program has been already implemented before. 
-If it has been done already, I hope this approach gives a new perspective on helping us to understand the mystery of nature with good purposes!
-
-## Acknowledgement & Gratitude
-
-I would like to express my gratitude to my physics teachers who made me love physics and prepared us for the physics olympiads:
-
-* Physics Teacher Rafet Kamer, Physics Olympiads
-* Prof. Dr. K. Sinan Bilikmen, METU-Physics
-* Prof. Dr. Mehmet Tomak, METU-Physics
-
-And who are not with us:
-
-* Prof. Dr. İbrahim Günal (R.I.P), METU-Physics
-* Prof. Dr. Ordal Demokan (R.I.P), METU-Physics
-* Physics Teacher Aykut Gümüç (R.I.P), Eskisehir Science High School
-* Prof. Dr. Oleg Fedorovich Kabardin (R.I.P), Physics Olympiads
-
-And I would like to thanks to my genius and big-hearted friends who always enjoy supporting me:
-
-* Dr. İnanç Kanık
-* Dr. Özgür Sümer
-* Atılım Çetin
-* Osman Özgür
-* Ali Onur Geven
-
-And of course to my beloved wife Ayşen and my dear children Ozan & Doruk!
-
-I would like to thank again all the team who developed the pint library from here 👏!
-
-Emre Dagli

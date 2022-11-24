@@ -20,7 +20,7 @@ python ./main.py --target-value "6.67430(15)e-11" \
                  --config-file "$config_folder/newtonian_constant_of_gravitation_attempt_02.json" \
                  > $output_folder/newtonian_constant_of_gravitation_attempt_02.txt &
 
-# Newtonian Constant of Gravitation - Attempt 03_1_over_6
+# Newtonian Constant of Gravitation - Attempt 03
 python ./main.py --target-value "6.67430(15)e-11" \
                  --target-unit "m^3/(kg s^2)" \
                  --config-file "$config_folder/newtonian_constant_of_gravitation_attempt_03.json" \

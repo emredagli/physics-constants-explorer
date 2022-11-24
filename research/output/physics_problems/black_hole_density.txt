@@ -17,19 +17,19 @@ by using brute_force methodology...
 Found 4 candidates the resultant unit matched with the target's unit:
 	{ Q } [ kg·m³/s⁴ ] = c³⋅e⁶ / (ℎ³⋅ε_0³⋅G)
 	  ├── 👍 In range!
-	  └──  Min (~4E+42) < Q (~3E+55) < Max (~1E+70) 
+	  └── Min (~4E+42) < Q (~3E+55) < Max (~1E+70) 
 
 	{ Q } [ kg·m³/s⁴ ] = c⁴⋅e⁴ / (ℎ²⋅ε_0²⋅G)
 	  ├── 👍 In range!
-	  └──  Min (~4E+42) < Q (~2E+57) < Max (~1E+70) 
+	  └── Min (~4E+42) < Q (~2E+57) < Max (~1E+70) 
 
 	{ Q } [ kg·m³/s⁴ ] = c⁵⋅e² / (ℎ⋅ε_0⋅G)
 	  ├── 👍 In range!
-	  └──  Min (~4E+42) < Q (~2E+59) < Max (~1E+70) 
+	  └── Min (~4E+42) < Q (~2E+59) < Max (~1E+70) 
 
 	{ Q } [ kg·m³/s⁴ ] = c⁶ / G
 	  ├── 👍 In range!
-	  └──  Min (~4E+42) < Q (~1E+61) < Max (~1E+70) 
+	  └── Min (~4E+42) < Q (~1E+61) < Max (~1E+70) 
 
 Totally, unique 53361 dimensionless multiplications are calculated!
 

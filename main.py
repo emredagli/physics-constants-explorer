@@ -36,7 +36,7 @@ if __name__ == '__main__':
                              'Temperature - kelvin (K)\n'
                              'Luminous intensity - candela (cd)\n'
                              'Mass - kilogram (kg)\n'
-                             'Please use ^ symbol to represent power and space for multiplication.\n'
+                             'Use ^ symbol to represent power and space for multiplication.\n'
                              'Some valid examples: "kg/(s^3 K^4)", "kg s^-3 K^-4", "m/s"')
 
     parser.add_argument('-c',
@@ -44,10 +44,10 @@ if __name__ == '__main__':
                         required=False,
                         default='./src/resources/default_config.json',
                         metavar='\b',
-                        help='The config file relative path.\n'
+                        help='Relative path of the config file.\n'
                              'It is a JSON file that contains the list of dimensional and dimensionless constants\n'
                              'with their power range. This file is validated by "src/resources/config_schema.json"\n'
-                             'If it is not provided the program will use the default config file:\n'
+                             'If it is not provided the program uses the default config file, located:\n'
                              './src/resources/default_config.json')
 
     parser.add_argument('-d',
@@ -55,10 +55,10 @@ if __name__ == '__main__':
                         required=False,
                         default='./src/resources/default_definition.json',
                         metavar='\b',
-                        help='Definition file relative path.\n'
+                        help='Relative path of the definition file.\n'
                              'It is a JSON file that contains the definition of dimensional and dimensionless constants.\n'
                              'This file is validated by "src/resources/definition_schema.json"\n'
-                             'If it is not provided the program will use default definition file:\n'
+                             'If it is not provided the program uses the default definition file, located:\n'
                              './src/resources/default_definition.json'
                         )
 

@@ -1,14 +1,4 @@
 {
-  "TODO": [
-    "Check the symbol definitions from books",
-    "Check molar_gas_constant -> https://physics.nist.gov/cgi-bin/cuu/Value?r|search_for=molar_gas_constant",
-    "How eulers_number is represented on physical equations to differentiate elementary charge, some link: https://proofwiki.org/wiki/Symbols:E/Elementary_Charge",
-    "Check other fundamental Mathematical constants like: ",
-    "* https://en.wikipedia.org/wiki/Euler%27s_constant",
-    "* https://en.wikipedia.org/wiki/Euler%27s_constant#Exponential",
-    "like info field, link field can be added to related CODATA link",
-    "* mc_to_ec_ratio check this value representation"
-  ],
   "dimensional_constants": {
     "newtonian_constant_of_gravitation": {
       "numeric_value": "6.67430(15)e-11",
@@ -55,11 +45,6 @@
       "unit": "kg m^2/K/mol/s^2",
       "symbol": "R"
     },
-    "faraday_constant": {
-      "numeric_value": "9.64853321233100184e+4",
-      "unit": "A s/mol",
-      "symbol": "F"
-    },
     "rydberg_constant": {
       "numeric_value": "1.0973731568160(21)e+7",
       "unit": "m^-1",
@@ -80,44 +65,10 @@
       "unit": "kg",
       "symbol": "m_p"
     },
-    "characteristic_impedance_of_vacuum": {
-      "numeric_value": "3.76730313668(57)e+2",
-      "unit": "kg m^2/A^2/s^3",
-      "symbol": "Z_0"
-    },
-    "classical_electron_radius": {
-      "numeric_value": "2.8179403262(13)e-15",
-      "unit": "m",
-      "symbol": "r_e"
-    },
-    "thomson_cross_section": {
-      "numeric_value": "3.76730313668(57)e+2",
-      "unit": "m^2",
-      "symbol": "σ_e"
-    },
-    "josephson_constant": {
-      "numeric_value": "4.83597848416983632447658285054528135353351(1)e+14",
-      "unit": "A s^2/kg/m^2",
-      "symbol": "K_J"
-    },
-    "von_klitzing_constant": {
-      "numeric_value": "2.58128074593045066600455167060874430424572(1)e+4",
-      "unit": "kg m^2/A^2/s^3",
-      "symbol": "R_K"
-    },
-    "magnetic_flux_quantum": {
-      "numeric_value": "2.06783384846192932308111541214749734017154(1)e-15",
-      "unit": "kg m^2/A/s^2",
-      "symbol": "Phi_0"
-    },
-    "conductance_quantum": {
-      "numeric_value": "7.74809172986365064668082332330876394358728(1)e-5",
-      "unit": "A^2 s^3/kg/m^2",
-      "symbol": "G_0"
-    },
     "mc_to_ec_ratio": {
       "numeric_value": "1.41925729236(43)e+5",
-      "unit": "kg^2 m^4/A^4/s^6"
+      "unit": "kg^2 m^4/A^4/s^6",
+      "info": "It is the ratio of vacuum magnetic permeability and vacuum electric permittivity"
     }
   },
   "dimensionless_constants": {
@@ -144,11 +95,6 @@
       "numeric_value": "1.83615267343(11)e+3",
       "symbol": "μ",
       "info": "proton-to-electron mass ratio, μ or β"
-    },
-    "electron_g_factor": {
-      "numeric_value": "2.00231930436256(35)",
-      "symbol": "g_e",
-      "info": "Its absolute value is defined here."
     }
   }
 }

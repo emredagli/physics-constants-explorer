@@ -53,9 +53,8 @@ class ExploreConstant:
         self.results = None
 
     def _is_within_the_target_error_range(self, numeric_value, relative_error):
-        return 1 - relative_error - self.target.relative_error \
-               <= self.target.value / numeric_value <= \
-               1 + relative_error + self.target.relative_error
+        """Numeric value overlapping check by using relative errors"""
+        return 1 - relative_error - self.target.relative_error <= self.target.value / numeric_value <= 1 + relative_error + self.target.relative_error
 
     def explore(self):
 
