@@ -5,6 +5,7 @@ This work contains exploration of some well-known physical constants and experim
 ## Table of Content
 
 <!-- TOC -->
+
 * [1 Exploring Derived Physical Constants](#1-exploring-derived-physical-constants)
 * [2 Exploring Planck Units](#2-exploring-planck-units)
 * [3 Exploring Some Physics Problem](#3-exploring-some-physics-problem)
@@ -34,62 +35,61 @@ This work contains exploration of some well-known physical constants and experim
 * [6 Behind the Scene](#6-behind-the-scene)
 * [7 Acknowledgement & Gratitude](#7-acknowledgement--gratitude)
 * [8 Final Notes](#8-final-notes)
+
 <!-- TOC -->
 
 ## 1 Exploring Derived Physical Constants
 
-The script ([derived_constants.sh](script/derived_constants.sh)) is prepared to explore some constants that can be derived using fundamental constants.
-
-The following script was executed on the project root folder, and it stored the results given on the table below:
-
-```shell
-> research/script/derived_constants.sh
-```
+The script ([derived_constants.sh](script/derived_constants.sh)) is prepared to explore some constants that can be derived in terms of fundamental constants.
 
 * The default config file ([default_config.json](../src/resources/default_config.json)) was used on all calculations!
 * The default definition file ([default_definition.json](../src/resources/default_definition.json)) was used.
 * CODATA values were used as target numeric values.
 
+The script was executed on the project root folder, and it stored the results given on the table below:
+```shell
+> research/script/derived_constants.sh
+```
 
-| Constant Name                                                                                                                       | Constant Derivation                                                    | Numeric Value                                                            | Unit              | The Program Result                | The Program Output File                                                                                               |
-| ----------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------- | ------------------------------------------------------------------------ | ----------------- | --------------------------------- | --------------------------------------------------------------------------------------------------------------------- |
-| [Stefan–Boltzmann Constant](https://en.wikipedia.org/wiki/Stefan%E2%80%93Boltzmann_constant)                                       | $\sigma ={\frac {2\pi ^{5}k^{4}}{15c^{2}h^{3}}}$                       | [5.670374419E-8](https://physics.nist.gov/cgi-bin/cuu/Value?sigma)       | kg/K⁴/s³        | 2⋅π⁵⋅k⁴ / (3⋅5⋅c²⋅ℎ³)  | [stefan_boltzmann_constant.txt](output/derived_constants/stefan_boltzmann_constant.txt)                               |
-| [Rydberg Constant](https://en.wikipedia.org/wiki/Rydberg_constant)                                                                  | $R_{\infty }={\frac {m_{\text{e}}e^{4}}{8\varepsilon _{0}^{2}h^{3}c}}$ | [1.0973731568160(21)E+7](https://physics.nist.gov/cgi-bin/cuu/Value?ryd) | 1/m               | e⁴⋅m_e / (2³⋅c⋅ℎ³⋅ε_0²) | [rydberg_constant.txt](output/derived_constants/rydberg_constant.txt)                                                 |
-| [Fine Structure Constant](https://en.wikipedia.org/wiki/Fine-structure_constant)                                                    | $\alpha ={\frac {e^{2}}{2\varepsilon _{0}hc}}$                         | [7.2973525693(11)E-3](https://physics.nist.gov/cgi-bin/cuu/Value?alph)   | -                 | e² / (2⋅c⋅ℎ⋅ε_0)            | [fine_structure_constant.txt](output/derived_constants/fine_structure_constant.txt)                                   |
-| [Molar Gas Constant](https://en.wikipedia.org/wiki/Gas_constant)                                                                    | $R=N_{\rm {A}}k_{\rm {B}}$                                             | [8.314462618E0](https://physics.nist.gov/cgi-bin/cuu/Value?r)            | kg·m²/K/mol/s² | k⋅N_A                            | [molar_gas_constant.txt](output/derived_constants/molar_gas_constant.txt)                                             |
-| [Vacuum Permeability (Magnetic Constant)](https://en.wikipedia.org/wiki/Vacuum_permeability)                                        | $\mu _{0}={1 \over {c^{2}\varepsilon _{0}}}$                           | [1.25663706212(19)E-6](https://physics.nist.gov/cgi-bin/cuu/Value?mu0)   | kg·m/A²/s²     | 1 / (c²⋅ε_0)                   | [vacuum_magnetic_permeability.txt](output/derived_constants/vacuum_magnetic_permeability.txt)                         |
-| [Wien Frequency Displacement Law Constant](https://en.wikipedia.org/wiki/Wien%27s_displacement_law#Frequency-dependent_formulation) | $\nu _{\text{peak}}={\alpha  \over h}kT$                               | [5.878925757E+10](https://physics.nist.gov/cgi-bin/cuu/Value?bpwien)     | 1/K/s             | wien_u⋅k / ℎ                    | [wien_frequency_displacement_law_constant.txt](output/derived_constants/wien_frequency_displacement_law_constant.txt) |
-| [Impedance of Free Space](https://en.wikipedia.org/wiki/Impedance_of_free_space#Relation_to_other_constants)                        | $Z_{0}={\frac {1}{\varepsilon _{0}c}}$                                 | [3.76730313668(57)E+2](https://physics.nist.gov/cgi-bin/cuu/Value?z0)    | kg·m²/A²/s³   | 1 / (c⋅ε_0)                     | [impedance_of_free_space.txt](output/derived_constants/impedance_of_free_space.txt)                                   |
-| [Josephson Constant](https://en.wikipedia.org/wiki/Magnetic_flux_quantum)                                                           | $1 / \Phi _{B}={\frac {2e}{h}}$                                        | [4.835978484E+14](https://physics.nist.gov/cgi-bin/cuu/Value?kjos)       | A·s²/kg/m²     | 2⋅e / ℎ                         | [josephson_constant.txt](output/derived_constants/josephson_constant.txt)                                             |
-| [Von Klitzing Constant](https://en.wikipedia.org/wiki/Quantum_Hall_effect#Applications)                                             | $\mathrm{R} _{K}={\frac {h}{e^{2}}} $                                  | [2.581280745E+4](https://physics.nist.gov/cgi-bin/cuu/Value?rk)          | kg·m²/A²/s³   | ℎ / e²                          | [von_klitzing_constant.txt](output/derived_constants/von_klitzing_constant.txt)                                       |
+| Constant Name | Constant Derivation | Numeric Value | Unit | The Program Result | The Program Output File |
+| ------------- | ------------------- | ------------- | ---- | ------------------ | ----------------------- |
+| [Stefan–Boltzmann Constant](https://en.wikipedia.org/wiki/Stefan%E2%80%93Boltzmann_constant) | $$\sigma ={\frac {2\pi ^{5}k^{4}}{15c^{2}h^{3}}}$$ | [5.670374419E-8](https://physics.nist.gov/cgi-bin/cuu/Value?sigma) | kg/K⁴/s³ | 2⋅π⁵⋅k⁴ / (3⋅5⋅c²⋅ℎ³) | [The output](output/derived_constants/stefan_boltzmann_constant.txt) |
+| [Rydberg Constant](https://en.wikipedia.org/wiki/Rydberg_constant) | $$R_{\infty }={\frac {m_{\text{e}}e^{4}}{8\varepsilon _{0}^{2}h^{3}c}}$$ | [1.0973731568160(21)e+7](https://physics.nist.gov/cgi-bin/cuu/Value?ryd) | 1/m | e⁴⋅m_e / (2³⋅c⋅ℎ³⋅ε_0²) | [The output](output/derived_constants/rydberg_constant.txt) |
+| [Fine Structure Constant](https://en.wikipedia.org/wiki/Fine-structure_constant) | $$\alpha ={\frac {e^{2}}{2\varepsilon _{0}hc}}$$ | [7.2973525693(11)E-3](https://physics.nist.gov/cgi-bin/cuu/Value?alph) | - | e² / (2⋅c⋅ℎ⋅ε_0) | [The output](output/derived_constants/fine_structure_constant.txt) |
+| [Molar Gas Constant](https://en.wikipedia.org/wiki/Gas_constant) | $$R=N_{\rm {A}}k_{\rm {B}}$$ | [8.314462618E0](https://physics.nist.gov/cgi-bin/cuu/Value?r) | kg·m²/K/mol/s² | k⋅N_A | [The output](output/derived_constants/molar_gas_constant.txt) |
+| [Vacuum Permeability (Magnetic Constant)](https://en.wikipedia.org/wiki/Vacuum_permeability) | $$\mu _{0}={1 \over {c^{2}\varepsilon _{0}}}$$ | [1.25663706212(19)e-6](https://physics.nist.gov/cgi-bin/cuu/Value?mu0) | kg·m/A²/s² | 1 / (c²⋅ε_0) | [The output](output/derived_constants/vacuum_magnetic_permeability.txt) |
+| [Wien Frequency Displacement Law Constant](https://en.wikipedia.org/wiki/Wien%27s_displacement_law#Frequency-dependent_formulation) | $$\nu _{\text{peak}}={\alpha  \over h}kT$$ | [5.878925757E+10](https://physics.nist.gov/cgi-bin/cuu/Value?bpwien) | 1/K/s | wien_u⋅k / ℎ | [The output](output/derived_constants/wien_frequency_displacement_law_constant.txt) |
+| [Impedance of Free Space](https://en.wikipedia.org/wiki/Impedance_of_free_space#Relation_to_other_constants) | $$Z_{0}={\frac {1}{\varepsilon _{0}c}}$$ | [3.76730313668(57)E+2](https://physics.nist.gov/cgi-bin/cuu/Value?z0) | kg·m²/A²/s³ | 1 / (c⋅ε_0) | [The output](output/derived_constants/impedance_of_free_space.txt) |
+| [Josephson Constant](https://en.wikipedia.org/wiki/Magnetic_flux_quantum) | $$1 / \Phi _{B}={\frac {2e}{h}}$$ | [4.835978484E+14](https://physics.nist.gov/cgi-bin/cuu/Value?kjos) | A·s²/kg/m² | 2⋅e / ℎ | [The output](output/derived_constants/josephson_constant.txt) |
+| [Von Klitzing Constant](https://en.wikipedia.org/wiki/Quantum_Hall_effect#Applications) | $$\mathrm{R} _{K}={\frac {h}{e^{2}}} $$ | [2.581280745E+4](https://physics.nist.gov/cgi-bin/cuu/Value?rk) | kg·m²/A²/s³ | ℎ / e² | [The output](output/derived_constants/von_klitzing_constant.txt) |
 
 ## 2 Exploring Planck Units
 
-"Planck considered only the units based on the universal constants $\displaystyle G$, $\displaystyle h$,
+"Planck considered only the units based on the universal constants $\displaystyle G$, $\displaystyle h$, 
 $\displaystyle c$, and $\displaystyle k_{\rm B}$ to arrive at natural units for length, time, mass, and temperature.
-His definitions differ from the modern ones by a factor of $\displaystyle {\sqrt {2\pi }}$,
+His definitions differ from the modern ones by a factor of $\displaystyle {\sqrt {2\pi }}$, 
 because the modern definitions use $\displaystyle \hbar$  rather than $\displaystyle h$."
 ([Planck units - Wikipedia](https://en.wikipedia.org/wiki/Planck_units#History_and_definition))
 
 The script ([planck_units.sh](script/planck_units.sh)) is prepared to explore the Planck Units.
 
-The following script was executed on the project root folder, and it stored the results given on the table below:
-
-```shell
-> research/script/planck_units.sh
-```
-
 * The config file ([planck_units.json](config/planck_units/plank_units.json)) is used on the calculations.
 * The default definition file ([default_definition.json](../src/resources/default_definition.json)) is used.
 * Again, CODATA values were picked as target numeric values.
 
+The script was executed on the project root folder, and it stored the results given on the table below:
+```shell
+> research/script/planck_units.sh
+```
 
-| Constant                                                                                | Constant Expression                                                             | Numeric Value                                                         | Unit | The Result                                          | Output File                                                          |
-| --------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- | --------------------------------------------------------------------- | ---- | --------------------------------------------------- | -------------------------------------------------------------------- |
-| [Planck Length](https://en.wikipedia.org/wiki/Planck_units#History_and_definition)      | $l_{\text{P}}={\sqrt {\frac {\hbar G}{c^{3}}}}$                                 | [1.616255(18)E-35](https://physics.nist.gov/cgi-bin/cuu/Value?plkl)   | m    | ℎ¹ᐟ²⋅G¹ᐟ² / (2¹ᐟ²⋅π¹ᐟ²⋅c³ᐟ²)    | [planck_length.txt](output/planck_units/planck_length.txt)           |
-| [Planck Mass](https://en.wikipedia.org/wiki/Planck_units#History_and_definition)        | $m_{\text{P}}={\sqrt {\frac {\hbar c}{G}}}$                                     | [2.176434(24)E-8](https://physics.nist.gov/cgi-bin/cuu/Value?plkm)    | kg   | c¹ᐟ²⋅ℎ¹ᐟ² / (2¹ᐟ²⋅π¹ᐟ²⋅G¹ᐟ²)    | [planck_mass.txt](output/planck_units/planck_mass.txt)               |
-| [Planck Time](https://en.wikipedia.org/wiki/Planck_units#History_and_definition)        | ${\displaystyle t_{\text{P}}={\sqrt {\frac {\hbar G}{c^{5}}}}}$                 | [5.391247(60)E-44](https://physics.nist.gov/cgi-bin/cuu/Value?plkt)   | s    | ℎ¹ᐟ²⋅G¹ᐟ² / (2¹ᐟ²⋅π¹ᐟ²⋅c⁵ᐟ²)    | [planck_time.txt](output/planck_units/planck_time.txt)               |
-| [Planck Temperature](https://en.wikipedia.org/wiki/Planck_units#History_and_definition) | ${\displaystyle T_{\text{P}}={\sqrt {\frac {\hbar c^{5}}{Gk_{\text{B}}^{2}}}}}$ | [1.416784(16)E+32](https://physics.nist.gov/cgi-bin/cuu/Value?plktmp) | K    | c⁵ᐟ²⋅ℎ¹ᐟ² / (2¹ᐟ²⋅π¹ᐟ²⋅G¹ᐟ²⋅k) | [planck_temperature.txt](output/planck_units/planck_temperature.txt) |
+
+| Constant Name | Constant Derivation | Numeric Value | Unit | The Program Result | The Program Output File |
+| ------------- | ------------------- | ------------- | ---- | ------------------ | ----------------------- |
+| [Planck Length](https://en.wikipedia.org/wiki/Planck_units#History_and_definition) | $$l_{\text{P}}={\sqrt {\frac {\hbar G}{c^{3}}}}$$ | [1.616255(18)E-35](https://physics.nist.gov/cgi-bin/cuu/Value?plkl) | m | ℎ¹ᐟ²⋅G¹ᐟ² / (2¹ᐟ²⋅π¹ᐟ²⋅c³ᐟ²) | [The output](output/planck_units/planck_length.txt) |
+| [Planck Mass](https://en.wikipedia.org/wiki/Planck_units#History_and_definition) | $$m_{\text{P}}={\sqrt {\frac {\hbar c}{G}}}$$ | [2.176434(24)E-8](https://physics.nist.gov/cgi-bin/cuu/Value?plkm) | kg | c¹ᐟ²⋅ℎ¹ᐟ² / (2¹ᐟ²⋅π¹ᐟ²⋅G¹ᐟ²) | [The output](output/planck_units/planck_mass.txt) |
+| [Planck Time](https://en.wikipedia.org/wiki/Planck_units#History_and_definition) | $${\displaystyle t_{\text{P}}={\sqrt {\frac {\hbar G}{c^{5}}}}}$$ | [5.391247(60)E-44](https://physics.nist.gov/cgi-bin/cuu/Value?plkt) | s | ℎ¹ᐟ²⋅G¹ᐟ² / (2¹ᐟ²⋅π¹ᐟ²⋅c⁵ᐟ²) | [The output](output/planck_units/planck_time.txt) |
+| [Planck Temperature](https://en.wikipedia.org/wiki/Planck_units#History_and_definition) | $${\displaystyle T_{\text{P}}={\sqrt {\frac {\hbar c^{5}}{Gk_{\text{B}}^{2}}}}}$$ | [1.416784(16)E+32](https://physics.nist.gov/cgi-bin/cuu/Value?plktmp) | K | c⁵ᐟ²⋅ℎ¹ᐟ² / (2¹ᐟ²⋅π¹ᐟ²⋅G¹ᐟ²⋅k) | [The output](output/planck_units/planck_temperature.txt) |
+
 
 ## 3 Exploring Some Physics Problem
 
@@ -122,7 +122,7 @@ Result(s) that overlap with the target:
 	{ 2.082670(47) e+56 } [ kg·m³/s⁴ ] = 3⋅c⁶ / (2⁹⋅π⁵⋅G)
 ```
 
-Note: as you see "G" the newtonian constant of gravitation increased the resultant expression uncertainty!
+Note that: "G" the Newtonian constant of gravitation increased the resultant expression uncertainty!
 
 ## 4 Experiments
 
@@ -130,7 +130,7 @@ After executing enough runs on the other physical constants, it is time to exper
 
 The script "[experiments.sh](script/experiments.sh)" is used on the experiments listed on this section.
 
-Note: Please execute the script on the project's root folder, if you want to test it:
+Note: The script was executed on the project's root folder:
 
 ```shell
 > ./research/script/experiments.sh
@@ -169,7 +169,7 @@ The well-known relation between the following fundamental physical constants:
 c={\frac {1}{\sqrt {\varepsilon _{0}\mu _{0}}}}
 ```
 
-The derivation contains the multiplication of these constants $\mu _{0}$, $\varepsilon _{0}$. 
+The derivation contains the multiplication of these constants $\mu _{0}$, $\varepsilon _{0}$.
 
 So, in this experiment we would like to explore the ratio of $\mu _{0} / \varepsilon _{0}$, it actually the square of [Impedance of free space](https://en.wikipedia.org/wiki/Impedance_of_free_space#Relation_to_other_constants):
 
@@ -420,17 +420,17 @@ At this point, I think that it does not make much sense to make explorations usi
 
 ## 6 Behind the Scene
 
-I am a computer engineer with a background in Scientific Computing and Physics. 
-Last 4 years I am mainly working in big data related subjects and domains.  
+I am a computer engineer with a background in Scientific Computing and Physics.
+Last 4 years I am mainly working in big data related subjects and domains.
 
-In my high school years, I was selected to the Physics Olympic team of my home country (The Republic of Turkey) and won the honourable mention award in [IPhO 1996 (XXVII Oslo, Norway)](https://www.ipho-new.org/documentations/#statistics). 
+In my high school years, I was selected to the Physics Olympic team of my home country (The Republic of Turkey) and won the honourable mention award in [IPhO 1996 (XXVII Oslo, Norway)](https://www.ipho-new.org/documentations/#statistics).
 In the same year, I won the Computer Engineering department in my country's university exam and I decided to study computer engineering.
 
-To be honest, we talked about the feasibility of this program 20 years ago, in a conversation with my close friend Atilim Cetin. 
-In those years, there weren't libraries like the [pint](https://pint.readthedocs.io/en/stable/) quantity library which helps to deal with units parts of the quantities. 
-I am very happy that I could manage to implement this approach with the guidance of my friends and teachers. 
+To be honest, we talked about the feasibility of this program 20 years ago, in a conversation with my close friend Atilim Cetin.
+In those years, there weren't libraries like the [pint](https://pint.readthedocs.io/en/stable/) quantity library which helps to deal with units parts of the quantities.
+I am very happy that I could manage to implement this approach with the guidance of my friends and teachers.
 
-I don't know if a similar physical constant explorer program has been already implemented before. 
+I don't know if a similar physical constant explorer program has been already implemented before.
 If it has been implemented already, I hope this approach gives a new perspective on helping us to understand the mystery of nature with good purposes!
 
 ## 7 Acknowledgement & Gratitude
