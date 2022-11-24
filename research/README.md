@@ -343,7 +343,7 @@ If we substitute `mc_to_ec_ratio` (magnetic constant to electric constant ratio)
 * $h$ is the planck constant
 * $c$ is the speed of light in vacuum
 * $e$ is the elementary charge
-* $ \m_{e} $ is the mass of a stationary electron
+* $\mathrm{m}_{e}$ is the mass of a stationary electron
 * $ \m _{e} $ is the mass of a stationary electron
 * $ \m_{p} $ is the mass of proton
 * $\mu _{0}$ is the vacuum permeability (magnetic constant)
