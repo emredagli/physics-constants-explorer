@@ -361,7 +361,7 @@ It will store the results into `output_file_name.txt` file on the same folder th
 
 ### 5.2 Output Format
 
-There are 3 sections on the output. The following sections explains the parts of the `Rydberg Constant` exploration [output file.](research/output/derived_constants/rydberg_constant.txt)):
+There are 3 sections on the output. The following sections explains the parts of the `Rydberg Constant` exploration [output file.](research/output/derived_constants/rydberg_constant.txt)
 
 #### 5.2.1 Summarizing the Inputs
 ```text
