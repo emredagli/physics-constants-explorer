@@ -342,6 +342,8 @@ If we write for example (R3) with well-known symbols of the constants:
 * $c$ is the speed of light in vacuum
 * $e$ is the elementary charge
 * $\m _{e}$ is the mass of a stationary electron
+* <pre xml:lang="latex">\m _{e}</pre>
+* <pre xml:lang="latex">\\m _{e}</pre>
 * $\m _{p}$ is the mass of proton
 * $\mu _{0}$ is the vacuum permeability (magnetic constant)
 * $\varepsilon _{0}$ is the vacuum permittivity (electric constant)
