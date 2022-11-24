@@ -1,8 +1,8 @@
 # Physics Constants Explorer
 
-This work contains research and a python program to explore physical constants formulation in terms of given other physical and mathematical constants.
+This work contains a python program to explore physical constants in terms of given dimensional and dimensionless constants. 
 
-The researches and explorations by using this program can be examined under [research](research) folder.
+The exploration of some well-known physical constants by using this program is summarized under [research](research) folder.
 
 ## Table of Content
 
