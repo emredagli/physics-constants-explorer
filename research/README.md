@@ -46,17 +46,17 @@ The following script was executed on the project root folder, and it stored the 
 * The default definition file ([default_definition.json](../src/resources/default_definition.json)) was used.
 * CODATA values were used as target numeric values.
 
-| Constant | Constant Expression | Numeric Value | Unit | The Result | Output File |
-| -------- | ------------------- | ------------- | ---- | ---------- | ----------- |
-| [Stefan–Boltzmann Constant](https://en.wikipedia.org/wiki/Stefan%E2%80%93Boltzmann_constant) | $\sigma ={\frac {2\pi ^{5}k^{4}}{15c^{2}h^{3}}}$ | [5.670374419E-8](https://physics.nist.gov/cgi-bin/cuu/Value?sigma) | kg/K⁴/s³ | 2⋅π⁵⋅k⁴ / (3⋅5⋅c²⋅ℎ³) | [stefan_boltzmann_constant.txt](output/derived_constants/stefan_boltzmann_constant.txt) |
-| [Rydberg Constant](https://en.wikipedia.org/wiki/Rydberg_constant) | $R_{\infty }={\frac {m_{\text{e}}e^{4}}{8\varepsilon _{0}^{2}h^{3}c}}$ | [1.0973731568160(21)e+7](https://physics.nist.gov/cgi-bin/cuu/Value?ryd) | 1/m | e⁴⋅m_e / (2³⋅c⋅ℎ³⋅ε_0²) | [rydberg_constant.txt](output/derived_constants/rydberg_constant.txt) |
-| [Fine Structure Constant](https://en.wikipedia.org/wiki/Fine-structure_constant) | $\alpha ={\frac {e^{2}}{2\varepsilon _{0}hc}}$ | [7.2973525693(11)E-3](https://physics.nist.gov/cgi-bin/cuu/Value?alph) | [ dimensionless ] | e² / (2⋅c⋅ℎ⋅ε_0) | [fine_structure_constant.txt](output/derived_constants/fine_structure_constant.txt) |
-| [Molar Gas Constant](https://en.wikipedia.org/wiki/Gas_constant) | $R=N_{\rm {A}}k_{\rm {B}}$ | [8.314462618E0](https://physics.nist.gov/cgi-bin/cuu/Value?r) | kg·m²/K/mol/s² | k⋅N_A | [molar_gas_constant.txt](output/derived_constants/molar_gas_constant.txt) |
-| [Vacuum Permeability (Magnetic Constant)](https://en.wikipedia.org/wiki/Vacuum_permeability) | $\mu _{0}={1 \over {c^{2}\varepsilon _{0}}}$ | [1.25663706212(19)e-6](https://physics.nist.gov/cgi-bin/cuu/Value?mu0) | kg·m/A²/s² | 1 / (c²⋅ε_0) | [vacuum_magnetic_permeability.txt](output/derived_constants/vacuum_magnetic_permeability.txt) |
-| [Wien Frequency Displacement Law Constant](https://en.wikipedia.org/wiki/Wien%27s_displacement_law#Frequency-dependent_formulation) | $\nu _{\text{peak}}={\alpha  \over h}kT$ | [5.878925757E+10](https://physics.nist.gov/cgi-bin/cuu/Value?bpwien) | 1/K/s | wien_u⋅k / ℎ | [wien_frequency_displacement_law_constant.txt](output/derived_constants/wien_frequency_displacement_law_constant.txt) |
-| [Impedance of Free Space](https://en.wikipedia.org/wiki/Impedance_of_free_space#Relation_to_other_constants) | $Z_{0}={\frac {1}{\varepsilon _{0}c}}$ | [3.76730313668(57)E+2](https://physics.nist.gov/cgi-bin/cuu/Value?z0) | kg·m²/A²/s³ | 1 / (c⋅ε_0) | [impedance_of_free_space.txt](output/derived_constants/impedance_of_free_space.txt) |
-| [Josephson Constant](https://en.wikipedia.org/wiki/Magnetic_flux_quantum) | $1 / \Phi _{B}={\frac {2e}{h}}$ | [4.835978484E+14](https://physics.nist.gov/cgi-bin/cuu/Value?kjos) | A·s²/kg/m² | 2⋅e / ℎ | [josephson_constant.txt](output/derived_constants/josephson_constant.txt) |
-| [Von Klitzing Constant](https://en.wikipedia.org/wiki/Quantum_Hall_effect#Applications) | $\R _{K}={\frac {h}{e^{2}}}$ | [2.581280745E+4](https://physics.nist.gov/cgi-bin/cuu/Value?rk) | kg·m²/A²/s³ | ℎ / e² | [von_klitzing_constant.txt](output/derived_constants/von_klitzing_constant.txt) |
+| Constant                                                                                                                            | Constant Expression                                                    | Numeric Value                                                            | Unit              | The Result              | Output File                                                                                                           |
+|-------------------------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------|--------------------------------------------------------------------------|-------------------|-------------------------|-----------------------------------------------------------------------------------------------------------------------|
+| [Stefan–Boltzmann Constant](https://en.wikipedia.org/wiki/Stefan%E2%80%93Boltzmann_constant)                                        | $\sigma ={\frac {2\pi ^{5}k^{4}}{15c^{2}h^{3}}}$                       | [5.670374419E-8](https://physics.nist.gov/cgi-bin/cuu/Value?sigma)       | kg/K⁴/s³          | 2⋅π⁵⋅k⁴ / (3⋅5⋅c²⋅ℎ³)   | [stefan_boltzmann_constant.txt](output/derived_constants/stefan_boltzmann_constant.txt)                               |
+| [Rydberg Constant](https://en.wikipedia.org/wiki/Rydberg_constant)                                                                  | $R_{\infty }={\frac {m_{\text{e}}e^{4}}{8\varepsilon _{0}^{2}h^{3}c}}$ | [1.0973731568160(21)e+7](https://physics.nist.gov/cgi-bin/cuu/Value?ryd) | 1/m               | e⁴⋅m_e / (2³⋅c⋅ℎ³⋅ε_0²) | [rydberg_constant.txt](output/derived_constants/rydberg_constant.txt)                                                 |
+| [Fine Structure Constant](https://en.wikipedia.org/wiki/Fine-structure_constant)                                                    | $\alpha ={\frac {e^{2}}{2\varepsilon _{0}hc}}$                         | [7.2973525693(11)E-3](https://physics.nist.gov/cgi-bin/cuu/Value?alph)   | [ dimensionless ] | e² / (2⋅c⋅ℎ⋅ε_0)        | [fine_structure_constant.txt](output/derived_constants/fine_structure_constant.txt)                                   |
+| [Molar Gas Constant](https://en.wikipedia.org/wiki/Gas_constant)                                                                    | $R=N_{\rm {A}}k_{\rm {B}}$                                             | [8.314462618E0](https://physics.nist.gov/cgi-bin/cuu/Value?r)            | kg·m²/K/mol/s²    | k⋅N_A                   | [molar_gas_constant.txt](output/derived_constants/molar_gas_constant.txt)                                             |
+| [Vacuum Permeability (Magnetic Constant)](https://en.wikipedia.org/wiki/Vacuum_permeability)                                        | $\mu _{0}={1 \over {c^{2}\varepsilon _{0}}}$                           | [1.25663706212(19)e-6](https://physics.nist.gov/cgi-bin/cuu/Value?mu0)   | kg·m/A²/s²        | 1 / (c²⋅ε_0)            | [vacuum_magnetic_permeability.txt](output/derived_constants/vacuum_magnetic_permeability.txt)                         |
+| [Wien Frequency Displacement Law Constant](https://en.wikipedia.org/wiki/Wien%27s_displacement_law#Frequency-dependent_formulation) | $\nu _{\text{peak}}={\alpha  \over h}kT$                               | [5.878925757E+10](https://physics.nist.gov/cgi-bin/cuu/Value?bpwien)     | 1/K/s             | wien_u⋅k / ℎ            | [wien_frequency_displacement_law_constant.txt](output/derived_constants/wien_frequency_displacement_law_constant.txt) |
+| [Impedance of Free Space](https://en.wikipedia.org/wiki/Impedance_of_free_space#Relation_to_other_constants)                        | $Z_{0}={\frac {1}{\varepsilon _{0}c}}$                                 | [3.76730313668(57)E+2](https://physics.nist.gov/cgi-bin/cuu/Value?z0)    | kg·m²/A²/s³       | 1 / (c⋅ε_0)             | [impedance_of_free_space.txt](output/derived_constants/impedance_of_free_space.txt)                                   |
+| [Josephson Constant](https://en.wikipedia.org/wiki/Magnetic_flux_quantum)                                                           | $1 / \Phi _{B}={\frac {2e}{h}}$                                        | [4.835978484E+14](https://physics.nist.gov/cgi-bin/cuu/Value?kjos)       | A·s²/kg/m²        | 2⋅e / ℎ                 | [josephson_constant.txt](output/derived_constants/josephson_constant.txt)                                             |
+| [Von Klitzing Constant](https://en.wikipedia.org/wiki/Quantum_Hall_effect#Applications)                                             | $ \R _{K}={\frac {h}{e^{2}}}$                                          | [2.581280745E+4](https://physics.nist.gov/cgi-bin/cuu/Value?rk)          | kg·m²/A²/s³       | ℎ / e²                  | [von_klitzing_constant.txt](output/derived_constants/von_klitzing_constant.txt)                                       |
 
 ## 2 Exploring Planck Units
 
@@ -334,24 +334,15 @@ if we put $\alpha$ (the fine-structure constant) formulation on the results they
 If we write for example (R3) with well-known symbols of the constants:
 
 ```math
-6.674224928(14)E-11 m³/kg/s² \approx {\frac {2^{2}}{3\cdot5^{3}\cdot\pi^{4}}}\cdot{\frac {\alpha^{4} \,e^{4} \,c\,\mu _{0}}{h\,\varepsilon _{0}}\cdot{\frac {\\m _{e}^{7}}{\\m _{p}^{9}}}}
+6.674224928(14)x10^-11 [m³/kg/s²] = {\frac {2^{2}}{3\cdot5^{3}\cdot\pi^{4}}}\cdot{\frac {\alpha^{4} \,e^{4} \,c\,\mu _{0}}{h\,\varepsilon _{0}}\cdot{\frac {\\m _{e}^{7}}{\\m _{p}^{9}}}}
 ```
 
 * $\alpha$ is the fine-structure constant
 * $h$ is the planck constant
 * $c$ is the speed of light in vacuum
 * $e$ is the elementary charge
-* $\m _{e}$ is the mass of a stationary electron
-* $\m_{e}$ is the mass of a stationary electron
-* $\\m_{e}$ is the mass of a stationary electron
-* $\[ x^n + y^n = z^n \]$
-* $\[ m _{e} + m_{e} = z^n \]$
-* $\ m_{e} + m_{e} = z^n $
-* $\ m _{e} + m _{e} = z^n $
-* the mass of a stationary electron is $\\m _{e}$ 
-* <pre xml:lang="latex">\m _{e}</pre>
-* <pre xml:lang="latex">\\m _{e}</pre>
-* $\m _{p}$ is the mass of proton
+* $ \m_{e}$ is the mass of a stationary electron
+* $ \m_{p}$ is the mass of proton
 * $\mu _{0}$ is the vacuum permeability (magnetic constant)
 * $\varepsilon _{0}$ is the vacuum permittivity (electric constant)
 * $\pi$ is the ratio of a circle's circumference to its diameter (mathematical constant)
