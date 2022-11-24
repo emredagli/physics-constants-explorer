@@ -132,6 +132,8 @@ Note: Please execute the script on the project's root folder, if you want to tes
 
 ### 4.1 Magnetic Constant to Electric Constant Ratio
 
+#### 4.1.1 Resources
+
 Resources used for this experiment:
 
 * [Config File - magnetic_constant_to_electric_constant_ratio.json](config/experiments/magnetic_constant_to_electric_constant_ratio.json)
@@ -139,7 +141,7 @@ Resources used for this experiment:
 * [Output File - magnetic_constant_to_electric_constant_ratio.txt](output/experiments/magnetic_constant_to_electric_constant_ratio.txt)
 * [Script File - experiments.sh](script/experiments.sh)
 
-#### 4.1.1 Introduction
+#### 4.1.2 Introduction
 
 Vacuum Magnetic Permeability (Magnetic Constant):
 
@@ -169,31 +171,31 @@ The target of this experiment is exploring the ratio of $\mu _{0} / \varepsilon 
 
 We are also expecting the following well-known relations that contain $\varepsilon _{0}$ and $\mu _{0}$ in the results.
 
-##### 4.1.1.1 Speed of Light in Vacuum (1)
+##### 4.1.2.1 Speed of Light in Vacuum (1)
 
-c ([speed of light in vacuum](#vacuum-permeability-magnetic-constant)) contains $\varepsilon _{0}$ and $\mu _{0}$:
+c (speed of light in vacuum) contains $\varepsilon _{0}$ and $\mu _{0}$:
 
 ```math
 c={\frac {1}{\sqrt {\varepsilon _{0}\mu _{0}}}}
 ```
 
-##### 4.1.1.2 Fine-structure Constant (2)
+##### 4.1.2.2 Fine-structure Constant (2)
 
-$\alpha$ ([fine-structure constant](#fine-structure-constant)) contains $e$ (elementary charge), $h$ (plank constant), $\varepsilon _{0}$:
+$\alpha$ (fine-structure constant) contains $e$ (elementary charge), $h$ (plank constant), $\varepsilon _{0}$:
 
 ```math
 \alpha={\frac {e^{2}}{2\varepsilon _{0}hc}}={\frac {e^{2}}{2h}}{\sqrt{\frac {\mu _{0}}{\varepsilon _{0}}}}
 ```
 
-##### 4.1.1.3 Rydberg Constant (3)
+##### 4.1.2.3 Rydberg Constant (3)
 
-$R_{\infty }$ ([Rydberg constant](#rydberg-constant)) contains $e$, $m_{\text{e}}$ (the rest mass of the electron), $h$ and $c$:
+$R_{\infty }$ (Rydberg constant) contains $e$, $m_{\text{e}}$ (the rest mass of the electron), $h$ and $c$:
 
 ```math
 R_{\infty }={\frac {m_{\text{e}}e^{4}}{8\varepsilon _{0}^{2}h^{3}c}}={\frac {m_{\text{e}}e^{4}c}{8h^{3}}}{\frac {\mu _{0}}{\varepsilon _{0}}}
 ```
 
-#### 4.1.2 Results
+#### 4.1.3 Results
 
 The target value ($\mu _{0}/\varepsilon _{0}$ ratio) is:
 
@@ -230,11 +232,11 @@ R3	{ 1.41925729236(86) e+5 } [ kg²·m⁴/A⁴/s⁶ ] = 2³ᐟ²⋅α³⋅ℎ³�
 
 As it was expected,
 
-* The result (R2) is actually the same equation of [(2) $\alpha$](#4112-fine-structure-constant-2)
-* The results (R1) and (R3) can be derived from the equation [(3) $R_{\infty }$](#4113-rydberg-constant-3), (2) and [(1) c - speed of light](#4111-speed-of-light-in-vacuum-1).
+* The result (R2) is actually the same equation of $\alpha$ [(2) fine-structure constant](#4122-fine-structure-constant-2)
+* The results (R1) and (R3) can be derived from the equation $R_{\infty }$ [(3) Rydberg Constant](#4123-rydberg-constant-3), (2) and c [(1) speed of light](#4121-speed-of-light-in-vacuum-1).
 
-With this experiment, we have verified numerically these 3 equations,
-but could not find a possible alternative expressions for $\mu _{0}/\varepsilon _{0}$ ratio for the given exploration scope.
+With this experiment, these 3 equations were found as we have expected.
+But a possible alternative expressions for $\mu _{0}/\varepsilon _{0}$ ratio for the given exploration scope could not be found.
 
 ### 4.2 Newtonian Constant of Gravitation
 
@@ -339,17 +341,16 @@ If we write for example (R3) with well-known symbols of the constants:
 * $h$ is the planck constant
 * $c$ is the speed of light in vacuum
 * $e$ is the elementary charge
-* $\\m _{e}$ is the mass of a stationary electron
-* $\\m _{p}$ is the mass of proton
+* $\m _{e}$ is the mass of a stationary electron
+* $\m _{p}$ is the mass of proton
 * $\mu _{0}$ is the vacuum permeability (magnetic constant)
 * $\varepsilon _{0}$ is the vacuum permittivity (electric constant)
 * $\pi$ is the ratio of a circle's circumference to its diameter (mathematical constant)
 
-This expression can be re-formed in various ways.
+This expression can be re-formed in various ways. So on the next attempt, `the fine-structure constant` will be removed from the dimensionless constants scope.
 
-If we increase the dimensionless constants scope (especially having less significant digit targets, such as here, because it only has 6 significant digits) we may get different results.
+And it is also important that, if we increase the dimensionless constants scope, especially having less significant digit targets (such as here, because it has 6 significant digits) we may get different results.
 
-So on the next attempt, `the fine-structure constant` will be removed from the dimensionless constants scope.
 
 #### 4.2.3 Newtonian Constant of Gravitation - Attempt 03
 
