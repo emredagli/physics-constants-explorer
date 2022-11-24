@@ -415,9 +415,55 @@ At this point, I think that it does not make much sense to make explorations usi
 
 * [The NIST Reference on Constants, Units, and Uncertainty (CODATA 2018 values)](https://physics.nist.gov/cuu/Constants/index.html)
 * [NIST, Fundamental Physical Constants — Extensive Listing](https://physics.nist.gov/cuu/pdf/all.pdf)
+* [Units and Fundamental Constants in Physics and Chemistry, Subvolume b / Editors: J. Bortfeldt and B. Kramer](https://www.voebb.de//aDISWeb/app?service=direct/0/Home/$DirectLink&sp=SPROD00&sp=SAK12735219)
 
-## 6 Final Notes
+## 6 Behind the Scene
 
-The results found in this research are only some numerical explorations, they are not physical proof or a derivation!
+I am a computer engineer with a background in Scientific Computing and Physics. 
+Last 4 years I am mainly working in big data related subjects and domains.  
 
-I hope the approach and the results, make sense to physicists and would be beneficial in their research!
+In my high school years, I was selected to the Physics Olympic team of my home country (The Republic of Turkey) and won the honourable mention award in [IPhO 1996 (XXVII Oslo, Norway)](https://www.ipho-new.org/documentations/#statistics). 
+In the same year, I won the Computer Engineering department in my country's university exam and I decided to study computer engineering.
+
+To be honest, we talked about the feasibility of this program 20 years ago, in a conversation with my close friend Atilim Cetin. 
+In those years, there weren't libraries like the [pint](https://pint.readthedocs.io/en/stable/) quantity library which helps to deal with units parts of the quantities. 
+I am very happy that I could manage to implement this approach with the guidance of my friends and teachers. 
+
+
+I don't know if a similar physical constant explorer program has been already implemented before. 
+If it has been implemented already, I hope this approach gives a new perspective on helping us to understand the mystery of nature with good purposes!
+
+## 7 Acknowledgement & Gratitude
+
+I would like to express my gratitude to my physics teachers who made me love physics and prepared us for the physics olympiads:
+
+* Physics Teacher Rafet Kamer, Physics Olympiads
+* Prof. Dr. K. Sinan Bilikmen, METU-Physics
+* Prof. Dr. Mehmet Tomak, METU-Physics
+
+And who are not with us:
+
+* Prof. Dr. İbrahim Günal (R.I.P), METU-Physics
+* Prof. Dr. Ordal Demokan (R.I.P), METU-Physics
+* Physics Teacher Aykut Gümüç (R.I.P), Eskisehir Science High School
+* Prof. Dr. Oleg Fedorovich Kabardin (R.I.P), Physics Olympiads
+
+And I would like to thanks to my genius and big-hearted friends who always enjoy supporting me:
+
+* Dr. İnanç Kanık
+* Dr. Özgür Sümer
+* Atılım Çetin
+* Osman Özgür
+* Ali Onur Geven
+
+And of course to my beloved wife Ayşen and my dear children Ozan & Doruk!
+
+I would like to thank all the team who have developed and contributed the [pint library](https://pint.readthedocs.io/en/stable/) 👏
+
+Emre Dagli
+
+## 8 Final Notes
+
+The results found in this research are only numerical explorations, they are not physical proof or a derivation!
+
+I hope the approach and the results, make sense to physicists and would be beneficial in their studies!
