@@ -342,7 +342,7 @@ If we substitute `mc_to_ec_ratio` (magnetic constant to electric constant ratio)
 * $c$ is the speed of light in vacuum
 * $e$ is the elementary charge
 * $\mathrm{m}_{e}$ is the mass of a stationary electron
-* $\mathrm{m}_{p} $ is the mass of proton
+* $\mathrm{m}_{p}$ is the mass of proton
 * $\mu _{0}$ is the vacuum permeability (magnetic constant)
 * $\varepsilon _{0}$ is the vacuum permittivity (electric constant)
 * $\pi$ is the ratio of a circle's circumference to its diameter (mathematical constant)
