@@ -181,9 +181,9 @@ All dimensional and dimensionless constants are defined under this JSON file. Th
 
 The program uses its [default definition file](src/resources/default_definition.json), if `--definition-file` parameter is not provided.
 The default definition file is prepared by using [CODATA](https://physics.nist.gov/cuu/Constants/index.html) values which are the latest experimented and defined values.
-If you want to add new constants or override the existing ones, please check [The Program Inputs](#the-program-inputs) section to get more info.
+If you would like to add new constants or override the existing ones, please check [The Program Inputs](#43-the-program-inputs) section to get more info.
 
-To make the numeric values be consistent, only SI base units are allowed as units of dimensional constants.
+Only SI base units are allowed as units of dimensional constants.
 
 The definition file has 2 main collections:
 * `dimensional_constants`
@@ -218,8 +218,8 @@ It has the following key-value pair definitions:
 * `value` object has the following kay-value pairs:
   * `"numeric_value": "..."` (mandatory). 
     * The values should be in scientific notation format.
-    * `"2.99792458e+8"`, if it is an exact value. The error will be 0 for the constants in this format.
-    * `"6.67430(15)e-11"`, if it has some error. The format is a combination of both scientific and concise notations. The program considers this value as `(6.67430 ± 0.00015)✕10⁻¹¹`
+    * `"2.99792458e+8"`, if it is an exact value, then the relative error will be 0.
+    * `"6.67430(15)e-11"`, if it has some measurement error. The format is a combination of both scientific and concise notations. The program considers this value as `(6.67430 ± 0.00015)✕10⁻¹¹`
   * `"unit": "..."` (mandatory). 
     * Only SI base units are accepted: m, s, mol, A, K, cd, kg
     * The following characters can be used:
@@ -227,29 +227,28 @@ It has the following key-value pair definitions:
       * `/` for divisions
       * `^` for powers
       * `(...)` parentheses for grouping
-    * The following examples which gives the same resultant unit for "Vacuum magnetic permittivity constant" :
+    * The following examples which gives the same resultant unit (for example the unit of "Vacuum magnetic permittivity constant"):
       * `A^2 s^4/kg/m^3` = `A^2 s^4/(kg m^3)` = `A^2 s^4 kg^-1 m^-3` 
   * `"symbol": "..."` (optional). 
     * The symbol is used on the results. If it is not provided the `key` value is used on the required places.
   * `"info": "..."` (optional). 
-    * If it is needed, this field can be used to enter more information.
+    * Can be used to provide more info about the constant.
 
 #### 4.1.2 Dimensionless Constants Collection
 
 This collection should only contain constants that have no units.
 
-It has the same key-value pairs with the same formats as the "Dimensional Constants Collection" except for `unit` definitions. It should not contain the `unit` definitions.
+It has the same key-value pairs with the same formats as the "Dimensional Constants Collection" except for `unit` definitions.
 
 ### 4.2 The Config File
 
-The configuration file determines which constants the program will use to find results close to the desired target value.
+The configuration file determines the scope of the program that will be used to find results close to the desired target value.
 
-Within this file, the list of dimensional and dimensionless constants is defined along with their power ranges.
-In this file, a list of dimensional and dimensionless constants is entered along with their power ranges.
+In this file, the list of dimensional and dimensionless constants is defined along with their power ranges.
 
-The program uses its [default config file](src/resources/default_config.json), if `--config-file` parameter is not provided. [The Program Inputs](#the-program-inputs) section gives the info about the usage of `--config-file` parameter.
+The program uses its [default config file](src/resources/default_config.json), if `--config-file` parameter is not provided. [The Program Inputs](#43-the-program-inputs) section gives more information about the usage of `--config-file` parameter.
 
-The default config file is prepared by exploring some derived physical constants. You can check the list of these derived constants under [the research document](/research).
+The default config file is prepared by exploring some physical constants. You can check the list of these explorations under [the research document](/research).
 
 The config file has the following parameters:
 * `method`
@@ -291,6 +290,11 @@ Power range values can be in 3 format as given the example above:
 * Object format (`{"range": [min, max], "step": "s"}`)
   * For the given example above, program creates the powers ranges as, [0, 1/3, 2/3, 1, 4/3, 5/3, 2]
 
+`method` parameter can be set one of these:
+* brute_force
+  * It is pure brute force implementation
+* brute_force_with_memorization
+  * It contains memorization implementation by pre-calculating the group of quantities. The performance is better than `brute_force`.  
 
 ### 4.3 The Program Inputs
 
@@ -301,17 +305,15 @@ The program `main.py` takes target value and unit with the following input names
 * `--config-file` (optional)
 * `--definition-file` (optional)
 
-As an example, to explore `Rydberg Constant`:
+As an example, `Rydberg Constant` can be explored: 
 
 ```shell
 > python ./main.py --target-value "1.0973731568160(21)e+7" --target-unit "1/m"
 ```
 
-Please use `--help` option to get info about the program usage & input formats:
+The program summarizes the usage & input formats with `--help` option:
 
 ```shell
-> python ./main.py --help
-
 options:
   -h, --help            show this help message and exit
   -v, --target-value 
@@ -331,21 +333,22 @@ options:
                         Temperature - kelvin (K)
                         Luminous intensity - candela (cd)
                         Mass - kilogram (kg)
-                        Please use ^ symbol to represent power and space for multiplication.
+                        Use ^ symbol to represent power and space for multiplication.
                         Some valid examples: "kg/(s^3 K^4)", "kg s^-3 K^-4", "m/s"
   -c, --config-file 
-                        The config file relative path.
+                        Relative path of the config file.
                         It is a JSON file that contains the list of dimensional and dimensionless constants
                         with their power range. This file is validated by "src/resources/config_schema.json"
-                        If it is not provided the program will use the default config file:
+                        If it is not provided the program uses the default config file, located:
                         ./src/resources/default_config.json
   -d, --definition-file 
-                        Definition file relative path.
+                        Relative path of the definition file.
                         It is a JSON file that contains the definition of dimensional and dimensionless constants.
                         This file is validated by "src/resources/definition_schema.json"
-                        If it is not provided the program will use default definition file:
+                        If it is not provided the program uses the default definition file, located:
                         ./src/resources/default_definition.json
 ```
+
 ## 5 The Program Outputs
 
 The program prints the outputs to console. 
