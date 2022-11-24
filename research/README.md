@@ -5,18 +5,18 @@ This work contains exploration of some well-known physical constants and experim
 ## Table of Content
 
 <!-- TOC -->
-
 * [1 Exploring Derived Physical Constants](#1-exploring-derived-physical-constants)
 * [2 Exploring Planck Units](#2-exploring-planck-units)
 * [3 Exploring Some Physics Problem](#3-exploring-some-physics-problem)
   * [3.1 Black Hole Density](#31-black-hole-density)
 * [4 Experiments](#4-experiments)
   * [4.1 Magnetic Constant to Electric Constant Ratio](#41-magnetic-constant-to-electric-constant-ratio)
-    * [4.1.1 Introduction](#411-introduction)
-      * [4.1.1.1 Speed of Light in Vacuum (1)](#4111-speed-of-light-in-vacuum--1-)
-      * [4.1.1.2 Fine-structure Constant (2)](#4112-fine-structure-constant--2-)
-      * [4.1.1.3 Rydberg Constant (3)](#4113-rydberg-constant--3-)
-    * [4.1.2 Results](#412-results)
+    * [4.1.1 Resources](#411-resources)
+    * [4.1.2 Introduction](#412-introduction)
+      * [4.1.2.1 Speed of Light in Vacuum (1)](#4121-speed-of-light-in-vacuum--1-)
+      * [4.1.2.2 Fine-structure Constant (2)](#4122-fine-structure-constant--2-)
+      * [4.1.2.3 Rydberg Constant (3)](#4123-rydberg-constant--3-)
+    * [4.1.3 Results](#413-results)
   * [4.2 Newtonian Constant of Gravitation](#42-newtonian-constant-of-gravitation)
     * [4.2.1 Newtonian Constant of Gravitation - Attempt 01](#421-newtonian-constant-of-gravitation---attempt-01)
       * [4.2.1.1 Resources](#4211-resources)
@@ -31,8 +31,9 @@ This work contains exploration of some well-known physical constants and experim
       * [4.2.3.3 Results](#4233-results)
 * [5 Resources](#5-resources)
   * [5.1 Physical Constants](#51-physical-constants)
-* [6 Final Notes](#6-final-notes)
-
+* [6 Behind the Scene](#6-behind-the-scene)
+* [7 Acknowledgement & Gratitude](#7-acknowledgement--gratitude)
+* [8 Final Notes](#8-final-notes)
 <!-- TOC -->
 
 ## 1 Exploring Derived Physical Constants
@@ -428,7 +429,6 @@ In the same year, I won the Computer Engineering department in my country's univ
 To be honest, we talked about the feasibility of this program 20 years ago, in a conversation with my close friend Atilim Cetin. 
 In those years, there weren't libraries like the [pint](https://pint.readthedocs.io/en/stable/) quantity library which helps to deal with units parts of the quantities. 
 I am very happy that I could manage to implement this approach with the guidance of my friends and teachers. 
-
 
 I don't know if a similar physical constant explorer program has been already implemented before. 
 If it has been implemented already, I hope this approach gives a new perspective on helping us to understand the mystery of nature with good purposes!

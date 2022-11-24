@@ -27,8 +27,6 @@ The researches and explorations by using this program can be examined under [res
 * [7 Researches](#7-researches)
 * [8 Resources & Libraries](#8-resources--libraries)
 * [9 Future Work](#9-future-work)
-* [10 Behind the Scene](#10-behind-the-scene)
-* [11 Acknowledgement & Gratitude](#11-acknowledgement--gratitude)
 <!-- TOC -->
 
 ## 1 Motivation & Concept
