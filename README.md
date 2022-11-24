@@ -47,7 +47,7 @@ Formulation of $\sigma$ was [theoretically derived](https://edisciplinas.usp.br/
 Now, let's think oppositely and assume we have a function which takes:
 
 * Target value: 5.670374419E-8 (in [Scientific Notation](https://en.wikipedia.org/wiki/Scientific_notation))
-* Target unit: $\mathrm{kg}$⋅$\mathrm{s}^{-3}$⋅$\mathrm{K}^{-4}$
+* Target unit: $\mathrm{kg}\cdot\mathrm{s}^{-3}\cdot\mathrm{K}^{-4}$
 * List of physical constants with their units ( $k$, $h$, $c$, ...)
 * List of mathematical constants ( $\pi$, $e$, ...)
 * List of prime numbers (2, 3, 5, ...)
