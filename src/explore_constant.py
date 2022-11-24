@@ -108,4 +108,4 @@ class ExploreConstant:
             if len(self.candidates_in_range) > 0:
                 print("But the following candidates were in the given dimensionless range:")
                 for candidate in self.candidates_in_range:
-                    print(f"\t{candidate.}")
+                    print(f"\t{candidate.to_string()}")

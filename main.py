@@ -9,9 +9,8 @@ import src.common_library
 from src.explore_constant import ExploreConstant
 
 if __name__ == '__main__':
-    parser = argparse.ArgumentParser(description='It will search the nearest physical and mathematical\n'
-                                                 'representation of the dimensional physical value target\n'
-                                                 'in terms of the given scope and power ranges.',
+    parser = argparse.ArgumentParser(description='It will explore the nearest representation of the given physical quantity\n'
+                                                 'in terms of the given other quantity definitions and the scope.',
                                      formatter_class=RawTextHelpFormatter)
     parser.add_argument('-v',
                         '--target-value',
@@ -46,9 +45,9 @@ if __name__ == '__main__':
                         default='./src/resources/default_config.json',
                         metavar='\b',
                         help='The config file relative path.\n'
-                             'It is a JSON file that contains the list of physical and mathematical constants\n'
-                             'with their power ranges. This file is validated by "src/resources/config_schema.json"\n'
-                             'If it is not provided the program will use default config file:\n'
+                             'It is a JSON file that contains the list of dimensional and dimensionless constants\n'
+                             'with their power range. This file is validated by "src/resources/config_schema.json"\n'
+                             'If it is not provided the program will use the default config file:\n'
                              './src/resources/default_config.json')
 
     parser.add_argument('-d',
@@ -57,7 +56,7 @@ if __name__ == '__main__':
                         default='./src/resources/default_definition.json',
                         metavar='\b',
                         help='Definition file relative path.\n'
-                             'It is a JSON file that contains the definition of physical and mathematical constants.\n'
+                             'It is a JSON file that contains the definition of dimensional and dimensionless constants.\n'
                              'This file is validated by "src/resources/definition_schema.json"\n'
                              'If it is not provided the program will use default definition file:\n'
                              './src/resources/default_definition.json'

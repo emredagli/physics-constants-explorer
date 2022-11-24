@@ -2,14 +2,19 @@
 
 This work contains research and a python program to explore physical constants formulation in terms of given other physical and mathematical constants.
 
+The researches and explorations by using this program can be examined under [research](research) folder.
+
 ## Table of Content
 
 <!-- TOC -->
 * [Motivation & Concept](#motivation--concept)
 * [Methodology](#methodology)
+  * [Technical Reasons](#technical-reasons)
 * [Python Installation](#python-installation)
 * [Running the Program](#running-the-program)
-  * [Constants Definition File](#constants-definition-file)
+  * [The Definition File](#the-definition-file)
+    * [Dimensional Constants Collection](#dimensional-constants-collection)
+    * [Dimensionless Constants Collection](#dimensionless-constants-collection)
   * [The Config File](#the-config-file)
   * [The Program Inputs](#the-program-inputs)
 * [The Program Outputs](#the-program-outputs)
@@ -23,8 +28,8 @@ This work contains research and a python program to explore physical constants f
 * [Resources](#resources)
   * [Libraries & Documentation](#libraries--documentation)
 * [Future Work](#future-work)
-* [Decided TODO list:](#decided-todo-list-)
-* [Gratitude](#gratitude)
+* [Behind the Scene](#behind-the-scene)
+* [Acknowledgement & Gratitude](#acknowledgement--gratitude)
 <!-- TOC -->
 
 ## Motivation & Concept
@@ -318,11 +323,11 @@ options:
   -v, --target-value 
                         Target value with scientific notation.
                         To specify target value with the standard uncertainty please use "concise form".
-                        For example to provide this value (1.23±0.06)×10^−5, enter "1.23(6)E-5".
-                        Some examples: "1.23(6)E-5", "8.9875(15)E+16", "4.2(3)E+0"
+                        For example to execute (1.23±0.06)×10^−5, enter "1.23(6)E-5" or "1.230(60)E-5".
+                        Some valid examples: "1.23(6)E-5", "8.9875(15)E+16", "4.20(30)E+0"
                         The target value can also be provided without uncertainty specification:
-                        In this cae, the program converts "1.23E-5" to "1.235(5)E-5"
-                        Some examples: "1.23E-5", "8.9875E+16", "4.2E+0"
+                        In this cae, the program converts "1.23E-5" to "1.230(10)E-5"
+                        Some valid examples: "1.23E-5", "8.9875E+16", "4.2E+0"
   -u, --target-unit 
                         Target unit expression in terms of SI base units symbols.
                         Length - meter (m)
@@ -333,22 +338,19 @@ options:
                         Luminous intensity - candela (cd)
                         Mass - kilogram (kg)
                         Please use ^ symbol to represent power and space for multiplication.
-                        Some examples: "kg/(s^3 K^4)", "kg s^-3 K^-4", "m/s"
+                        Some valid examples: "kg/(s^3 K^4)", "kg s^-3 K^-4", "m/s"
   -c, --config-file 
                         The config file relative path.
-                        It is a JSON file that contains the list of physical and mathematical constants
-                        with their power ranges. This file is validated by "src/resources/config_schema.json"
-                        If it is not provided the program will use default config file:
+                        It is a JSON file that contains the list of dimensional and dimensionless constants
+                        with their power range. This file is validated by "src/resources/config_schema.json"
+                        If it is not provided the program will use the default config file:
                         ./src/resources/default_config.json
   -d, --definition-file 
                         Definition file relative path.
-                        If it is not provided the program use pint library default definition file:
-                        https://github.com/hgrecco/pint/blob/master/pint/default_en.txt
-                        And loads default physical constant definitions:
-                        https://github.com/hgrecco/pint/blob/master/pint/constants_en.txt
-                        To customize it, please copy these 2 files, make customization on constants_en.txt file
-                        and reference default_en.txt relative path for this parameter.
-                        Please look at the examples given on the Readme.md file
+                        It is a JSON file that contains the definition of dimensional and dimensionless constants.
+                        This file is validated by "src/resources/definition_schema.json"
+                        If it is not provided the program will use default definition file:
+                        ./src/resources/default_definition.json
 ```
 ## The Program Outputs
 
@@ -365,89 +367,92 @@ It will store the results into `output_file_name.txt` file on the same folder th
 
 ### Output Format
 
-There are 3 sections on the output. The following part explains the sections of the `Rydberg Constant` exploration:
+There are 3 sections on the output. The following part explains the sections of the `Rydberg Constant` exploration ([the output file](research/output/derived_constants/rydberg_constant.txt)):
 
 #### Summarizing the Inputs
 ```text
-Search the target:
-	(1.0973731568160 ± 0.0000000000021)✕10⁷ 1/m
+Explore the target quantity:
+	{ 1.0973731568160(21) e+7 } [ 1/m ] = Target
 in terms of the given:
-	physical constants:     
-		speed_of_light ^ [-2, -1, 0, 1, 2]
-		planck_constant ^ [-3, -2, -1, 0, 1, 2, 3]
-		boltzmann_constant ^ [-4, -3, -2, -1, 0, 1, 2, 3, 4]
-		elementary_charge ^ [-4, -3, -2, -1, 0, 1, 2, 3, 4]
-		electric_constant ^ [-2, -1, 0, 1, 2]
-		electron_mass ^ [-1, 0, 1]
-		avogadro_constant ^ [-1, 0, 1]
-	mathematical constants: 
-		pi ^ [-5, -4, -3, -2, -1, 0, 1, 2, 3, 4, 5]
-		wien_u ^ [-1, 0, 1]
+	dimensional constants:   
+		speed_of_light_in_vacuum (c) ^ [-2, -1, 0, 1, 2]
+		planck_constant (ℎ) ^ [-3, -2, -1, 0, 1, 2, 3]
+		boltzmann_constant (k) ^ [-4, -3, -2, -1, 0, 1, 2, 3, 4]
+		elementary_charge (e) ^ [-4, -3, -2, -1, 0, 1, 2, 3, 4]
+		vacuum_electric_permittivity (ε_0) ^ [-2, -1, 0, 1, 2]
+		electron_mass (m_e) ^ [-2, -1, 0, 1, 2]
+		avogadro_constant (N_A) ^ [-1, 0, 1]
+	dimensionless constants: 
 		2 ^ [-3, -2, -1, 0, 1, 2, 3]
 		3 ^ [-1, 0, 1]
 		5 ^ [-1, 0, 1]
+		pi (π) ^ [-5, -4, -3, -2, -1, 0, 1, 2, 3, 4, 5]
+		wien_u ^ [-1, 0, 1]
 by using brute_force methodology...
 ```
 
 #### Listing the Candidates
-After checking all combination of the physical constants given in the scope, the program prepares the candidates list whose resultant unit matches the target unit.
-
-All mathematical multiplication combinations are calculated if there is at least one candidate in the result.
+After checking all combination of the dimensional constants given in the scope, the program prepares the candidates list whose resultant unit matches the target unit.
 
 ```text
-Totally, unique 2079 mathematical multiplications are calculated & cached!
 Found 4 candidates the resultant unit matched with the target's unit:
-	[ M ] [ 1/m ] = elementary_charge⁴ ⋅ electron_mass / (speed_of_light ⋅ planck_constant³ ⋅ electric_constant²)
+	{ Q } [ 1/m ] = e⁴⋅m_e / (c⋅ℎ³⋅ε_0²)
 	  ├── 👍 In range!
-	  └──  Min (~1✕10²) < M̲ ̲(̲~̲9̲✕̲1̲0̲⁷̲)̲ < Max (~1✕10¹²) 
+	  └──  Min (~1E+2) < Q (~9E+7) < Max (~1E+12) 
 
-	[ M ] [ 1/m ] = elementary_charge² ⋅ electron_mass / (planck_constant² ⋅ electric_constant)
+	{ Q } [ 1/m ] = e²⋅m_e / (ℎ²⋅ε_0)
 	  ├── 👍 In range!
-	  └──  Min (~1✕10²) < M̲ ̲(̲~̲6̲✕̲1̲0̲⁹̲)̲ < Max (~1✕10¹²) 
+	  └──  Min (~1E+2) < Q (~6E+9) < Max (~1E+12) 
 
-	[ M ] [ 1/m ] = speed_of_light ⋅ electron_mass / planck_constant
+	{ Q } [ 1/m ] = c⋅m_e / ℎ
 	  ├── 👍 In range!
-	  └──  Min (~1✕10²) < M̲ ̲(̲~̲4̲✕̲1̲0̲¹̲¹̲)̲ < Max (~1✕10¹²) 
+	  └──  Min (~1E+2) < Q (~4E+11) < Max (~1E+12) 
 
-	[ M ] [ 1/m ] = speed_of_light² ⋅ electric_constant ⋅ electron_mass / elementary_charge²
+	{ Q } [ 1/m ] = c²⋅ε_0⋅m_e / e²
 	  ├── 👎 Not in range.
-	  └──  Min (~1✕10²) < Max (~1✕10¹²) < M̲ ̲(̲~̲3̲✕̲1̲0̲¹̲³̲)̲ 
+	  └──  Min (~1E+2) < Max (~1E+12) < Q (~3E+13) 
 ```
-About the first line, if you multiply the length of mathematical constants powers:
-
-`2079 = 11 x 3 x 7 x 3 x 3` combination count can be verified.
 
 If you look at the first candidate:
 ```text
 ...
-	[ M ] [ 1/m ] = elementary_charge⁴ ⋅ electron_mass / (speed_of_light ⋅ planck_constant³ ⋅ electric_constant²)
+	{ Q } [ 1/m ] = e⁴⋅m_e / (c⋅ℎ³⋅ε_0²)
 	  ├── 👍 In range!
-	  └──  Min (~1✕10²) < M̲ ̲(̲~̲9̲✕̲1̲0̲⁷̲)̲ < Max (~1✕10¹²) 
+	  └──  Min (~1E+2) < Q (~9E+7) < Max (~1E+12) 
 ...
 ```
-The program calculated physical constants multiplication and represented its numerical value as `[ M ]` and its unit as `[ 1/m ]`.
+
+The program calculated dimensional constants multiplication and represented its numerical value as `{ Q }` and its unit as `[ 1/m ]`.
 
 `Min` and `Max` values are calculated as:
 
-`Min (...)` = [Target value] / [The maximum value of the mathematical multiplication combinations]
+`Min (...)` = [Target value] / [The maximum value of the dimensionless multiplication combinations]
 
-`Max (...)` = [Target value] / [The minimum value of the mathematical multiplication combinations]
+`Max (...)` = [Target value] / [The minimum value of the dimensionless multiplication combinations]
 
-So, the line represents:
+So, the line:
 
-`	  └──  Min (~1✕10²) < M̲ ̲(̲~̲9̲✕̲1̲0̲⁷̲)̲ < Max (~1✕10¹²) `:
+`	  └──  Min (~1E+2) < Q (~9E+7) < Max (~1E+12) `:
 
-`M` is in the range of mathematical multiplication range. If it is not in range, this candidate is ignored and its numerical value match is not investigated on the next steps.
+represents: `Q` is in the range of dimensionless multiplication range. If it is not in range, this candidate will be ignored and its numerical value will not be investigated on the next steps.
 
 This distinction is highlighted as `👍 In range!` or `👎 Not in range.`.
 
 #### Matched Results
-At the end, the program lists numerically matched results (which rely on the target error range) from the candidate list:
+
+At this step the program calculates all dimensionless multiplication combinations given in the scope.
+```text
+Totally, unique 2079 dimensionless multiplications are calculated!
+```
+If we multiply the length of mathematical constants powers:
+`2079 = 11 x 3 x 7 x 3 x 3` combination count can be verified.
+
+At the end, the program lists numerically matched results from the candidate list:
 
 ```text
-Result(s) matched the target:
-	(1.0973731568160 ± 0.0000000000021)✕10⁷ 1/m
-	 1.0973731568160✕10⁷ 1/m ≈ elementary_charge⁴ ⋅ electron_mass / (2³ ⋅ speed_of_light ⋅ planck_constant³ ⋅ electric_constant²)
+Result(s) that overlap with the target:
+	{ 1.0973731568160(21) e+7 } [ 1/m ] = Target
+	{ 1.09737315681(66) e+7 } [ 1/m ] = e⁴⋅m_e / (2³⋅c⋅ℎ³⋅ε_0²)
 ```
 
 ## Tests
@@ -460,9 +465,9 @@ Test folder is [src/tests](src/tests). To run the all test:
 
 ## Researches
 
-Some well-known physical constant values were searched and verified by using this program.
+Some well-known physical constant values were explored and verified by using this program.
 
-Unknown physical constants like Newtonian Constant of Gravitation (G) are also researched under the same [./research](./research) folder.
+Unknown physical constants like Newtonian Constant of Gravitation (G) were also explored under the same [./research](./research) folder.
 
 ## Resources
 
@@ -470,9 +475,9 @@ Unknown physical constants like Newtonian Constant of Gravitation (G) are also r
 
 * [pint](https://pint.readthedocs.io/en/stable/)
   * [pint repository](https://github.com/hgrecco/pint/tree/master/pint)
-  * [pint default constants definition file](https://github.com/hgrecco/pint/blob/master/pint/constants_en.txt)
   * [pint developer reference](https://pint.readthedocs.io/en/stable/developers_reference.html)
   * [pint tutorıal](https://pint.readthedocs.io/en/stable/tutorial.html)
+  * [pint default constants definition file](https://github.com/hgrecco/pint/blob/master/pint/constants_en.txt)
 * [Python fractions](https://docs.python.org/3/library/fractions.html)
   * It is used on the mathematical operations of the unit part of the quantities
 * [Python decimal](https://docs.python.org/3/library/decimal.html)
@@ -482,60 +487,41 @@ Unknown physical constants like Newtonian Constant of Gravitation (G) are also r
 * [Latex Mathematics](https://en.wikibooks.org/wiki/LaTeX/Mathematics)
   * [Writing mathematical expressions](https://docs.github.com/en/get-started/writing-on-github/working-with-advanced-formatting/writing-mathematical-expressions)
 
-TODO: check Resources section under the reasearch part. It should include the remove part below.
 
 ## Future Work
 
-* For found results, display the previous and next mathematical values to understand how accurately the numerical values to the right of the equation fall within the target error range.
-* Investigate possibility of finding all (known) physical constants with a single config file? Targeting `1.0000` with `dimensionless` methodology can be usefully for this purpose, like:
+* Explore possibility of finding all (known) physical constants with a single config file? Targeting `1.0000` with `dimensionless` methodology can be usefully for this purpose, like:
 
 ```shell
 > python ./main.py --target-value "1.00000E+0" --target-unit ""
 ```
 
-* Calculate total error value on physical constants multiplications and show it on the result. It will be the error of the right side of the equation. To achieve that, define error values in the definition file. Pint library may also have some features for this purpose. Or [uncertainties library](https://uncertainties-python-package.readthedocs.io/en/latest/) can be a good candidate!
-* Implement Cache & [check optimization suggestions of pint](https://pint.readthedocs.io/en/stable/advanced/performance.html)
+* Implement caching
 * Store results into the output file. Currently, results are printed to the console.
 * Use python [logging](https://docs.python.org/3/howto/logging.html) instead of `print` after implementing the output file.
 
-## Decided TODO list:
-* Reformat config as:
-  * dimensional_constants
-  * dimensionless_constants
-  * Reason, mathematical & physical is not a good separation of concepts. For example fine structure constant, it is a physical dimensionless constants!
-* Show results in formatted:
-  * pint-formatter: https://pint.readthedocs.io/en/stable/api/specific.html#pint-formatter
-  * pint-formatter code: https://github.com/hgrecco/pint/blob/ef0c51944264f2917bf50fb1743bd3f6a214e6fb/pint/formatting.py#L57
-  * Mathematical operators and symbols in Unicode: https://en.wikipedia.org/wiki/Mathematical_operators_and_symbols_in_Unicode
-  * Or implement your own
-* Reformat config file to:
-  * To show results with errors.
-    * Check how to use pint-formatter with this.
-* It has very important information related with the research: https://en.wikipedia.org/wiki/Physical_constant#Number_of_fundamental_constants
 
-
-## About Me and History of the Program
+## Behind the Scene
 
 I am a computer engineer with a background in Scientific Computing and Physics. 
 Last 4 years I am mainly working in big data related subjects and domains.  
 
 When I was in high school, I was selected to the Physics Olympic team of my home country. I was 2. on our team and won the honourable mention award in [IPhO 1996 (XXVII Oslo, Norway)](https://www.ipho-new.org/documentations/#statistics).
 
-In the same year, I won the Computer Engineering department in my country's university exam and I decided to study computer engineering due to the conditions of the country I live in.
+In the same year, I won the Computer Engineering department in my country's university exam and I decided to study computer engineering.
 
 When I look back now, I was very happy to see that my physics knowledge was still not erased and that I could remember some of them with a short effort.
 
-To admit, we talked about the feasibility of this program 20 years ago, in a conversation with my close friend Atilim Cetin. 
-In those years, I did not attempt to implement this program because I had just graduated and my priorities were different.
-And frankly, if there weren't libraries like the [pint](https://pint.readthedocs.io/en/stable/) quantity library which helps to dealing with units parts of the quantities, 
-I might not have enough energy to get into this. I would like to thank all the team who have developed the pint library from here.
+To be honest, we talked about the feasibility of this program 20 years ago, in a conversation with my close friend Atilim Cetin. 
 
-I don't know if a similar physical constant explorer program has been done before. 
+In those years, I did not attempt to implement this program, and frankly, if there weren't libraries like the [pint](https://pint.readthedocs.io/en/stable/) quantity library which helps to deal with units parts of the quantities, I might not have enough energy to get into this. 
+
+I would like to thank all the team who have developed the pint library from here 👏!
+
+I don't know if a similar physical constant explorer program has been already implemented before. 
 If it has been done already, I hope this approach gives a new perspective on helping us to understand the mystery of nature with good purposes!
 
-[Emre Dagli - Linkedin](https://www.linkedin.com/in/emre-dagli/) 
-
-## Gratitude
+## Acknowledgement & Gratitude
 
 I would like to express my gratitude to my physics teachers who made me love physics and prepared us for the physics olympiads:
 
@@ -550,7 +536,7 @@ And who are not with us:
 * Physics Teacher Aykut Gümüç (R.I.P), Eskisehir Science High School
 * Prof. Dr. Oleg Fedorovich Kabardin (R.I.P), Physics Olympiads
 
-And special thanks to my genius and big-hearted friends who always enjoy supporting me:
+And I would like to thanks to my genius and big-hearted friends who always enjoy supporting me:
 
 * Dr. İnanç Kanık
 * Dr. Özgür Sümer
@@ -558,5 +544,8 @@ And special thanks to my genius and big-hearted friends who always enjoy support
 * Osman Özgür
 * Ali Onur Geven
 
-And to my parents Muazzez Dagli & Sadi Dagli who are retired math teacher!
-And to my beloved wife Ayşen and my dear children Ozan & Doruk!
+And of course to my beloved wife Ayşen and my dear children Ozan & Doruk!
+
+I would like to thank again all the team who developed the pint library from here 👏!
+
+Emre Dagli
