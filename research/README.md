@@ -150,7 +150,7 @@ Resources used for this experiment:
 
 Vacuum Magnetic Permeability (Magnetic Constant):
 
-* [CODATA value](https://physics.nist.gov/cgi-bin/cuu/Value?mu0): $\mu _{0}=1.25663706212(19) \times 10^{-6}\!\mathrm{kg}\cdot\mathrm{m}\cdot\mathrm{s}^{-2}\cdot\mathrm{A}^{-2}$
+* [CODATA value](https://physics.nist.gov/cgi-bin/cuu/Value?mu0): $\mu _{0}=1.25663706212(19) \times 10^{-6}  \mathrm{kg}\cdot\mathrm{m}\cdot\mathrm{s}^{-2}\cdot\mathrm{A}^{-2}$
 * [More information](https://en.wikipedia.org/wiki/Vacuum_permeability) on Wikipedia.
 
 Vacuum Electric Permittivity (Electric Constant):
