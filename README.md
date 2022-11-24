@@ -6,33 +6,8 @@ The researches and explorations by using this program can be examined under [res
 
 ## Table of Content
 
-<!-- TOC -->
-* [Motivation & Concept](#motivation--concept)
-* [Methodology](#methodology)
-  * [Technical Reasons](#technical-reasons)
-* [Python Installation](#python-installation)
-* [Running the Program](#running-the-program)
-  * [The Definition File](#the-definition-file)
-    * [Dimensional Constants Collection](#dimensional-constants-collection)
-    * [Dimensionless Constants Collection](#dimensionless-constants-collection)
-  * [The Config File](#the-config-file)
-  * [The Program Inputs](#the-program-inputs)
-* [The Program Outputs](#the-program-outputs)
-  * [Store Results into a File](#store-results-into-a-file)
-  * [Output Format](#output-format)
-    * [Summarizing the Inputs](#summarizing-the-inputs)
-    * [Listing the Candidates](#listing-the-candidates)
-    * [Matched Results](#matched-results)
-* [Tests](#tests)
-* [Researches](#researches)
-* [Resources](#resources)
-  * [Libraries & Documentation](#libraries--documentation)
-* [Future Work](#future-work)
-* [Behind the Scene](#behind-the-scene)
-* [Acknowledgement & Gratitude](#acknowledgement--gratitude)
-<!-- TOC -->
 
-## Motivation & Concept
+## 1 Motivation & Concept
 
 Most of the relations in physics are observed from experiments and constants in the relations measured by instruments within the given error range.
 
@@ -72,7 +47,7 @@ Formulation of $\sigma$ was [theoretically derived](https://edisciplinas.usp.br/
 Now, let's think oppositely and assume we have a function which takes:
 
 * Target value: 5.670374419E-8 (in [Scientific Notation](https://en.wikipedia.org/wiki/Scientific_notation))
-* Target unit: $\mathrm{kg}\\times\mathrm{s}^{-3}\\times\mathrm{K}^{-4}$
+* Target unit: $\mathrm{kg}$⋅$\mathrm{s}^{-3}$⋅$\mathrm{K}^{-4}$
 * List of physical constants with their units ( $k$, $h$, $c$, ...)
 * List of mathematical constants ( $\pi$, $e$, ...)
 * List of prime numbers (2, 3, 5, ...)
@@ -95,7 +70,7 @@ Yes it is possible. To be honest, I am not definitely sure about its usefulness!
 But I would like to start this study with the excitement of opportunity of being the first person to see the possible formulation of some famous physical constants.
 And I know that this methodology can be expanded to a wider scope with distributed calculation methods if this approach can be successful and be considered as useful.
 
-## Methodology
+## 2 Methodology
 
 It is a well-known fact that the resultant unit on the right side of the equations must match the left side.
 
@@ -143,18 +118,15 @@ I wanted to apply a simple and clear set of methodologies:
 5. Using [decimal](https://docs.python.org/3/library/decimal.html) library to represent numeric values of quantities with high significant digits.
 6. Using [fractions](https://docs.python.org/3/library/fractions.html) library to represent the power of the quantities and its units.
 
-### Technical Reasons
+### 2.1 Technical Solutions
 
 * Python's Decimal library was used to calculate the mathematical operations of the numeric values of the quantities.
 * The "pint" library in conjunction with the Python's Fractions library was used to calculate the mathematical operations of the units part of the quantities.
 
 The main reasons about this technical decisions are:
-1. Python Fractions library we can make this kind of rational mathematical operations correctly: [$s^{2/3}$] ⋅ [$s^{4/3}$] ≟ [$s^{2}$]
+1. With Python Fractions library, we can achieve rational number units multiplications correctly: $s^{2/3}$ ⋅ $s^{4/3}$ ≟ $s^{2}$
 2. "pint" library has support for "Non integer types" (non_int_type) to set `Decimal` or `Fractions`. But, unfortunately I could not find a feature to set numeric and unit parts class types differently.  
-3. Decimal Library has nice set of features to represent high precision numbers and operate on it quickly.
-4. It is not wanted to use another library to handle the measurement error calculations of the numeric values. The main reason is to add less complexity. Only Python's built-in Libraries are used. So it can be implemented more robustly and more testable.
-
-Please do not hesitate to provide feedback if you have suggestions, thanks!
+3. Decimal Library has nice set of features to represent numbers with high precision and operate on it quickly.
 
 ## Python Installation
 
@@ -367,7 +339,7 @@ It will store the results into `output_file_name.txt` file on the same folder th
 
 ### Output Format
 
-There are 3 sections on the output. The following part explains the sections of the `Rydberg Constant` exploration ([the output file](research/output/derived_constants/rydberg_constant.txt)):
+There are 3 sections on the output. The following sections explains the parts of the `Rydberg Constant` exploration [output file.](research/output/derived_constants/rydberg_constant.txt)):
 
 #### Summarizing the Inputs
 ```text
@@ -512,11 +484,9 @@ In the same year, I won the Computer Engineering department in my country's univ
 
 When I look back now, I was very happy to see that my physics knowledge was still not erased and that I could remember some of them with a short effort.
 
-To be honest, we talked about the feasibility of this program 20 years ago, in a conversation with my close friend Atilim Cetin. 
+To be honest, we talked about the feasibility of this program 20 years ago, in a conversation with my close friend Atilim Cetin. In those years, there weren't libraries like the [pint](https://pint.readthedocs.io/en/stable/) quantity library which helps to deal with units parts of the quantities. 
 
-In those years, I did not attempt to implement this program, and frankly, if there weren't libraries like the [pint](https://pint.readthedocs.io/en/stable/) quantity library which helps to deal with units parts of the quantities, I might not have enough energy to get into this. 
-
-I would like to thank all the team who have developed the pint library from here 👏!
+I would like to thank all the team who have developed the pint library 👏!
 
 I don't know if a similar physical constant explorer program has been already implemented before. 
 If it has been done already, I hope this approach gives a new perspective on helping us to understand the mystery of nature with good purposes!
@@ -546,6 +516,6 @@ And I would like to thanks to my genius and big-hearted friends who always enjoy
 
 And of course to my beloved wife Ayşen and my dear children Ozan & Doruk!
 
-I would like to thank again all the team who developed the pint library from here 👏!
+I would like to thank again all the team who developed the pint library!
 
 Emre Dagli
