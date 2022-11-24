@@ -428,7 +428,8 @@ So, the line:
 
 `	  └──  Min (~1E+2) < Q (~9E+7) < Max (~1E+12) `:
 
-represents: `Q` is in the range of dimensionless multiplication range. If it is not in range, this candidate will be ignored and its numerical value will not be investigated on the next steps.
+represents: `Q` is in the range of dimensionless multiplication range. 
+If it is not in range, this candidate will be ignored and its numerical value will not be investigated on the next steps.
 
 This distinction is highlighted as `👍 In range!` or `👎 Not in range.`.
 
@@ -461,7 +462,7 @@ Test folder is [src/tests](src/tests). To run the all test:
 
 Some well-known physical constant values were explored and verified by using this program.
 
-Unknown physical constants like Newtonian Constant of Gravitation (G) were also explored under the same [./research](./research) folder.
+Some unknown (not derived) physical constants like Newtonian Constant of Gravitation (G) were also explored under the same [./research](./research) folder.
 
 ## 8 Resources & Libraries
 
