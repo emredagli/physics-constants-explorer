@@ -122,7 +122,7 @@ Result(s) that overlap with the target:
 	{ 2.082670(47) e+56 } [ kg·m³/s⁴ ] = 3⋅c⁶ / (2⁹⋅π⁵⋅G)
 ```
 
-Note: as you see "G" the newtonian constant of gravitation increased the resultant expression uncertainty!
+Note that: "G" the Newtonian constant of gravitation increased the resultant expression uncertainty!
 
 ## 4 Experiments
 
@@ -130,7 +130,7 @@ After executing enough runs on the other physical constants, it is time to exper
 
 The script "[experiments.sh](script/experiments.sh)" is used on the experiments listed on this section.
 
-Note: Please execute the script on the project's root folder, if you want to test it:
+Note: The script was executed on the project's root folder:
 
 ```shell
 > ./research/script/experiments.sh
