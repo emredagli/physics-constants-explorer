@@ -14,7 +14,7 @@ by using brute_force methodology...
 Found 1 candidates the resultant unit matched with the target's unit:
 	{ Q } [ kg ] = c¹ᐟ²⋅ℎ¹ᐟ² / G¹ᐟ²
 	  ├── 👍 In range!
-	  └──  Min (~6E-10) < Q (~5E-8) < Max (~9E-7) 
+	  └── Min (~6E-10) < Q (~5E-8) < Max (~9E-7) 
 
 Totally, unique 81 dimensionless multiplications are calculated!
 

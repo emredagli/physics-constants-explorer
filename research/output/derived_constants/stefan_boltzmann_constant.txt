@@ -20,15 +20,15 @@ by using brute_force methodology...
 Found 3 candidates the resultant unit matched with the target's unit:
 	{ Q } [ kg/K⁴/s³ ] = k⁴ / (c²⋅ℎ³)
 	  ├── 👍 In range!
-	  └──  Min (~5E-13) < Q (~1E-9) < Max (~6E-3) 
+	  └── Min (~5E-13) < Q (~1E-9) < Max (~6E-3) 
 
 	{ Q } [ kg/K⁴/s³ ] = k⁴⋅ε_0 / (c⋅ℎ²⋅e²)
 	  ├── 👍 In range!
-	  └──  Min (~5E-13) < Q (~1E-7) < Max (~6E-3) 
+	  └── Min (~5E-13) < Q (~1E-7) < Max (~6E-3) 
 
 	{ Q } [ kg/K⁴/s³ ] = k⁴⋅ε_0² / (ℎ⋅e⁴)
 	  ├── 👍 In range!
-	  └──  Min (~5E-13) < Q (~7E-6) < Max (~6E-3) 
+	  └── Min (~5E-13) < Q (~7E-6) < Max (~6E-3) 
 
 Totally, unique 2079 dimensionless multiplications are calculated!
 

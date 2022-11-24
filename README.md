@@ -6,6 +6,30 @@ The researches and explorations by using this program can be examined under [res
 
 ## Table of Content
 
+<!-- TOC -->
+* [1 Motivation & Concept](#1-motivation--concept)
+* [2 Methodology](#2-methodology)
+  * [2.1 Technical Solutions](#21-technical-solutions)
+* [3 Python Installation](#3-python-installation)
+* [4 Running the Program](#4-running-the-program)
+  * [4.1 The Definition File](#41-the-definition-file)
+    * [4.1.1 Dimensional Constants Collection](#411-dimensional-constants-collection)
+    * [4.1.2 Dimensionless Constants Collection](#412-dimensionless-constants-collection)
+  * [4.2 The Config File](#42-the-config-file)
+  * [4.3 The Program Inputs](#43-the-program-inputs)
+* [5 The Program Outputs](#5-the-program-outputs)
+  * [5.1 Store Results into a File](#51-store-results-into-a-file)
+  * [5.2 Output Format](#52-output-format)
+    * [5.2.1 Summarizing the Inputs](#521-summarizing-the-inputs)
+    * [5.2.2 Listing the Candidates](#522-listing-the-candidates)
+    * [5.2.3 Matched Results](#523-matched-results)
+* [6 Tests](#6-tests)
+* [7 Researches](#7-researches)
+* [8 Resources & Libraries](#8-resources--libraries)
+* [9 Future Work](#9-future-work)
+* [10 Behind the Scene](#10-behind-the-scene)
+* [11 Acknowledgement & Gratitude](#11-acknowledgement--gratitude)
+<!-- TOC -->
 
 ## 1 Motivation & Concept
 
@@ -128,7 +152,7 @@ The main reasons about this technical decisions are:
 2. "pint" library has support for "Non integer types" (non_int_type) to set `Decimal` or `Fractions`. But, unfortunately I could not find a feature to set numeric and unit parts class types differently.  
 3. Decimal Library has nice set of features to represent numbers with high precision and operate on it quickly.
 
-## Python Installation
+## 3 Python Installation
 
 The implementation is done by using Python 3.9.13. The program should run Python >=3.9.13
 
@@ -143,7 +167,7 @@ Please execute the following code, line by line on the projects root folder afte
 > pip install -r ./requirements.txt
 ```
 
-## Running the Program
+## 4 Running the Program
 
 The program takes:
 * The target quantity numeric value (mandatory)
@@ -153,7 +177,7 @@ The program takes:
 
 The program prints the results in descriptive format on the console.
 
-### The Definition File
+### 4.1 The Definition File
 
 All dimensional and dimensionless constants are defined under this JSON file. The program loads and considers only the constants selected from here.
 
@@ -187,7 +211,7 @@ Each collection has its own `key`, `value` pairs, for example:
   }
 }
 ```
-#### Dimensional Constants Collection
+#### 4.1.1 Dimensional Constants Collection
 
 This collection should only contain constants that have units.
 
@@ -212,13 +236,13 @@ It has the following key-value pair definitions:
   * `"info": "..."` (optional). 
     * If it is needed, this field can be used to enter more information.
 
-#### Dimensionless Constants Collection
+#### 4.1.2 Dimensionless Constants Collection
 
 This collection should only contain constants that have no units.
 
 It has the same key-value pairs with the same formats as the "Dimensional Constants Collection" except for `unit` definitions. It should not contain the `unit` definitions.
 
-### The Config File
+### 4.2 The Config File
 
 The configuration file determines which constants the program will use to find results close to the desired target value.
 
@@ -270,7 +294,7 @@ Power range values can be in 3 format as given the example above:
   * For the given example above, program creates the powers ranges as, [0, 1/3, 2/3, 1, 4/3, 5/3, 2]
 
 
-### The Program Inputs
+### 4.3 The Program Inputs
 
 The program `main.py` takes target value and unit with the following input names:
 
@@ -324,11 +348,11 @@ options:
                         If it is not provided the program will use default definition file:
                         ./src/resources/default_definition.json
 ```
-## The Program Outputs
+## 5 The Program Outputs
 
 The program prints the outputs to console. 
 
-### Store Results into a File
+### 5.1 Store Results into a File
 
 You can store the results into a file by executing the script like:
 
@@ -337,11 +361,11 @@ You can store the results into a file by executing the script like:
 ```
 It will store the results into `output_file_name.txt` file on the same folder that you execute the script.
 
-### Output Format
+### 5.2 Output Format
 
 There are 3 sections on the output. The following sections explains the parts of the `Rydberg Constant` exploration [output file.](research/output/derived_constants/rydberg_constant.txt)):
 
-#### Summarizing the Inputs
+#### 5.2.1 Summarizing the Inputs
 ```text
 Explore the target quantity:
 	{ 1.0973731568160(21) e+7 } [ 1/m ] = Target
@@ -363,7 +387,7 @@ in terms of the given:
 by using brute_force methodology...
 ```
 
-#### Listing the Candidates
+#### 5.2.2 Listing the Candidates
 After checking all combination of the dimensional constants given in the scope, the program prepares the candidates list whose resultant unit matches the target unit.
 
 ```text
@@ -410,7 +434,7 @@ represents: `Q` is in the range of dimensionless multiplication range. If it is 
 
 This distinction is highlighted as `👍 In range!` or `👎 Not in range.`.
 
-#### Matched Results
+#### 5.2.3 Matched Results
 
 At this step the program calculates all dimensionless multiplication combinations given in the scope.
 ```text
@@ -427,7 +451,7 @@ Result(s) that overlap with the target:
 	{ 1.09737315681(66) e+7 } [ 1/m ] = e⁴⋅m_e / (2³⋅c⋅ℎ³⋅ε_0²)
 ```
 
-## Tests
+## 6 Tests
 
 Test folder is [src/tests](src/tests). To run the all test:
 
@@ -435,15 +459,13 @@ Test folder is [src/tests](src/tests). To run the all test:
 > pytest
 ```
 
-## Researches
+## 7 Researches
 
 Some well-known physical constant values were explored and verified by using this program.
 
 Unknown physical constants like Newtonian Constant of Gravitation (G) were also explored under the same [./research](./research) folder.
 
-## Resources
-
-### Libraries & Documentation
+## 8 Resources & Libraries
 
 * [pint](https://pint.readthedocs.io/en/stable/)
   * [pint repository](https://github.com/hgrecco/pint/tree/master/pint)
@@ -460,7 +482,7 @@ Unknown physical constants like Newtonian Constant of Gravitation (G) were also 
   * [Writing mathematical expressions](https://docs.github.com/en/get-started/writing-on-github/working-with-advanced-formatting/writing-mathematical-expressions)
 
 
-## Future Work
+## 9 Future Work
 
 * Explore possibility of finding all (known) physical constants with a single config file? Targeting `1.0000` with `dimensionless` methodology can be usefully for this purpose, like:
 
@@ -473,7 +495,7 @@ Unknown physical constants like Newtonian Constant of Gravitation (G) were also 
 * Use python [logging](https://docs.python.org/3/howto/logging.html) instead of `print` after implementing the output file.
 
 
-## Behind the Scene
+## 10 Behind the Scene
 
 I am a computer engineer with a background in Scientific Computing and Physics. 
 Last 4 years I am mainly working in big data related subjects and domains.  
@@ -491,7 +513,7 @@ I would like to thank all the team who have developed the pint library 👏!
 I don't know if a similar physical constant explorer program has been already implemented before. 
 If it has been done already, I hope this approach gives a new perspective on helping us to understand the mystery of nature with good purposes!
 
-## Acknowledgement & Gratitude
+## 11 Acknowledgement & Gratitude
 
 I would like to express my gratitude to my physics teachers who made me love physics and prepared us for the physics olympiads:
 

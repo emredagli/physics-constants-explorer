@@ -405,7 +405,7 @@ R3	{ 6.674365007(14) e-11 } [ m³/kg/s² ] = c²⁰ᐟ³⋅µ_0¹⁷ᐟ³⋅e³�
 
 R2 is the result that we have found the previous attempt.
 
-If we would have measured the numerical value of G more precisely, maybe we would have been able to eliminate some of these results.
+If we would have a more precise numerical value of G, maybe we would have been able to eliminate some of these results.
 
 At this point, I think that it does not make much sense to make explorations using the program for the Newtonian Constant of Gravitation (G), which has only 6 significant digits.
 

@@ -20,19 +20,19 @@ by using brute_force methodology...
 Found 4 candidates the resultant unit matched with the target's unit:
 	{ Q } [ A·s²/kg/m² ] = e³ / (c⋅ℎ²⋅ε_0)
 	  ├── 👍 In range!
-	  └──  Min (~5E+9) < Q (~4E+12) < Max (~5E+19) 
+	  └── Min (~5E+9) < Q (~4E+12) < Max (~5E+19) 
 
 	{ Q } [ A·s²/kg/m² ] = e / ℎ
 	  ├── 👍 In range!
-	  └──  Min (~5E+9) < Q (~2E+14) < Max (~5E+19) 
+	  └── Min (~5E+9) < Q (~2E+14) < Max (~5E+19) 
 
 	{ Q } [ A·s²/kg/m² ] = c⋅ε_0 / e
 	  ├── 👍 In range!
-	  └──  Min (~5E+9) < Q (~2E+16) < Max (~5E+19) 
+	  └── Min (~5E+9) < Q (~2E+16) < Max (~5E+19) 
 
 	{ Q } [ A·s²/kg/m² ] = c²⋅ℎ⋅ε_0² / e³
 	  ├── 👍 In range!
-	  └──  Min (~5E+9) < Q (~1E+18) < Max (~5E+19) 
+	  └── Min (~5E+9) < Q (~1E+18) < Max (~5E+19) 
 
 Totally, unique 2079 dimensionless multiplications are calculated!
 
