@@ -331,10 +331,10 @@ R3	{ 6.674224928(14) e-11 } [ m³/kg/s² ] = 2²⋅α⁴⋅c⋅mc_to_ec_ratio⋅
 The program actually found a single candidate, not 3 different one. 
 if we put $\alpha$ (the fine-structure constant) formulation on the results they are equal.
 
-If we write for example (R3) with well-known symbols of the constants:
+If we substitute `mc_to_ec_ratio` (magnetic constant to electric constant ratio) and $ \m_{u}$ (proton to electron mass ratio) on (R3):
 
 ```math
-6.674224928(14)x10^-11 [m³/kg/s²] = {\frac {2^{2}}{3\cdot5^{3}\cdot\pi^{4}}}\cdot{\frac {\alpha^{4} \,e^{4} \,c\,\mu _{0}}{h\,\varepsilon _{0}}\cdot{\frac {\\m _{e}^{7}}{\\m _{p}^{9}}}}
+6.674224928(14)\times 10^{-11}\, \mathrm{m}^{3}/\mathrm{kg}/\mathrm{s}^{2} = {\frac {2^{2}}{3\cdot5^{3}\cdot\pi^{4}}}\cdot{\frac {\alpha^{4} \,e^{4} \,c\,\mu _{0}}{h\,\varepsilon _{0}}\cdot{\frac {\\m _{e}^{7}}{\\m _{p}^{9}}}}
 ```
 
 * $\alpha$ is the fine-structure constant
