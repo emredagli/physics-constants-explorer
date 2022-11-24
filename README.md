@@ -80,7 +80,7 @@ Now, let's think oppositely and assume we have a function which takes:
 and returns the matched multiplications, so that:
 
 * The target unit is "exactly" matched with the unit of formula and,
-* The target value is matched with the resultant numeric value (within the given error range).
+* The target value overlaps with the resultant numeric value within the given error range.
 
 Example Output:
 
@@ -90,9 +90,7 @@ Example Output:
 
 Would it be possible and "useful"?
 
-Yes, it is possible.
-
-The program explained here outputs the all calculation steps in detail. 
+Yes, it is possible. The program explained here outputs the all calculation steps in detail. 
 So, exploring the dimensionally matched candidates may also support the experts on their researches.
 
 And the methodology can be expanded to a wider scope with distributed calculation methodologies.
@@ -101,47 +99,53 @@ And the methodology can be expanded to a wider scope with distributed calculatio
 
 It is a well-known fact that the resultant unit on the right side of the equations must match the left side.
 
+We can represent the equations with quantity definitions:
 ```text
 Quantity = {numeric value} ⋅ [unit]
 
 Q1 = {Q1} ⋅ [Q1]
 Q2 = {Q2} ⋅ [Q2]
-
-If Q1 = Q2 then units must be equal, [Q1] = [Q2].
 ```
-If we claim Q1 = Q2 then their numeric values must also overlap in their error ranges:
+
+If Q1 = Q2 then units must be equal ([Q1] = [Q2]) and their numeric values must also overlap in their error ranges:
+
 ```text
 Quantity = {numeric value ± error} ⋅ [unit]
 
 Q1 = {Q1 ± ΔQ1}⋅[Q1]
 Q2 = {Q2 ± ΔQ2}⋅[Q2]
-
-To claim Q1 = Q2:
-* [Q1] = [Q2], and
-* {Q1 + ΔQ1} >= {Q2 - ΔQ2}, and
-* {Q1 - ΔQ1} <= {Q2 + ΔQ2}
 ```
 
-For physical constants, even if units are matched and quantities are overlapped, we can not state that Q1 = Q2! 
+If Q1 = Q2 then the following conditions must be fulfilled: 
+* Unit match: [Q1] = [Q2], and
+* Numeric value overlap with absolute error definitions:
+  * Q1 + ΔQ1 >= Q2 - ΔQ2, and
+  * Q1 - ΔQ1 <= Q2 + ΔQ2
 
-Only with a mathematical and logical derivation, we can claim that Q1 = Q2. 
+Numeric value overlapping can also be expressed by using [relative error](https://de.wikipedia.org/wiki/Fehlerschranke) definitions:
+* 1 + δQ1 + δQ2 >= Q1/Q2, and
+* 1 - δQ1 - δQ2 <= Q1/Q2
 
-In the program, `Q1` is the target (`T`) and set of `Q2`'s which are the candidates satisfying the conditions given above!
+where relative errors, δQ1 = ΔQ1 / Q1 and δQ2 = ΔQ2 / Q2.
 
-The program also takes config ([default](src/resources/default_config.json)) and definition ([default](src/resources/default_definition.json)) files to restrict and define its scope.
+Note: For physical constants, even if units are matched and quantities' numeric values are overlapped, we can not state directly the formulation of Q1 is equal to the Q2 expression! 
+
+In the program, `Q1` is the target (`T`) and set of `Q2`'s which are the candidates satisfying conditions given above!
+
+The program also takes a config file ([default_config.json](src/resources/default_config.json)) and a definition file ([default_definition.json](src/resources/default_definition.json)) to restrict and define its scope.
 
 The main calculation steps can be summarized as:
 
-![Flowchart of Physical Constants Explorer](./img/Flowchart_of_Physical_Constants_Explorer.drawio.svg)
+![Flowchart of Physics Constants Explorer](./img/Flowchart_of_Physical_Constants_Explorer.png)
 
-I wanted to apply a simple and clear set of methodologies:
+The simple and clear set of methodologies were applied:
 
 1. Brute force algorithm for all multiplication combinations
 2. Using a unit library ([pint](https://pint.readthedocs.io/en/stable/)) to:
    * Represent dimensional constants units in SI base units
    * Correctly calculate and compare the units of multiplication and power operations
 3. Using scientific notation with the ["concise form"](https://en.wikipedia.org/wiki/Scientific_notation#Estimated_final_digits).
-4. Calculating the relative errors.
+4. Calculating and using the relative errors.
 5. Using [decimal](https://docs.python.org/3/library/decimal.html) library to represent numeric values of quantities with high significant digits.
 6. Using [fractions](https://docs.python.org/3/library/fractions.html) library to represent the power of the quantities and its units.
 
@@ -154,17 +158,19 @@ So,
 * Python's Decimal library was used to calculate the mathematical operations of the numeric values of the quantities.
 
 The main reasons about this technical decisions are:
-1. With Python Fractions library, we can achieve rational number units multiplications correctly: $s^{2/3}$ ⋅ $s^{4/3}$ ≟ $s^{2}$
-2. "pint" library has support for "Non integer types" (non_int_type) to set `Decimal` or `Fractions`. But, unfortunately I could not find a feature to set numeric and unit parts class types differently.  
+1. With Python Fractions library, we can achieve units power multiplications correctly, such as:
+   * $s^{2/3}$ ⋅ $s^{4/3}$ ≟ $s^{2}$
+   * $s^{-1/6}$ ⋅ $s^{7/6}$ ≟ $s$
+2. "pint" library has support for "Non integer types" (non_int_type) to set `Decimal` or `Fractions`. But, unfortunately I could not find a way to set numeric and unit class types differently.  
 3. Decimal Library has nice set of features to represent numbers with high precision and operate on it quickly.
 
 ## 3 Python Installation
 
-The implementation is done by using Python 3.9.13. The program should run Python >=3.9.13
+The implementation is done by using Python 3.9.13. The program should be run with Python >=3.9.13
 
 If python is not installed, I suggest using one of "Python Version Manager" (Anaconda, pyenv, etc.)
 
-Please execute the following code, line by line on the projects root folder after cloning this repository.
+After cloning this repository, to install the required libraries, the following shell codes can be executed line by line on the projects root folder:
 
 ```shell
 > python -m venv ./venv
@@ -176,10 +182,10 @@ Please execute the following code, line by line on the projects root folder afte
 ## 4 The Program Usage
 
 The program takes:
-* The target quantity numeric value (mandatory)
-* The target quantity unit (mandatory)
-* The definition file (optional), that is a list of all dimensional and dimensionless constant definitions as a JSON file.
-* The config file (optional), that is the scope of the program. It is a list of dimensional and dimensionless constants and their power ranges as a JSON file.
+* The target quantity numeric value
+* The target quantity unit
+* The definition file, that is a list of all dimensional and dimensionless constant definitions in JSON format.
+* The config file, that is the scope of the program in JSON format. It is a list of dimensional and dimensionless constants power ranges.
 
 The program prints the results in descriptive format on the console.
 
@@ -197,6 +203,8 @@ As an example, the Rydberg constant can be explored:
 ```shell
 > python ./main.py --target-value "1.0973731568160(21)e+7" --target-unit "1/m"
 ```
+
+Sample usages of the program can be accessible under the [research/script](research/script) folder.
 
 #### 4.1.1 The Inputs 
 

@@ -36,8 +36,8 @@ class Quantity:
 
         power_decimal = Decimal(power.numerator) / Decimal(power.denominator)
         value_decimal = Decimal(value_str)
-        delta = Decimal(error_concise) * Decimal("10") ** Decimal(value_decimal.as_tuple().exponent)
-        relative_error = delta / value_decimal
+        absolute_error = Decimal(error_concise) * Decimal("10") ** Decimal(value_decimal.as_tuple().exponent)
+        relative_error = absolute_error / value_decimal
 
         if not unit:
             unit = "dimensionless"
@@ -104,10 +104,6 @@ class Quantity:
         return result
 
     def get_unit_str(self):
-        # unit = self.get_unit()
-        # if unit is None:
-        #     return "dimensionless"
-
         result = f"{self.unit:~P}"
         return result if result else "dimensionless"
 
