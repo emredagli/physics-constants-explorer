@@ -347,6 +347,7 @@ If we write for example (R3) with well-known symbols of the constants:
 * $\[ x^n + y^n = z^n \]$
 * $\[ m _{e} + m_{e} = z^n \]$
 * $\ m_{e} + m_{e} = z^n $
+* $\ m _{e} + m _{e} = z^n $
 * the mass of a stationary electron is $\\m _{e}$ 
 * <pre xml:lang="latex">\m _{e}</pre>
 * <pre xml:lang="latex">\\m _{e}</pre>
