@@ -281,7 +281,7 @@ Each collection has its own `key`, `value` pairs, for example:
 This collection should only contain constants that have unit.
 
 It has the following key-value pair definitions:
-* `key` values should contain a descriptive info (on the given example above it is `speed_of_light_in_vacuum`).
+* `key` values should contain a descriptive information (on the given example above it is `speed_of_light_in_vacuum`).
 * `value` object has the following kay-value pairs:
   * `"numeric_value": "..."` (mandatory). 
     * The values should be in scientific notation format.
@@ -297,9 +297,9 @@ It has the following key-value pair definitions:
     * The following examples which gives the same resultant unit (for example the unit of "Vacuum magnetic permittivity constant"):
       * `A^2 s^4/kg/m^3` = `A^2 s^4/(kg m^3)` = `A^2 s^4 kg^-1 m^-3` 
   * `"symbol": "..."` (optional). 
-    * The symbol is used on the results. If it is not provided the `key` value is used on the required places.
+    * The symbol is used on the results. If it is not provided the `key` value is used on the output of the program.
   * `"info": "..."` (optional). 
-    * Can be used to provide more info about the constant.
+    * Can be set to describe the constant in more detail.
 
 #### 4.2.2 Dimensionless Constants Collection
 
@@ -387,86 +387,95 @@ It will store the results into `output_file_name.txt` file on the same folder th
 
 ### 5.2 Output Format
 
-There are 3 sections on the output. The following sections explains the parts of the `Rydberg Constant` exploration [output file.](research/output/derived_constants/rydberg_constant.txt)
+There are 3 sections on the output:
+* Summarizing the Inputs
+* Listing the Candidates
+* Results
+
+The following sections explain the parts of the `Rydberg constant` [exploration](research/output/derived_constants/rydberg_constant.txt) as an example.
 
 #### 5.2.1 Summarizing the Inputs
 ```text
-Explore the target quantity:
+Explore the target:
 	{ 1.0973731568160(21) e+7 } [ 1/m ] = Target
-in terms of the given:
+in terms of the given,
 	dimensional constants:   
-		speed_of_light_in_vacuum (c) ^ [-2, -1, 0, 1, 2]
-		planck_constant (ℎ) ^ [-3, -2, -1, 0, 1, 2, 3]
-		boltzmann_constant (k) ^ [-4, -3, -2, -1, 0, 1, 2, 3, 4]
-		elementary_charge (e) ^ [-4, -3, -2, -1, 0, 1, 2, 3, 4]
-		vacuum_electric_permittivity (ε_0) ^ [-2, -1, 0, 1, 2]
-		electron_mass (m_e) ^ [-2, -1, 0, 1, 2]
-		avogadro_constant (N_A) ^ [-1, 0, 1]
+		c = { 2.99792458e+8 } [ m/s ], powers = [-2, -1, 0, 1, 2]
+		ℎ = { 6.62607015e-34 } [ kg·m²/s ], powers = [-3, -2, -1, 0, 1, 2, 3]
+		k = { 1.380649e-23 } [ kg·m²/K/s² ], powers = [-4, -3, -2, -1, 0, 1, 2, 3, 4]
+		e = { 1.602176634e-19 } [ A·s ], powers = [-4, -3, -2, -1, 0, 1, 2, 3, 4]
+		ε_0 = { 8.8541878128(13)e-12 } [ A²·s⁴/kg/m³ ], powers = [-2, -1, 0, 1, 2]
+		m_e = { 9.1093837015(28)e-31 } [ kg ], powers = [-2, -1, 0, 1, 2]
+		N_A = { 6.02214076e+23 } [ 1/mol ], powers = [-1, 0, 1]
 	dimensionless constants: 
-		2 ^ [-3, -2, -1, 0, 1, 2, 3]
-		3 ^ [-1, 0, 1]
-		5 ^ [-1, 0, 1]
-		pi (π) ^ [-5, -4, -3, -2, -1, 0, 1, 2, 3, 4, 5]
-		wien_u ^ [-1, 0, 1]
+		2, powers = [-3, -2, -1, 0, 1, 2, 3]
+		3, powers = [-1, 0, 1]
+		5, powers = [-1, 0, 1]
+		π, powers = [-5, -4, -3, -2, -1, 0, 1, 2, 3, 4, 5]
+		wien_u, powers = [-1, 0, 1]
+		μ, powers = [-1, 0, 1]
+		g_e, powers = [-1, 0, 1]
+		g_p, powers = [-1, 0, 1]
 by using brute_force methodology...
 ```
 
 #### 5.2.2 Listing the Candidates
-After checking all combination of the dimensional constants given in the scope, the program prepares the candidates list whose resultant unit matches the target unit.
+After checking all combination of the dimensional constants given in the scope, 
+the program prepares the candidates list whose resultant unit matches the target unit.
 
 ```text
 Found 4 candidates the resultant unit matched with the target's unit:
 	{ Q } [ 1/m ] = e⁴⋅m_e / (c⋅ℎ³⋅ε_0²)
 	  ├── 👍 In range!
-	  └──  Min (~1E+2) < Q (~9E+7) < Max (~1E+12) 
+	  └── Min (~5E-3) < Q (~9E+7) < Max (~2E+16) 
 
 	{ Q } [ 1/m ] = e²⋅m_e / (ℎ²⋅ε_0)
 	  ├── 👍 In range!
-	  └──  Min (~1E+2) < Q (~6E+9) < Max (~1E+12) 
+	  └── Min (~5E-3) < Q (~6E+9) < Max (~2E+16) 
 
 	{ Q } [ 1/m ] = c⋅m_e / ℎ
 	  ├── 👍 In range!
-	  └──  Min (~1E+2) < Q (~4E+11) < Max (~1E+12) 
+	  └── Min (~5E-3) < Q (~4E+11) < Max (~2E+16) 
 
 	{ Q } [ 1/m ] = c²⋅ε_0⋅m_e / e²
-	  ├── 👎 Not in range.
-	  └──  Min (~1E+2) < Max (~1E+12) < Q (~3E+13) 
+	  ├── 👍 In range!
+	  └── Min (~5E-3) < Q (~3E+13) < Max (~2E+16) 
 ```
 
-At the first candidate,
+For example, if we look at the first candidate,
 ```text
 ...
 	{ Q } [ 1/m ] = e⁴⋅m_e / (c⋅ℎ³⋅ε_0²)
 	  ├── 👍 In range!
-	  └──  Min (~1E+2) < Q (~9E+7) < Max (~1E+12) 
+	  └── Min (~5E-3) < Q (~9E+7) < Max (~2E+16) 
 ...
 ```
 
-The program calculated dimensional constants multiplication and represented its numerical value as `{ Q }` and its unit as `[ 1/m ]`.
+The program calculated the quantity and represented its numerical value as `{ Q }` and its unit as `[ 1/m ]`.
 
 `Min` and `Max` values are calculated as:
 
-`Min (...)` = (Target value) / (The maximum value of the dimensionless multiplication combinations)
+`Min (...)` = (Target value) / (The _maximum_ value of the whole dimensionless range)
 
-`Max (...)` = (Target value) / (The minimum value of the dimensionless multiplication combinations)
+`Max (...)` = (Target value) / (The _minimum_ value of the whole dimensionless range)
 
 So, the line:
 
-`	  └──  Min (~1E+2) < Q (~9E+7) < Max (~1E+12) `:
+`	  └──  Min (~5E-3) < Q (~9E+7) < Max (~2E+16) `:
 
-represents: `Q` is in the range of dimensionless multiplication range. 
-If it is not in range, this candidate will be ignored and its numerical value will not be investigated on the next steps.
+represents, `Q` as in the range of dimensionless range. 
+If it is not in the range, this candidate will be ignored and its numerical value will not be investigated on the next steps.
 
 This distinction is highlighted as `👍 In range!` or `👎 Not in range.`.
 
-#### 5.2.3 Matched Results
+#### 5.2.3 Results
 
-At this step the program calculates all dimensionless multiplication combinations given in the scope.
+At this step, if there exist a candidate, the program calculates all dimensionless multiplication combinations given in the scope.
 ```text
-Totally, unique 2079 dimensionless multiplications are calculated!
+Totally, unique 56133 dimensionless multiplications are calculated!
 ```
 If we multiply the length of mathematical constants powers:
-`2079 = 11 x 3 x 7 x 3 x 3` combination count can be verified.
+`56133 = 7 x 3 x 3 x 11 x 3 x 3 x 3 x 3` combination count can be verified.
 
 At the end, the program lists numerically matched results from the candidate list:
 
@@ -474,7 +483,25 @@ At the end, the program lists numerically matched results from the candidate lis
 Result(s) that overlap with the target:
 	{ 1.0973731568160(21) e+7 } [ 1/m ] = Target
 	{ 1.09737315681(66) e+7 } [ 1/m ] = e⁴⋅m_e / (2³⋅c⋅ℎ³⋅ε_0²)
+
+Where
+* m_e: the electron mass
+* c: the speed of light in vacuum
+* ℎ: the planck constant
+* e: the elementary charge
+* ε_0: the vacuum electric permittivity
 ```
+
+The program represents the resultant expression with its error values (`{ 1.09737315681(66) e+7 }`) in concise form.
+
+If the resultant expression has no relative error, then it is displayed (for example in [Stefan-Boltzmann constant](research/output/derived_constants/stefan_boltzmann_constant.txt)) differently:
+
+```text
+	{ 5.6703744190(10) e-8 } [ kg/K⁴/s³ ] = Target
+	{ 5.6703744191844... e-8 (exact) } [ kg/K⁴/s³ ] = 2⋅π⁵⋅k⁴ / (3⋅5⋅c²⋅ℎ³)
+```
+
+Because the numeric values of k, c, and h are also exact 😎!
 
 ## 6 Tests
 
@@ -486,9 +513,12 @@ Test folder is [src/tests](src/tests). To run the all test:
 
 ## 7 Researches
 
-Some well-known physical constant values were explored and verified by using this program.
+In the [research part](research), some known physical constants were investigated by using this program. 
+The primary goal was to make sure the program was working correctly. 
 
-Some unknown (not derived) physical constants like Newtonian Constant of Gravitation (G) were also explored under the same [./research](./research) folder.
+Therefore, the known formulation of many physical constants has been tested. 
+
+Some attempts have also been done to investigate the Newtonian constant of gravitation.
 
 ## 8 Resources & Libraries
 
@@ -509,11 +539,15 @@ Some unknown (not derived) physical constants like Newtonian Constant of Gravita
 
 ## 9 Future Work
 
-* Explore possibility of finding all (known) physical constants with a single config file? Targeting `1.0000` with `dimensionless` methodology can be usefully for this purpose, like:
+* Convert the repo to python module and upload to PyPI.
+* Import all (or important) [CODATA](https://physics.nist.gov/cuu/Constants/) values into the definition file. 
+* Explore possibility of finding important physical constants with a single config file? Targeting `1.0000` with `dimensionless` methodology can be usefully for this purpose, like:
 
 ```shell
 > python ./main.py --target-value "1.00000E+0" --target-unit ""
 ```
+
+Then we are expecting the numerator of the expression will be equal to the denominator 🤷‍♂️
 
 * Implement caching
 * Store results into the output file. Currently, results are printed to the console.

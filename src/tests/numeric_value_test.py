@@ -36,15 +36,13 @@ def test_error_for_single_constant(info, numeric_value, power, error_in_concise)
         },
         "dimensionless_constants": {"x": 1}
     }
-    _, _, unit_registry = get_test_resources()
 
     # WHEN
     explorer = ExploreConstant(
         target_value=target_value,
         target_unit="m",
         definition=definition,
-        config=config,
-        unit_registry=unit_registry)
+        config=config)
 
     explorer.explore()
 

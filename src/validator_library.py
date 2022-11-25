@@ -5,21 +5,21 @@ from fractions import Fraction
 from jsonschema.exceptions import ValidationError
 from jsonschema.validators import validate
 
+from src import ur
+from src.common_library import parse_numeric_value, parse_unit
 from src.quantity import Quantity
 
 
-def validate_input(target_value, target_unit, unit_registry):
+def validate_input(target_value, target_unit):
     try:
         target = Quantity(
-            value=target_value,
+            value=parse_numeric_value(numeric_value=target_value, forced_absolute_error="1"),
             power=Fraction(1),
-            unit=target_unit.strip(),
+            unit=parse_unit(target_unit.strip()),
             constant_name="Target",
-            symbol="Target",
-            uncertainty=("0", "10"),
-            unit_registry=unit_registry)
+            symbol="Target")
 
-        check_dimensionless = target.unit / unit_registry(target_unit).to_base_units()
+        check_dimensionless = target.unit / ur(target_unit).to_base_units()
         if check_dimensionless.magnitude != 1 or str(check_dimensionless.dimensionality) != "dimensionless":
             raise ValueError(f"Target unit may not contain SI base units")
     except ValueError:
@@ -28,10 +28,15 @@ def validate_input(target_value, target_unit, unit_registry):
         raise ValueError(f"Target value {target_value} or {target_unit} unit is invalid!")
 
 
-def validate_definition(definition, unit_registry):
+def validate_definition(definition):
     with open(str(pathlib.Path(__file__).parent.resolve()) + '/resources/definition_schema.json') as f:
         definition_schema = json.load(f)
     try:
+        # TODO, it would be nice to validate & check:
+        #   * unique symbol definitions
+        #   * unit definitions, SI base units
+        #   * numeric_value definitions
+        #   * no duplicate quantities (checking both unit & numeric_value)
         validate(instance=definition, schema=definition_schema)
     except ValidationError:
         raise

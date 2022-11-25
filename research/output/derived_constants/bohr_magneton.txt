@@ -1,5 +1,5 @@
 Explore the target:
-	{ 1.25663706212(19) e-6 } [ kg·m/A²/s² ] = Target
+	{ 9.2740100783(28) e-24 } [ A·m² ] = Target
 in terms of the given,
 	dimensional constants:   
 		c = { 2.99792458e+8 } [ m/s ], powers = [-2, -1, 0, 1, 2]
@@ -20,25 +20,30 @@ in terms of the given,
 		g_p, powers = [-1, 0, 1]
 by using brute_force methodology...
 
-Found 3 candidates the resultant unit matched with the target's unit:
-	{ Q } [ kg·m/A²/s² ] = 1 / (c²⋅ε_0)
+Found 4 candidates the resultant unit matched with the target's unit:
+	{ Q } [ A·m² ] = e³ / (c⋅ε_0⋅m_e)
 	  ├── 👍 In range!
-	  └── Min (~6E-16) < Q (~1E-6) < Max (~3E+3) 
+	  └── Min (~4E-33) < Q (~2E-24) < Max (~2E-14) 
 
-	{ Q } [ kg·m/A²/s² ] = ℎ / (c⋅e²)
+	{ Q } [ A·m² ] = ℎ⋅e / m_e
 	  ├── 👍 In range!
-	  └── Min (~6E-16) < Q (~9E-5) < Max (~3E+3) 
+	  └── Min (~4E-33) < Q (~1E-22) < Max (~2E-14) 
 
-	{ Q } [ kg·m/A²/s² ] = ℎ²⋅ε_0 / e⁴
+	{ Q } [ A·m² ] = c⋅ℎ²⋅ε_0 / (e⋅m_e)
 	  ├── 👍 In range!
-	  └── Min (~6E-16) < Q (~6E-3) < Max (~3E+3) 
+	  └── Min (~4E-33) < Q (~8E-21) < Max (~2E-14) 
+
+	{ Q } [ A·m² ] = c²⋅ℎ³⋅ε_0² / (e³⋅m_e)
+	  ├── 👍 In range!
+	  └── Min (~4E-33) < Q (~5E-19) < Max (~2E-14) 
 
 Totally, unique 56133 dimensionless multiplications are calculated!
 
 Result(s) that overlap with the target:
-	{ 1.25663706212(19) e-6 } [ kg·m/A²/s² ] = Target
-	{ 1.25663706212(18) e-6 } [ kg·m/A²/s² ] = 1 / (c²⋅ε_0)
+	{ 9.2740100783(28) e-24 } [ A·m² ] = Target
+	{ 9.2740100784(29) e-24 } [ A·m² ] = ℎ⋅e / (2²⋅π⋅m_e)
 
 Where
-* ε_0: vacuum electric permittivity
-* c: speed of light in vacuum
+* e: elementary charge
+* m_e: electron mass
+* ℎ: planck constant
