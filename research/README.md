@@ -1,6 +1,6 @@
 # Researches
 
-This work contains exploration of some well-known physical constants and experiments for some unknown constants by using the `physics-constant-explorer` program explained on the [root folder](..).
+This work contains exploration of some well-known physical constants and experiments for some unknown constants by using the `physics-constant-explorer` program explained on the [root folder](./../).
 
 ## Table of Content
 
