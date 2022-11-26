@@ -66,7 +66,7 @@ The script was executed on the project root folder, and it stored the results gi
 | [Nuclear magneton](https://en.wikipedia.org/wiki/Nuclear_magneton)                                                                                         | { [5.0507837461(15)E-27](https://physics.nist.gov/cgi-bin/cuu/Value?mun) } [ A·m² ]       | $$\mu _{\text{N}}={{e\hbar } \over {2m _{\text{p}}}}$$                                              | ℎ⋅e / (2²⋅π⋅μ⋅m_e)<br>[The output file](research/output/derived_constants/nuclear_magneton.txt)             |
 | [Proton Gyromagnetic Ratio](https://de.wikipedia.org/wiki/Gyromagnetisches_Verh%C3%A4ltnis#%CE%B3%E2%84%93_f%C3%BCr_reinen_Bahndrehimpuls_eines_Elektrons) | { [2.6752218744(11)E+8](https://physics.nist.gov/cgi-bin/cuu/Value?gammap) } [ A·s/kg ]   | $$\gamma _{\mathrm {p} }={\frac {e}{2m _{\mathrm {p} }}}\,g _{\mathrm {p} }$$                       | g_p⋅e / (2⋅μ⋅m_e)<br>[The output file](research/output/derived_constants/proton_gyromagnetic_ratio.txt)     |
 | [Bohr radius](https://en.wikipedia.org/wiki/Bohr_radius)                                                                                                   | { [5.29177210903(80)E-11](https://physics.nist.gov/cgi-bin/cuu/Value?bohrrada0) } [ m ]   | $$a_{0}={\frac {\varepsilon _{0}h^{2}}{\pi e^{2}m _{\text{e}}}}$$                                   | ℎ²⋅ε_0 / (π⋅e²⋅m_e)<br>[The output file](research/output/derived_constants/bohr_radius.txt)                 |
-| [Hartree energy](https://en.wikipedia.org/wiki/Hartree)                                                                                                    | { [4.3597447222071(85)E-18](https://physics.nist.gov/cgi-bin/cuu/Value?hr) } [ kg·m²/s² ] | $$E_{\mathrm {h} }=m _{\mathrm {e} }\left({\frac {e^{2}}{4\pi \varepsilon _{0}\hbar }}\right)^{2}$$ | ℎ²⋅ε_0 / (π⋅e²⋅m_e)<br>[The output file](research/output/derived_constants/bohr_radius.txt)                 |
+| [Hartree energy](https://en.wikipedia.org/wiki/Hartree)                                                                                                    | { [4.3597447222071(85)E-18](https://physics.nist.gov/cgi-bin/cuu/Value?hr) } [ kg·m²/s² ] | $$E_{\mathrm {h} }=m _{\mathrm {e} }\left({\frac {e^{2}}{4\pi \varepsilon _{0}\hbar }}\right)^{2}$$ | e⁴⋅m_e / (2²⋅ℎ²⋅ε_0²)<br>[The output file](research/output/derived_constants/hartree_energy.txt)            |
 
 ## 2 Exploring Planck Units
 
@@ -145,12 +145,12 @@ Note: The script was executed on the project's root folder:
 
 #### 4.1.1 Resources
 
-Resources used for this experiment:
+The following resources are related with this experiment:
 
-* [Config File - magnetic_constant_to_electric_constant_ratio.json](config/experiments/magnetic_constant_to_electric_constant_ratio.json)
-* [Default Definition File - default_definition.json](../src/resources/default_definition.json)
-* [Output File - magnetic_constant_to_electric_constant_ratio.txt](output/experiments/magnetic_constant_to_electric_constant_ratio.txt)
-* [Script File - experiments.sh](script/experiments.sh)
+* [Config File](config/experiments/magnetic_constant_to_electric_constant_ratio.json)
+* [Default Definition File](../src/resources/default_definition.json)
+* [Output File](output/experiments/magnetic_constant_to_electric_constant_ratio.txt)
+* [Script File](script/experiments.sh)
 
 #### 4.1.2 Introduction
 
@@ -253,12 +253,12 @@ The same scope was also used on the "Exploring Derived Physical Constants" [sect
 
 ##### 4.2.1.1 Resources
 
-Resources used for this experiment:
+The following resources are related with this experiment:
 
-* [Default Config File - magnetic_constant_to_electric_constant_ratio.json](../src/resources/default_config.json)
-* [Default Definition File - default_definition.json](../src/resources/default_definition.json)
-* [Output File - newtonian_constant_of_gravitation_attempt_01.txt](output/experiments/newtonian_constant_of_gravitation_attempt_01.txt)
-* [Script File - experiments.sh](script/experiments.sh)
+* [Default Config File](../src/resources/default_config.json)
+* [Default Definition File](../src/resources/default_definition.json)
+* [Output File](output/experiments/newtonian_constant_of_gravitation_attempt_01.txt)
+* [Script File](script/experiments.sh)
 
 ##### 4.2.1.2 Results
 
@@ -298,12 +298,12 @@ It was also tried, but no satisfactory result was found!
 
 ##### 4.2.2.1 Resources
 
-Resources used for this experiment:
+The following resources are related with this experiment:
 
-* [Config file - newtonian_constant_of_gravitation_attempt_02.json](config/experiments/newtonian_constant_of_gravitation_attempt_02.json)
-* [Default Definition File - default_definition.json](../src/resources/default_definition.json)
-* [Output file - newtonian_constant_of_gravitation_attempt_02.txt](output/experiments/newtonian_constant_of_gravitation_attempt_02.txt)
-* [Script file - experiments.sh](script/experiments.sh)
+* [Config file](config/experiments/newtonian_constant_of_gravitation_attempt_02.json)
+* [Default Definition File](../src/resources/default_definition.json)
+* [Output file](output/experiments/newtonian_constant_of_gravitation_attempt_02.txt)
+* [Script file](script/experiments.sh)
 
 ##### 4.2.2.2 Introduction
 
@@ -352,12 +352,12 @@ especially targeting less significant digits (such as here, it has 6 significant
 
 ##### 4.2.3.1 Resources
 
-Resources used for this experiment:
+The following resources are related with this experiment:
 
-* [Config file - newtonian_constant_of_gravitation_attempt_03.json](config/experiments/newtonian_constant_of_gravitation_attempt_03.json)
-* [Default Definition File - default_definition.json](../src/resources/default_definition.json)
-* [Output file - newtonian_constant_of_gravitation_attempt_03.txt](output/experiments/newtonian_constant_of_gravitation_attempt_03.txt)
-* [Script file - experiments.sh](script/experiments.sh)
+* [Config file](config/experiments/newtonian_constant_of_gravitation_attempt_03.json)
+* [Default Definition File](../src/resources/default_definition.json)
+* [Output file](output/experiments/newtonian_constant_of_gravitation_attempt_03.txt)
+* [Script file](script/experiments.sh)
 
 ##### 4.2.3.2 Introduction
 
@@ -368,7 +368,7 @@ In this attempt:
 * More dense power ranges are added around the target that we have found on previous attempt, such that:
   * `"planck_constant": 8` changed as `"planck_constant": {"range": [-6,-4], "step": "1/6"},`
   * `"elementary_charge": 8,` changed as `"elementary_charge": {"range": [11, 13], "step": "1/6"},`
-* To speed up the calculations new methodology is implemented `brute_force_with_memorization`
+* To speed up the calculations a new methodology is implemented `brute_force_with_memorization`
 
 ##### 4.2.3.3 Results
 
@@ -401,8 +401,6 @@ The Ratio of R1/R2 and R2/R3 can be represented in terms of $\alpha^{1/3}$ (the 
 
 So these expressions should be identical, but the values are different.
 
-I think the problem here is
-
 If we have a more precise numerical value of G, we could have been able to eliminate some of these results!
 
 ## 5 Resources
@@ -413,24 +411,19 @@ If we have a more precise numerical value of G, we could have been able to elimi
 * [NIST, Fundamental Physical Constants — Extensive Listing](https://physics.nist.gov/cuu/pdf/all.pdf)
 * [Units and Fundamental Constants in Physics and Chemistry, Subvolume b / Editors: J. Bortfeldt and B. Kramer](https://link.springer.com/book/9783540475316)
 
-## 6 Behind the Scene
 
-I am a computer engineer with a background in Scientific Computing and Physics.
+## 6 Acknowledgement & Gratitude
+
+I am a software engineer with a background in Scientific Computing and Physics and over 20 years of experience.
 Last 4 years I am mainly working in big data related subjects and domains.
 
 In my high school years, I was selected to the Physics Olympic team of my home country (The Republic of Turkey) and won the honourable mention award in [IPhO 1996 (XXVII Oslo, Norway)](https://www.ipho-new.org/documentations/#statistics).
-In the same year, I won the Computer Engineering department in my country's university exam and I decided to study computer engineering.
+In the same year, I decided to study computer engineering.
 
-To be honest, we talked about the feasibility of this program 20 years ago, in a conversation with my close friend Atilim Cetin.
-In those years, there weren't libraries like the [pint](https://pint.readthedocs.io/en/stable/) quantity library which helps to deal with units parts of the quantities.
-I am very happy that I could manage to implement this approach with the guidance of my friends and teachers.
+The first idea of this program is based on a conversation I had with Atilim Cetin, a close friend of mine, about 20 years ago.
+I am pleased that after 20 years, I could manage to implement this approach with the guidance of my friends and teachers.
 
-I don't know if a similar physical constant explorer program has been already implemented before.
-If it has been implemented already, I hope this approach gives a new perspective on helping us to understand the mystery of nature with good purposes!
-
-## 7 Acknowledgement & Gratitude
-
-I would like to express my gratitude to my physics teachers who made me love physics and prepared us for the physics olympiads:
+I would like to express my gratitude to my physics teachers who made me love physics:
 
 * Physics Teacher Rafet Kamer, Physics Olympiads
 * Prof. Dr. K. Sinan Bilikmen, METU-Physics
@@ -457,8 +450,9 @@ I would like to thank all the team who have developed and contributed the [pint 
 
 Emre Dagli
 
-## 8 Final Notes
+## 7 Final Notes
 
-The results found in this research are only numerical explorations, they are not physical proof or a derivation!
+The results found in this research are only numerical explorations, they are not a physical proof or a derivation!
 
-I hope the approach and the results, make sense to physicists and would be beneficial in their studies!
+Not sure if a similar physical hard explorer program has been implemented before. 
+If it has been implemented already, I hope this approach gives a new perspective on helping us to understand the mystery of nature with good purposes!
