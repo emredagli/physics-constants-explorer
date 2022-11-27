@@ -8,27 +8,9 @@ This work contains exploration of some well-known physical constants and experim
 * [1 Exploring Derived Physical Constants](#1-exploring-derived-physical-constants)
 * [2 Exploring Planck Units](#2-exploring-planck-units)
 * [3 Exploring Theoretical Problems](#3-exploring-theoretical-problems)
-  * [3.1 Black Hole Density](#31-black-hole-density)
 * [4 Experiments](#4-experiments)
   * [4.1 Magnetic Constant to Electric Constant Ratio](#41-magnetic-constant-to-electric-constant-ratio)
-    * [4.1.1 Resources](#411-resources)
-    * [4.1.2 Introduction](#412-introduction)
-      * [4.1.2.1 Speed of Light in Vacuum (1)](#4121-speed-of-light-in-vacuum--1-)
-      * [4.1.2.2 Fine-structure Constant (2)](#4122-fine-structure-constant--2-)
-      * [4.1.2.3 Rydberg Constant (3)](#4123-rydberg-constant--3-)
-    * [4.1.3 Results](#413-results)
   * [4.2 Newtonian Constant of Gravitation](#42-newtonian-constant-of-gravitation)
-    * [4.2.1 Newtonian Constant of Gravitation - Attempt 01](#421-newtonian-constant-of-gravitation---attempt-01)
-      * [4.2.1.1 Resources](#4211-resources)
-      * [4.2.1.2 Results](#4212-results)
-    * [4.2.2 Newtonian Constant of Gravitation - Attempt 02](#422-newtonian-constant-of-gravitation---attempt-02)
-      * [4.2.2.1 Resources](#4221-resources)
-      * [4.2.2.2 Introduction](#4222-introduction)
-      * [4.2.2.3 Results](#4223-results)
-    * [4.2.3 Newtonian Constant of Gravitation - Attempt 03](#423-newtonian-constant-of-gravitation---attempt-03)
-      * [4.2.3.1 Resources](#4231-resources)
-      * [4.2.3.2 Introduction](#4232-introduction)
-      * [4.2.3.3 Results](#4233-results)
 * [5 Resources](#5-resources)
   * [5.1 Physical Constants](#51-physical-constants)
 * [6 Acknowledgement & Gratitude](#6-acknowledgement--gratitude)
@@ -305,15 +287,13 @@ The following resources are related with this experiment:
 
 ##### 4.2.2.2 Introduction
 
-In this case, $\mu _{0}/\varepsilon _{0}$ ratio is added into the definition file.
-
-And used in the config file.
+In this case, $\mu _{0}/\varepsilon _{0}$ ratio is added into the definition file ("mc_to_ec_ratio") and used in the config file.
 
 ##### 4.2.2.3 Results
 
 The program found 6 candidates that the resultant unit matched with the target's unit and __the resultant value in the dimensionless range__.
 
-And found 3 candidates that their numeric value overlap with the target range:
+And 3 of them overlap with the target value:
 
 ```text
 Result(s) that overlap with the target:
@@ -321,15 +301,24 @@ Result(s) that overlap with the target:
 R1	{ 6.674224928(14) e-11 } [ m³/kg/s² ] = α²⋅c⋅mc_to_ec_ratio²⋅e⁸ / (3⋅5³⋅π⁴⋅μ⁹⋅ℎ³⋅m_e²)
 R2	{ 6.674224928(14) e-11 } [ m³/kg/s² ] = 2⋅α³⋅c⋅mc_to_ec_ratio³ᐟ²⋅e⁶ / (3⋅5³⋅π⁴⋅μ⁹⋅ℎ²⋅m_e²)
 R3	{ 6.674224928(14) e-11 } [ m³/kg/s² ] = 2²⋅α⁴⋅c⋅mc_to_ec_ratio⋅e⁴ / (3⋅5³⋅π⁴⋅μ⁹⋅ℎ⋅m_e²)
+
+Where
+* ℎ: planck constant
+* m_e: electron mass
+* c: speed of light in vacuum
+* mc_to_ec_ratio: mc to ec ratio, µ_0 / ε_0 (the ratio of vacuum magnetic permeability to vacuum electric permittivity)
+* e: elementary charge
+* α: fine structure constant
+* μ: proton electron mass ratio, m_p / m_e
 ```
 
 The program actually found a single candidate, not 3 different ones.
 if we put $\alpha$ (the fine-structure constant) formulation on the results they are equal.
 
-If we substitute `mc_to_ec_ratio` (magnetic constant to electric constant ratio) and $ \m_{u} $ (proton to electron mass ratio) on (R3):
+If we substitute `mc_to_ec_ratio` (magnetic constant to electric constant ratio) and $\mu$ (proton to electron mass ratio) on R3 for example:
 
 ```math
-6.674224928(14)\times 10^{-11}\, \mathrm{m}^{3}/\mathrm{kg}/\mathrm{s}^{2} = {\frac {2^{2}}{3\cdot5^{3}\cdot\pi^{4}}}\cdot{\frac {\alpha^{4} \,e^{4} \,c\,\mu _{0}}{h\,\varepsilon _{0}}\cdot{\frac {\\m _{e}^{7}}{\\m _{p}^{9}}}}
+6.674224928(14)\times 10^{-11}\, \mathrm{m}^{3}/\mathrm{kg}/\mathrm{s}^{2} \approx {\frac {2^{2}}{3\cdot5^{3}\cdot\pi^{4}}}\cdot{\frac {\alpha^{4} \,e^{4} \,c\,\mu _{0}}{h\,\varepsilon _{0}}\cdot{\frac {\\m _{e}^{7}}{\\m _{p}^{9}}}}
 ```
 
 * $\alpha$ is the fine-structure constant
@@ -341,65 +330,32 @@ If we substitute `mc_to_ec_ratio` (magnetic constant to electric constant ratio)
 * $\mu _{0}$ is the vacuum magnetic permeability
 * $\varepsilon _{0}$ is the vacuum electric permittivity
 
-On the next attempt, `the fine-structure constant` will be removed from the dimensionless constants scope.
-
 Note that, if we increase the scope of the dimensionless constant,
 especially targeting less significant digits (such as here, it has 6 significant digits) we may get different results.
 
-#### 4.2.3 Newtonian Constant of Gravitation - Attempt 03
+This result may have come across as numerically by chance. If we want to analyze the probability, 
+the numeric value we are looking for has 6 significant digits. 
+The program tries to find the match from 1416933 [the number of dimensionless combinations] x 1 [the number of found candidates, since in this case they are identical it is 1]. 
+We can also differ the number of combinations by adding or excluding the constants from the dimensionless scope
 
-##### 4.2.3.1 Resources
-
-The following resources are related with this experiment:
-
-* [Config file](config/experiments/newtonian_constant_of_gravitation_attempt_03.json)
-* [Default Definition File](../src/resources/default_definition.json)
-* [Output file](output/experiments/newtonian_constant_of_gravitation_attempt_03.txt)
-* [Script file](script/experiments.sh)
-
-##### 4.2.3.2 Introduction
-
-In this attempt:
-
-* Instead of using $\mu _{0}/\varepsilon _{0}$ ratio, $\mu _{0}$ and $\varepsilon _{0}$ constants are used
-* The fine-structure constant is removed from the dimensionless constants scope
-* More dense power ranges are added around the target that we have found on previous attempt, such that:
-  * `"planck_constant": 8` changed as `"planck_constant": {"range": [-6,-4], "step": "1/6"},`
-  * `"elementary_charge": 8,` changed as `"elementary_charge": {"range": [11, 13], "step": "1/6"},`
-* To speed up the calculations a new methodology is implemented `brute_force_with_memorization`
-
-##### 4.2.3.3 Results
-
-The program found 7 candidates that the resultant unit matched with the target's unit.
+That means it has a high probability. But it's still surprising that we could find the expression by using the following scope, 
+which was similar used on the derived constants:
 
 ```text
-	{ Q } [ m³/kg/s² ] = c¹⁵ᐟ²⋅e¹³⋅µ_0¹³ᐟ² / (ℎ¹¹ᐟ²⋅m_e²)
-	{ Q } [ m³/kg/s² ] = c²²ᐟ³⋅e³⁸ᐟ³⋅µ_0¹⁹ᐟ³ / (ℎ¹⁶ᐟ³⋅m_e²)
-	{ Q } [ m³/kg/s² ] = c⁴³ᐟ⁶⋅e³⁷ᐟ³⋅µ_0³⁷ᐟ⁶ / (ℎ³¹ᐟ⁶⋅m_e²)
-	{ Q } [ m³/kg/s² ] = c⁷⋅e¹²⋅µ_0⁶ / (ℎ⁵⋅m_e²)
-	{ Q } [ m³/kg/s² ] = c⁴¹ᐟ⁶⋅e³⁵ᐟ³⋅µ_0³⁵ᐟ⁶ / (ℎ²⁹ᐟ⁶⋅m_e²)
-	{ Q } [ m³/kg/s² ] = c²⁰ᐟ³⋅e³⁴ᐟ³⋅µ_0¹⁷ᐟ³ / (ℎ¹⁴ᐟ³⋅m_e²)
-	{ Q } [ m³/kg/s² ] = c¹³ᐟ²⋅e¹¹⋅µ_0¹¹ᐟ² / (ℎ⁹ᐟ²⋅m_e²)
+dimensional constants:   
+    c, powers = [-8, -7, -6, -5, -4, -3, -2, -1, 0, 1, 2, 3, 4, 5, 6, 7, 8]
+    ℎ, powers = [-8, -7, -6, -5, -4, -3, -2, -1, 0, 1, 2, 3, 4, 5, 6, 7, 8]
+    e, powers = [-8, -7, -6, -5, -4, -3, -2, -1, 0, 1, 2, 3, 4, 5, 6, 7, 8]
+    m_e, powers = [-8, -7, -6, -5, -4, -3, -2, -1, 0, 1, 2, 3, 4, 5, 6, 7, 8]
+    mc_to_ec_ratio, powers = [-4, -7/2, -3, -5/2, -2, -3/2, -1, -1/2, 0, 1/2, 1, 3/2, 2, 5/2, 3, 7/2, 4]
+dimensionless constants: 
+    2, powers = [-8, -7, -6, -5, -4, -3, -2, -1, 0, 1, 2, 3, 4, 5, 6, 7, 8]
+    3, powers = [-3, -2, -1, 0, 1, 2, 3]
+    5, powers = [-3, -2, -1, 0, 1, 2, 3]
+    π, powers = [-4, -3, -2, -1, 0, 1, 2, 3, 4]
+    μ, powers = [-10, -9, -8, -7, -6, -5, -4, -3, -2, -1, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+    α, powers = [-4, -3, -2, -1, 0, 1, 2, 3, 4]
 ```
-
-And found 3 results that their numeric values overlap with the target range:
-
-```text
-Totally, unique 128282 dimensionless multiplications are calculated!
-Result(s) that overlap with the target:
-	{ 6.67430(15) e-11 } [ m³/kg/s² ] = Target
-R1	{ 6.674314482(14) e-11 } [ m³/kg/s² ] = 5²⋅c²²ᐟ³⋅µ_0¹⁹ᐟ³⋅e³⁸ᐟ³ / (2⁶⋅3⋅π³⋅μ²⁹ᐟ³⋅ℎ¹⁶ᐟ³⋅m_e²)
-R2	{ 6.674224928(14) e-11 } [ m³/kg/s² ] = c⁷⋅µ_0⁶⋅e¹² / (2²⋅3⋅5³⋅π⁴⋅μ⁹⋅ℎ⁵⋅m_e²)
-R3	{ 6.674365007(14) e-11 } [ m³/kg/s² ] = c²⁰ᐟ³⋅µ_0¹⁷ᐟ³⋅e³⁴ᐟ³ / (2⋅3²⋅5²⋅π³⋅μ¹⁹ᐟ²⋅ℎ¹⁴ᐟ³⋅m_e²)
-```
-
-R2 is the result that we have found on the previous exploration.
-
-The Ratio of R1/R2 and R2/R3 can be represented in terms of $\alpha^{1/3}$ (the fine-structure constant to the power 1/3) and with other dimensionless constants.
-
-So these expressions should be identical, but the values are different.
-
-If we have a more precise numerical value of G, we could have been able to eliminate some of these results!
 
 ## 5 Resources
 
@@ -415,13 +371,12 @@ If we have a more precise numerical value of G, we could have been able to elimi
 I am a software engineer with a background in Scientific Computing and Physics and over 20 years of experience.
 Last 4 years I am mainly working in big data related subjects and domains.
 
-In my high school years, I was selected to the Physics Olympic team of my home country (The Republic of Turkey) and won the honourable mention award in [IPhO 1996 (XXVII Oslo, Norway)](https://www.ipho-new.org/documentations/#statistics).
+I won the honourable mention award in [IPhO 1996 (XXVII Oslo, Norway)](https://www.ipho-new.org/documentations/#statistics).
 In the same year, I decided to study computer engineering.
 
-The first idea of this program is based on a conversation I had with Atilim Cetin, a close friend of mine, about 20 years ago.
-I am pleased that after 20 years, I could manage to implement this approach with the guidance of my friends and teachers.
+Although more than 20 years have passed, I am pleased to be able to use my physics knowledge to develop such an application.
 
-I would like to express my gratitude to my physics teachers who made me love physics:
+I would like to express my gratitude to my physics teachers who made me love physics during these years:
 
 * Physics Teacher Rafet Kamer, Physics Olympiads
 * Prof. Dr. K. Sinan Bilikmen, METU-Physics
@@ -444,7 +399,7 @@ And I would like to thanks to my genius and big-hearted friends who always enjoy
 
 And of course to my beloved wife Ayşen and my dear children Ozan & Doruk!
 
-I would like to thank all the team who have developed and contributed the [pint library](https://pint.readthedocs.io/en/stable/) 👏
+I would also like to thank all the team who have developed and contributed the [pint library](https://pint.readthedocs.io/en/stable/) 👏
 
 Emre Dagli
 
@@ -452,5 +407,5 @@ Emre Dagli
 
 The results found in this research are only numerical explorations, they are not a physical proof or a derivation!
 
-Not sure if a similar physical hard explorer program has been implemented before. 
+I am not sure if a similar physical constant explorer program has been implemented before. 
 If it has been implemented already, I hope this approach gives a new perspective on helping us to understand the mystery of nature with good purposes!
