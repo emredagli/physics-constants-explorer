@@ -17,7 +17,7 @@
     },
     "elementary_charge": {
       "numeric_value": "1.602176634e-19",
-      "unit": "C",
+      "unit": "A s",
       "symbol": "e"
     },
     "vacuum_magnetic_permeability": {
@@ -65,10 +65,15 @@
       "unit": "kg",
       "symbol": "m_p"
     },
+    "proton_molar_mass": {
+      "numeric_value": "1.00727646627(31)e-3",
+      "unit": "kg mol^-1",
+      "symbol": "M_p"
+    },
     "mc_to_ec_ratio": {
       "numeric_value": "1.41925729236(43)e+5",
       "unit": "kg^2 m^4/A^4/s^6",
-      "info": "It is the ratio of vacuum magnetic permeability and vacuum electric permittivity"
+      "info": "µ_0 / ε_0 (the ratio of vacuum magnetic permeability to vacuum electric permittivity)"
     }
   },
   "dimensionless_constants": {
@@ -81,7 +86,7 @@
     },
     "wien_u": {
       "numeric_value": "2.8214393721220788934031913302944851953458817440731",
-      "info": "solution to (u-3)*exp(u)+3 = 0 => u = W(3/exp(3))+3"
+      "info": "the solution to (u-3)*exp(u)+3 = 0 => u = W(3/exp(3))+3"
     },
     "fine_structure_constant": {
       "numeric_value": "7.2973525693(11)e-3",
@@ -94,7 +99,16 @@
     "proton_electron_mass_ratio": {
       "numeric_value": "1.83615267343(11)e+3",
       "symbol": "μ",
-      "info": "proton-to-electron mass ratio, μ or β"
+      "info": "m_p / m_e"
+    },
+    "electron_g_factor": {
+      "numeric_value": "2.00231930436256(35)",
+      "symbol": "g_e",
+      "info": "the absolute value of the electron g factor"
+    },
+    "proton_g_factor": {
+      "numeric_value": "5.5856946893(16)",
+      "symbol": "g_p"
     }
   }
 }

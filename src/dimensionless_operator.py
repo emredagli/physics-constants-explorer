@@ -7,11 +7,9 @@ from tqdm import tqdm
 from src.quantity import Quantity
 
 
-
 class DimensionlessOperator:
-    def __init__(self, scope, unit_registry):
+    def __init__(self, scope):
         self.scope = scope
-        self.ur = unit_registry
         self.constants = dict()
 
         min_value = 1
@@ -25,10 +23,7 @@ class DimensionlessOperator:
         self.max_value = max_value
         self.numeric_range = [min_value, max_value]
 
-    def is_in_range(self, value):
-        return self.min_value <= value <= self.max_value
-
-    def prepare_dimensionless_constants(self):
+    def prepare_constants(self):
         powered_quantities = self.scope.powered_quantities.values()
 
         total_len = reduce(operator.mul, map(len, powered_quantities), 1)
@@ -38,7 +33,7 @@ class DimensionlessOperator:
                                desc=f"Dimensionless set is being calculated...",
                                unit=" Iteration",
                                total=total_len):
-            quantity = Quantity(value=list(quantities), unit_registry=self.ur)
+            quantity = Quantity(value=list(quantities))
 
             constants.setdefault(quantity.value, quantity)
 

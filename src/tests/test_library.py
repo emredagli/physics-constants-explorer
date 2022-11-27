@@ -1,7 +1,5 @@
 import pathlib
 import json
-import pint
-from fractions import Fraction
 
 
 def get_test_resources(method="brute_force"):
@@ -16,8 +14,4 @@ def get_test_resources(method="brute_force"):
     with open(f"{test_resources_path}/definition.json") as f:
         definition = json.load(f)
 
-    unit_registry = pint.UnitRegistry(
-        non_int_type=Fraction,
-    )
-
-    return config, definition, unit_registry
+    return config, definition

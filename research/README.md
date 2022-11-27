@@ -1,67 +1,51 @@
 # Researches
 
-This work contains exploration of some well-known physical constants and experiments for some unknown constants by using the `physics-constant-explorer` program explained on the [root folder](..).
+This work contains exploration of some well-known physical constants and experiments for 
+some unknown constants by using the `physics-constant-explorer` program explained on the [repo home page](../README.md).
 
 ## Table of Content
 
 <!-- TOC -->
-
 * [1 Exploring Derived Physical Constants](#1-exploring-derived-physical-constants)
 * [2 Exploring Planck Units](#2-exploring-planck-units)
-* [3 Exploring Some Physics Problem](#3-exploring-some-physics-problem)
-  * [3.1 Black Hole Density](#31-black-hole-density)
+* [3 Exploring Theoretical Problems](#3-exploring-theoretical-problems)
 * [4 Experiments](#4-experiments)
   * [4.1 Magnetic Constant to Electric Constant Ratio](#41-magnetic-constant-to-electric-constant-ratio)
-    * [4.1.1 Resources](#411-resources)
-    * [4.1.2 Introduction](#412-introduction)
-      * [4.1.2.1 Speed of Light in Vacuum (1)](#4121-speed-of-light-in-vacuum--1-)
-      * [4.1.2.2 Fine-structure Constant (2)](#4122-fine-structure-constant--2-)
-      * [4.1.2.3 Rydberg Constant (3)](#4123-rydberg-constant--3-)
-    * [4.1.3 Results](#413-results)
   * [4.2 Newtonian Constant of Gravitation](#42-newtonian-constant-of-gravitation)
-    * [4.2.1 Newtonian Constant of Gravitation - Attempt 01](#421-newtonian-constant-of-gravitation---attempt-01)
-      * [4.2.1.1 Resources](#4211-resources)
-      * [4.2.1.2 Results](#4212-results)
-    * [4.2.2 Newtonian Constant of Gravitation - Attempt 02](#422-newtonian-constant-of-gravitation---attempt-02)
-      * [4.2.2.1 Resources](#4221-resources)
-      * [4.2.2.2 Introduction](#4222-introduction)
-      * [4.2.2.3 Results](#4223-results)
-    * [4.2.3 Newtonian Constant of Gravitation - Attempt 03](#423-newtonian-constant-of-gravitation---attempt-03)
-      * [4.2.3.1 Resources](#4231-resources)
-      * [4.2.3.2 Introduction](#4232-introduction)
-      * [4.2.3.3 Results](#4233-results)
 * [5 Resources](#5-resources)
   * [5.1 Physical Constants](#51-physical-constants)
-* [6 Behind the Scene](#6-behind-the-scene)
-* [7 Acknowledgement & Gratitude](#7-acknowledgement--gratitude)
-* [8 Final Notes](#8-final-notes)
-
+* [6 Acknowledgement & Gratitude](#6-acknowledgement--gratitude)
+* [7 Final Notes](#7-final-notes)
 <!-- TOC -->
 
 ## 1 Exploring Derived Physical Constants
 
-The script ([derived_constants.sh](script/derived_constants.sh)) is prepared to explore some constants that can be derived in terms of fundamental constants.
-
-* The default config file ([default_config.json](../src/resources/default_config.json)) was used on all calculations!
-* The default definition file ([default_definition.json](../src/resources/default_definition.json)) was used.
-* CODATA values were used as target numeric values.
-
-The script was executed on the project root folder, and it stored the results given on the table below:
+The script ([derived_constants.sh](script/derived_constants.sh)) is prepared to explore some constants that can be derived in terms of fundamental constants. It was executed on the project root folder:
 ```shell
 > research/script/derived_constants.sh
 ```
 
-| Constant Name | Constant Derivation | Numeric Value | Unit | The Program Result | The Program Output File |
-| ------------- | ------------------- | ------------- | ---- | ------------------ | ----------------------- |
-| [Stefan–Boltzmann Constant](https://en.wikipedia.org/wiki/Stefan%E2%80%93Boltzmann_constant) | $$\sigma ={\frac {2\pi ^{5}k^{4}}{15c^{2}h^{3}}}$$ | [5.670374419E-8](https://physics.nist.gov/cgi-bin/cuu/Value?sigma) | kg/K⁴/s³ | 2⋅π⁵⋅k⁴ / (3⋅5⋅c²⋅ℎ³) | [The output](output/derived_constants/stefan_boltzmann_constant.txt) |
-| [Rydberg Constant](https://en.wikipedia.org/wiki/Rydberg_constant) | $$R_{\infty }={\frac {m_{\text{e}}e^{4}}{8\varepsilon _{0}^{2}h^{3}c}}$$ | [1.0973731568160(21)e+7](https://physics.nist.gov/cgi-bin/cuu/Value?ryd) | 1/m | e⁴⋅m_e / (2³⋅c⋅ℎ³⋅ε_0²) | [The output](output/derived_constants/rydberg_constant.txt) |
-| [Fine Structure Constant](https://en.wikipedia.org/wiki/Fine-structure_constant) | $$\alpha ={\frac {e^{2}}{2\varepsilon _{0}hc}}$$ | [7.2973525693(11)E-3](https://physics.nist.gov/cgi-bin/cuu/Value?alph) | - | e² / (2⋅c⋅ℎ⋅ε_0) | [The output](output/derived_constants/fine_structure_constant.txt) |
-| [Molar Gas Constant](https://en.wikipedia.org/wiki/Gas_constant) | $$R=N_{\rm {A}}k_{\rm {B}}$$ | [8.314462618E0](https://physics.nist.gov/cgi-bin/cuu/Value?r) | kg·m²/K/mol/s² | k⋅N_A | [The output](output/derived_constants/molar_gas_constant.txt) |
-| [Vacuum Permeability (Magnetic Constant)](https://en.wikipedia.org/wiki/Vacuum_permeability) | $$\mu _{0}={1 \over {c^{2}\varepsilon _{0}}}$$ | [1.25663706212(19)e-6](https://physics.nist.gov/cgi-bin/cuu/Value?mu0) | kg·m/A²/s² | 1 / (c²⋅ε_0) | [The output](output/derived_constants/vacuum_magnetic_permeability.txt) |
-| [Wien Frequency Displacement Law Constant](https://en.wikipedia.org/wiki/Wien%27s_displacement_law#Frequency-dependent_formulation) | $$\nu _{\text{peak}}={\alpha  \over h}kT$$ | [5.878925757E+10](https://physics.nist.gov/cgi-bin/cuu/Value?bpwien) | 1/K/s | wien_u⋅k / ℎ | [The output](output/derived_constants/wien_frequency_displacement_law_constant.txt) |
-| [Impedance of Free Space](https://en.wikipedia.org/wiki/Impedance_of_free_space#Relation_to_other_constants) | $$Z_{0}={\frac {1}{\varepsilon _{0}c}}$$ | [3.76730313668(57)E+2](https://physics.nist.gov/cgi-bin/cuu/Value?z0) | kg·m²/A²/s³ | 1 / (c⋅ε_0) | [The output](output/derived_constants/impedance_of_free_space.txt) |
-| [Josephson Constant](https://en.wikipedia.org/wiki/Magnetic_flux_quantum) | $$1 / \Phi _{B}={\frac {2e}{h}}$$ | [4.835978484E+14](https://physics.nist.gov/cgi-bin/cuu/Value?kjos) | A·s²/kg/m² | 2⋅e / ℎ | [The output](output/derived_constants/josephson_constant.txt) |
-| [Von Klitzing Constant](https://en.wikipedia.org/wiki/Quantum_Hall_effect#Applications) | $$\mathrm{R} _{K}={\frac {h}{e^{2}}} $$ | [2.581280745E+4](https://physics.nist.gov/cgi-bin/cuu/Value?rk) | kg·m²/A²/s³ | ℎ / e² | [The output](output/derived_constants/von_klitzing_constant.txt) |
+* The default config file ([default_config.json](../src/resources/default_config.json)) was used on all calculations listed below!
+* The default definition file ([default_definition.json](../src/resources/default_definition.json)) was used.
+
+
+| Constant Name                                                                                                                                              | Derivation                                                                                          | The Program Input<br>[CODATA](https://physics.nist.gov/cuu/Constants/) Constant Values                           | The Results                       | Stored Output                                                                                               |
+|------------------------------------------------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------|-----------------------------------|-------------------------------------------------------------------------------------------------------------|
+| [Stefan–Boltzmann Constant](https://en.wikipedia.org/wiki/Stefan%E2%80%93Boltzmann_constant)                                                               | $$\sigma ={\frac {2\pi ^{5}k^{4}}{15c^{2}h^{3}}}$$                                                  | {&nbsp;[5.670374419E-8](https://physics.nist.gov/cgi-bin/cuu/Value?sigma)&nbsp;}<br>[&nbsp;kg/K⁴/s³&nbsp;]       | 2⋅π⁵⋅k⁴&nbsp;/&nbsp;(3⋅5⋅c²⋅ℎ³)   | [The&nbsp;output&nbsp;file](research/output/derived_constants/stefan_boltzmann_constant.txt)                |
+| [Rydberg Constant](https://en.wikipedia.org/wiki/Rydberg_constant)                                                                                         | $$R_{\infty }={\frac {m_{\text{e}}e^{4}}{8\varepsilon _{0}^{2}h^{3}c}}$$                            | {&nbsp;[1.0973731568160(21)e+7](https://physics.nist.gov/cgi-bin/cuu/Value?ryd)&nbsp;}<br>[&nbsp;1/m&nbsp;]      | e⁴⋅m_e&nbsp;/&nbsp;(2³⋅c⋅ℎ³⋅ε_0²) | [The&nbsp;output&nbsp;file](research/output/derived_constants/rydberg_constant.txt)                         |
+| [Fine Structure Constant](https://en.wikipedia.org/wiki/Fine-structure_constant)                                                                           | $$\alpha ={\frac {e^{2}}{2\varepsilon _{0}hc}}$$                                                    | {&nbsp;[7.2973525693(11)E-3](https://physics.nist.gov/cgi-bin/cuu/Value?alph)&nbsp;}<br>[&nbsp;-&nbsp;]          | e²&nbsp;/&nbsp;(2⋅c⋅ℎ⋅ε_0)        | [The&nbsp;output&nbsp;file](research/output/derived_constants/fine_structure_constant.txt)                  |
+| [Molar Gas Constant](https://en.wikipedia.org/wiki/Gas_constant)                                                                                           | $$R=N_{\rm {A}}k_{\rm {B}}$$                                                                        | {&nbsp;[8.314462618E0](https://physics.nist.gov/cgi-bin/cuu/Value?r)&nbsp;}<br>[&nbsp;kg·m²/K/mol/s²&nbsp;]      | k⋅N_A                             | [The&nbsp;output&nbsp;file](research/output/derived_constants/molar_gas_constant.txt)                       |
+| [Vacuum Magnetic Permeability](https://en.wikipedia.org/wiki/Vacuum_permeability)                                                                          | $$\mu _{0}={1 \over {c^{2}\varepsilon _{0}}}$$                                                      | {&nbsp;[1.25663706212(19)e-6](https://physics.nist.gov/cgi-bin/cuu/Value?mu0)&nbsp;}<br>[&nbsp;kg·m/A²/s²&nbsp;] | 1&nbsp;/&nbsp;(c²⋅ε_0)            | [The&nbsp;output&nbsp;file](research/output/derived_constants/vacuum_magnetic_permeability.txt)             |
+| [Wien's displacement law](https://en.wikipedia.org/wiki/Wien%27s_displacement_law#Frequency-dependent_formulation)                                         | $$\nu _{\text{peak}}={\alpha  \over h}kT$$                                                          | {&nbsp;[5.878925757E+10](https://physics.nist.gov/cgi-bin/cuu/Value?bpwien)&nbsp;}<br>[&nbsp;1/K/s&nbsp;]        | wien_u⋅k&nbsp;/&nbsp;ℎ            | [The&nbsp;output&nbsp;file](research/output/derived_constants/wien_frequency_displacement_law_constant.txt) |
+| [Impedance of Free Space](https://en.wikipedia.org/wiki/Impedance_of_free_space#Relation_to_other_constants)                                               | $$Z_{0}={\frac {1}{\varepsilon _{0}c}}$$                                                            | {&nbsp;[3.76730313668(57)E+2](https://physics.nist.gov/cgi-bin/cuu/Value?z0)&nbsp;}<br>[&nbsp;kg·m²/A²/s³&nbsp;] | 1&nbsp;/&nbsp;(c⋅ε_0)             | [The&nbsp;output&nbsp;file](research/output/derived_constants/impedance_of_free_space.txt)                  |
+| [Josephson Constant](https://en.wikipedia.org/wiki/Magnetic_flux_quantum)                                                                                  | $$1 / \Phi _{B}={\frac {2e}{h}}$$                                                                   | {&nbsp;[4.835978484E+14](https://physics.nist.gov/cgi-bin/cuu/Value?kjos)&nbsp;}<br>[&nbsp;A·s²/kg/m²&nbsp;]     | 2⋅e&nbsp;/&nbsp;ℎ                 | [The&nbsp;output&nbsp;file](research/output/derived_constants/josephson_constant.txt)                       |
+| [Von Klitzing Constant](https://en.wikipedia.org/wiki/Quantum_Hall_effect#Applications)                                                                    | $$\mathrm{R} _{K}={\frac {h}{e^{2}}} $$                                                             | {&nbsp;[2.581280745E+4](https://physics.nist.gov/cgi-bin/cuu/Value?rk)&nbsp;}<br>[&nbsp;kg·m²/A²/s³&nbsp;]       | ℎ&nbsp;/&nbsp;e²                  | [The&nbsp;output&nbsp;file](research/output/derived_constants/von_klitzing_constant.txt)                    |
+| [Bohr magneton](https://en.wikipedia.org/wiki/Bohr_magneton)                                                                                               | $$\mu _{\mathrm{B}}=\frac{e\hbar}{2m _{\mathrm{e}}}$$                                               | {&nbsp;[9.2740100783(28)E-24](https://physics.nist.gov/cgi-bin/cuu/CCValue?mub)&nbsp;}<br>[&nbsp;A·m²&nbsp;]     | ℎ⋅e&nbsp;/&nbsp;(2²⋅π⋅m_e)        | [The&nbsp;output&nbsp;file](research/output/derived_constants/bohr_magneton.txt)                            |
+| [Nuclear magneton](https://en.wikipedia.org/wiki/Nuclear_magneton)                                                                                         | $$\mu _{\text{N}}={{e\hbar } \over {2m _{\text{p}}}}$$                                              | {&nbsp;[5.0507837461(15)E-27](https://physics.nist.gov/cgi-bin/cuu/Value?mun)&nbsp;}<br>[&nbsp;A·m²&nbsp;]       | ℎ⋅e&nbsp;/&nbsp;(2²⋅π⋅μ⋅m_e)      | [The&nbsp;output&nbsp;file](research/output/derived_constants/nuclear_magneton.txt)                         |
+| [Proton Gyromagnetic Ratio](https://de.wikipedia.org/wiki/Gyromagnetisches_Verh%C3%A4ltnis#%CE%B3%E2%84%93_f%C3%BCr_reinen_Bahndrehimpuls_eines_Elektrons) | $$\gamma _{\mathrm {p} }={\frac {e}{2m _{\mathrm {p} }}}\,g _{\mathrm {p} }$$                       | {&nbsp;[2.6752218744(11)E+8](https://physics.nist.gov/cgi-bin/cuu/Value?gammap)&nbsp;}<br>[&nbsp;A·s/kg&nbsp;]   | g_p⋅e&nbsp;/&nbsp;(2⋅μ⋅m_e)       | [The&nbsp;output&nbsp;file](research/output/derived_constants/proton_gyromagnetic_ratio.txt)                |
+| [Bohr radius](https://en.wikipedia.org/wiki/Bohr_radius)                                                                                                   | $$a_{0}={\frac {\varepsilon _{0}h^{2}}{\pi e^{2}m _{\text{e}}}}$$                                   | {&nbsp;[5.29177210903(80)E-11](https://physics.nist.gov/cgi-bin/cuu/Value?bohrrada0)&nbsp;}<br>[&nbsp;m&nbsp;]   | ℎ²⋅ε_0&nbsp;/&nbsp;(π⋅e²⋅m_e)     | [The&nbsp;output&nbsp;file](research/output/derived_constants/bohr_radius.txt)                              |
+| [Hartree energy](https://en.wikipedia.org/wiki/Hartree)                                                                                                    | $$E_{\mathrm {h} }=m _{\mathrm {e} }\left({\frac {e^{2}}{4\pi \varepsilon _{0}\hbar }}\right)^{2}$$ | {&nbsp;[4.3597447222071(85)E-18](https://physics.nist.gov/cgi-bin/cuu/Value?hr)&nbsp;}<br>[&nbsp;kg·m²/s²&nbsp;] | e⁴⋅m_e&nbsp;/&nbsp;(2²⋅ℎ²⋅ε_0²)   | [The&nbsp;output&nbsp;file](research/output/derived_constants/hartree_energy.txt)                           |
+| ...                                                                                                                                                        |                                                                                                     |                                                                                                                  |                                   |                                                                                                             |
 
 ## 2 Exploring Planck Units
 
@@ -83,20 +67,20 @@ The script was executed on the project root folder, and it stored the results gi
 ```
 
 
-| Constant Name | Constant Derivation | Numeric Value | Unit | The Program Result | The Program Output File |
-| ------------- | ------------------- | ------------- | ---- | ------------------ | ----------------------- |
-| [Planck Length](https://en.wikipedia.org/wiki/Planck_units#History_and_definition) | $$l_{\text{P}}={\sqrt {\frac {\hbar G}{c^{3}}}}$$ | [1.616255(18)E-35](https://physics.nist.gov/cgi-bin/cuu/Value?plkl) | m | ℎ¹ᐟ²⋅G¹ᐟ² / (2¹ᐟ²⋅π¹ᐟ²⋅c³ᐟ²) | [The output](output/planck_units/planck_length.txt) |
-| [Planck Mass](https://en.wikipedia.org/wiki/Planck_units#History_and_definition) | $$m_{\text{P}}={\sqrt {\frac {\hbar c}{G}}}$$ | [2.176434(24)E-8](https://physics.nist.gov/cgi-bin/cuu/Value?plkm) | kg | c¹ᐟ²⋅ℎ¹ᐟ² / (2¹ᐟ²⋅π¹ᐟ²⋅G¹ᐟ²) | [The output](output/planck_units/planck_mass.txt) |
-| [Planck Time](https://en.wikipedia.org/wiki/Planck_units#History_and_definition) | $${\displaystyle t_{\text{P}}={\sqrt {\frac {\hbar G}{c^{5}}}}}$$ | [5.391247(60)E-44](https://physics.nist.gov/cgi-bin/cuu/Value?plkt) | s | ℎ¹ᐟ²⋅G¹ᐟ² / (2¹ᐟ²⋅π¹ᐟ²⋅c⁵ᐟ²) | [The output](output/planck_units/planck_time.txt) |
-| [Planck Temperature](https://en.wikipedia.org/wiki/Planck_units#History_and_definition) | $${\displaystyle T_{\text{P}}={\sqrt {\frac {\hbar c^{5}}{Gk_{\text{B}}^{2}}}}}$$ | [1.416784(16)E+32](https://physics.nist.gov/cgi-bin/cuu/Value?plktmp) | K | c⁵ᐟ²⋅ℎ¹ᐟ² / (2¹ᐟ²⋅π¹ᐟ²⋅G¹ᐟ²⋅k) | [The output](output/planck_units/planck_temperature.txt) |
+| Constant Name                                                                           | Derivation                                                                        | The Program Input<br>[CODATA](https://physics.nist.gov/cuu/Constants/) Constant Values                 | The Results                              | Stored Output                                                                    |
+|-----------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------|------------------------------------------|----------------------------------------------------------------------------------|
+| [Planck Length](https://en.wikipedia.org/wiki/Planck_units#History_and_definition)      | $$l_{\text{P}}={\sqrt {\frac {\hbar G}{c^{3}}}}$$                                 | {&nbsp;[1.616255(18)E-35](https://physics.nist.gov/cgi-bin/cuu/Value?plkl)&nbsp;}<br>[&nbsp;m&nbsp;]   | ℎ¹ᐟ²⋅G¹ᐟ²&nbsp;/&nbsp;(2¹ᐟ²⋅π¹ᐟ²⋅c³ᐟ²)   | [The&nbsp;output&nbsp;file](research/output/planck_units/planck_length.txt)      |
+| [Planck Mass](https://en.wikipedia.org/wiki/Planck_units#History_and_definition)        | $$m_{\text{P}}={\sqrt {\frac {\hbar c}{G}}}$$                                     | {&nbsp;[2.176434(24)E-8](https://physics.nist.gov/cgi-bin/cuu/Value?plkm)&nbsp;}<br>[&nbsp;kg&nbsp;]   | c¹ᐟ²⋅ℎ¹ᐟ²&nbsp;/&nbsp;(2¹ᐟ²⋅π¹ᐟ²⋅G¹ᐟ²)   | [The&nbsp;output&nbsp;file](research/output/planck_units/planck_mass.txt)        |
+| [Planck Time](https://en.wikipedia.org/wiki/Planck_units#History_and_definition)        | $${\displaystyle t_{\text{P}}={\sqrt {\frac {\hbar G}{c^{5}}}}}$$                 | {&nbsp;[5.391247(60)E-44](https://physics.nist.gov/cgi-bin/cuu/Value?plkt)&nbsp;}<br>[&nbsp;s&nbsp;]   | ℎ¹ᐟ²⋅G¹ᐟ²&nbsp;/&nbsp;(2¹ᐟ²⋅π¹ᐟ²⋅c⁵ᐟ²)   | [The&nbsp;output&nbsp;file](research/output/planck_units/planck_time.txt)        |
+| [Planck Temperature](https://en.wikipedia.org/wiki/Planck_units#History_and_definition) | $${\displaystyle T_{\text{P}}={\sqrt {\frac {\hbar c^{5}}{Gk_{\text{B}}^{2}}}}}$$ | {&nbsp;[1.416784(16)E+32](https://physics.nist.gov/cgi-bin/cuu/Value?plktmp)&nbsp;}<br>[&nbsp;K&nbsp;] | c⁵ᐟ²⋅ℎ¹ᐟ²&nbsp;/&nbsp;(2¹ᐟ²⋅π¹ᐟ²⋅G¹ᐟ²⋅k) | [The&nbsp;output&nbsp;file](research/output/planck_units/planck_temperature.txt) |
 
 
-## 3 Exploring Some Physics Problem
+## 3 Exploring Theoretical Problems
 
 ### 3.1 Black Hole Density
 
 We wanted to challenge this program with more ambitious theoretical constant.
-Therefore, one of the theoretical inference of the density of the black hole has been explored as well.
+One of the theoretical inferences of the density of the black hole has been selected for this purpose.
 
 Suppose a star rotates around a black hole with a $T$ orbital period on a circular orbit with a radius of $r$.
 
@@ -106,29 +90,30 @@ So, $\rho$ could be derived in terms of $T$ and $r$:
 
 Where:
 
+* $\rho$: Density of the black hole
 * $\gamma$: Newtonian constant of gravitation
 * M: the mass of the black hole
 * m: the mass of the star
 * v: the numeric value of the velocity of the star
 * R: the radius of the blackhole
 
-If the target numeric value is selected as `3⋅c⁶ / (512⋅π⁵⋅G) = 2.0826698222(1)E+56` and unit as `kg·m³/s⁴`:
+If the target numeric value is set as `3⋅c⁶ / (512⋅π⁵⋅G) ≈ 2.082660(10)E+56` and unit as `kg·m³/s⁴`:
 
 The program calculated the constant ([the script file](script/physics_problems.sh)) as we expected ([output file](output/physics_problems/black_hole_density.txt)):
 
 ```text
 Result(s) that overlap with the target:
-	{ 2.08266982220(10) e+56 } [ kg·m³/s⁴ ] = Target
+	{ 2.082660(10) e+56 } [ kg·m³/s⁴ ] = Target
 	{ 2.082670(47) e+56 } [ kg·m³/s⁴ ] = 3⋅c⁶ / (2⁹⋅π⁵⋅G)
 ```
 
-Note that: "G" the Newtonian constant of gravitation increased the resultant expression uncertainty!
+Note that: "G" the Newtonian constant of gravitation (represented as $\gamma$ on the problem) increased the resultant expression uncertainty!
 
 ## 4 Experiments
 
 After executing enough runs on the other physical constants, it is time to experiment on measured but not theoretically-proofed constants.
 
-The script "[experiments.sh](script/experiments.sh)" is used on the experiments listed on this section.
+The script ([experiments.sh](script/experiments.sh)) is used on the experiments listed on this section.
 
 Note: The script was executed on the project's root folder:
 
@@ -140,44 +125,40 @@ Note: The script was executed on the project's root folder:
 
 #### 4.1.1 Resources
 
-Resources used for this experiment:
-
-* [Config File - magnetic_constant_to_electric_constant_ratio.json](config/experiments/magnetic_constant_to_electric_constant_ratio.json)
-* [Default Definition File - default_definition.json](../src/resources/default_definition.json)
-* [Output File - magnetic_constant_to_electric_constant_ratio.txt](output/experiments/magnetic_constant_to_electric_constant_ratio.txt)
-* [Script File - experiments.sh](script/experiments.sh)
+* [Config File](config/experiments/magnetic_constant_to_electric_constant_ratio.json), and scope:
+```text
+dimensional constants:   
+    c, powers = [-1, -1/2, 0, 1/2, 1]
+    ℎ, powers = [-3, -5/2, -2, -3/2, -1, -1/2, 0, 1/2, 1, 3/2, 2, 5/2, 3]
+    e, powers = [-4, -7/2, -3, -5/2, -2, -3/2, -1, -1/2, 0, 1/2, 1, 3/2, 2, 5/2, 3, 7/2, 4]
+    m_e, powers = [-1, -1/2, 0, 1/2, 1]
+    R_inf, powers = [-1/2, 0, 1/2]
+dimensionless constants: 
+    2, powers = [-4, -7/2, -3, -5/2, -2, -3/2, -1, -1/2, 0, 1/2, 1, 3/2, 2, 5/2, 3, 7/2, 4]
+    π, powers = [-4, -7/2, -3, -5/2, -2, -3/2, -1, -1/2, 0, 1/2, 1, 3/2, 2, 5/2, 3, 7/2, 4]
+    α, powers = [-4, -7/2, -3, -5/2, -2, -3/2, -1, -1/2, 0, 1/2, 1, 3/2, 2, 5/2, 3, 7/2, 4]
+```
+* [Default Definition File](../src/resources/default_definition.json)
+* [Output File](output/experiments/magnetic_constant_to_electric_constant_ratio.txt)
+* [Script File](script/experiments.sh)
 
 #### 4.1.2 Introduction
 
-Vacuum Magnetic Permeability (Magnetic Constant):
+[Vacuum Magnetic Permeability (Magnetic Constant)](https://en.wikipedia.org/wiki/Vacuum_permeability):
 
 * [CODATA value](https://physics.nist.gov/cgi-bin/cuu/Value?mu0): $\mu _{0}=1.25663706212(19) \times 10^{-6}$ $\mathrm{kg}\cdot\mathrm{m}\cdot\mathrm{s}^{-2}\cdot\mathrm{A}^{-2}$
-* [More information](https://en.wikipedia.org/wiki/Vacuum_permeability) on Wikipedia.
 
-Vacuum Electric Permittivity (Electric Constant):
+[Vacuum Electric Permittivity (Electric Constant)](https://en.wikipedia.org/wiki/Vacuum_permittivity):
 
 * [CODATA value](https://physics.nist.gov/cgi-bin/cuu/Value?ep0): $\varepsilon _{0}=8.8541878128(13) \times 10^{-12}$ $\mathrm{A^{2}}\cdot\mathrm{s}^{4}\cdot\mathrm{kg}^{-1}\cdot\mathrm{m}^{-3}$
-* [More information](https://en.wikipedia.org/wiki/Vacuum_permittivity) on Wikipedia.
 
-The well-known relation between the following fundamental physical constants:
+In this experiment we would like to explore the ratio $\mu _{0} / \varepsilon _{0}$, it is actually the square of [Impedance of free space](https://en.wikipedia.org/wiki/Impedance_of_free_space#Relation_to_other_constants):
 
-* $\mu _{0}$ (magnetic constant)
-* $\varepsilon _{0}$ (electric Constant)
-* $c$ (speed of light)
-
-```math
-c={\frac {1}{\sqrt {\varepsilon _{0}\mu _{0}}}}
-```
-
-The derivation contains the multiplication of these constants $\mu _{0}$, $\varepsilon _{0}$.
-
-So, in this experiment we would like to explore the ratio of $\mu _{0} / \varepsilon _{0}$, it actually the square of [Impedance of free space](https://en.wikipedia.org/wiki/Impedance_of_free_space#Relation_to_other_constants):
-
-We are also expecting the following well-known relations that contain $\varepsilon _{0}$ and $\mu _{0}$ in the results.
+We have the following well-known relations and definitions that contain $\mu _{0}$ and $\varepsilon _{0}$ :
 
 ##### 4.1.2.1 Speed of Light in Vacuum (1)
 
-c (speed of light in vacuum) contains $\varepsilon _{0}$ and $\mu _{0}$:
+c (speed of light in vacuum) contains the multiplication of $\varepsilon _{0}$ and $\mu _{0}$:
 
 ```math
 c={\frac {1}{\sqrt {\varepsilon _{0}\mu _{0}}}}
@@ -185,7 +166,7 @@ c={\frac {1}{\sqrt {\varepsilon _{0}\mu _{0}}}}
 
 ##### 4.1.2.2 Fine-structure Constant (2)
 
-$\alpha$ (fine-structure constant) contains $e$ (elementary charge), $h$ (plank constant), $\varepsilon _{0}$:
+$\alpha$ (fine-structure constant) contains the ratio $\mu _{0} / \varepsilon _{0}$:
 
 ```math
 \alpha={\frac {e^{2}}{2\varepsilon _{0}hc}}={\frac {e^{2}}{2h}}{\sqrt{\frac {\mu _{0}}{\varepsilon _{0}}}}
@@ -193,7 +174,7 @@ $\alpha$ (fine-structure constant) contains $e$ (elementary charge), $h$ (plank 
 
 ##### 4.1.2.3 Rydberg Constant (3)
 
-$R_{\infty }$ (Rydberg constant) contains $e$, $m_{\text{e}}$ (the rest mass of the electron), $h$ and $c$:
+$R_{\infty }$ (Rydberg constant) contains the ratio $\mu _{0} / \varepsilon _{0}$:
 
 ```math
 R_{\infty }={\frac {m_{\text{e}}e^{4}}{8\varepsilon _{0}^{2}h^{3}c}}={\frac {m_{\text{e}}e^{4}c}{8h^{3}}}{\frac {\mu _{0}}{\varepsilon _{0}}}
@@ -201,16 +182,15 @@ R_{\infty }={\frac {m_{\text{e}}e^{4}}{8\varepsilon _{0}^{2}h^{3}c}}={\frac {m_{
 
 #### 4.1.3 Results
 
-The target value ($\mu _{0}/\varepsilon _{0}$ ratio) is:
+The target is:
 
 ```math
 {\frac {\mu _{0}}{\varepsilon _{0}}}=1.4192572923(42) \times 10^{5} \, \mathrm{kg}^{2} \, \mathrm{m}^{4} \, \mathrm{A}^{-4} \, \mathrm{s}^{-6}
 ```
 
-The error of the target is calculated based on the relative errors.
+Found 3 candidates the resultant unit matched with the target's unit:
 
 ```text
-Found 3 candidates the resultant unit matched with the target's unit:
 	{ Q } [ kg²·m⁴/A⁴/s⁶ ] = R_inf¹ᐟ²⋅ℎ⁵ᐟ² / (e⁴⋅m_e¹ᐟ²⋅c¹ᐟ²)
 	  ├── 👍 In range!
 	  └── Min (~3E-7) < Q (~3E+6) < Max (~8E+16)
@@ -224,10 +204,9 @@ Found 3 candidates the resultant unit matched with the target's unit:
 	  └── Min (~3E-7) < Q (~1E+11) < Max (~8E+16)
 ```
 
-And 3 of these numerically matched the target value:
+And results that overlap with the target:
 
 ```text
-Result(s) that overlap with the target:
 	{ 1.4192572923(42) e+5 } [ kg²·m⁴/A⁴/s⁶ ] = Target
 R1	{ 1.41925729237(43) e+5 } [ kg²·m⁴/A⁴/s⁶ ] = 2⁵ᐟ²⋅α⋅R_inf¹ᐟ²⋅ℎ⁵ᐟ² / (e⁴⋅m_e¹ᐟ²⋅c¹ᐟ²)
 R2	{ 1.41925729236(43) e+5 } [ kg²·m⁴/A⁴/s⁶ ] = 2²⋅α²⋅ℎ² / e⁴
@@ -240,7 +219,7 @@ As it was expected,
 * The results (R1) and (R3) can be derived from the equation $R_{\infty }$ [(3) Rydberg Constant](#4123-rydberg-constant-3), (2) and c [(1) speed of light](#4121-speed-of-light-in-vacuum-1).
 
 With this experiment, these 3 equations were found as we have expected.
-But a possible alternative expressions for $\mu _{0}/\varepsilon _{0}$ ratio for the given exploration scope could not be found.
+But a possible alternative expressions for $\mu _{0}/\varepsilon _{0}$ ratio could not be found (for the given exploration scope)!
 
 ### 4.2 Newtonian Constant of Gravitation
 
@@ -252,21 +231,20 @@ r, between their centers of mass." (Ref: [Gravitational constant - Wikipedia](ht
 F=G{\frac {m_{1}m_{2}}{r^{2}}}
 ```
 
-Again, [CODATA](https://physics.nist.gov/cgi-bin/cuu/Value?bg) value of the Newtonian gravitational constant
-was used on the following calculations.
+Again, [CODATA](https://physics.nist.gov/cgi-bin/cuu/Value?bg) value `6.67430(15) E-11` of the Newtonian gravitational constant
+was used on the following explorations.
 
 #### 4.2.1 Newtonian Constant of Gravitation - Attempt 01
 
-In the first attempt, as a scope, the default config file was used. The same scope was also used on the "Exploring Derived Physical Constants" [section above](#exploring-derived-physical-constants).
+In the first attempt, as a scope, the default config file was used.
+The same scope was also used on the "Exploring Derived Physical Constants" [section above](#1-exploring-derived-physical-constants).
 
 ##### 4.2.1.1 Resources
 
-Resources used for this experiment:
-
-* [Default Config File - magnetic_constant_to_electric_constant_ratio.json](../src/resources/default_config.json)
-* [Default Definition File - default_definition.json](../src/resources/default_definition.json)
-* [Output File - newtonian_constant_of_gravitation_attempt_01.txt](output/experiments/newtonian_constant_of_gravitation_attempt_01.txt)
-* [Script File - experiments.sh](script/experiments.sh)
+* [Default Config File](../src/resources/default_config.json)
+* [Default Definition File](../src/resources/default_definition.json)
+* [Output File](output/experiments/newtonian_constant_of_gravitation_attempt_01.txt)
+* [Script File](script/experiments.sh)
 
 ##### 4.2.1.2 Results
 
@@ -306,24 +284,20 @@ It was also tried, but no satisfactory result was found!
 
 ##### 4.2.2.1 Resources
 
-Resources used for this experiment:
-
-* [Config file - newtonian_constant_of_gravitation_attempt_02.json](config/experiments/newtonian_constant_of_gravitation_attempt_02.json)
-* [Default Definition File - default_definition.json](../src/resources/default_definition.json)
-* [Output file - newtonian_constant_of_gravitation_attempt_02.txt](output/experiments/newtonian_constant_of_gravitation_attempt_02.txt)
-* [Script file - experiments.sh](script/experiments.sh)
+* [Config file](config/experiments/newtonian_constant_of_gravitation_attempt_02.json)
+* [Default Definition File](../src/resources/default_definition.json)
+* [Output file](output/experiments/newtonian_constant_of_gravitation_attempt_02.txt)
+* [Script file](script/experiments.sh)
 
 ##### 4.2.2.2 Introduction
 
-In this case, $\mu _{0}/\varepsilon _{0}$ ratio is added into the definition file.
-
-And used in the config file.
+In this case, $\mu _{0}/\varepsilon _{0}$ ratio is added into the definition file ("mc_to_ec_ratio") and used in the config file.
 
 ##### 4.2.2.3 Results
 
 The program found 6 candidates that the resultant unit matched with the target's unit and __the resultant value in the dimensionless range__.
 
-And found 3 candidates that their numeric value overlap with the target range:
+And 3 of them overlap with the target value:
 
 ```text
 Result(s) that overlap with the target:
@@ -331,15 +305,24 @@ Result(s) that overlap with the target:
 R1	{ 6.674224928(14) e-11 } [ m³/kg/s² ] = α²⋅c⋅mc_to_ec_ratio²⋅e⁸ / (3⋅5³⋅π⁴⋅μ⁹⋅ℎ³⋅m_e²)
 R2	{ 6.674224928(14) e-11 } [ m³/kg/s² ] = 2⋅α³⋅c⋅mc_to_ec_ratio³ᐟ²⋅e⁶ / (3⋅5³⋅π⁴⋅μ⁹⋅ℎ²⋅m_e²)
 R3	{ 6.674224928(14) e-11 } [ m³/kg/s² ] = 2²⋅α⁴⋅c⋅mc_to_ec_ratio⋅e⁴ / (3⋅5³⋅π⁴⋅μ⁹⋅ℎ⋅m_e²)
+
+Where
+* ℎ: planck constant
+* m_e: electron mass
+* c: speed of light in vacuum
+* mc_to_ec_ratio: mc to ec ratio, µ_0 / ε_0 (the ratio of vacuum magnetic permeability to vacuum electric permittivity)
+* e: elementary charge
+* α: fine structure constant
+* μ: proton electron mass ratio, m_p / m_e
 ```
 
-The program actually found a single candidate, not 3 different one.
+The program actually found a single candidate, not 3 different ones.
 if we put $\alpha$ (the fine-structure constant) formulation on the results they are equal.
 
-If we substitute `mc_to_ec_ratio` (magnetic constant to electric constant ratio) and $ \m_{u}$ (proton to electron mass ratio) on (R3):
+If we substitute `mc_to_ec_ratio` (magnetic constant to electric constant ratio) and $\mu$ (proton to electron mass ratio) on R3 for example:
 
 ```math
-6.674224928(14)\times 10^{-11}\, \mathrm{m}^{3}/\mathrm{kg}/\mathrm{s}^{2} = {\frac {2^{2}}{3\cdot5^{3}\cdot\pi^{4}}}\cdot{\frac {\alpha^{4} \,e^{4} \,c\,\mu _{0}}{h\,\varepsilon _{0}}\cdot{\frac {\\m _{e}^{7}}{\\m _{p}^{9}}}}
+6.674224928(14)\times 10^{-11}\, \mathrm{m}^{3}/\mathrm{kg}/\mathrm{s}^{2} \approx {\frac {2^{2}}{3\cdot5^{3}\cdot\pi^{4}}}\cdot{\frac {\alpha^{4} \,e^{4} \,c\,\mu _{0}}{h\,\varepsilon _{0}}\cdot{\frac {\\m _{e}^{7}}{\\m _{p}^{9}}}}
 ```
 
 * $\alpha$ is the fine-structure constant
@@ -348,67 +331,35 @@ If we substitute `mc_to_ec_ratio` (magnetic constant to electric constant ratio)
 * $e$ is the elementary charge
 * $\mathrm{m}_{e}$ is the mass of a stationary electron
 * $\mathrm{m}_{p}$ is the mass of proton
-* $\mu _{0}$ is the vacuum permeability (magnetic constant)
-* $\varepsilon _{0}$ is the vacuum permittivity (electric constant)
-* $\pi$ is the ratio of a circle's circumference to its diameter (mathematical constant)
+* $\mu _{0}$ is the vacuum magnetic permeability
+* $\varepsilon _{0}$ is the vacuum electric permittivity
 
-This expression can be re-formed in various ways. So on the next attempt, `the fine-structure constant` will be removed from the dimensionless constants scope.
+Note that, if we increase the scope of the dimensionless constant,
+especially targeting less significant digits (such as here, it has 6 significant digits) we may get different results.
 
-And it is also important that, if we increase the dimensionless constants scope, especially having less significant digit targets (such as here, because it has 6 significant digits) we may get different results.
+This result may have come across as numerically by chance. If we want to analyze the probability, 
+the numeric value we are looking for has 6 significant digits. 
+The program tries to find the match from 1416933 [the number of dimensionless combinations] x 1 [the number of found candidates, since in this case they are identical it is 1]. 
+We can also differ the number of combinations by adding or excluding the constants from the dimensionless scope
 
-#### 4.2.3 Newtonian Constant of Gravitation - Attempt 03
-
-##### 4.2.3.1 Resources
-
-Resources used for this experiment:
-
-* [Config file - newtonian_constant_of_gravitation_attempt_03.json](config/experiments/newtonian_constant_of_gravitation_attempt_03.json)
-* [Default Definition File - default_definition.json](../src/resources/default_definition.json)
-* [Output file - newtonian_constant_of_gravitation_attempt_03.txt](output/experiments/newtonian_constant_of_gravitation_attempt_03.txt)
-* [Script file - experiments.sh](script/experiments.sh)
-
-##### 4.2.3.2 Introduction
-
-In this attempt:
-
-* instead of using $\mu _{0}/\varepsilon _{0}$ ratio, $\mu _{0}$ and $\varepsilon _{0}$ constants are used
-* The fine-structure constant is removed from the dimensionless constants scope
-* More dense power ranges are added around the target that we have found on previous attempt, such that:
-  * `"planck_constant": 8` changed as `"planck_constant": {"range": [-6,-4], "step": "1/6"},`
-  * `"elementary_charge": 8,` changed as `"elementary_charge": {"range": [11, 13], "step": "1/6"},`
-* To speed up the calculations new methodology is implemented `brute_force_with_memorization`
-
-##### 4.2.3.3 Results
-
-The program found 7 candidates that the resultant unit matched with the target's unit and __the resultant value in the mathematical range__.
+That means it has a high probability. But it's still surprising that we could find the expression by using the following scope, 
+which was similar used on the derived constants:
 
 ```text
-Found 7 candidates the resultant unit matched with the target's unit:
-	{ Q } [ m³/kg/s² ] = c¹⁵ᐟ²⋅µ_0¹³ᐟ²⋅e¹³ / (ℎ¹¹ᐟ²⋅m_e²)
-	{ Q } [ m³/kg/s² ] = c²²ᐟ³⋅µ_0¹⁹ᐟ³⋅e³⁸ᐟ³ / (ℎ¹⁶ᐟ³⋅m_e²)
-	{ Q } [ m³/kg/s² ] = c⁴³ᐟ⁶⋅µ_0³⁷ᐟ⁶⋅e³⁷ᐟ³ / (ℎ³¹ᐟ⁶⋅m_e²)
-	{ Q } [ m³/kg/s² ] = c⁷⋅µ_0⁶⋅e¹² / (ℎ⁵⋅m_e²)
-	{ Q } [ m³/kg/s² ] = c⁴¹ᐟ⁶⋅µ_0³⁵ᐟ⁶⋅e³⁵ᐟ³ / (ℎ²⁹ᐟ⁶⋅m_e²)
-	{ Q } [ m³/kg/s² ] = c²⁰ᐟ³⋅µ_0¹⁷ᐟ³⋅e³⁴ᐟ³ / (ℎ¹⁴ᐟ³⋅m_e²)
-	{ Q } [ m³/kg/s² ] = c¹³ᐟ²⋅µ_0¹¹ᐟ²⋅e¹¹ / (ℎ⁹ᐟ²⋅m_e²)
+dimensional constants:   
+    c, powers = [-8, -7, -6, -5, -4, -3, -2, -1, 0, 1, 2, 3, 4, 5, 6, 7, 8]
+    ℎ, powers = [-8, -7, -6, -5, -4, -3, -2, -1, 0, 1, 2, 3, 4, 5, 6, 7, 8]
+    e, powers = [-8, -7, -6, -5, -4, -3, -2, -1, 0, 1, 2, 3, 4, 5, 6, 7, 8]
+    m_e, powers = [-8, -7, -6, -5, -4, -3, -2, -1, 0, 1, 2, 3, 4, 5, 6, 7, 8]
+    mc_to_ec_ratio, powers = [-4, -7/2, -3, -5/2, -2, -3/2, -1, -1/2, 0, 1/2, 1, 3/2, 2, 5/2, 3, 7/2, 4]
+dimensionless constants: 
+    2, powers = [-8, -7, -6, -5, -4, -3, -2, -1, 0, 1, 2, 3, 4, 5, 6, 7, 8]
+    3, powers = [-3, -2, -1, 0, 1, 2, 3]
+    5, powers = [-3, -2, -1, 0, 1, 2, 3]
+    π, powers = [-4, -3, -2, -1, 0, 1, 2, 3, 4]
+    μ, powers = [-10, -9, -8, -7, -6, -5, -4, -3, -2, -1, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+    α, powers = [-4, -3, -2, -1, 0, 1, 2, 3, 4]
 ```
-
-And found 3 candidates that their numeric values overlap with the target range:
-
-```text
-Totally, unique 128282 dimensionless multiplications are calculated!
-Result(s) that overlap with the target:
-	{ 6.67430(15) e-11 } [ m³/kg/s² ] = Target
-R1	{ 6.674314482(14) e-11 } [ m³/kg/s² ] = 5²⋅c²²ᐟ³⋅µ_0¹⁹ᐟ³⋅e³⁸ᐟ³ / (2⁶⋅3⋅π³⋅μ²⁹ᐟ³⋅ℎ¹⁶ᐟ³⋅m_e²)
-R2	{ 6.674224928(14) e-11 } [ m³/kg/s² ] = c⁷⋅µ_0⁶⋅e¹² / (2²⋅3⋅5³⋅π⁴⋅μ⁹⋅ℎ⁵⋅m_e²)
-R3	{ 6.674365007(14) e-11 } [ m³/kg/s² ] = c²⁰ᐟ³⋅µ_0¹⁷ᐟ³⋅e³⁴ᐟ³ / (2⋅3²⋅5²⋅π³⋅μ¹⁹ᐟ²⋅ℎ¹⁴ᐟ³⋅m_e²)
-```
-
-R2 is the result that we have found the previous attempt.
-
-If we would have a more precise numerical value of G, maybe we would have been able to eliminate some of these results.
-
-At this point, I think that it does not make much sense to make explorations using the program for the Newtonian Constant of Gravitation (G), which has only 6 significant digits.
 
 ## 5 Resources
 
@@ -416,26 +367,20 @@ At this point, I think that it does not make much sense to make explorations usi
 
 * [The NIST Reference on Constants, Units, and Uncertainty (CODATA 2018 values)](https://physics.nist.gov/cuu/Constants/index.html)
 * [NIST, Fundamental Physical Constants — Extensive Listing](https://physics.nist.gov/cuu/pdf/all.pdf)
-* [Units and Fundamental Constants in Physics and Chemistry, Subvolume b / Editors: J. Bortfeldt and B. Kramer](https://www.voebb.de//aDISWeb/app?service=direct/0/Home/$DirectLink&sp=SPROD00&sp=SAK12735219)
+* [Units and Fundamental Constants in Physics and Chemistry, Subvolume b / Editors: J. Bortfeldt and B. Kramer](https://link.springer.com/book/9783540475316)
 
-## 6 Behind the Scene
 
-I am a computer engineer with a background in Scientific Computing and Physics.
+## 6 Acknowledgement & Gratitude
+
+I am a software engineer with a background in Scientific Computing and Physics and over 20 years of experience.
 Last 4 years I am mainly working in big data related subjects and domains.
 
-In my high school years, I was selected to the Physics Olympic team of my home country (The Republic of Turkey) and won the honourable mention award in [IPhO 1996 (XXVII Oslo, Norway)](https://www.ipho-new.org/documentations/#statistics).
-In the same year, I won the Computer Engineering department in my country's university exam and I decided to study computer engineering.
+I won the honourable mention award in [IPhO 1996 (XXVII Oslo, Norway)](https://www.ipho-new.org/documentations/#statistics).
+In the same year, I decided to study computer engineering.
 
-To be honest, we talked about the feasibility of this program 20 years ago, in a conversation with my close friend Atilim Cetin.
-In those years, there weren't libraries like the [pint](https://pint.readthedocs.io/en/stable/) quantity library which helps to deal with units parts of the quantities.
-I am very happy that I could manage to implement this approach with the guidance of my friends and teachers.
+Although more than 20 years have passed, I am pleased to be able to use my physics knowledge to develop such an application.
 
-I don't know if a similar physical constant explorer program has been already implemented before.
-If it has been implemented already, I hope this approach gives a new perspective on helping us to understand the mystery of nature with good purposes!
-
-## 7 Acknowledgement & Gratitude
-
-I would like to express my gratitude to my physics teachers who made me love physics and prepared us for the physics olympiads:
+I would like to express my gratitude to my physics teachers who made me love physics during these years:
 
 * Physics Teacher Rafet Kamer, Physics Olympiads
 * Prof. Dr. K. Sinan Bilikmen, METU-Physics
@@ -458,12 +403,13 @@ And I would like to thanks to my genius and big-hearted friends who always enjoy
 
 And of course to my beloved wife Ayşen and my dear children Ozan & Doruk!
 
-I would like to thank all the team who have developed and contributed the [pint library](https://pint.readthedocs.io/en/stable/) 👏
+I would also like to thank all the team who have developed and contributed the [pint library](https://pint.readthedocs.io/en/stable/) 👏
 
 Emre Dagli
 
-## 8 Final Notes
+## 7 Final Notes
 
-The results found in this research are only numerical explorations, they are not physical proof or a derivation!
+The results found in this research are only numerical explorations, they are not a physical proof or a derivation!
 
-I hope the approach and the results, make sense to physicists and would be beneficial in their studies!
+I am not sure if a similar physical constant explorer program has been implemented before. 
+If it has been implemented already, I hope this approach gives a new perspective on helping us to understand the mystery of nature with good purposes!

@@ -1,36 +1,30 @@
-from fractions import Fraction
+import re
 
-from pint import register_unit_format, formatter
-
-_PRETTY_EXPONENTS = "⁰¹²³⁴⁵⁶⁷⁸⁹"
+from src import ur
 
 
-def pretty_faction_exponent(num):
-    f_num = Fraction(num).limit_denominator(1000000)
-    numerator = f_num.numerator
-    denominator = f_num.denominator
-    if denominator == 1:
-        ret = f"{str(numerator)}"
+def parse_numeric_value(numeric_value, forced_absolute_error=None):
+    regex_search = re.search(r"^(?:[1-9])(?:\.\d*)?(\(\d*\))?(?:[eE][+\-]?\d+)?$", numeric_value)
+
+    if regex_search is not None:
+        absolute_error = "0"
+        concise_error = regex_search.group(1)
+        if concise_error is not None:
+            numeric_value = numeric_value.replace(concise_error, '')
+            absolute_error = concise_error.replace('(', '').replace(')', '')
+        elif forced_absolute_error is not None:
+            absolute_error = forced_absolute_error
     else:
-        ret = f"{str(numerator)}/{str(denominator)}"
+        raise ValueError(f"({numeric_value}) is not in scientific notation.")
 
-    ret = ret.replace("/", "ᐟ").replace("-", "⁻").replace(".", "\u22C5")
-    for n in range(10):
-        ret = ret.replace(str(n), _PRETTY_EXPONENTS[n])
-    return ret
+    return numeric_value, absolute_error
 
 
-@register_unit_format("FU")
-def format_pretty(unit, registry, **options):
-    return formatter(
-        unit.items(),
-        as_ratio=True,
-        single_denominator=True,
-        product_fmt="·",
-        division_fmt="/",
-        power_fmt="{}{}",
-        parentheses_fmt="({})",
-        exp_call=pretty_faction_exponent,
-        **options,
-    )
+def parse_unit(unit):
+    pint_unit = ur(unit).to_base_units()
+    if pint_unit.magnitude != 1:
+        raise ValueError(f"Magnitude of unit ({unit}) is not equal to 1.\n"
+                         f"Please provide target's unit with SI base units which are:\n"
+                         f"(m, s, mol, A, K, cd, kg) or empty string "" for dimensionless targets")
 
+    return pint_unit.units

@@ -37,15 +37,15 @@ logger = logging.getLogger(__name__)
 def test_invalid_target_values(target_value, target_unit):
     logger.info(f"Testing target_value={target_value}, target_unit={target_unit}")
 
-    config, definition, unit_registry = get_test_resources()
+    config, definition = get_test_resources()
 
     with pytest.raises((ValueError, decimal.InvalidOperation)):
         explorer = ExploreConstant(
             target_value=target_value,
             target_unit=target_unit,
             definition=definition,
-            config=config,
-            unit_registry=unit_registry)
+            config=config
+        )
 
         explorer.explore()
 
@@ -141,15 +141,13 @@ def test_invalid_definitions(info, definition):
         "dimensional_constants": {"c": 1},
         "dimensionless_constants": {"2": 1}
     }
-    _, _, unit_registry = get_test_resources()
 
     with pytest.raises(ValidationError):
         ExploreConstant(
             target_value="4.2E0",
             target_unit="m/s",
             definition=definition,
-            config=config,
-            unit_registry=unit_registry)
+            config=config)
 
 
 @pytest.mark.parametrize(
@@ -306,15 +304,13 @@ def test_invalid_configs(info, config):
             },
         }
     }
-    _, _, unit_registry = get_test_resources()
 
     with pytest.raises(ValidationError):
         ExploreConstant(
             target_value="4.2E0",
             target_unit="m/s",
             definition=definition,
-            config=config,
-            unit_registry=unit_registry)
+            config=config)
 
 
 def test_valid_definition_and_config():
@@ -349,11 +345,9 @@ def test_valid_definition_and_config():
             "pi": 5
         }
     }
-    _, _, unit_registry = get_test_resources()
 
     ExploreConstant(
         target_value="4.2E0",
         target_unit="m/s",
         definition=definition,
-        config=config,
-        unit_registry=unit_registry)
+        config=config)

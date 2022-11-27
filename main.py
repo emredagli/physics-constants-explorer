@@ -4,8 +4,8 @@ from argparse import RawTextHelpFormatter
 from decimal import getcontext
 from fractions import Fraction
 
-import pint
-import src.common_library
+# import pint
+# import src.common_library
 from src.explore_constant import ExploreConstant
 
 if __name__ == '__main__':
@@ -75,16 +75,10 @@ if __name__ == '__main__':
     with open(args.definition_file) as f:
         definition = json.load(f)
 
-    # pint unit registry
-    unit_registry = pint.UnitRegistry(
-        non_int_type=Fraction
-    )
-
     explorer = ExploreConstant(
         target_value=args.target_value,
         target_unit=args.target_unit,
         definition=definition,
-        config=config,
-        unit_registry=unit_registry)
+        config=config)
 
     explorer.explore()

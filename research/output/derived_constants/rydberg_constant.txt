@@ -1,41 +1,51 @@
-Explore the target quantity:
+Explore the target:
 	{ 1.0973731568160(21) e+7 } [ 1/m ] = Target
-in terms of the given:
+in terms of the given,
 	dimensional constants:   
-		speed_of_light_in_vacuum (c) ^ [-2, -1, 0, 1, 2]
-		planck_constant (ℎ) ^ [-3, -2, -1, 0, 1, 2, 3]
-		boltzmann_constant (k) ^ [-4, -3, -2, -1, 0, 1, 2, 3, 4]
-		elementary_charge (e) ^ [-4, -3, -2, -1, 0, 1, 2, 3, 4]
-		vacuum_electric_permittivity (ε_0) ^ [-2, -1, 0, 1, 2]
-		electron_mass (m_e) ^ [-2, -1, 0, 1, 2]
-		avogadro_constant (N_A) ^ [-1, 0, 1]
+		c = { 2.99792458e+8 } [ m/s ], powers = [-2, -1, 0, 1, 2]
+		ℎ = { 6.62607015e-34 } [ kg·m²/s ], powers = [-3, -2, -1, 0, 1, 2, 3]
+		k = { 1.380649e-23 } [ kg·m²/K/s² ], powers = [-4, -3, -2, -1, 0, 1, 2, 3, 4]
+		e = { 1.602176634e-19 } [ A·s ], powers = [-4, -3, -2, -1, 0, 1, 2, 3, 4]
+		ε_0 = { 8.8541878128(13)e-12 } [ A²·s⁴/kg/m³ ], powers = [-2, -1, 0, 1, 2]
+		m_e = { 9.1093837015(28)e-31 } [ kg ], powers = [-2, -1, 0, 1, 2]
+		N_A = { 6.02214076e+23 } [ 1/mol ], powers = [-1, 0, 1]
 	dimensionless constants: 
-		2 ^ [-3, -2, -1, 0, 1, 2, 3]
-		3 ^ [-1, 0, 1]
-		5 ^ [-1, 0, 1]
-		pi (π) ^ [-5, -4, -3, -2, -1, 0, 1, 2, 3, 4, 5]
-		wien_u ^ [-1, 0, 1]
+		2, powers = [-3, -2, -1, 0, 1, 2, 3]
+		3, powers = [-1, 0, 1]
+		5, powers = [-1, 0, 1]
+		π, powers = [-5, -4, -3, -2, -1, 0, 1, 2, 3, 4, 5]
+		wien_u, powers = [-1, 0, 1]
+		μ, powers = [-1, 0, 1]
+		g_e, powers = [-1, 0, 1]
+		g_p, powers = [-1, 0, 1]
 by using brute_force methodology...
 
 Found 4 candidates the resultant unit matched with the target's unit:
 	{ Q } [ 1/m ] = e⁴⋅m_e / (c⋅ℎ³⋅ε_0²)
 	  ├── 👍 In range!
-	  └── Min (~1E+2) < Q (~9E+7) < Max (~1E+12) 
+	  └── Min (~5E-3) < Q (~9E+7) < Max (~2E+16) 
 
 	{ Q } [ 1/m ] = e²⋅m_e / (ℎ²⋅ε_0)
 	  ├── 👍 In range!
-	  └── Min (~1E+2) < Q (~6E+9) < Max (~1E+12) 
+	  └── Min (~5E-3) < Q (~6E+9) < Max (~2E+16) 
 
 	{ Q } [ 1/m ] = c⋅m_e / ℎ
 	  ├── 👍 In range!
-	  └── Min (~1E+2) < Q (~4E+11) < Max (~1E+12) 
+	  └── Min (~5E-3) < Q (~4E+11) < Max (~2E+16) 
 
 	{ Q } [ 1/m ] = c²⋅ε_0⋅m_e / e²
-	  ├── 👎 Not in range.
-	  └── Min (~1E+2) < Max (~1E+12) < Q (~3E+13) 
+	  ├── 👍 In range!
+	  └── Min (~5E-3) < Q (~3E+13) < Max (~2E+16) 
 
-Totally, unique 2079 dimensionless multiplications are calculated!
+Totally, unique 56133 dimensionless multiplications are calculated!
 
 Result(s) that overlap with the target:
 	{ 1.0973731568160(21) e+7 } [ 1/m ] = Target
 	{ 1.09737315681(66) e+7 } [ 1/m ] = e⁴⋅m_e / (2³⋅c⋅ℎ³⋅ε_0²)
+
+Where
+* ℎ: planck constant
+* m_e: electron mass
+* ε_0: vacuum electric permittivity
+* c: speed of light in vacuum
+* e: elementary charge

@@ -1,14 +1,14 @@
-Explore the target quantity:
+Explore the target:
 	{ 1.616255(18) e-35 } [ m ] = Target
-in terms of the given:
+in terms of the given,
 	dimensional constants:   
-		speed_of_light_in_vacuum (c) ^ [-3, -5/2, -2, -3/2, -1, -1/2, 0, 1/2, 1, 3/2, 2, 5/2, 3]
-		planck_constant (ℎ) ^ [-1, -1/2, 0, 1/2, 1]
-		newtonian_constant_of_gravitation (G) ^ [-1, -1/2, 0, 1/2, 1]
-		boltzmann_constant (k) ^ [-1, -1/2, 0, 1/2, 1]
+		c = { 2.99792458e+8 } [ m/s ], powers = [-3, -5/2, -2, -3/2, -1, -1/2, 0, 1/2, 1, 3/2, 2, 5/2, 3]
+		ℎ = { 6.62607015e-34 } [ kg·m²/s ], powers = [-1, -1/2, 0, 1/2, 1]
+		G = { 6.67430(15)e-11 } [ m³/kg/s² ], powers = [-1, -1/2, 0, 1/2, 1]
+		k = { 1.380649e-23 } [ kg·m²/K/s² ], powers = [-1, -1/2, 0, 1/2, 1]
 	dimensionless constants: 
-		2 ^ [-2, -3/2, -1, -1/2, 0, 1/2, 1, 3/2, 2]
-		pi (π) ^ [-2, -3/2, -1, -1/2, 0, 1/2, 1, 3/2, 2]
+		2, powers = [-2, -3/2, -1, -1/2, 0, 1/2, 1, 3/2, 2]
+		π, powers = [-2, -3/2, -1, -1/2, 0, 1/2, 1, 3/2, 2]
 by using brute_force methodology...
 
 Found 1 candidates the resultant unit matched with the target's unit:
@@ -21,3 +21,8 @@ Totally, unique 81 dimensionless multiplications are calculated!
 Result(s) that overlap with the target:
 	{ 1.616255(18) e-35 } [ m ] = Target
 	{ 1.616255(18) e-35 } [ m ] = ℎ¹ᐟ²⋅G¹ᐟ² / (2¹ᐟ²⋅π¹ᐟ²⋅c³ᐟ²)
+
+Where
+* c: speed of light in vacuum
+* ℎ: planck constant
+* G: newtonian constant of gravitation

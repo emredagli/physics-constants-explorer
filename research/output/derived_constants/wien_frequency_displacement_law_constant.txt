@@ -1,45 +1,53 @@
-Explore the target quantity:
+Explore the target:
 	{ 5.8789257570(10) e+10 } [ 1/K/s ] = Target
-in terms of the given:
+in terms of the given,
 	dimensional constants:   
-		speed_of_light_in_vacuum (c) ^ [-2, -1, 0, 1, 2]
-		planck_constant (ℎ) ^ [-3, -2, -1, 0, 1, 2, 3]
-		boltzmann_constant (k) ^ [-4, -3, -2, -1, 0, 1, 2, 3, 4]
-		elementary_charge (e) ^ [-4, -3, -2, -1, 0, 1, 2, 3, 4]
-		vacuum_electric_permittivity (ε_0) ^ [-2, -1, 0, 1, 2]
-		electron_mass (m_e) ^ [-2, -1, 0, 1, 2]
-		avogadro_constant (N_A) ^ [-1, 0, 1]
+		c = { 2.99792458e+8 } [ m/s ], powers = [-2, -1, 0, 1, 2]
+		ℎ = { 6.62607015e-34 } [ kg·m²/s ], powers = [-3, -2, -1, 0, 1, 2, 3]
+		k = { 1.380649e-23 } [ kg·m²/K/s² ], powers = [-4, -3, -2, -1, 0, 1, 2, 3, 4]
+		e = { 1.602176634e-19 } [ A·s ], powers = [-4, -3, -2, -1, 0, 1, 2, 3, 4]
+		ε_0 = { 8.8541878128(13)e-12 } [ A²·s⁴/kg/m³ ], powers = [-2, -1, 0, 1, 2]
+		m_e = { 9.1093837015(28)e-31 } [ kg ], powers = [-2, -1, 0, 1, 2]
+		N_A = { 6.02214076e+23 } [ 1/mol ], powers = [-1, 0, 1]
 	dimensionless constants: 
-		2 ^ [-3, -2, -1, 0, 1, 2, 3]
-		3 ^ [-1, 0, 1]
-		5 ^ [-1, 0, 1]
-		pi (π) ^ [-5, -4, -3, -2, -1, 0, 1, 2, 3, 4, 5]
-		wien_u ^ [-1, 0, 1]
+		2, powers = [-3, -2, -1, 0, 1, 2, 3]
+		3, powers = [-1, 0, 1]
+		5, powers = [-1, 0, 1]
+		π, powers = [-5, -4, -3, -2, -1, 0, 1, 2, 3, 4, 5]
+		wien_u, powers = [-1, 0, 1]
+		μ, powers = [-1, 0, 1]
+		g_e, powers = [-1, 0, 1]
+		g_p, powers = [-1, 0, 1]
 by using brute_force methodology...
 
 Found 5 candidates the resultant unit matched with the target's unit:
 	{ Q } [ 1/K/s ] = k⋅e⁴ / (c²⋅ℎ³⋅ε_0²)
 	  ├── 👍 In range!
-	  └── Min (~6E+5) < Q (~4E+6) < Max (~6E+15) 
+	  └── Min (~3E+1) < Q (~4E+6) < Max (~1E+20) 
 
 	{ Q } [ 1/K/s ] = k⋅e² / (c⋅ℎ²⋅ε_0)
 	  ├── 👍 In range!
-	  └── Min (~6E+5) < Q (~3E+8) < Max (~6E+15) 
+	  └── Min (~3E+1) < Q (~3E+8) < Max (~1E+20) 
 
 	{ Q } [ 1/K/s ] = k / ℎ
 	  ├── 👍 In range!
-	  └── Min (~6E+5) < Q (~2E+10) < Max (~6E+15) 
+	  └── Min (~3E+1) < Q (~2E+10) < Max (~1E+20) 
 
 	{ Q } [ 1/K/s ] = c⋅k⋅ε_0 / e²
 	  ├── 👍 In range!
-	  └── Min (~6E+5) < Q (~1E+12) < Max (~6E+15) 
+	  └── Min (~3E+1) < Q (~1E+12) < Max (~1E+20) 
 
 	{ Q } [ 1/K/s ] = c²⋅ℎ⋅k⋅ε_0² / e⁴
 	  ├── 👍 In range!
-	  └── Min (~6E+5) < Q (~1E+14) < Max (~6E+15) 
+	  └── Min (~3E+1) < Q (~1E+14) < Max (~1E+20) 
 
-Totally, unique 2079 dimensionless multiplications are calculated!
+Totally, unique 56133 dimensionless multiplications are calculated!
 
 Result(s) that overlap with the target:
 	{ 5.8789257570(10) e+10 } [ 1/K/s ] = Target
 	{ 5.8789257576468... e+10 (exact) } [ 1/K/s ] = wien_u⋅k / ℎ
+
+Where
+* k: boltzmann constant
+* ℎ: planck constant
+* wien_u: wien u, the solution to (u-3)*exp(u)+3 = 0 => u = W(3/exp(3))+3

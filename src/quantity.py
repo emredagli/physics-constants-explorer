@@ -1,6 +1,6 @@
-import re
-
 from decimal import Decimal, ROUND_HALF_UP
+
+from src import dimensionless_unit
 
 
 class Quantity:
@@ -9,52 +9,25 @@ class Quantity:
         "0": "⁰", "1": "¹", "2": "²", "3": "³", "4": "⁴", "5": "⁵", "6": "⁶", "7": "⁷", "8": "⁸", "9": "⁹",
         "-": "⁻", "+": "", "/": "ᐟ"})
 
-    # TODO too mant input params
-    def __init__(self, value, power=None, unit_registry=None, unit=None, constant_name=None, symbol=None,
-                 uncertainty=None):
+    def __init__(self, value, power=None, unit=None, constant_name=None, symbol=None):
         if isinstance(value, list):
-            self._init_with_quantities(value, unit_registry)
+            self._init_with_quantities(value)
             return
 
-        value_str = value.lower()
-        regex_search = re.search(r"^(?:[1-9])(?:\.\d*)?(\(\d*\))?(?:[eE][+\-]?\d+)?$", value_str)
-
-        if regex_search is not None:
-            error_concise = "0"
-            error_in_concise_form = regex_search.group(1)
-            if error_in_concise_form is not None:
-                value_str = value_str.replace(error_in_concise_form, '')
-                error_concise = error_in_concise_form.replace('(', '').replace(')', '')
-            elif uncertainty is not None:
-                last_digits, error_concise = uncertainty
-                if "e" in value_str:
-                    value_str = value_str.replace("e", last_digits + "e")
-                else:
-                    value_str = value_str + last_digits
-        else:
-            raise ValueError(f"{constant_name} ({value_str}) is not in scientific notation.")
+        value_str, error_concise = value
 
         power_decimal = Decimal(power.numerator) / Decimal(power.denominator)
         value_decimal = Decimal(value_str)
         absolute_error = Decimal(error_concise) * Decimal("10") ** Decimal(value_decimal.as_tuple().exponent)
         relative_error = absolute_error / value_decimal
 
-        if not unit:
-            unit = "dimensionless"
-
-        q_unit = unit_registry(unit).to_base_units()
-        if q_unit.magnitude != 1:
-            raise ValueError(f"Magnitude of {constant_name}'s unit ({unit}) is not equal to 1.\n"
-                             f"Please provide target's unit with SI base units which are:\n"
-                             f"(m, s, mol, A, K, cd, kg) or empty string "" for dimensionless targets")
-
-        self.unit = q_unit.units ** power
+        self.unit = unit ** power
         self.value = value_decimal ** power_decimal
         self.relative_error = relative_error * abs(power_decimal)
         self.representation = [(constant_name, symbol, power)]
 
-    def _init_with_quantities(self, list_of_quantities, unit_registry):
-        self.unit = unit_registry("dimensionless").to_base_units().units
+    def _init_with_quantities(self, list_of_quantities):
+        self.unit = dimensionless_unit
         self.value = 1
         self.relative_error = 0
         self.representation = []
@@ -83,7 +56,7 @@ class Quantity:
             return "".join(map(str, arr))
 
         if self.relative_error == 0:
-            _, digits, exponent = self.value.quantize(target.value * Decimal(10) ** -3,
+            _, digits, exponent = self.value.quantize(target.value * Decimal(10) ** -4,
                                                       rounding=ROUND_HALF_UP).as_tuple()
             result_exponent = exponent + len(digits) - 1
             power_str = "" if result_exponent == 0 else "e" + get_sign(result_exponent) + str(abs(result_exponent))

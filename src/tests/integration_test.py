@@ -17,9 +17,9 @@ logger = logging.getLogger(__name__)
         ("Stefan–Boltzmann constant", "5.670374419E-8", "kg/(s^3 K^4)",
          "kg/K⁴/s³", ["2⋅π⁵⋅k⁴ / (3⋅5⋅c²⋅ℎ³)", "2⋅π⁵⋅k⁴ / (3⋅5⋅ℎ³⋅c²)"]),
         ("Rydberg constant", "1.0973731568160(21)e+7", "1/m",
-         "1/m", ["e⁴⋅m_e / (2³⋅c⋅ℎ³⋅ε_0²)", "e⁴⋅m_e / (2³⋅ℎ³⋅ε_0²⋅c)"]),
+         "1/m", ["e⁴⋅m_e / (2³⋅c⋅ℎ³⋅ε_0²)", "e⁴⋅m_e / (2³⋅ℎ³⋅ε_0²⋅c)", "e⁴⋅m_e / (2³⋅ℎ³⋅c⋅ε_0²)"]),
         ("Fine structure constant", "7.2973525693(11)E-3", "",
-         "dimensionless", ["e² / (2⋅c⋅ℎ⋅ε_0)", "e² / (2⋅ℎ⋅ε_0⋅c)"]),
+         "dimensionless", ["e² / (2⋅c⋅ℎ⋅ε_0)", "e² / (2⋅ℎ⋅ε_0⋅c)", "e² / (2⋅ℎ⋅c⋅ε_0)"]),
         ("Vacuum magnetic permeability", "1.25663706212(19)e-6", "m kg/(A^2 s^2)",
          "kg·m/A²/s²", ["1 / (c²⋅ε_0)", "1 / (ε_0⋅c²)"]),
         ("Molar gas constant", "8.314462618E0", "(kg m^2)/(K mol s^2)",
@@ -39,15 +39,14 @@ def test_derived_constants(constant_name, target_value, target_unit, expected_un
     # GIVEN
     logger.info(f"Testing derived constants{constant_name}")
 
-    config, definition, unit_registry = get_test_resources(method)
+    config, definition = get_test_resources(method)
 
     # WHEN
     explorer = ExploreConstant(
         target_value=target_value,
         target_unit=target_unit,
         definition=definition,
-        config=config,
-        unit_registry=unit_registry)
+        config=config)
 
     explorer.explore()
 
@@ -55,13 +54,13 @@ def test_derived_constants(constant_name, target_value, target_unit, expected_un
     assert len(explorer.results) == 1, \
         f"Expected result count for {constant_name} is 1, but got {len(explorer.results)} results"
 
-    result = explorer.results[0][1]
+    _, first_result = explorer.results[0]
 
-    result_unit = result.get_unit_str()
+    result_unit = first_result.get_unit_str()
     assert result_unit == expected_unit, \
         f"Expected unit for {constant_name} is {expected_unit} , but got {result_unit}"
 
-    result_expression = result.get_expression_with_solidus()
+    result_expression = first_result.get_expression_with_solidus()
     assert result_expression in expected_expressions, \
         f"Expected expression for {constant_name} is not in {expected_expressions}, but got {result_expression}"
 
@@ -120,7 +119,7 @@ def test_constants_itself(constant_name, target_value, target_unit, method):
         "wien_u": 1
       }
     }
-    _, definition, unit_registry = get_test_resources()
+    _, definition = get_test_resources()
 
     # If it is a dimensionless constant and defined under the definition file
     if target_unit is "":
@@ -138,8 +137,7 @@ def test_constants_itself(constant_name, target_value, target_unit, method):
         target_value=target_value,
         target_unit=target_unit,
         definition=definition,
-        config=config,
-        unit_registry=unit_registry)
+        config=config)
 
     explorer.explore()
 
