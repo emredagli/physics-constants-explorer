@@ -45,8 +45,8 @@ Theoretical formulation of $\sigma$ was done by [Ludwig Eduard Boltzmann](https:
 
 where
 
-* $k$ is the [Boltzmann constant](https://en.wikipedia.org/wiki/Boltzmann_constant) (another physical constant)
-* $h$ is the [Planck constant](https://en.wikipedia.org/wiki/Planck_constant) (another physical constant)
+* $k$ is the [Boltzmann constant](https://en.wikipedia.org/wiki/Boltzmann_constant) (physical constant)
+* $h$ is the [Planck constant](https://en.wikipedia.org/wiki/Planck_constant) (physical constant)
 * $c$ is the [Speed of Light](https://en.wikipedia.org/wiki/Speed_of_light) in vacuum (physical constant)
 * $\pi$ is the ratio of a circle's circumference to its diameter (mathematical constant)
 
@@ -62,14 +62,13 @@ Now, let's think oppositely and assume we have a function which takes:
 
 * Target value: 5.670374419E-8 (in [Scientific Notation](https://en.wikipedia.org/wiki/Scientific_notation))
 * Target unit: $\mathrm{kg}\cdot\mathrm{s}^{-3}\cdot\mathrm{K}^{-4}$
-* List of physical constants with their units ( $k$, $h$, $c$, ...)
-* List of mathematical constants ( $\pi$, $e$, ...)
-* List of prime numbers (2, 3, 5, ...)
+* As a scope, list of dimensional physical constants ( $k$, $h$, $c$, ...)
+* As a scope, list of dimensionless constants ( $\pi$, 2, 3, 5, ...)
 
 and returns the matched multiplications, so that:
 
-* The target unit is "exactly" matched with the unit of formula and,
-* The target value overlaps with the resultant numeric value within the given error range.
+* The unit of the target is "exactly" matched with the unit of results and,
+* The numeric value of the target overlaps with the numeric values of the results within the given relative error ranges.
 
 Example Output:
 

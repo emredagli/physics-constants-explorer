@@ -1,6 +1,7 @@
 # Researches
 
-This work contains exploration of some well-known physical constants and experiments for some unknown constants by using the `physics-constant-explorer` program explained on the [root folder](../README.md).
+This work contains exploration of some well-known physical constants and experiments for 
+some unknown constants by using the `physics-constant-explorer` program explained on the [repo home page](../README.md).
 
 ## Table of Content
 
@@ -19,16 +20,14 @@ This work contains exploration of some well-known physical constants and experim
 
 ## 1 Exploring Derived Physical Constants
 
-The script ([derived_constants.sh](script/derived_constants.sh)) is prepared to explore some constants that can be derived in terms of fundamental constants.
-
-* The default config file ([default_config.json](../src/resources/default_config.json)) was used on all calculations!
-* The default definition file ([default_definition.json](../src/resources/default_definition.json)) was used.
-* CODATA values were used as target numeric values.
-
-The script was executed on the project root folder, and it stored the results given on the table below:
+The script ([derived_constants.sh](script/derived_constants.sh)) is prepared to explore some constants that can be derived in terms of fundamental constants. It was executed on the project root folder:
 ```shell
 > research/script/derived_constants.sh
 ```
+
+* The default config file ([default_config.json](../src/resources/default_config.json)) was used on all calculations listed below!
+* The default definition file ([default_definition.json](../src/resources/default_definition.json)) was used.
+
 
 | Constant Name                                                                                                                                              | Derivation                                                                                          | The Program Input<br>[CODATA](https://physics.nist.gov/cuu/Constants/) Constant Values                           | The Results                       | Stored Output                                                                                               |
 |------------------------------------------------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------|-----------------------------------|-------------------------------------------------------------------------------------------------------------|
@@ -91,6 +90,7 @@ So, $\rho$ could be derived in terms of $T$ and $r$:
 
 Where:
 
+* $\rho$: Density of the black hole
 * $\gamma$: Newtonian constant of gravitation
 * M: the mass of the black hole
 * m: the mass of the star
@@ -107,13 +107,13 @@ Result(s) that overlap with the target:
 	{ 2.082670(47) e+56 } [ kg·m³/s⁴ ] = 3⋅c⁶ / (2⁹⋅π⁵⋅G)
 ```
 
-Note that: "G" the Newtonian constant of gravitation increased the resultant expression uncertainty!
+Note that: "G" the Newtonian constant of gravitation (represented as $\gamma$ on the problem) increased the resultant expression uncertainty!
 
 ## 4 Experiments
 
 After executing enough runs on the other physical constants, it is time to experiment on measured but not theoretically-proofed constants.
 
-The script "[experiments.sh](script/experiments.sh)" is used on the experiments listed on this section.
+The script ([experiments.sh](script/experiments.sh)) is used on the experiments listed on this section.
 
 Note: The script was executed on the project's root folder:
 
@@ -125,28 +125,36 @@ Note: The script was executed on the project's root folder:
 
 #### 4.1.1 Resources
 
-The following resources are related with this experiment:
-
-* [Config File](config/experiments/magnetic_constant_to_electric_constant_ratio.json)
+* [Config File](config/experiments/magnetic_constant_to_electric_constant_ratio.json), and scope:
+```text
+dimensional constants:   
+    c, powers = [-1, -1/2, 0, 1/2, 1]
+    ℎ, powers = [-3, -5/2, -2, -3/2, -1, -1/2, 0, 1/2, 1, 3/2, 2, 5/2, 3]
+    e, powers = [-4, -7/2, -3, -5/2, -2, -3/2, -1, -1/2, 0, 1/2, 1, 3/2, 2, 5/2, 3, 7/2, 4]
+    m_e, powers = [-1, -1/2, 0, 1/2, 1]
+    R_inf, powers = [-1/2, 0, 1/2]
+dimensionless constants: 
+    2, powers = [-4, -7/2, -3, -5/2, -2, -3/2, -1, -1/2, 0, 1/2, 1, 3/2, 2, 5/2, 3, 7/2, 4]
+    π, powers = [-4, -7/2, -3, -5/2, -2, -3/2, -1, -1/2, 0, 1/2, 1, 3/2, 2, 5/2, 3, 7/2, 4]
+    α, powers = [-4, -7/2, -3, -5/2, -2, -3/2, -1, -1/2, 0, 1/2, 1, 3/2, 2, 5/2, 3, 7/2, 4]
+```
 * [Default Definition File](../src/resources/default_definition.json)
 * [Output File](output/experiments/magnetic_constant_to_electric_constant_ratio.txt)
 * [Script File](script/experiments.sh)
 
 #### 4.1.2 Introduction
 
-Vacuum Magnetic Permeability (Magnetic Constant):
+[Vacuum Magnetic Permeability (Magnetic Constant)](https://en.wikipedia.org/wiki/Vacuum_permeability):
 
 * [CODATA value](https://physics.nist.gov/cgi-bin/cuu/Value?mu0): $\mu _{0}=1.25663706212(19) \times 10^{-6}$ $\mathrm{kg}\cdot\mathrm{m}\cdot\mathrm{s}^{-2}\cdot\mathrm{A}^{-2}$
-* [More information](https://en.wikipedia.org/wiki/Vacuum_permeability) on Wikipedia.
 
-Vacuum Electric Permittivity (Electric Constant):
+[Vacuum Electric Permittivity (Electric Constant)](https://en.wikipedia.org/wiki/Vacuum_permittivity):
 
 * [CODATA value](https://physics.nist.gov/cgi-bin/cuu/Value?ep0): $\varepsilon _{0}=8.8541878128(13) \times 10^{-12}$ $\mathrm{A^{2}}\cdot\mathrm{s}^{4}\cdot\mathrm{kg}^{-1}\cdot\mathrm{m}^{-3}$
-* [More information](https://en.wikipedia.org/wiki/Vacuum_permittivity) on Wikipedia.
 
 In this experiment we would like to explore the ratio $\mu _{0} / \varepsilon _{0}$, it is actually the square of [Impedance of free space](https://en.wikipedia.org/wiki/Impedance_of_free_space#Relation_to_other_constants):
 
-We have the following well-known expressions that their derivation contains $\mu _{0}$ and $\varepsilon _{0}$ .
+We have the following well-known relations and definitions that contain $\mu _{0}$ and $\varepsilon _{0}$ :
 
 ##### 4.1.2.1 Speed of Light in Vacuum (1)
 
@@ -233,8 +241,6 @@ The same scope was also used on the "Exploring Derived Physical Constants" [sect
 
 ##### 4.2.1.1 Resources
 
-The following resources are related with this experiment:
-
 * [Default Config File](../src/resources/default_config.json)
 * [Default Definition File](../src/resources/default_definition.json)
 * [Output File](output/experiments/newtonian_constant_of_gravitation_attempt_01.txt)
@@ -277,8 +283,6 @@ It was also tried, but no satisfactory result was found!
 #### 4.2.2 Newtonian Constant of Gravitation - Attempt 02
 
 ##### 4.2.2.1 Resources
-
-The following resources are related with this experiment:
 
 * [Config file](config/experiments/newtonian_constant_of_gravitation_attempt_02.json)
 * [Default Definition File](../src/resources/default_definition.json)
