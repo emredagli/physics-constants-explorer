@@ -62,8 +62,8 @@ Formulation of $\sigma$ was [theoretically derived](https://edisciplinas.usp.br/
 
 Let's think oppositely and assume we have a function which takes:
 
-* A target value ($5.670374\times 10^{-8}$)
-* A target unit ($\mathrm{kg}\cdot\mathrm{s}^{-3}\cdot\mathrm{K}^{-4}$)
+* A target value ( $5.670374\times 10^{-8}$ )
+* A target unit ( $\mathrm{kg}\cdot\mathrm{s}^{-3}\cdot\mathrm{K}^{-4}$ )
 * As a scope, list of dimensional physical constants ( $k$, $h$, $c$, ...)
 * As a scope, list of dimensionless constants ( $\pi$, 2, 3, 5, ...)
 

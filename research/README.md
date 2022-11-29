@@ -56,8 +56,8 @@ because the modern definitions use $\displaystyle \hbar$  rather than $\displays
 
 The script ([planck_units.sh](script/planck_units.sh)) is prepared to explore the Planck Units.
 
-* The config file ([planck_units.json](config/planck_units/plank_units.json)) is used on the calculations.
-* The default definition file ([default_definition.json](../src/resources/default_definition.json)) is used.
+* The config file ([planck_units.json](config/planck_units/plank_units.json)) was used on the calculations.
+* The default definition file ([default_definition.json](../src/resources/default_definition.json)) was used.
 * Again, CODATA values were picked as target numeric values.
 
 The script was executed on the project root folder, and it stored the results given on the table below:
@@ -77,7 +77,7 @@ The script was executed on the project root folder, and it stored the results gi
 
 After executing enough runs on the other physical constants, it is time to experiment on measured but not theoretically-proofed constants.
 
-The script ([experiments.sh](script/experiments.sh)) is used on the experiments listed on this section.
+The script ([experiments.sh](script/experiments.sh)) was used on the experiments listed on this section.
 
 Note: The script was executed on the project's root folder:
 
