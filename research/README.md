@@ -149,7 +149,7 @@ R_{\infty }={\frac {m_{\text{e}}e^{4}}{8\varepsilon _{0}^{2}h^{3}c}}={\frac {m_{
 The target is:
 
 ```math
-{\frac {\mu _{0}}{\varepsilon _{0}}}=1.4192572923(42) \times 10^{5} \, \mathrm{kg}^{2} \, \mathrm{m}^{4} \, \mathrm{A}^{-4} \, \mathrm{s}^{-6}
+{\frac {\mu _{0}}{\varepsilon _{0}}}=1.4192572923(42) \times 10^{5} \, \mathrm{kg}^{2}\cdot\mathrm{m}^{4}\cdot\mathrm{A}^{-4}\cdot\mathrm{s}^{-6}
 ```
 
 Found 3 candidates the resultant unit matched with the target's unit:
@@ -212,16 +212,16 @@ The program found some candidates that the resultant unit matched with the targe
 
 If you look at the found candidates, there is a pattern between these (the first 2 candidates):
 ```text
-	{ Q } [ m³/kg/s² ] = e¹² / (c⁵⋅ℎ⁵⋅ε_0⁶⋅m_e²)
-	{ Q } [ m³/kg/s² ] = e¹⁰ / (c⁴⋅ℎ⁴⋅ε_0⁵⋅m_e²)
+    { Q1 } [ m³/kg/s² ] = e¹² / (c⁵⋅ℎ⁵⋅ε_0⁶⋅m_e²)
+    { Q2 } [ m³/kg/s² ] = e¹⁰ / (c⁴⋅ℎ⁴⋅ε_0⁵⋅m_e²)
 ...
 
 Q1/Q2 = e² / (c⋅ε_0⋅ℎ)
 ```
-As you see, Q1/Q2 is actually the square root of the fine-structure constant which is a dimensionless physical constant. 
+As you see, Q1/Q2 is actually the square root of the [fine-structure constant](#3122-fine-structure-constant-2) which is a dimensionless physical constant. 
 So we can state that the program actually found a single candidate that dimensionally matched with the target's unit.
 
-It also overlaps with the target's numeric value with the following equation:
+We have the following numerically overlapped expression:
 ```text
 Result(s) that overlap with the target:
 	{ 6.67430(15) e-11 } [ m³/kg/s² ] = Target
@@ -238,9 +238,11 @@ Where
 
 If we substitute $\mu$, which is proton (m_p) to electron rest mass (m_e) ratio, we may get:
 
-```math
+<font size="20"> 
+```text
   { 6.674224928(14) e-11 } [ m³/kg/s² ] = e¹²⋅m_e⁷ / (2²⋅3⋅5³⋅π⁴⋅c⁵⋅ℎ⁵⋅ε_0⁶⋅m_p⁹)
 ```
+</font>
 
 __Note that__, if we increase the scope of the dimensionless constant,
 especially targeting numeric values which have less significant digits (such as here, which has only 6 significant digits) we may get different results.
