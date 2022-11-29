@@ -245,6 +245,7 @@ If we substitute $\mu$, which is proton (m_p) to electron rest mass (m_e) ratio,
 ```
 
 </span>
+
 __Note that__, if we increase the scope of the dimensionless constant,
 especially targeting numeric values which have less significant digits (such as here, which has only 6 significant digits) we may get different results.
 
