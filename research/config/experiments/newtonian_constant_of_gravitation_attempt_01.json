@@ -1,0 +1,17 @@
+{
+  "method": "brute_force_with_memorization",
+  "dimensional_constants": {
+    "speed_of_light_in_vacuum": [-8, 8],
+    "planck_constant": [-6, 6],
+    "elementary_charge": [-12, 12],
+    "electron_mass": [-2, 2],
+    "vacuum_electric_permittivity": [-6, 6]
+  },
+  "dimensionless_constants": {
+    "2": 8,
+    "3": 3,
+    "5": 3,
+    "pi": 4,
+    "proton_electron_mass_ratio": [-10, 10]
+  }
+}

@@ -23,7 +23,7 @@ Result(s) that overlap with the target:
 	{ 1.416784(16) e+32 } [ K ] = c⁵ᐟ²⋅ℎ¹ᐟ² / (2¹ᐟ²⋅π¹ᐟ²⋅G¹ᐟ²⋅k)
 
 Where
+* k: boltzmann constant
 * G: newtonian constant of gravitation
 * ℎ: planck constant
 * c: speed of light in vacuum
-* k: boltzmann constant

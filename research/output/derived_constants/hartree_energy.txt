@@ -41,6 +41,6 @@ Result(s) that overlap with the target:
 
 Where
 * m_e: electron mass
-* ℎ: planck constant
 * e: elementary charge
+* ℎ: planck constant
 * ε_0: vacuum electric permittivity

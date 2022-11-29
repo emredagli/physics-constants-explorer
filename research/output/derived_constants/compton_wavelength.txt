@@ -44,6 +44,6 @@ Result(s) that overlap with the target:
 	{ 2.42631023868(75) e-12 } [ m ] = ℎ / (c⋅m_e)
 
 Where
+* c: speed of light in vacuum
 * m_e: electron mass
 * ℎ: planck constant
-* c: speed of light in vacuum

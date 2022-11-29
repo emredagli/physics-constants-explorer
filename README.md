@@ -58,17 +58,19 @@ with SI base units:
 
 Formulation of $\sigma$ was [theoretically derived](https://edisciplinas.usp.br/pluginfile.php/48089/course/section/16461/qsp_chapter10-plank.pdf) by using the other physical and mathematical constants.
 
-Now, let's think oppositely and assume we have a function which takes:
+---
 
-* Target value: 5.670374419E-8 (in [Scientific Notation](https://en.wikipedia.org/wiki/Scientific_notation))
-* Target unit: $\mathrm{kg}\cdot\mathrm{s}^{-3}\cdot\mathrm{K}^{-4}$
+Let's think oppositely and assume we have a function which takes:
+
+* A target value ($5.670374\times 10^{-8}$)
+* A target unit ($\mathrm{kg}\cdot\mathrm{s}^{-3}\cdot\mathrm{K}^{-4}$)
 * As a scope, list of dimensional physical constants ( $k$, $h$, $c$, ...)
 * As a scope, list of dimensionless constants ( $\pi$, 2, 3, 5, ...)
 
-and returns the matched multiplications, so that:
+and returns set of multiplication results, so that:
 
 * The unit of the target is "exactly" matched with the unit of results and,
-* The numeric value of the target overlaps with the numeric values of the results within the given relative error ranges.
+* The numeric value of the target overlaps with the numeric values of the results.
 
 Example Output:
 
@@ -79,7 +81,7 @@ Example Output:
 Would it be possible and "useful"?
 
 Yes, it is possible. The program explained here outputs the all calculation steps in detail. 
-So, exploring the dimensionally matched candidates may also support the experts on their researches.
+So, even exploring the dimensionally matched candidates may be useful for the experts in their research.
 
 And the methodology can be expanded to a wider scope with distributed calculation methodologies.
 
@@ -87,16 +89,7 @@ And the methodology can be expanded to a wider scope with distributed calculatio
 
 It is a well-known fact that the resultant unit on the right side of the equations must match the left side.
 
-We can represent the equations with quantity definitions:
-```text
-Quantity = {numeric value} ⋅ [unit]
-
-Q1 = {Q1} ⋅ [Q1]
-Q2 = {Q2} ⋅ [Q2]
-```
-
-If Q1 = Q2 then units must be equal ([Q1] = [Q2]) and their numeric values must also overlap in their error ranges:
-
+We can represent physical quantities Q1 and Q2 with their absolute errors:
 ```text
 Quantity = {numeric value ± error} ⋅ [unit]
 
@@ -106,21 +99,21 @@ Q2 = {Q2 ± ΔQ2}⋅[Q2]
 
 If Q1 = Q2 then the following conditions must be fulfilled: 
 * Unit match: [Q1] = [Q2], and
-* Numeric value overlap with absolute error definitions:
+* Their numeric values must also overlap:
   * Q1 + ΔQ1 >= Q2 - ΔQ2, and
   * Q1 - ΔQ1 <= Q2 + ΔQ2
 
-Numeric value overlapping can also be expressed by using [relative error](https://de.wikipedia.org/wiki/Fehlerschranke) definitions:
+Numeric value overlapping condition can be expressed by using their [relative errors](https://de.wikipedia.org/wiki/Fehlerschranke):
 * 1 + δQ1 + δQ2 >= Q1/Q2, and
 * 1 - δQ1 - δQ2 <= Q1/Q2
 
-where relative errors, δQ1 = ΔQ1 / Q1 and δQ2 = ΔQ2 / Q2.
+Where relative errors, δQ1 = ΔQ1 / Q1 and δQ2 = ΔQ2 / Q2.
 
-Note: For physical constants, even if units are matched and quantities' numeric values are overlapped, we can not state directly the formulation of Q1 is equal to the Q2 expression! 
+__Note__: For physical constants, even if units are matched and quantities' numeric values are overlapped, we can not state directly the formulation of Q1 is equal to the Q2 expression! 
 
-In the program, `Q1` is the target (`T`) and set of `Q2`'s which are the candidates satisfying conditions given above!
+In the program, we have `T` as the target physical quantity and the program investigate set of candidate quantities satisfying the matching conditions given above!
 
-The program also takes a config file ([default_config.json](src/resources/default_config.json)) and a definition file ([default_definition.json](src/resources/default_definition.json)) to restrict and define its scope.
+The program also takes a config file ([default_config.json](src/resources/default_config.json)) to restrict it scope and a definition file ([default_definition.json](src/resources/default_definition.json)) which contains the definition of dimensional and dimensionless quantities.
 
 The main calculation steps can be summarized as:
 

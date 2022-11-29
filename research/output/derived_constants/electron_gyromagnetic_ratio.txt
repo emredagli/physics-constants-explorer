@@ -44,6 +44,6 @@ Result(s) that overlap with the target:
 	{ 1.76085963023(54) e+11 } [ A·s/kg ] = g_e⋅e / (2⋅m_e)
 
 Where
-* e: elementary charge
 * m_e: electron mass
+* e: elementary charge
 * g_e: electron g factor, the absolute value of the electron g factor

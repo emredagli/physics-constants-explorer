@@ -48,5 +48,5 @@ Result(s) that overlap with the target:
 	{ 8.3144626181532...  (exact) } [ kg·m²/K/mol/s² ] = k⋅N_A
 
 Where
-* k: boltzmann constant
 * N_A: avogadro constant
+* k: boltzmann constant
