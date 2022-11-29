@@ -242,7 +242,7 @@ If we substitute $\mu$, which is proton (m_p) to electron rest mass (m_e) ratio,
   { 6.674224928(14) e-11 } [ m³/kg/s² ] = e¹²⋅m_e⁷ / (2²⋅3⋅5³⋅π⁴⋅c⁵⋅ℎ⁵⋅ε_0⁶⋅m_p⁹)
 ```
 
-__Note that__, if we increase the scope of the dimensionless constant,
+__Note that__, if we increase the scope of the dimensionless constant, 
 especially targeting numeric values which have less significant digits (such as here, which has only 6 significant digits) we may get different results.
 
 This result may have come across as numerically by chance. But it's still surprising that we could find the expression by using [this simple scope](config/experiments/newtonian_constant_of_gravitation_attempt_01.json) used in this experiment.
