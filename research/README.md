@@ -238,7 +238,7 @@ Where
 
 If we substitute $\mu$, which is proton (m_p) to electron rest mass (m_e) ratio, we may get:
 
-<span style="font-size:6em;">
+<span style="font-size:30px!important;">
 
 ```text
   { 6.674224928(14) e-11 } [ m³/kg/s² ] = e¹²⋅m_e⁷ / (2²⋅3⋅5³⋅π⁴⋅c⁵⋅ℎ⁵⋅ε_0⁶⋅m_p⁹)
