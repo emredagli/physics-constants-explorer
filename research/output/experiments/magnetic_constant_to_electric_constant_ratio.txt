@@ -35,9 +35,9 @@ Result(s) that overlap with the target:
 	{ 1.41925729236(86) e+5 } [ kg²·m⁴/A⁴/s⁶ ] = 2³ᐟ²⋅α³⋅ℎ³ᐟ²⋅c¹ᐟ²⋅m_e¹ᐟ² / (e⁴⋅R_inf¹ᐟ²)
 
 Where
-* e: elementary charge
-* c: speed of light in vacuum
 * ℎ: planck constant
 * R_inf: rydberg constant
+* e: elementary charge
+* c: speed of light in vacuum
 * m_e: electron mass
 * α: fine structure constant

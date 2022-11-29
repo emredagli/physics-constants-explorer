@@ -23,6 +23,6 @@ Result(s) that overlap with the target:
 	{ 5.391246(61) e-44 } [ s ] = ℎ¹ᐟ²⋅G¹ᐟ² / (2¹ᐟ²⋅π¹ᐟ²⋅c⁵ᐟ²)
 
 Where
+* ℎ: planck constant
 * c: speed of light in vacuum
 * G: newtonian constant of gravitation
-* ℎ: planck constant

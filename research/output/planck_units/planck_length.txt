@@ -23,6 +23,6 @@ Result(s) that overlap with the target:
 	{ 1.616255(18) e-35 } [ m ] = ℎ¹ᐟ²⋅G¹ᐟ² / (2¹ᐟ²⋅π¹ᐟ²⋅c³ᐟ²)
 
 Where
-* c: speed of light in vacuum
-* ℎ: planck constant
 * G: newtonian constant of gravitation
+* ℎ: planck constant
+* c: speed of light in vacuum

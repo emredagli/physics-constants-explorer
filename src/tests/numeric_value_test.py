@@ -17,20 +17,27 @@ logger = logging.getLogger(__name__)
 @pytest.mark.parametrize(
     "info, numeric_values_with_power, expected_relative_error",
     [
-        ("single 1.", [("1.00000(30)E+5", "1")], "3.0E-4"),
-        ("single 2.", [("1.0000(3)E+5", "1")], "3.0E-4"),
+        # The expected relative error calculation of the following test:
+        #   (0.0003 / 1.0) * |1| = 3 x 10^-4
+        ("single 1.", [("1.0000(3)E+5", "1")], "3.0E-4"),
+        ("single 2.", [("1.00000(30)E+5", "1")], "3.0E-4"),
         ("single 3.", [("1.0000(3)E+5", "3")], "9.0E-4"),
         ("single 4.", [("1.0000(3)E+5", "1/3")], "1.0E-4"),
-        ("single less than 1, 1.", [("1.0000(3)E-5", "1/3")], "1.0E-4"),
-        ("single less than 1, 1.", [("2.000000(6)E-45", "1/3")], "1.0E-6"),
-        ("2 values, 1.", [("1.0000(3)E+5", "1"), ("1.0000(3)E+5", "1")], "6.0E-4"),
-        ("2 values, 2.", [("1.0000(3)E+5", "2"), ("1.0000(3)E+5", "1/2")], "7.50E-4"),
-        ("2 values, 3.", [("2.0000(3)E+5", "2"), ("2.0000(3)E+5", "1/2")], "3.750E-4"),
-        ("2 values, different significant, 1.", [("1.0000(1)E+5", "1"), ("1.0000000(1)E+5", "1")], "1.0010E-4"),
-        ("2 values negative power, 1.", [("1.0000(2)E+5", "-1.5"), ("1.0000(2)E+5", "-1.5")], "6.0E-4"),
-        ("2 values negative power, 2.", [("1.0000(2)E+5", "-1.5"), ("1.0000(2)E+5", "1.5")], "6.0E-4"),
-        ("2 values negative power, 3.", [("3.0000(9)E+5", "-5"), ("4.0000(2)E+5", "-2")], "1.60E-3"),
-        ("3 values, 1.", [("1.0000(1)E-42", "1"), ("1.0000(1)E+0", "1"), ("1.0000(1)E+35", "1")], "3.0E-4"),
+        ("single 5.", [("1.0000(3)E-5", "1/3")], "1.0E-4"),
+        ("single 6.", [("2.000000(6)E-45", "1/3")], "1.0E-6"),
+        # The expected relative error calculation of the following test:
+        #   ( 3 * |1| + 3 * |1| ) x 10^-4 = ( 6 ) x 10^-4
+        ("multiplication 1.", [("1.0000(3)E+5", "1"), ("1.0000(3)E+5", "1")], "6.0E-4"),
+        ("multiplication 2.", [("1.0000(3)E+5", "2"), ("1.0000(3)E+5", "1/2")], "7.50E-4"),
+        ("multiplication 3.", [("2.0000(3)E+5", "2"), ("2.0000(3)E+5", "1/2")], "3.750E-4"),
+        # The expected relative error calculation of the following test:
+        #   ( 3/2 * |11/3| + 7 * |-5/13| ) x 10^-4 = ( 23.7 ) x 10^-4
+        ("multiplication 4.", [("2.0000(3)E+5", "11/3"), ("1.0000(7)E+5", "-13/5")], "2.37E-3"),
+        ("multiplication, different significant, 5.", [("1.0000(1)E+5", "1"), ("1.0000000(1)E+5", "1")], "1.0010E-4"),
+        ("multiplication negative power, 6.", [("1.0000(2)E+5", "-1.5"), ("1.0000(2)E+5", "-1.5")], "6.0E-4"),
+        ("multiplication negative power, 7.", [("1.0000(2)E+5", "-1.5"), ("1.0000(2)E+5", "1.5")], "6.0E-4"),
+        ("multiplication negative power, 8.", [("3.0000(9)E+5", "-5"), ("4.0000(2)E+5", "-2")], "1.60E-3"),
+        ("multiplication 3 values, 9.", [("1.0000(1)E-42", "1"), ("1.0000(1)E+0", "1"), ("1.0000(1)E+35", "1")], "3.0E-4"),
     ]
 )
 @pytest.mark.parametrize("unit", ["dimensionless", "m", "kg^2/(A s)"])

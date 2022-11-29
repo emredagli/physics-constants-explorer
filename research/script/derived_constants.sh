@@ -53,5 +53,3 @@ python ./main.py --target-value "4.3597447222071(85)E-18" --target-unit "kg m^2/
 # Compton wavelength. Ref: https://physics.nist.gov/cgi-bin/cuu/Value?ecomwl
 python ./main.py --target-value "2.42631023867(73)E-12" --target-unit "m" > ./$output_folder/compton_wavelength.txt &
 
-# Targeting 1.
-python ./main.py --target-value "1.000000E0" --target-unit "" > ./$output_folder/targeting_1.txt &

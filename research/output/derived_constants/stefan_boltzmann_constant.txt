@@ -41,5 +41,5 @@ Result(s) that overlap with the target:
 
 Where
 * ℎ: planck constant
-* c: speed of light in vacuum
 * k: boltzmann constant
+* c: speed of light in vacuum

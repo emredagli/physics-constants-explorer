@@ -44,7 +44,7 @@ Result(s) that overlap with the target:
 	{ 5.2917721091(24) e-11 } [ m ] = ℎ²⋅ε_0 / (π⋅e²⋅m_e)
 
 Where
-* e: elementary charge
-* ℎ: planck constant
 * ε_0: vacuum electric permittivity
+* ℎ: planck constant
 * m_e: electron mass
+* e: elementary charge

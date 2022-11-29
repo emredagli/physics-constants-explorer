@@ -91,6 +91,7 @@ class ExploreConstant:
         else:
             print("No results were found that overlapped with the target's numeric value!\n")
             if len(self.dimensional.candidates_in_range.values()) > 0:
+                print(f"\t{self.target.to_string()}\n")
                 print("But the following candidates were in the given dimensionless range:")
                 for candidate in self.dimensional.candidates_in_range.values():
                     print(f"\t{candidate.to_string()}")

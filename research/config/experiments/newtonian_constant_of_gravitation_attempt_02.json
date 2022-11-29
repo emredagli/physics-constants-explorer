@@ -1,18 +1,18 @@
 {
   "method": "brute_force_with_memorization",
   "dimensional_constants": {
-    "speed_of_light_in_vacuum": 8,
-    "planck_constant": 8,
-    "elementary_charge": 8,
-    "electron_mass": 8,
-    "mc_to_ec_ratio": {"range": [-4, 4], "step": "1/2"}
+    "planck_constant": {"range": [-4, 4], "step": "1/2"},
+    "elementary_charge": {"range": [-4, 4], "step": "1/2"},
+    "electron_mass": {"range": [-3, 3], "step": "1/2"},
+    "vacuum_magnetic_permeability": {"range": [-4, 4], "step": "1/2"},
+    "vacuum_electric_permittivity": {"range": [-4, 4], "step": "1/2"},
+    "fermi_coupling_constant": {"range": [-4, 4], "step": "1/2"}
   },
   "dimensionless_constants": {
     "2": 8,
     "3": 3,
     "5": 3,
-    "pi": 4,
-    "proton_electron_mass_ratio": 10,
-    "fine_structure_constant": 4
+    "pi": 5,
+    "proton_electron_mass_ratio": {"range": [-6, 6], "step": "1/2"}
   }
 }

@@ -70,10 +70,10 @@
       "unit": "kg mol^-1",
       "symbol": "M_p"
     },
-    "mc_to_ec_ratio": {
-      "numeric_value": "1.41925729236(43)e+5",
-      "unit": "kg^2 m^4/A^4/s^6",
-      "info": "µ_0 / ε_0 (the ratio of vacuum magnetic permeability to vacuum electric permittivity)"
+    "fermi_coupling_constant": {
+      "numeric_value": "4.5437957(23)E+14",
+      "unit": "s^4/kg/m^4",
+      "symbol": "G_F"
     }
   },
   "dimensionless_constants": {
