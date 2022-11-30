@@ -122,7 +122,7 @@ def test_constants_itself(constant_name, target_value, target_unit, method):
     _, definition = get_test_resources()
 
     # If it is a dimensionless constant and defined under the definition file
-    if target_unit is "":
+    if target_unit == "":
         constant_definition = definition.get("dimensionless_constants").get(constant_name)
         if constant_definition is not None:
             expected_expression = constant_definition.get("symbol", constant_name)

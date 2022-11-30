@@ -40,7 +40,7 @@ Result(s) that overlap with the target:
 	{ 4.3597447222(26) e-18 } [ kg·m²/s² ] = e⁴⋅m_e / (2²⋅ℎ²⋅ε_0²)
 
 Where
-* m_e: electron mass
 * e: elementary charge
-* ℎ: planck constant
 * ε_0: vacuum electric permittivity
+* ℎ: planck constant
+* m_e: electron mass

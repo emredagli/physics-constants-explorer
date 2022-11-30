@@ -48,6 +48,6 @@ Result(s) that overlap with the target:
 	{ 5.8789257576468... e+10 (exact) } [ 1/K/s ] = wien_u⋅k / ℎ
 
 Where
-* ℎ: planck constant
 * k: boltzmann constant
+* ℎ: planck constant
 * wien_u: wien u, the solution to (u-3)*exp(u)+3 = 0 => u = W(3/exp(3))+3

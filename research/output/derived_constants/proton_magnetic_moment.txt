@@ -45,7 +45,7 @@ Result(s) that overlap with the target:
 
 Where
 * e: elementary charge
-* ℎ: planck constant
 * m_e: electron mass
-* g_p: proton g factor
+* ℎ: planck constant
 * μ: proton electron mass ratio, m_p / m_e
+* g_p: proton g factor

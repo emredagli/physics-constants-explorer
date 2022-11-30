@@ -44,8 +44,8 @@ Result(s) that overlap with the target:
 	{ 1.09737315681(66) e+7 } [ 1/m ] = e⁴⋅m_e / (2³⋅c⋅ℎ³⋅ε_0²)
 
 Where
+* e: elementary charge
 * c: speed of light in vacuum
 * m_e: electron mass
 * ε_0: vacuum electric permittivity
 * ℎ: planck constant
-* e: elementary charge
