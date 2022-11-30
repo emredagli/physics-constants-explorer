@@ -44,7 +44,7 @@ Result(s) that overlap with the target:
 	{ 2.6752218745(17) e+8 } [ A·s/kg ] = g_p⋅e / (2⋅μ⋅m_e)
 
 Where
-* e: elementary charge
 * m_e: electron mass
-* g_p: proton g factor
+* e: elementary charge
 * μ: proton electron mass ratio, m_p / m_e
+* g_p: proton g factor

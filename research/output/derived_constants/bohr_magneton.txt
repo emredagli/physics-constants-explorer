@@ -44,6 +44,6 @@ Result(s) that overlap with the target:
 	{ 9.2740100784(29) e-24 } [ A·m² ] = ℎ⋅e / (2²⋅π⋅m_e)
 
 Where
-* e: elementary charge
 * m_e: electron mass
+* e: elementary charge
 * ℎ: planck constant

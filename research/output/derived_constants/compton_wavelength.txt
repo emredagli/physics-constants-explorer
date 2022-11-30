@@ -45,5 +45,5 @@ Result(s) that overlap with the target:
 
 Where
 * c: speed of light in vacuum
-* m_e: electron mass
 * ℎ: planck constant
+* m_e: electron mass

@@ -40,6 +40,6 @@ Result(s) that overlap with the target:
 	{ 5.6703744191844... e-8 (exact) } [ kg/K⁴/s³ ] = 2⋅π⁵⋅k⁴ / (3⋅5⋅c²⋅ℎ³)
 
 Where
-* ℎ: planck constant
 * k: boltzmann constant
 * c: speed of light in vacuum
+* ℎ: planck constant
