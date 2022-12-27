@@ -18,14 +18,20 @@ in terms of the given,
 		μ, powers = [-1, 0, 1]
 		g_e, powers = [-1, 0, 1]
 		g_p, powers = [-1, 0, 1]
-by using brute_force methodology...
+by using buckingham_pi methodology...
+
+Dimensionless π terms found from the Buckingham π Theorem:
+- Containing Target:
+	π_1 = Target⋅ℎ / k
+- Not containing Target:
+	π_2 = e² / (c⋅ℎ⋅ε_0)
 
 Found 5 candidates the resultant unit matched with the target's unit:
-	{ Q } [ 1/K/s ] = k⋅e⁴ / (c²⋅ℎ³⋅ε_0²)
+	{ Q } [ 1/K/s ] = k⋅e⁴ / (ℎ³⋅c²⋅ε_0²)
 	  ├── 👍 In range!
 	  └── Min (~3E+1) < Q (~4E+6) < Max (~1E+20) 
 
-	{ Q } [ 1/K/s ] = k⋅e² / (c⋅ℎ²⋅ε_0)
+	{ Q } [ 1/K/s ] = k⋅e² / (ℎ²⋅c⋅ε_0)
 	  ├── 👍 In range!
 	  └── Min (~3E+1) < Q (~3E+8) < Max (~1E+20) 
 
@@ -33,11 +39,11 @@ Found 5 candidates the resultant unit matched with the target's unit:
 	  ├── 👍 In range!
 	  └── Min (~3E+1) < Q (~2E+10) < Max (~1E+20) 
 
-	{ Q } [ 1/K/s ] = c⋅k⋅ε_0 / e²
+	{ Q } [ 1/K/s ] = k⋅c⋅ε_0 / e²
 	  ├── 👍 In range!
 	  └── Min (~3E+1) < Q (~1E+12) < Max (~1E+20) 
 
-	{ Q } [ 1/K/s ] = c²⋅ℎ⋅k⋅ε_0² / e⁴
+	{ Q } [ 1/K/s ] = ℎ⋅k⋅c²⋅ε_0² / e⁴
 	  ├── 👍 In range!
 	  └── Min (~3E+1) < Q (~1E+14) < Max (~1E+20) 
 

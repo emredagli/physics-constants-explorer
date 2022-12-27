@@ -4,27 +4,38 @@ from itertools import product
 
 from tqdm import tqdm
 
+from src.scope import Scope
 from src.quantity import Quantity
 
 
 class DimensionlessOperator:
+    _numeric_range: tuple = None
+    scope: Scope = None
+
     def __init__(self, scope):
         self.scope = scope
         self.constants = dict()
 
-        min_value = 1
-        max_value = 1
-        for quantities in scope.powered_quantities.values():
-            value_range = [quantities[0].value, quantities[-1].value]
-            max_value *= max(value_range)
-            min_value *= min(value_range)
+    @property
+    def numeric_range(self):
+        if self.scope is None:
+            return None
 
-        self.min_value = min_value
-        self.max_value = max_value
-        self.numeric_range = [min_value, max_value]
+        if self._numeric_range is None:
+            min_value = 1
+            max_value = 1
+            for powered_quantity in self.scope.powered_quantities.values():
+                quantities = list(powered_quantity.values())
+                value_range = [quantities[0].value, quantities[-1].value]
+                max_value *= max(value_range)
+                min_value *= min(value_range)
+
+            self._numeric_range = (min_value, max_value)
+
+        return self._numeric_range
 
     def prepare_constants(self):
-        powered_quantities = self.scope.powered_quantities.values()
+        powered_quantities = self.scope.get_list_of_powered_quantities()
 
         total_len = reduce(operator.mul, map(len, powered_quantities), 1)
 

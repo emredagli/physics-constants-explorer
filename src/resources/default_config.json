@@ -1,5 +1,8 @@
 {
-  "method": "brute_force",
+  "settings": {
+    "method": "buckingham_pi",
+    "buckingham_pi_ranges": [-2, 2]
+  },
   "dimensional_constants": {
     "speed_of_light_in_vacuum": [-2, 2],
     "planck_constant": [-3, 3],

@@ -11,6 +11,8 @@ from src.validator_library import validate_input, validate_definition, validate_
 
 
 class ExploreConstant:
+    _SKIP_ON_WHERE_STATEMENT = ["π", "pi"]
+
     def __init__(self, target_value, target_unit, definition, config):
 
         validate_input(target_value, target_unit)
@@ -38,7 +40,7 @@ class ExploreConstant:
             scope=self.dimensionless_scope)
 
         self.dimensional = DimensionalOperator(
-            method=config.get("method"),
+            settings=config.get("settings"),
             scope=self.dimensional_scope,
             target=self.target,
             dimensionless_numeric_range=self.dimensionless.numeric_range)
@@ -47,7 +49,8 @@ class ExploreConstant:
 
     def _is_within_the_target_error_range(self, numeric_value, relative_error):
         """Numeric value overlapping check by using relative errors"""
-        return 1 - relative_error - self.target.relative_error <= self.target.value / numeric_value <= 1 + relative_error + self.target.relative_error
+        return 1 - relative_error - self.target.relative_error <= self.target.value / numeric_value <= \
+               1 + relative_error + self.target.relative_error
 
     def explore(self):
         print(f"Explore the target:\n"
@@ -55,7 +58,7 @@ class ExploreConstant:
               f"in terms of the given,\n"
               f"\tdimensional constants:   {self.dimensional.scope.get_summary()}\n"
               f"\tdimensionless constants: {self.dimensionless.scope.get_summary()}\n"
-              f"by using {self.dimensional.method} methodology...\n")
+              f"by using {self.dimensional.settings.get('method')} methodology...\n")
 
         results = list()
 
@@ -66,9 +69,10 @@ class ExploreConstant:
         if len(self.dimensional.candidates_in_range.items()) > 0:
             self.dimensionless.prepare_constants()
 
-            for dimensional_value, dimensional_quantity in tqdm(self.dimensional.candidates.items(),
-                                                                desc="Iterating the candidates",
-                                                                leave=True):
+            for _, dimensional_quantity in tqdm(self.dimensional.candidates.items(),
+                                                desc="Iterating the candidates",
+                                                leave=True):
+                dimensional_value = dimensional_quantity.value
                 for dimensionless_value, dimensionless_quantity in tqdm(
                         self.dimensionless.constants.items(),
                         desc="Iterating the dimensionless constants",
@@ -94,14 +98,14 @@ class ExploreConstant:
                 print(f"\t{self.target.to_string()}\n")
                 print("But the following candidates were in the given dimensionless range:")
                 for candidate in self.dimensional.candidates_in_range.values():
-                    print(f"\t{candidate.to_string()}")
+                    print(f"\t{candidate.to_string(self.target)}")
 
     def _get_where_statement_of_results(self):
         existing_dimensional_constants = set()
         existing_dimensionless_constants = set()
         for _, expression in self.results:
             for constant_name, symbol, power in expression.representation:
-                if power == 0:
+                if power == 0 or constant_name in self._SKIP_ON_WHERE_STATEMENT:
                     continue
                 if constant_name in self.dimensional_scope.powered_quantities.keys():
                     existing_dimensional_constants.add(constant_name)

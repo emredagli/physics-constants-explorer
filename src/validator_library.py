@@ -19,7 +19,7 @@ def validate_input(target_value, target_unit):
             constant_name="Target",
             symbol="Target")
 
-        check_dimensionless = target.unit / ur(target_unit).to_base_units()
+        check_dimensionless = target.unit.units / ur(target_unit).to_base_units()
         if check_dimensionless.magnitude != 1 or str(check_dimensionless.dimensionality) != "dimensionless":
             raise ValueError(f"Target unit may not contain SI base units")
     except ValueError:
@@ -29,7 +29,7 @@ def validate_input(target_value, target_unit):
 
 
 def validate_definition(definition):
-    with open(str(pathlib.Path(__file__).parent.resolve()) + '/resources/definition_schema.json') as f:
+    with open(str(pathlib.Path(__file__).parent.resolve()) + '/resources/schema/definition_schema.json') as f:
         definition_schema = json.load(f)
     try:
         # TODO, it would be nice to validate & check:
@@ -45,7 +45,7 @@ def validate_definition(definition):
 
 
 def validate_config(config, definition):
-    with open(str(pathlib.Path(__file__).parent.resolve()) + '/resources/config_schema.json') as f:
+    with open(str(pathlib.Path(__file__).parent.resolve()) + '/resources/schema/config_schema.json') as f:
         config_schema = json.load(f)
 
     try:

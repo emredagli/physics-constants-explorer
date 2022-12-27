@@ -18,10 +18,16 @@ in terms of the given,
 		μ, powers = [-1, 0, 1]
 		g_e, powers = [-1, 0, 1]
 		g_p, powers = [-1, 0, 1]
-by using brute_force methodology...
+by using buckingham_pi methodology...
+
+Dimensionless π terms found from the Buckingham π Theorem:
+- Containing Target:
+	π_1 = Target⋅c⋅m_e / ℎ
+- Not containing Target:
+	π_2 = e² / (c⋅ℎ⋅ε_0)
 
 Found 4 candidates the resultant unit matched with the target's unit:
-	{ Q } [ m ] = e² / (c²⋅ε_0⋅m_e)
+	{ Q } [ m ] = e² / (c²⋅m_e⋅ε_0)
 	  ├── 👍 In range!
 	  └── Min (~1E-21) < Q (~4E-14) < Max (~5E-3) 
 
@@ -29,11 +35,11 @@ Found 4 candidates the resultant unit matched with the target's unit:
 	  ├── 👍 In range!
 	  └── Min (~1E-21) < Q (~2E-12) < Max (~5E-3) 
 
-	{ Q } [ m ] = ℎ²⋅ε_0 / (e²⋅m_e)
+	{ Q } [ m ] = ℎ²⋅ε_0 / (m_e⋅e²)
 	  ├── 👍 In range!
 	  └── Min (~1E-21) < Q (~2E-10) < Max (~5E-3) 
 
-	{ Q } [ m ] = c⋅ℎ³⋅ε_0² / (e⁴⋅m_e)
+	{ Q } [ m ] = c⋅ℎ³⋅ε_0² / (m_e⋅e⁴)
 	  ├── 👍 In range!
 	  └── Min (~1E-21) < Q (~1E-8) < Max (~5E-3) 
 
@@ -44,6 +50,6 @@ Result(s) that overlap with the target:
 	{ 2.42631023868(75) e-12 } [ m ] = ℎ / (c⋅m_e)
 
 Where
-* c: speed of light in vacuum
-* ℎ: planck constant
 * m_e: electron mass
+* ℎ: planck constant
+* c: speed of light in vacuum

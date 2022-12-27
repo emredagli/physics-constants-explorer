@@ -18,7 +18,13 @@ in terms of the given,
 		μ, powers = [-1, 0, 1]
 		g_e, powers = [-1, 0, 1]
 		g_p, powers = [-1, 0, 1]
-by using brute_force methodology...
+by using buckingham_pi methodology...
+
+Dimensionless π terms found from the Buckingham π Theorem:
+- Containing Target:
+	π_1 = Target⋅c²⋅ℎ³ / k⁴
+- Not containing Target:
+	π_2 = e² / (c⋅ℎ⋅ε_0)
 
 Found 3 candidates the resultant unit matched with the target's unit:
 	{ Q } [ kg/K⁴/s³ ] = k⁴ / (c²⋅ℎ³)
@@ -41,5 +47,5 @@ Result(s) that overlap with the target:
 
 Where
 * k: boltzmann constant
-* c: speed of light in vacuum
 * ℎ: planck constant
+* c: speed of light in vacuum

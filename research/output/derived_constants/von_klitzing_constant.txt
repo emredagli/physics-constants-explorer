@@ -18,10 +18,16 @@ in terms of the given,
 		μ, powers = [-1, 0, 1]
 		g_e, powers = [-1, 0, 1]
 		g_p, powers = [-1, 0, 1]
-by using brute_force methodology...
+by using buckingham_pi methodology...
+
+Dimensionless π terms found from the Buckingham π Theorem:
+- Containing Target:
+	π_1 = Target⋅e² / ℎ
+- Not containing Target:
+	π_2 = ℎ⋅c⋅ε_0 / e²
 
 Found 4 candidates the resultant unit matched with the target's unit:
-	{ Q } [ kg·m²/A²/s³ ] = e² / (c²⋅ℎ⋅ε_0²)
+	{ Q } [ kg·m²/A²/s³ ] = e² / (ℎ⋅c²⋅ε_0²)
 	  ├── 👍 In range!
 	  └── Min (~1E-5) < Q (~5E+0) < Max (~5E+13) 
 
@@ -33,7 +39,7 @@ Found 4 candidates the resultant unit matched with the target's unit:
 	  ├── 👍 In range!
 	  └── Min (~1E-5) < Q (~3E+4) < Max (~5E+13) 
 
-	{ Q } [ kg·m²/A²/s³ ] = c⋅ℎ²⋅ε_0 / e⁴
+	{ Q } [ kg·m²/A²/s³ ] = ℎ²⋅c⋅ε_0 / e⁴
 	  ├── 👍 In range!
 	  └── Min (~1E-5) < Q (~2E+6) < Max (~5E+13) 
 
@@ -44,5 +50,5 @@ Result(s) that overlap with the target:
 	{ 2.5812807459305... e+4 (exact) } [ kg·m²/A²/s³ ] = ℎ / e²
 
 Where
-* ℎ: planck constant
 * e: elementary charge
+* ℎ: planck constant

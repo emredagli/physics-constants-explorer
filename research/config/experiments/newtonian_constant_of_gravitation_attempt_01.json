@@ -1,5 +1,8 @@
 {
-  "method": "brute_force_with_memorization",
+  "settings": {
+    "method": "buckingham_pi",
+    "buckingham_pi_ranges": {"range": [-6, 6], "step": "1/1"}
+  },
   "dimensional_constants": {
     "speed_of_light_in_vacuum": [-8, 8],
     "planck_constant": [-6, 6],

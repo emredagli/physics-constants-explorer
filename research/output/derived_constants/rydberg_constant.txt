@@ -18,14 +18,20 @@ in terms of the given,
 		μ, powers = [-1, 0, 1]
 		g_e, powers = [-1, 0, 1]
 		g_p, powers = [-1, 0, 1]
-by using brute_force methodology...
+by using buckingham_pi methodology...
+
+Dimensionless π terms found from the Buckingham π Theorem:
+- Containing Target:
+	π_1 = Target⋅ℎ / (c⋅m_e)
+- Not containing Target:
+	π_2 = e² / (c⋅ℎ⋅ε_0)
 
 Found 4 candidates the resultant unit matched with the target's unit:
-	{ Q } [ 1/m ] = e⁴⋅m_e / (c⋅ℎ³⋅ε_0²)
+	{ Q } [ 1/m ] = m_e⋅e⁴ / (c⋅ℎ³⋅ε_0²)
 	  ├── 👍 In range!
 	  └── Min (~5E-3) < Q (~9E+7) < Max (~2E+16) 
 
-	{ Q } [ 1/m ] = e²⋅m_e / (ℎ²⋅ε_0)
+	{ Q } [ 1/m ] = m_e⋅e² / (ℎ²⋅ε_0)
 	  ├── 👍 In range!
 	  └── Min (~5E-3) < Q (~6E+9) < Max (~2E+16) 
 
@@ -33,7 +39,7 @@ Found 4 candidates the resultant unit matched with the target's unit:
 	  ├── 👍 In range!
 	  └── Min (~5E-3) < Q (~4E+11) < Max (~2E+16) 
 
-	{ Q } [ 1/m ] = c²⋅ε_0⋅m_e / e²
+	{ Q } [ 1/m ] = c²⋅m_e⋅ε_0 / e²
 	  ├── 👍 In range!
 	  └── Min (~5E-3) < Q (~3E+13) < Max (~2E+16) 
 
@@ -41,11 +47,11 @@ Totally, unique 56133 dimensionless multiplications are calculated!
 
 Result(s) that overlap with the target:
 	{ 1.0973731568160(21) e+7 } [ 1/m ] = Target
-	{ 1.09737315681(66) e+7 } [ 1/m ] = e⁴⋅m_e / (2³⋅c⋅ℎ³⋅ε_0²)
+	{ 1.09737315681(66) e+7 } [ 1/m ] = m_e⋅e⁴ / (2³⋅c⋅ℎ³⋅ε_0²)
 
 Where
-* e: elementary charge
-* c: speed of light in vacuum
 * m_e: electron mass
-* ε_0: vacuum electric permittivity
+* e: elementary charge
 * ℎ: planck constant
+* c: speed of light in vacuum
+* ε_0: vacuum electric permittivity

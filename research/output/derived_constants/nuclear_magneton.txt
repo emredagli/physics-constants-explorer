@@ -18,10 +18,16 @@ in terms of the given,
 		μ, powers = [-1, 0, 1]
 		g_e, powers = [-1, 0, 1]
 		g_p, powers = [-1, 0, 1]
-by using brute_force methodology...
+by using buckingham_pi methodology...
+
+Dimensionless π terms found from the Buckingham π Theorem:
+- Containing Target:
+	π_1 = Target⋅m_e / (ℎ⋅e)
+- Not containing Target:
+	π_2 = e² / (c⋅ℎ⋅ε_0)
 
 Found 4 candidates the resultant unit matched with the target's unit:
-	{ Q } [ A·m² ] = e³ / (c⋅ε_0⋅m_e)
+	{ Q } [ A·m² ] = e³ / (m_e⋅c⋅ε_0)
 	  ├── 👍 In range!
 	  └── Min (~2E-36) < Q (~2E-24) < Max (~1E-17) 
 
@@ -29,11 +35,11 @@ Found 4 candidates the resultant unit matched with the target's unit:
 	  ├── 👍 In range!
 	  └── Min (~2E-36) < Q (~1E-22) < Max (~1E-17) 
 
-	{ Q } [ A·m² ] = c⋅ℎ²⋅ε_0 / (e⋅m_e)
+	{ Q } [ A·m² ] = ℎ²⋅c⋅ε_0 / (e⋅m_e)
 	  ├── 👍 In range!
 	  └── Min (~2E-36) < Q (~8E-21) < Max (~1E-17) 
 
-	{ Q } [ A·m² ] = c²⋅ℎ³⋅ε_0² / (e³⋅m_e)
+	{ Q } [ A·m² ] = ℎ³⋅c²⋅ε_0² / (e³⋅m_e)
 	  ├── 👍 In range!
 	  └── Min (~2E-36) < Q (~5E-19) < Max (~1E-17) 
 
@@ -44,7 +50,7 @@ Result(s) that overlap with the target:
 	{ 5.0507837461(19) e-27 } [ A·m² ] = ℎ⋅e / (2²⋅π⋅μ⋅m_e)
 
 Where
-* ℎ: planck constant
-* e: elementary charge
 * m_e: electron mass
+* e: elementary charge
+* ℎ: planck constant
 * μ: proton electron mass ratio, m_p / m_e

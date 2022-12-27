@@ -27,4 +27,4 @@ def parse_unit(unit):
                          f"Please provide target's unit with SI base units which are:\n"
                          f"(m, s, mol, A, K, cd, kg) or empty string "" for dimensionless targets")
 
-    return pint_unit.units
+    return pint_unit

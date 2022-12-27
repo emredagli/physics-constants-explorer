@@ -18,14 +18,20 @@ in terms of the given,
 		μ, powers = [-1, 0, 1]
 		g_e, powers = [-1, 0, 1]
 		g_p, powers = [-1, 0, 1]
-by using brute_force methodology...
+by using buckingham_pi methodology...
+
+Dimensionless π terms found from the Buckingham π Theorem:
+- Containing Target:
+	π_1 = Target / (k⋅N_A)
+- Not containing Target:
+	π_2 = e² / (c⋅ℎ⋅ε_0)
 
 Found 5 candidates the resultant unit matched with the target's unit:
-	{ Q } [ kg·m²/K/mol/s² ] = k⋅e⁴⋅N_A / (c²⋅ℎ²⋅ε_0²)
+	{ Q } [ kg·m²/K/mol/s² ] = k⋅N_A⋅e⁴ / (c²⋅ℎ²⋅ε_0²)
 	  ├── 👍 In range!
 	  └── Min (~4E-9) < Q (~2E-3) < Max (~2E+10) 
 
-	{ Q } [ kg·m²/K/mol/s² ] = k⋅e²⋅N_A / (c⋅ℎ⋅ε_0)
+	{ Q } [ kg·m²/K/mol/s² ] = k⋅N_A⋅e² / (c⋅ℎ⋅ε_0)
 	  ├── 👍 In range!
 	  └── Min (~4E-9) < Q (~1E-1) < Max (~2E+10) 
 
@@ -33,11 +39,11 @@ Found 5 candidates the resultant unit matched with the target's unit:
 	  ├── 👍 In range!
 	  └── Min (~4E-9) < Q (~8E+0) < Max (~2E+10) 
 
-	{ Q } [ kg·m²/K/mol/s² ] = c⋅ℎ⋅k⋅ε_0⋅N_A / e²
+	{ Q } [ kg·m²/K/mol/s² ] = k⋅N_A⋅c⋅ℎ⋅ε_0 / e²
 	  ├── 👍 In range!
 	  └── Min (~4E-9) < Q (~6E+2) < Max (~2E+10) 
 
-	{ Q } [ kg·m²/K/mol/s² ] = c²⋅ℎ²⋅k⋅ε_0²⋅N_A / e⁴
+	{ Q } [ kg·m²/K/mol/s² ] = k⋅N_A⋅c²⋅ℎ²⋅ε_0² / e⁴
 	  ├── 👍 In range!
 	  └── Min (~4E-9) < Q (~4E+4) < Max (~2E+10) 
 
@@ -48,5 +54,5 @@ Result(s) that overlap with the target:
 	{ 8.3144626181532...  (exact) } [ kg·m²/K/mol/s² ] = k⋅N_A
 
 Where
-* k: boltzmann constant
 * N_A: avogadro constant
+* k: boltzmann constant

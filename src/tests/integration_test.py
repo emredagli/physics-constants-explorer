@@ -17,7 +17,11 @@ logger = logging.getLogger(__name__)
         ("Stefan–Boltzmann constant", "5.670374419E-8", "kg/(s^3 K^4)",
          "kg/K⁴/s³", ["2⋅π⁵⋅k⁴ / (3⋅5⋅c²⋅ℎ³)", "2⋅π⁵⋅k⁴ / (3⋅5⋅ℎ³⋅c²)"]),
         ("Rydberg constant", "1.0973731568160(21)e+7", "1/m",
-         "1/m", ["e⁴⋅m_e / (2³⋅c⋅ℎ³⋅ε_0²)", "e⁴⋅m_e / (2³⋅ℎ³⋅ε_0²⋅c)", "e⁴⋅m_e / (2³⋅ℎ³⋅c⋅ε_0²)"]),
+         "1/m", [
+             "e⁴⋅m_e / (2³⋅c⋅ℎ³⋅ε_0²)",
+             "m_e⋅e⁴ / (2³⋅c⋅ℎ³⋅ε_0²)",
+             "e⁴⋅m_e / (2³⋅ℎ³⋅ε_0²⋅c)",
+             "e⁴⋅m_e / (2³⋅ℎ³⋅c⋅ε_0²)"]),
         ("Fine structure constant", "7.2973525693(11)E-3", "",
          "dimensionless", ["e² / (2⋅c⋅ℎ⋅ε_0)", "e² / (2⋅ℎ⋅ε_0⋅c)", "e² / (2⋅ℎ⋅c⋅ε_0)"]),
         ("Vacuum magnetic permeability", "1.25663706212(19)e-6", "m kg/(A^2 s^2)",
@@ -34,7 +38,7 @@ logger = logging.getLogger(__name__)
          "kg·m²/A²/s³", ["ℎ / e²"]),
     ]
 )
-@pytest.mark.parametrize("method", ["brute_force", "brute_force_with_memorization"])
+@pytest.mark.parametrize("method", ["buckingham_pi", "brute_force", "brute_force_with_memorization"])
 def test_derived_constants(constant_name, target_value, target_unit, expected_unit, expected_expressions, method):
     # GIVEN
     logger.info(f"Testing derived constants{constant_name}")
@@ -96,12 +100,15 @@ def test_derived_constants(constant_name, target_value, target_unit, expected_un
         ("wien_u", "2.8214393721220(42)", "")
     ]
 )
-@pytest.mark.parametrize("method", ["brute_force", "brute_force_with_memorization"])
+@pytest.mark.parametrize("method", ["buckingham_pi", "brute_force", "brute_force_with_memorization"])
 def test_constants_itself(constant_name, target_value, target_unit, method):
     # GIVEN
     logger.info(f"Testing constants itself {constant_name}")
     config = {
-      "method": method,
+      "settings": {
+          "method": method,
+          "buckingham_pi_ranges": [-2, 2]
+      },
       "dimensional_constants": {
         "speed_of_light_in_vacuum": 1,
         "planck_constant": 1,

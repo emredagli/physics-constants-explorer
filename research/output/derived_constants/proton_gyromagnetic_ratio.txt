@@ -18,10 +18,16 @@ in terms of the given,
 		μ, powers = [-1, 0, 1]
 		g_e, powers = [-1, 0, 1]
 		g_p, powers = [-1, 0, 1]
-by using brute_force methodology...
+by using buckingham_pi methodology...
+
+Dimensionless π terms found from the Buckingham π Theorem:
+- Containing Target:
+	π_1 = Target⋅m_e / e
+- Not containing Target:
+	π_2 = e² / (c⋅ℎ⋅ε_0)
 
 Found 4 candidates the resultant unit matched with the target's unit:
-	{ Q } [ A·s/kg ] = e³ / (c⋅ℎ⋅ε_0⋅m_e)
+	{ Q } [ A·s/kg ] = e³ / (m_e⋅c⋅ℎ⋅ε_0)
 	  ├── 👍 In range!
 	  └── Min (~1E-1) < Q (~3E+9) < Max (~6E+17) 
 

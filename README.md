@@ -216,13 +216,13 @@ options:
   -c, --config-file 
                         Relative path of the config file.
                         It is a JSON file that contains the list of dimensional and dimensionless constants
-                        with their power range. This file is validated by "src/resources/config_schema.json"
+                        with their power range. This file is validated by "src/resources/schema/config_schema.json"
                         If it is not provided the program uses the default config file, located:
                         ./src/resources/default_config.json
   -d, --definition-file 
                         Relative path of the definition file.
                         It is a JSON file that contains the definition of dimensional and dimensionless constants.
-                        This file is validated by "src/resources/definition_schema.json"
+                        This file is validated by "src/resources/schema/definition_schema.json"
                         If it is not provided the program uses the default definition file, located:
                         ./src/resources/default_definition.json
 ```

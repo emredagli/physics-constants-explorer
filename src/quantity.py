@@ -1,4 +1,4 @@
-from decimal import Decimal, ROUND_HALF_UP
+from decimal import Decimal
 
 from src import dimensionless_unit
 
@@ -24,7 +24,7 @@ class Quantity:
         self.unit = unit ** power
         self.value = value_decimal ** power_decimal
         self.relative_error = relative_error * abs(power_decimal)
-        self.representation = [(constant_name, symbol, power)]
+        self.representation = [] if power == 0 else [(constant_name, symbol, power)]
 
     def _init_with_quantities(self, list_of_quantities):
         self.unit = dimensionless_unit
@@ -36,6 +36,22 @@ class Quantity:
             self.value *= quantity.value
             self.relative_error += quantity.relative_error
             self.representation += quantity.representation
+
+    def get_hash(self):
+        representation = [f"{constant_name}::{power}" for constant_name, symbol, power in self.representation]
+        return "--".join(sorted(representation))
+
+    def power_of(self, power):
+        power_decimal = Decimal(power.numerator) / Decimal(power.denominator)
+
+        self.unit = self.unit ** power
+        self.value = self.value ** power_decimal
+        self.relative_error = self.relative_error * abs(power_decimal)
+        representation = []
+        if power != 0:
+            for r in self.representation:
+                representation.append((r[0], r[1], power * r[2]))
+        self.representation = representation
 
     def to_string(self, target=None):
         return f"{{ {self._get_numeric_value_str(target)} }} [ {self.get_unit_str()} ] = " \
@@ -56,15 +72,14 @@ class Quantity:
             return "".join(map(str, arr))
 
         if self.relative_error == 0:
-            _, digits, exponent = self.value.quantize(target.value * Decimal(10) ** -4,
-                                                      rounding=ROUND_HALF_UP).as_tuple()
+            _, digits, exponent = self.value.quantize(target.value * Decimal(10) ** -4).as_tuple()
             result_exponent = exponent + len(digits) - 1
             power_str = "" if result_exponent == 0 else "e" + get_sign(result_exponent) + str(abs(result_exponent))
             result = f"{digits[0]}.{concat_list(digits[1:])}... {power_str} (exact)"
         else:
             delta = Decimal(f"{self.relative_error * self.value:.1E}")
             _, digits_delta, exponent_delta = delta.as_tuple()
-            _, digits, exponent = self.value.quantize(delta, rounding=ROUND_HALF_UP).as_tuple()
+            _, digits, exponent = self.value.quantize(delta).as_tuple()
 
             result_exponent = exponent + len(digits) - 1
             power_str = "" if result_exponent == 0 else "e" + get_sign(result_exponent) + str(abs(result_exponent))
@@ -77,7 +92,7 @@ class Quantity:
         return result
 
     def get_unit_str(self):
-        result = f"{self.unit:~P}"
+        result = f"{self.unit.units:~P}"
         return result if result else "dimensionless"
 
     def get_expression_with_solidus(self):

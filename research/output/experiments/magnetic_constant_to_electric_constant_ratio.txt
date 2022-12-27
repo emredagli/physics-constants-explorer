@@ -11,7 +11,13 @@ in terms of the given,
 		2, powers = [-4, -7/2, -3, -5/2, -2, -3/2, -1, -1/2, 0, 1/2, 1, 3/2, 2, 5/2, 3, 7/2, 4]
 		π, powers = [-4, -7/2, -3, -5/2, -2, -3/2, -1, -1/2, 0, 1/2, 1, 3/2, 2, 5/2, 3, 7/2, 4]
 		α, powers = [-4, -7/2, -3, -5/2, -2, -3/2, -1, -1/2, 0, 1/2, 1, 3/2, 2, 5/2, 3, 7/2, 4]
-by using brute_force_with_memorization methodology...
+by using buckingham_pi methodology...
+
+Dimensionless π terms found from the Buckingham π Theorem:
+- Containing Target:
+	π_1 = Target⋅e⁴ / ℎ²
+- Not containing Target:
+	π_2 = c⋅m_e / (ℎ⋅R_inf)
 
 Found 3 candidates the resultant unit matched with the target's unit:
 	{ Q } [ kg²·m⁴/A⁴/s⁶ ] = ℎ⁵ᐟ²⋅R_inf¹ᐟ² / (e⁴⋅c¹ᐟ²⋅m_e¹ᐟ²)
@@ -35,9 +41,9 @@ Result(s) that overlap with the target:
 	{ 1.41925729236(86) e+5 } [ kg²·m⁴/A⁴/s⁶ ] = 2³ᐟ²⋅α³⋅ℎ³ᐟ²⋅c¹ᐟ²⋅m_e¹ᐟ² / (e⁴⋅R_inf¹ᐟ²)
 
 Where
+* m_e: electron mass
+* e: elementary charge
 * ℎ: planck constant
 * R_inf: rydberg constant
-* e: elementary charge
 * c: speed of light in vacuum
-* m_e: electron mass
 * α: fine structure constant

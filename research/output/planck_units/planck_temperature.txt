@@ -9,7 +9,11 @@ in terms of the given,
 	dimensionless constants: 
 		2, powers = [-2, -3/2, -1, -1/2, 0, 1/2, 1, 3/2, 2]
 		π, powers = [-2, -3/2, -1, -1/2, 0, 1/2, 1, 3/2, 2]
-by using brute_force methodology...
+by using buckingham_pi methodology...
+
+Dimensionless π terms found from the Buckingham π Theorem:
+- Containing Target:
+	π_1 = Target²⋅G⋅k² / (c⁵⋅ℎ)
 
 Found 1 candidates the resultant unit matched with the target's unit:
 	{ Q } [ K ] = c⁵ᐟ²⋅ℎ¹ᐟ² / (G¹ᐟ²⋅k)
