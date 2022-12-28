@@ -22,20 +22,20 @@ by using buckingham_pi methodology...
 
 Dimensionless π terms found from the Buckingham π Theorem:
 - Containing Target:
-	π_1 = Target / (c²⋅m_e)
+	π_1 = Target / (m_e⋅c²)
 - Not containing Target:
-	π_2 = e² / (c⋅ℎ⋅ε_0)
+	π_2 = e² / (ℎ⋅c⋅ε_0)
 
 Found 3 candidates the resultant unit matched with the target's unit:
 	{ Q } [ kg·m²/s² ] = m_e⋅e⁴ / (ℎ²⋅ε_0²)
 	  ├── 👍 In range!
 	  └── Min (~2E-27) < Q (~2E-17) < Max (~9E-9) 
 
-	{ Q } [ kg·m²/s² ] = c⋅m_e⋅e² / (ℎ⋅ε_0)
+	{ Q } [ kg·m²/s² ] = m_e⋅e²⋅c / (ℎ⋅ε_0)
 	  ├── 👍 In range!
 	  └── Min (~2E-27) < Q (~1E-15) < Max (~9E-9) 
 
-	{ Q } [ kg·m²/s² ] = c²⋅m_e
+	{ Q } [ kg·m²/s² ] = m_e⋅c²
 	  ├── 👍 In range!
 	  └── Min (~2E-27) < Q (~8E-14) < Max (~9E-9) 
 
@@ -43,7 +43,7 @@ Totally, unique 56133 dimensionless multiplications are calculated!
 
 Result(s) that overlap with the target:
 	{ 4.3597447222071(85) e-18 } [ kg·m²/s² ] = Target
-	{ 4.3597447222(26) e-18 } [ kg·m²/s² ] = m_e⋅e⁴ / (2²⋅ℎ²⋅ε_0²)
+	{ 4.3597447222(26) e-18 } [ kg·m²/s² ] = 1 / 2² ⋅ (m_e⋅e⁴ / (ℎ²⋅ε_0²))
 
 Where
 * m_e: electron mass

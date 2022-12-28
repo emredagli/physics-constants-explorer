@@ -104,17 +104,17 @@ class ExploreConstant:
         existing_dimensional_constants = set()
         existing_dimensionless_constants = set()
         for _, expression in self.results:
-            for constant_name, symbol, power in expression.representation:
-                if power == 0 or constant_name in self._SKIP_ON_WHERE_STATEMENT:
+            for term in expression.terms:
+                if term.power == 0 or term.symbol in self._SKIP_ON_WHERE_STATEMENT:
                     continue
-                if constant_name in self.dimensional_scope.powered_quantities.keys():
-                    existing_dimensional_constants.add(constant_name)
+                if term.is_dimensionless:
+                    existing_dimensionless_constants.add(term.constant_name)
                 else:
-                    existing_dimensionless_constants.add(constant_name)
+                    existing_dimensional_constants.add(term.constant_name)
 
         if len(existing_dimensional_constants) + len(existing_dimensionless_constants) == 0:
             return ""
 
         return f"\nWhere" \
-               f"{self.dimensional_scope.get_where_statement(existing_dimensional_constants)}" \
-               f"{self.dimensionless_scope.get_where_statement(existing_dimensionless_constants)}"
+               f"{self.dimensionless_scope.get_where_statement(existing_dimensionless_constants)}" \
+               f"{self.dimensional_scope.get_where_statement(existing_dimensional_constants)}"

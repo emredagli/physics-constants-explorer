@@ -24,14 +24,14 @@ Dimensionless π terms found from the Buckingham π Theorem:
 - Containing Target:
 	π_1 = Target
 - Not containing Target:
-	π_2 = e² / (c⋅ℎ⋅ε_0)
+	π_2 = e² / (ℎ⋅c⋅ε_0)
 
 Found 5 candidates the resultant unit matched with the target's unit:
-	{ Q } [ dimensionless ] = e⁴ / (c²⋅ℎ²⋅ε_0²)
+	{ Q } [ dimensionless ] = e⁴ / (ℎ²⋅c²⋅ε_0²)
 	  ├── 👍 In range!
 	  └── Min (~3E-12) < Q (~2E-4) < Max (~2E+7) 
 
-	{ Q } [ dimensionless ] = e² / (c⋅ℎ⋅ε_0)
+	{ Q } [ dimensionless ] = e² / (ℎ⋅c⋅ε_0)
 	  ├── 👍 In range!
 	  └── Min (~3E-12) < Q (~1E-2) < Max (~2E+7) 
 
@@ -39,11 +39,11 @@ Found 5 candidates the resultant unit matched with the target's unit:
 	  ├── 👍 In range!
 	  └── Min (~3E-12) < Q (~1E+00) < Max (~2E+7) 
 
-	{ Q } [ dimensionless ] = c⋅ℎ⋅ε_0 / e²
+	{ Q } [ dimensionless ] = ℎ⋅c⋅ε_0 / e²
 	  ├── 👍 In range!
 	  └── Min (~3E-12) < Q (~7E+1) < Max (~2E+7) 
 
-	{ Q } [ dimensionless ] = c²⋅ℎ²⋅ε_0² / e⁴
+	{ Q } [ dimensionless ] = ℎ²⋅c²⋅ε_0² / e⁴
 	  ├── 👍 In range!
 	  └── Min (~3E-12) < Q (~5E+3) < Max (~2E+7) 
 
@@ -51,7 +51,7 @@ Totally, unique 56133 dimensionless multiplications are calculated!
 
 Result(s) that overlap with the target:
 	{ 7.2973525693(11) e-3 } [ dimensionless ] = Target
-	{ 7.2973525693(11) e-3 } [ dimensionless ] = e² / (2⋅c⋅ℎ⋅ε_0)
+	{ 7.2973525693(11) e-3 } [ dimensionless ] = 1 / 2 ⋅ (e² / (ℎ⋅c⋅ε_0))
 
 Where
 * e: elementary charge

@@ -22,20 +22,20 @@ by using buckingham_pi methodology...
 
 Dimensionless π terms found from the Buckingham π Theorem:
 - Containing Target:
-	π_1 = Target⋅c²⋅ℎ³ / k⁴
+	π_1 = Target⋅ℎ³⋅c² / k⁴
 - Not containing Target:
-	π_2 = e² / (c⋅ℎ⋅ε_0)
+	π_2 = e² / (ℎ⋅c⋅ε_0)
 
 Found 3 candidates the resultant unit matched with the target's unit:
-	{ Q } [ kg/K⁴/s³ ] = k⁴ / (c²⋅ℎ³)
+	{ Q } [ kg/K⁴/s³ ] = k⁴ / (ℎ³⋅c²)
 	  ├── 👍 In range!
 	  └── Min (~3E-17) < Q (~1E-9) < Max (~1E+2) 
 
-	{ Q } [ kg/K⁴/s³ ] = k⁴⋅ε_0 / (c⋅ℎ²⋅e²)
+	{ Q } [ kg/K⁴/s³ ] = k⁴⋅ε_0 / (e²⋅ℎ²⋅c)
 	  ├── 👍 In range!
 	  └── Min (~3E-17) < Q (~1E-7) < Max (~1E+2) 
 
-	{ Q } [ kg/K⁴/s³ ] = k⁴⋅ε_0² / (ℎ⋅e⁴)
+	{ Q } [ kg/K⁴/s³ ] = k⁴⋅ε_0² / (e⁴⋅ℎ)
 	  ├── 👍 In range!
 	  └── Min (~3E-17) < Q (~7E-6) < Max (~1E+2) 
 
@@ -43,7 +43,7 @@ Totally, unique 56133 dimensionless multiplications are calculated!
 
 Result(s) that overlap with the target:
 	{ 5.6703744190(10) e-8 } [ kg/K⁴/s³ ] = Target
-	{ 5.6703744191844... e-8 (exact) } [ kg/K⁴/s³ ] = 2⋅π⁵⋅k⁴ / (3⋅5⋅c²⋅ℎ³)
+	{ 5.6703744191844... e-8 (exact) } [ kg/K⁴/s³ ] = (2⋅π⁵ / (3⋅5)) ⋅ (k⁴ / (ℎ³⋅c²))
 
 Where
 * k: boltzmann constant

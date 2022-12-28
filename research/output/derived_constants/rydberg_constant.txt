@@ -22,12 +22,12 @@ by using buckingham_pi methodology...
 
 Dimensionless π terms found from the Buckingham π Theorem:
 - Containing Target:
-	π_1 = Target⋅ℎ / (c⋅m_e)
+	π_1 = Target⋅ℎ / (m_e⋅c)
 - Not containing Target:
-	π_2 = e² / (c⋅ℎ⋅ε_0)
+	π_2 = e² / (ℎ⋅c⋅ε_0)
 
 Found 4 candidates the resultant unit matched with the target's unit:
-	{ Q } [ 1/m ] = m_e⋅e⁴ / (c⋅ℎ³⋅ε_0²)
+	{ Q } [ 1/m ] = m_e⋅e⁴ / (ℎ³⋅c⋅ε_0²)
 	  ├── 👍 In range!
 	  └── Min (~5E-3) < Q (~9E+7) < Max (~2E+16) 
 
@@ -35,11 +35,11 @@ Found 4 candidates the resultant unit matched with the target's unit:
 	  ├── 👍 In range!
 	  └── Min (~5E-3) < Q (~6E+9) < Max (~2E+16) 
 
-	{ Q } [ 1/m ] = c⋅m_e / ℎ
+	{ Q } [ 1/m ] = m_e⋅c / ℎ
 	  ├── 👍 In range!
 	  └── Min (~5E-3) < Q (~4E+11) < Max (~2E+16) 
 
-	{ Q } [ 1/m ] = c²⋅m_e⋅ε_0 / e²
+	{ Q } [ 1/m ] = m_e⋅c²⋅ε_0 / e²
 	  ├── 👍 In range!
 	  └── Min (~5E-3) < Q (~3E+13) < Max (~2E+16) 
 
@@ -47,7 +47,7 @@ Totally, unique 56133 dimensionless multiplications are calculated!
 
 Result(s) that overlap with the target:
 	{ 1.0973731568160(21) e+7 } [ 1/m ] = Target
-	{ 1.09737315681(66) e+7 } [ 1/m ] = m_e⋅e⁴ / (2³⋅c⋅ℎ³⋅ε_0²)
+	{ 1.09737315681(66) e+7 } [ 1/m ] = 1 / 2³ ⋅ (m_e⋅e⁴ / (ℎ³⋅c⋅ε_0²))
 
 Where
 * m_e: electron mass

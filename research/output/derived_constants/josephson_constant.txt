@@ -47,7 +47,7 @@ Totally, unique 56133 dimensionless multiplications are calculated!
 
 Result(s) that overlap with the target:
 	{ 4.8359784840(10) e+14 } [ A·s²/kg/m² ] = Target
-	{ 4.8359784841698... e+14 (exact) } [ A·s²/kg/m² ] = 2⋅e / ℎ
+	{ 4.8359784841698... e+14 (exact) } [ A·s²/kg/m² ] = 2 ⋅ (e / ℎ)
 
 Where
 * e: elementary charge

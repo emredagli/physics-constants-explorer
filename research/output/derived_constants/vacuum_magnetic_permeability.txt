@@ -22,16 +22,16 @@ by using buckingham_pi methodology...
 
 Dimensionless π terms found from the Buckingham π Theorem:
 - Containing Target:
-	π_1 = ℎ / (Target⋅c⋅e²)
+	π_1 = ℎ / (Target⋅e²⋅c)
 - Not containing Target:
-	π_2 = c⋅ℎ⋅ε_0 / e²
+	π_2 = ℎ⋅c⋅ε_0 / e²
 
 Found 3 candidates the resultant unit matched with the target's unit:
 	{ Q } [ kg·m/A²/s² ] = 1 / (c²⋅ε_0)
 	  ├── 👍 In range!
 	  └── Min (~6E-16) < Q (~1E-6) < Max (~3E+3) 
 
-	{ Q } [ kg·m/A²/s² ] = ℎ / (c⋅e²)
+	{ Q } [ kg·m/A²/s² ] = ℎ / (e²⋅c)
 	  ├── 👍 In range!
 	  └── Min (~6E-16) < Q (~9E-5) < Max (~3E+3) 
 

@@ -24,10 +24,10 @@ Dimensionless π terms found from the Buckingham π Theorem:
 - Containing Target:
 	π_1 = Target⋅m_e / e
 - Not containing Target:
-	π_2 = e² / (c⋅ℎ⋅ε_0)
+	π_2 = e² / (ℎ⋅c⋅ε_0)
 
 Found 4 candidates the resultant unit matched with the target's unit:
-	{ Q } [ A·s/kg ] = e³ / (m_e⋅c⋅ℎ⋅ε_0)
+	{ Q } [ A·s/kg ] = e³ / (m_e⋅ℎ⋅c⋅ε_0)
 	  ├── 👍 In range!
 	  └── Min (~1E-1) < Q (~3E+9) < Max (~6E+17) 
 
@@ -35,11 +35,11 @@ Found 4 candidates the resultant unit matched with the target's unit:
 	  ├── 👍 In range!
 	  └── Min (~1E-1) < Q (~2E+11) < Max (~6E+17) 
 
-	{ Q } [ A·s/kg ] = c⋅ℎ⋅ε_0 / (e⋅m_e)
+	{ Q } [ A·s/kg ] = ℎ⋅c⋅ε_0 / (m_e⋅e)
 	  ├── 👍 In range!
 	  └── Min (~1E-1) < Q (~1E+13) < Max (~6E+17) 
 
-	{ Q } [ A·s/kg ] = c²⋅ℎ²⋅ε_0² / (e³⋅m_e)
+	{ Q } [ A·s/kg ] = ℎ²⋅c²⋅ε_0² / (m_e⋅e³)
 	  ├── 👍 In range!
 	  └── Min (~1E-1) < Q (~8E+14) < Max (~6E+17) 
 
@@ -47,10 +47,10 @@ Totally, unique 56133 dimensionless multiplications are calculated!
 
 Result(s) that overlap with the target:
 	{ 2.6752218744(11) e+8 } [ A·s/kg ] = Target
-	{ 2.6752218745(17) e+8 } [ A·s/kg ] = g_p⋅e / (2⋅μ⋅m_e)
+	{ 2.6752218745(17) e+8 } [ A·s/kg ] = (g_p / (2⋅μ)) ⋅ (e / m_e)
 
 Where
-* m_e: electron mass
-* e: elementary charge
 * μ: proton electron mass ratio, m_p / m_e
 * g_p: proton g factor
+* m_e: electron mass
+* e: elementary charge

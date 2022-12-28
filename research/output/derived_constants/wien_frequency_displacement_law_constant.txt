@@ -24,7 +24,7 @@ Dimensionless π terms found from the Buckingham π Theorem:
 - Containing Target:
 	π_1 = Target⋅ℎ / k
 - Not containing Target:
-	π_2 = e² / (c⋅ℎ⋅ε_0)
+	π_2 = e² / (ℎ⋅c⋅ε_0)
 
 Found 5 candidates the resultant unit matched with the target's unit:
 	{ Q } [ 1/K/s ] = k⋅e⁴ / (ℎ³⋅c²⋅ε_0²)
@@ -43,7 +43,7 @@ Found 5 candidates the resultant unit matched with the target's unit:
 	  ├── 👍 In range!
 	  └── Min (~3E+1) < Q (~1E+12) < Max (~1E+20) 
 
-	{ Q } [ 1/K/s ] = ℎ⋅k⋅c²⋅ε_0² / e⁴
+	{ Q } [ 1/K/s ] = k⋅ℎ⋅c²⋅ε_0² / e⁴
 	  ├── 👍 In range!
 	  └── Min (~3E+1) < Q (~1E+14) < Max (~1E+20) 
 
@@ -51,9 +51,9 @@ Totally, unique 56133 dimensionless multiplications are calculated!
 
 Result(s) that overlap with the target:
 	{ 5.8789257570(10) e+10 } [ 1/K/s ] = Target
-	{ 5.8789257576468... e+10 (exact) } [ 1/K/s ] = wien_u⋅k / ℎ
+	{ 5.8789257576468... e+10 (exact) } [ 1/K/s ] = wien_u ⋅ (k / ℎ)
 
 Where
+* wien_u: wien u, the solution to (u-3)*exp(u)+3 = 0 => u = W(3/exp(3))+3
 * k: boltzmann constant
 * ℎ: planck constant
-* wien_u: wien u, the solution to (u-3)*exp(u)+3 = 0 => u = W(3/exp(3))+3

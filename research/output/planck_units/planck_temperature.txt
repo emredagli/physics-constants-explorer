@@ -13,10 +13,10 @@ by using buckingham_pi methodology...
 
 Dimensionless π terms found from the Buckingham π Theorem:
 - Containing Target:
-	π_1 = Target²⋅G⋅k² / (c⁵⋅ℎ)
+	π_1 = Target²⋅k²⋅G / (ℎ⋅c⁵)
 
 Found 1 candidates the resultant unit matched with the target's unit:
-	{ Q } [ K ] = c⁵ᐟ²⋅ℎ¹ᐟ² / (G¹ᐟ²⋅k)
+	{ Q } [ K ] = ℎ¹ᐟ²⋅c⁵ᐟ² / (k⋅G¹ᐟ²)
 	  ├── 👍 In range!
 	  └── Min (~4E+30) < Q (~4E+32) < Max (~6E+33) 
 
@@ -24,7 +24,7 @@ Totally, unique 81 dimensionless multiplications are calculated!
 
 Result(s) that overlap with the target:
 	{ 1.416784(16) e+32 } [ K ] = Target
-	{ 1.416784(16) e+32 } [ K ] = c⁵ᐟ²⋅ℎ¹ᐟ² / (2¹ᐟ²⋅π¹ᐟ²⋅G¹ᐟ²⋅k)
+	{ 1.416784(16) e+32 } [ K ] = (1 / (2¹ᐟ²⋅π¹ᐟ²)) ⋅ (ℎ¹ᐟ²⋅c⁵ᐟ² / (k⋅G¹ᐟ²))
 
 Where
 * k: boltzmann constant

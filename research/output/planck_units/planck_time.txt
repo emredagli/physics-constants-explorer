@@ -13,10 +13,10 @@ by using buckingham_pi methodology...
 
 Dimensionless π terms found from the Buckingham π Theorem:
 - Containing Target:
-	π_1 = Target²⋅c⁵ / (ℎ⋅G)
+	π_1 = Target²⋅c⁵ / (G⋅ℎ)
 
 Found 1 candidates the resultant unit matched with the target's unit:
-	{ Q } [ s ] = ℎ¹ᐟ²⋅G¹ᐟ² / c⁵ᐟ²
+	{ Q } [ s ] = G¹ᐟ²⋅ℎ¹ᐟ² / c⁵ᐟ²
 	  ├── 👍 In range!
 	  └── Min (~1E-45) < Q (~1E-43) < Max (~2E-42) 
 
@@ -24,7 +24,7 @@ Totally, unique 81 dimensionless multiplications are calculated!
 
 Result(s) that overlap with the target:
 	{ 5.391247(60) e-44 } [ s ] = Target
-	{ 5.391246(61) e-44 } [ s ] = ℎ¹ᐟ²⋅G¹ᐟ² / (2¹ᐟ²⋅π¹ᐟ²⋅c⁵ᐟ²)
+	{ 5.391246(61) e-44 } [ s ] = (1 / (2¹ᐟ²⋅π¹ᐟ²)) ⋅ (G¹ᐟ²⋅ℎ¹ᐟ² / c⁵ᐟ²)
 
 Where
 * G: newtonian constant of gravitation

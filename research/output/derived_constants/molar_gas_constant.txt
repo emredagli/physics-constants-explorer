@@ -22,28 +22,28 @@ by using buckingham_pi methodology...
 
 Dimensionless π terms found from the Buckingham π Theorem:
 - Containing Target:
-	π_1 = Target / (k⋅N_A)
+	π_1 = Target / (N_A⋅k)
 - Not containing Target:
-	π_2 = e² / (c⋅ℎ⋅ε_0)
+	π_2 = e² / (ℎ⋅c⋅ε_0)
 
 Found 5 candidates the resultant unit matched with the target's unit:
-	{ Q } [ kg·m²/K/mol/s² ] = k⋅N_A⋅e⁴ / (c²⋅ℎ²⋅ε_0²)
+	{ Q } [ kg·m²/K/mol/s² ] = N_A⋅k⋅e⁴ / (ℎ²⋅c²⋅ε_0²)
 	  ├── 👍 In range!
 	  └── Min (~4E-9) < Q (~2E-3) < Max (~2E+10) 
 
-	{ Q } [ kg·m²/K/mol/s² ] = k⋅N_A⋅e² / (c⋅ℎ⋅ε_0)
+	{ Q } [ kg·m²/K/mol/s² ] = N_A⋅k⋅e² / (ℎ⋅c⋅ε_0)
 	  ├── 👍 In range!
 	  └── Min (~4E-9) < Q (~1E-1) < Max (~2E+10) 
 
-	{ Q } [ kg·m²/K/mol/s² ] = k⋅N_A
+	{ Q } [ kg·m²/K/mol/s² ] = N_A⋅k
 	  ├── 👍 In range!
 	  └── Min (~4E-9) < Q (~8E+0) < Max (~2E+10) 
 
-	{ Q } [ kg·m²/K/mol/s² ] = k⋅N_A⋅c⋅ℎ⋅ε_0 / e²
+	{ Q } [ kg·m²/K/mol/s² ] = N_A⋅k⋅ℎ⋅c⋅ε_0 / e²
 	  ├── 👍 In range!
 	  └── Min (~4E-9) < Q (~6E+2) < Max (~2E+10) 
 
-	{ Q } [ kg·m²/K/mol/s² ] = k⋅N_A⋅c²⋅ℎ²⋅ε_0² / e⁴
+	{ Q } [ kg·m²/K/mol/s² ] = N_A⋅k⋅ℎ²⋅c²⋅ε_0² / e⁴
 	  ├── 👍 In range!
 	  └── Min (~4E-9) < Q (~4E+4) < Max (~2E+10) 
 
@@ -51,7 +51,7 @@ Totally, unique 56133 dimensionless multiplications are calculated!
 
 Result(s) that overlap with the target:
 	{ 8.3144626180(10)  } [ kg·m²/K/mol/s² ] = Target
-	{ 8.3144626181532...  (exact) } [ kg·m²/K/mol/s² ] = k⋅N_A
+	{ 8.3144626181532...  (exact) } [ kg·m²/K/mol/s² ] = N_A⋅k
 
 Where
 * N_A: avogadro constant
