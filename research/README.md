@@ -76,7 +76,6 @@ The script was executed on the project root folder, and it stored the results gi
 | [Planck Temperature](https://en.wikipedia.org/wiki/Planck_units#History_and_definition) | $${\displaystyle T_{\text{P}}={\sqrt {\frac {\hbar c^{5}}{Gk_{\text{B}}^{2}}}}}$$ | {&nbsp;[1.416784(16)E+32](https://physics.nist.gov/cgi-bin/cuu/Value?plktmp)&nbsp;}<br>[&nbsp;K&nbsp;] | (1&nbsp;/&nbsp;(2¹ᐟ²⋅π¹ᐟ²))&nbsp;⋅&nbsp;(h¹ᐟ²⋅c⁵ᐟ²&nbsp;/&nbsp;(k⋅G¹ᐟ²)) | [The&nbsp;output&nbsp;file](research/output/planck_units/planck_temperature.txt) |
 
 
-
 ## 3 Experiments
 
 After executing enough runs on the other physical constants, it is time to experiment on measured but not theoretically-proofed constants.
@@ -96,11 +95,11 @@ Note: The script was executed on the project's root folder:
 * [Config File](config/experiments/magnetic_constant_to_electric_constant_ratio.json), and scope:
 ```text
 dimensional constants:   
-    c, powers = [-1, -1/2, 0, 1/2, 1]
-    ℎ, powers = [-3, -5/2, -2, -3/2, -1, -1/2, 0, 1/2, 1, 3/2, 2, 5/2, 3]
-    e, powers = [-4, -7/2, -3, -5/2, -2, -3/2, -1, -1/2, 0, 1/2, 1, 3/2, 2, 5/2, 3, 7/2, 4]
-    m_e, powers = [-1, -1/2, 0, 1/2, 1]
-    R_inf, powers = [-1/2, 0, 1/2]
+    c = { 299792458 } [ m/s ], powers = [-1, -1/2, 0, 1/2, 1]
+    h = { 6.62607015e-34 } [ kg·m²/s ], powers = [-3, -5/2, -2, -3/2, -1, -1/2, 0, 1/2, 1, 3/2, 2, 5/2, 3]
+    e = { 1.602176634e-19 } [ A·s ], powers = [-4, -7/2, -3, -5/2, -2, -3/2, -1, -1/2, 0, 1/2, 1, 3/2, 2, 5/2, 3, 7/2, 4]
+    m_e = { 9.1093837015(28)e-31 } [ kg ], powers = [-1, -1/2, 0, 1/2, 1]
+    R_∞ = { 10973731.568160(21) } [ 1/m ], powers = [-1/2, 0, 1/2]
 dimensionless constants: 
     2, powers = [-4, -7/2, -3, -5/2, -2, -3/2, -1, -1/2, 0, 1/2, 1, 3/2, 2, 5/2, 3, 7/2, 4]
     π, powers = [-4, -7/2, -3, -5/2, -2, -3/2, -1, -1/2, 0, 1/2, 1, 3/2, 2, 5/2, 3, 7/2, 4]
@@ -159,26 +158,26 @@ The target is:
 Found 3 candidates the resultant unit matched with the target's unit:
 
 ```text
-	{ Q } [ kg²·m⁴/A⁴/s⁶ ] = R_inf¹ᐟ²⋅ℎ⁵ᐟ² / (e⁴⋅m_e¹ᐟ²⋅c¹ᐟ²)
+	{ Q } [ kg²·m⁴/A⁴/s⁶ ] = h⁵ᐟ²⋅R_∞¹ᐟ² / (m_e¹ᐟ²⋅e⁴⋅c¹ᐟ²)
 	  ├── 👍 In range!
-	  └── Min (~3E-7) < Q (~3E+6) < Max (~8E+16)
+	  └── Min (~3E-7) < Q (~3E+6) < Max (~8E+16) 
 
-	{ Q } [ kg²·m⁴/A⁴/s⁶ ] = ℎ² / e⁴
+	{ Q } [ kg²·m⁴/A⁴/s⁶ ] = h² / e⁴
 	  ├── 👍 In range!
-	  └── Min (~3E-7) < Q (~7E+8) < Max (~8E+16)
+	  └── Min (~3E-7) < Q (~7E+8) < Max (~8E+16) 
 
-	{ Q } [ kg²·m⁴/A⁴/s⁶ ] = ℎ³ᐟ²⋅m_e¹ᐟ²⋅c¹ᐟ² / (e⁴⋅R_inf¹ᐟ²)
+	{ Q } [ kg²·m⁴/A⁴/s⁶ ] = m_e¹ᐟ²⋅h³ᐟ²⋅c¹ᐟ² / (e⁴⋅R_∞¹ᐟ²)
 	  ├── 👍 In range!
-	  └── Min (~3E-7) < Q (~1E+11) < Max (~8E+16)
+	  └── Min (~3E-7) < Q (~1E+11) < Max (~8E+16) 
 ```
 
 And results that overlap with the target:
 
 ```text
 	{ 1.4192572923(42) e+5 } [ kg²·m⁴/A⁴/s⁶ ] = Target
-R1	{ 1.41925729237(43) e+5 } [ kg²·m⁴/A⁴/s⁶ ] = 2⁵ᐟ²⋅α⋅R_inf¹ᐟ²⋅ℎ⁵ᐟ² / (e⁴⋅m_e¹ᐟ²⋅c¹ᐟ²)
-R2	{ 1.41925729236(43) e+5 } [ kg²·m⁴/A⁴/s⁶ ] = 2²⋅α²⋅ℎ² / e⁴
-R3	{ 1.41925729236(86) e+5 } [ kg²·m⁴/A⁴/s⁶ ] = 2³ᐟ²⋅α³⋅ℎ³ᐟ²⋅m_e¹ᐟ²⋅c¹ᐟ² / (e⁴⋅R_inf¹ᐟ²)
+R1	{ 1.41925729237(43) e+5 } [ kg²·m⁴/A⁴/s⁶ ] = (2⁵ᐟ²⋅α) ⋅ (h⁵ᐟ²⋅R_∞¹ᐟ² / (m_e¹ᐟ²⋅e⁴⋅c¹ᐟ²))
+R2	{ 1.41925729236(43) e+5 } [ kg²·m⁴/A⁴/s⁶ ] = (2²⋅α²) ⋅ (h² / e⁴)
+R3	{ 1.41925729236(86) e+5 } [ kg²·m⁴/A⁴/s⁶ ] = (2³ᐟ²⋅α³) ⋅ (m_e¹ᐟ²⋅h³ᐟ²⋅c¹ᐟ² / (e⁴⋅R_∞¹ᐟ²))
 ```
 
 As it was expected,
@@ -216,10 +215,11 @@ The program found some candidates that the resultant unit matched with the targe
 
 If you look at the found candidates, there is a pattern between these (the first 2 candidates):
 ```text
-    { Q1 } [ m³/kg/s² ] = e¹² / (c⁵⋅ℎ⁵⋅ε_0⁶⋅m_e²)
-    { Q2 } [ m³/kg/s² ] = e¹⁰ / (c⁴⋅ℎ⁴⋅ε_0⁵⋅m_e²)
+	{ Q1 } [ m³/kg/s² ] = e¹² / (m_e²⋅h⁵⋅c⁵⋅ε_0⁶)
+    { Q2 } [ m³/kg/s² ] = e¹⁰ / (m_e²⋅h⁴⋅c⁴⋅ε_0⁵)
 ...
 
+The ratio is:
 Q1/Q2 = e² / (c⋅ε_0⋅ℎ)
 ```
 As you see, Q1/Q2 is actually the square root of the [fine-structure constant](#3122-fine-structure-constant-2) which is a dimensionless physical constant. 
@@ -229,21 +229,15 @@ We have the following numerically overlapped expression:
 ```text
 Result(s) that overlap with the target:
 	{ 6.67430(15) e-11 } [ m³/kg/s² ] = Target
-	{ 6.674224928(14) e-11 } [ m³/kg/s² ] = e¹² / (2²⋅3⋅5³⋅π⁴⋅μ⁹⋅c⁵⋅ℎ⁵⋅ε_0⁶⋅m_e²)
+	{ 6.674224928(14) e-11 } [ m³/kg/s² ] = (1 / (2²⋅3⋅5³⋅π⁴⋅(m_p/m_e)⁹)) ⋅ (e¹² / (m_e²⋅h⁵⋅c⁵⋅ε_0⁶))
 
 Where
-* ε_0: vacuum electric permittivity
-* c: speed of light in vacuum
-* ℎ: planck constant
-* e: elementary charge
+* (m_p/m_e): proton electron mass ratio
 * m_e: electron mass
-* μ: proton electron mass ratio, m_p / m_e
-```
-
-If we substitute $\mu$, which is proton (m_p) to electron rest mass (m_e) ratio, we may get:
-
-```text
-  { 6.674224928(14) e-11 } [ m³/kg/s² ] = e¹²⋅m_e⁷ / (2²⋅3⋅5³⋅π⁴⋅c⁵⋅ℎ⁵⋅ε_0⁶⋅m_p⁹)
+* e: elementary charge
+* h: planck constant
+* c: speed of light in vacuum
+* ε_0: vacuum electric permittivity
 ```
 
 __Note that__, if we increase the scope of the dimensionless constant, 
@@ -281,9 +275,10 @@ And who are not with us:
 * Physics Teacher Aykut Gümüç (R.I.P), Eskisehir Science High School
 * Prof. Dr. Oleg Fedorovich Kabardin (R.I.P), Physics Olympiads
 
-And I would like to thanks to my friends who always enjoy supporting me:
+And I would like to thank my friends who was supporting me on this work:
 
 * Dr. İnanç Kanık
+* Dr. Serkan Cabi
 * Dr. Özgür Sümer
 * Atılım Çetin
 * Osman Özgür

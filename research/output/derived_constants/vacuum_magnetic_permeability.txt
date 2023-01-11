@@ -18,13 +18,7 @@ in terms of the given,
 		(m_p/m_e), powers = [-1, 0, 1]
 		g_e, powers = [-1, 0, 1]
 		g_p, powers = [-1, 0, 1]
-by using buckingham_pi methodology...
-
-Dimensionless π terms found from the Buckingham π Theorem:
-- Containing Target:
-	π_1 = Target⋅e²⋅c / h
-- Not containing Target:
-	π_2 = e² / (h⋅c⋅ε_0)
+by using brute_force methodology...
 
 Found 3 candidates the resultant unit matched with the target's unit:
 	{ Q } [ kg·m/A²/s² ] = 1 / (c²⋅ε_0)

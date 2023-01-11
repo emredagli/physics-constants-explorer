@@ -18,13 +18,7 @@ in terms of the given,
 		(m_p/m_e), powers = [-1, 0, 1]
 		g_e, powers = [-1, 0, 1]
 		g_p, powers = [-1, 0, 1]
-by using buckingham_pi methodology...
-
-Dimensionless π terms found from the Buckingham π Theorem:
-- Containing Target:
-	π_1 = Target
-- Not containing Target:
-	π_2 = e² / (h⋅c⋅ε_0)
+by using brute_force methodology...
 
 Found 5 candidates the resultant unit matched with the target's unit:
 	{ Q } [ dimensionless ] = e⁴ / (h²⋅c²⋅ε_0²)
@@ -37,7 +31,7 @@ Found 5 candidates the resultant unit matched with the target's unit:
 
 	{ Q } [ dimensionless ] = 1
 	  ├── 👍 In range!
-	  └── Min (~3E-12) < Q (~1E+00) < Max (~2E+7) 
+	  └── Min (~3E-12) < Q (~1E+0) < Max (~2E+7) 
 
 	{ Q } [ dimensionless ] = h⋅c⋅ε_0 / e²
 	  ├── 👍 In range!
