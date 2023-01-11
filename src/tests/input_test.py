@@ -92,7 +92,7 @@ def test_invalid_target_values(target_value, target_unit):
             "dimensionless_constants": {"2": {"numeric_value": "2"}}
         }),
         ("12- 'numeric_value' must be in scientific format", {
-            "dimensional_constants": {"c": {"numeric_value": "321", "unit": "m/s"}},
+            "dimensional_constants": {"c": {"numeric_value": "321abc", "unit": "m/s"}},
             "dimensionless_constants": {"2": {"numeric_value": "2"}}
         }),
         ("13- 'unit' must defined for dimensional constants", {

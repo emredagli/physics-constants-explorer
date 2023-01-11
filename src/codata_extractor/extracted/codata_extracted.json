@@ -1,0 +1,1418 @@
+{
+  "alpha_particle_mass": {
+    "name": "Alpha particle mass",
+    "codata": "https://physics.nist.gov/cgi-bin/cuu/Value?mal"
+  },
+  "alpha_particle_mass_energy_equivalent": {
+    "name": "Alpha particle mass energy equivalent",
+    "codata": "https://physics.nist.gov/cgi-bin/cuu/Value?malc2"
+  },
+  "alpha_particle_mass_energy_equivalent_in_mev": {
+    "name": "Alpha particle mass energy equivalent in mev",
+    "codata": "https://physics.nist.gov/cgi-bin/cuu/Value?malc2mev"
+  },
+  "alpha_particle_mass_in_u": {
+    "name": "Alpha particle mass in u",
+    "codata": "https://physics.nist.gov/cgi-bin/cuu/Value?malu"
+  },
+  "alpha_particle_molar_mass": {
+    "name": "Alpha particle molar mass",
+    "codata": "https://physics.nist.gov/cgi-bin/cuu/Value?mmal"
+  },
+  "alpha_particle_relative_atomic_mass": {
+    "name": "Alpha particle relative atomic mass",
+    "codata": "https://physics.nist.gov/cgi-bin/cuu/Value?aral"
+  },
+  "alpha_particle_electron_mass_ratio": {
+    "name": "Alpha particle-electron mass ratio",
+    "codata": "https://physics.nist.gov/cgi-bin/cuu/Value?malsme"
+  },
+  "alpha_particle_proton_mass_ratio": {
+    "name": "Alpha particle-proton mass ratio",
+    "codata": "https://physics.nist.gov/cgi-bin/cuu/Value?malsmp"
+  },
+  "angstrom_star": {
+    "name": "Angstrom star",
+    "codata": "https://physics.nist.gov/cgi-bin/cuu/Value?angstar"
+  },
+  "atomic_mass_constant": {
+    "name": "Atomic mass constant",
+    "codata": "https://physics.nist.gov/cgi-bin/cuu/Value?u"
+  },
+  "atomic_mass_constant_energy_equivalent": {
+    "name": "Atomic mass constant energy equivalent",
+    "codata": "https://physics.nist.gov/cgi-bin/cuu/Value?uj"
+  },
+  "atomic_mass_constant_energy_equivalent_in_mev": {
+    "name": "Atomic mass constant energy equivalent in mev",
+    "codata": "https://physics.nist.gov/cgi-bin/cuu/Value?muc2mev"
+  },
+  "atomic_mass_unit_electron_volt_relationship": {
+    "name": "Atomic mass unit-electron volt relationship",
+    "codata": "https://physics.nist.gov/cgi-bin/cuu/Value?uev"
+  },
+  "atomic_mass_unit_hartree_relationship": {
+    "name": "Atomic mass unit-hartree relationship",
+    "codata": "https://physics.nist.gov/cgi-bin/cuu/Value?uhr"
+  },
+  "atomic_mass_unit_hertz_relationship": {
+    "name": "Atomic mass unit-hertz relationship",
+    "codata": "https://physics.nist.gov/cgi-bin/cuu/Value?uhz"
+  },
+  "atomic_mass_unit_inverse_meter_relationship": {
+    "name": "Atomic mass unit-inverse meter relationship",
+    "codata": "https://physics.nist.gov/cgi-bin/cuu/Value?uminv"
+  },
+  "atomic_mass_unit_joule_relationship": {
+    "name": "Atomic mass unit-joule relationship",
+    "codata": "https://physics.nist.gov/cgi-bin/cuu/Value?Ruj"
+  },
+  "atomic_mass_unit_kelvin_relationship": {
+    "name": "Atomic mass unit-kelvin relationship",
+    "codata": "https://physics.nist.gov/cgi-bin/cuu/Value?uk"
+  },
+  "atomic_mass_unit_kilogram_relationship": {
+    "name": "Atomic mass unit-kilogram relationship",
+    "codata": "https://physics.nist.gov/cgi-bin/cuu/Value?Rukg"
+  },
+  "atomic_unit_of_1st_hyperpolarizability": {
+    "name": "Atomic unit of 1st hyperpolarizability",
+    "codata": "https://physics.nist.gov/cgi-bin/cuu/Value?auhypol"
+  },
+  "atomic_unit_of_2nd_hyperpolarizability": {
+    "name": "Atomic unit of 2nd hyperpolarizability",
+    "codata": "https://physics.nist.gov/cgi-bin/cuu/Value?au2hypol"
+  },
+  "atomic_unit_of_action": {
+    "name": "Atomic unit of action",
+    "codata": "https://physics.nist.gov/cgi-bin/cuu/Value?Ahbar"
+  },
+  "atomic_unit_of_charge": {
+    "name": "Atomic unit of charge",
+    "codata": "https://physics.nist.gov/cgi-bin/cuu/Value?Ae"
+  },
+  "atomic_unit_of_charge_density": {
+    "name": "Atomic unit of charge density",
+    "codata": "https://physics.nist.gov/cgi-bin/cuu/Value?aucd"
+  },
+  "atomic_unit_of_current": {
+    "name": "Atomic unit of current",
+    "codata": "https://physics.nist.gov/cgi-bin/cuu/Value?aucur"
+  },
+  "atomic_unit_of_electric_dipole_moment": {
+    "name": "Atomic unit of electric dipole moment",
+    "codata": "https://physics.nist.gov/cgi-bin/cuu/Value?auedm"
+  },
+  "atomic_unit_of_electric_field": {
+    "name": "Atomic unit of electric field",
+    "codata": "https://physics.nist.gov/cgi-bin/cuu/Value?auefld"
+  },
+  "atomic_unit_of_electric_field_gradient": {
+    "name": "Atomic unit of electric field gradient",
+    "codata": "https://physics.nist.gov/cgi-bin/cuu/Value?auefg"
+  },
+  "atomic_unit_of_electric_polarizability": {
+    "name": "Atomic unit of electric polarizability",
+    "codata": "https://physics.nist.gov/cgi-bin/cuu/Value?auepol"
+  },
+  "atomic_unit_of_electric_potential": {
+    "name": "Atomic unit of electric potential",
+    "codata": "https://physics.nist.gov/cgi-bin/cuu/Value?auep"
+  },
+  "atomic_unit_of_electric_quadrupole_moment": {
+    "name": "Atomic unit of electric quadrupole moment",
+    "codata": "https://physics.nist.gov/cgi-bin/cuu/Value?aueqm"
+  },
+  "atomic_unit_of_energy": {
+    "name": "Atomic unit of energy",
+    "codata": "https://physics.nist.gov/cgi-bin/cuu/Value?Ahr"
+  },
+  "atomic_unit_of_force": {
+    "name": "Atomic unit of force",
+    "codata": "https://physics.nist.gov/cgi-bin/cuu/Value?auforce"
+  },
+  "atomic_unit_of_length": {
+    "name": "Atomic unit of length",
+    "codata": "https://physics.nist.gov/cgi-bin/cuu/Value?Abohrrada0"
+  },
+  "atomic_unit_of_magnetic_dipole_moment": {
+    "name": "Atomic unit of magnetic dipole moment",
+    "codata": "https://physics.nist.gov/cgi-bin/cuu/Value?aumdm"
+  },
+  "atomic_unit_of_magnetic_flux_density": {
+    "name": "Atomic unit of magnetic flux density",
+    "codata": "https://physics.nist.gov/cgi-bin/cuu/Value?aumfd"
+  },
+  "atomic_unit_of_magnetizability": {
+    "name": "Atomic unit of magnetizability",
+    "codata": "https://physics.nist.gov/cgi-bin/cuu/Value?aumag"
+  },
+  "atomic_unit_of_mass": {
+    "name": "Atomic unit of mass",
+    "codata": "https://physics.nist.gov/cgi-bin/cuu/Value?Ame"
+  },
+  "atomic_unit_of_momentum": {
+    "name": "Atomic unit of momentum",
+    "codata": "https://physics.nist.gov/cgi-bin/cuu/Value?aumom"
+  },
+  "atomic_unit_of_permittivity": {
+    "name": "Atomic unit of permittivity",
+    "codata": "https://physics.nist.gov/cgi-bin/cuu/Value?auperm"
+  },
+  "atomic_unit_of_time": {
+    "name": "Atomic unit of time",
+    "codata": "https://physics.nist.gov/cgi-bin/cuu/Value?aut"
+  },
+  "atomic_unit_of_velocity": {
+    "name": "Atomic unit of velocity",
+    "codata": "https://physics.nist.gov/cgi-bin/cuu/Value?auvel"
+  },
+  "avogadro_constant": {
+    "name": "Avogadro constant",
+    "codata": "https://physics.nist.gov/cgi-bin/cuu/Value?na"
+  },
+  "bohr_magneton": {
+    "name": "Bohr magneton",
+    "codata": "https://physics.nist.gov/cgi-bin/cuu/Value?mub"
+  },
+  "bohr_magneton_in_ev_t": {
+    "name": "Bohr magneton in ev/t",
+    "codata": "https://physics.nist.gov/cgi-bin/cuu/Value?mubev"
+  },
+  "bohr_magneton_in_hz_t": {
+    "name": "Bohr magneton in hz/t",
+    "codata": "https://physics.nist.gov/cgi-bin/cuu/Value?mubshhz"
+  },
+  "bohr_magneton_in_inverse_meter_per_tesla": {
+    "name": "Bohr magneton in inverse meter per tesla",
+    "codata": "https://physics.nist.gov/cgi-bin/cuu/Value?mubshcminv"
+  },
+  "bohr_magneton_in_k_t": {
+    "name": "Bohr magneton in k/t",
+    "codata": "https://physics.nist.gov/cgi-bin/cuu/Value?mubskk"
+  },
+  "bohr_radius": {
+    "name": "Bohr radius",
+    "codata": "https://physics.nist.gov/cgi-bin/cuu/Value?bohrrada0"
+  },
+  "boltzmann_constant": {
+    "name": "Boltzmann constant",
+    "codata": "https://physics.nist.gov/cgi-bin/cuu/Value?k"
+  },
+  "boltzmann_constant_in_ev_k": {
+    "name": "Boltzmann constant in ev/k",
+    "codata": "https://physics.nist.gov/cgi-bin/cuu/Value?kev"
+  },
+  "boltzmann_constant_in_hz_k": {
+    "name": "Boltzmann constant in hz/k",
+    "codata": "https://physics.nist.gov/cgi-bin/cuu/Value?kshhz"
+  },
+  "boltzmann_constant_in_inverse_meter_per_kelvin": {
+    "name": "Boltzmann constant in inverse meter per kelvin",
+    "codata": "https://physics.nist.gov/cgi-bin/cuu/Value?kshcminv"
+  },
+  "characteristic_impedance_of_vacuum": {
+    "name": "Characteristic impedance of vacuum",
+    "codata": "https://physics.nist.gov/cgi-bin/cuu/Value?z0"
+  },
+  "classical_electron_radius": {
+    "name": "Classical electron radius",
+    "codata": "https://physics.nist.gov/cgi-bin/cuu/Value?re"
+  },
+  "compton_wavelength": {
+    "name": "Compton wavelength",
+    "codata": "https://physics.nist.gov/cgi-bin/cuu/Value?ecomwl"
+  },
+  "conductance_quantum": {
+    "name": "Conductance quantum",
+    "codata": "https://physics.nist.gov/cgi-bin/cuu/Value?conqu2e2sh"
+  },
+  "conventional_value_of_ampere_90": {
+    "name": "Conventional value of ampere-90",
+    "codata": "https://physics.nist.gov/cgi-bin/cuu/Value?ampere90"
+  },
+  "conventional_value_of_coulomb_90": {
+    "name": "Conventional value of coulomb-90",
+    "codata": "https://physics.nist.gov/cgi-bin/cuu/Value?charge90"
+  },
+  "conventional_value_of_farad_90": {
+    "name": "Conventional value of farad-90",
+    "codata": "https://physics.nist.gov/cgi-bin/cuu/Value?capacitance90"
+  },
+  "conventional_value_of_henry_90": {
+    "name": "Conventional value of henry-90",
+    "codata": "https://physics.nist.gov/cgi-bin/cuu/Value?inductance90"
+  },
+  "conventional_value_of_josephson_constant": {
+    "name": "Conventional value of josephson constant",
+    "codata": "https://physics.nist.gov/cgi-bin/cuu/Value?kj90"
+  },
+  "conventional_value_of_ohm_90": {
+    "name": "Conventional value of ohm-90",
+    "codata": "https://physics.nist.gov/cgi-bin/cuu/Value?ohm90"
+  },
+  "conventional_value_of_volt_90": {
+    "name": "Conventional value of volt-90",
+    "codata": "https://physics.nist.gov/cgi-bin/cuu/Value?volt90"
+  },
+  "conventional_value_of_von_klitzing_constant": {
+    "name": "Conventional value of von klitzing constant",
+    "codata": "https://physics.nist.gov/cgi-bin/cuu/Value?rk90"
+  },
+  "conventional_value_of_watt_90": {
+    "name": "Conventional value of watt-90",
+    "codata": "https://physics.nist.gov/cgi-bin/cuu/Value?power90"
+  },
+  "copper_x_unit": {
+    "name": "Copper x unit",
+    "codata": "https://physics.nist.gov/cgi-bin/cuu/Value?xucukalph1"
+  },
+  "deuteron_g_factor": {
+    "name": "Deuteron g factor",
+    "codata": "https://physics.nist.gov/cgi-bin/cuu/Value?gdn"
+  },
+  "deuteron_magnetic_moment": {
+    "name": "Deuteron magnetic moment",
+    "codata": "https://physics.nist.gov/cgi-bin/cuu/Value?mud"
+  },
+  "deuteron_magnetic_moment_to_bohr_magneton_ratio": {
+    "name": "Deuteron magnetic moment to bohr magneton ratio",
+    "codata": "https://physics.nist.gov/cgi-bin/cuu/Value?mudsmub"
+  },
+  "deuteron_magnetic_moment_to_nuclear_magneton_ratio": {
+    "name": "Deuteron magnetic moment to nuclear magneton ratio",
+    "codata": "https://physics.nist.gov/cgi-bin/cuu/Value?mudsmun"
+  },
+  "deuteron_mass": {
+    "name": "Deuteron mass",
+    "codata": "https://physics.nist.gov/cgi-bin/cuu/Value?md"
+  },
+  "deuteron_mass_energy_equivalent": {
+    "name": "Deuteron mass energy equivalent",
+    "codata": "https://physics.nist.gov/cgi-bin/cuu/Value?mdc2"
+  },
+  "deuteron_mass_energy_equivalent_in_mev": {
+    "name": "Deuteron mass energy equivalent in mev",
+    "codata": "https://physics.nist.gov/cgi-bin/cuu/Value?mdc2mev"
+  },
+  "deuteron_mass_in_u": {
+    "name": "Deuteron mass in u",
+    "codata": "https://physics.nist.gov/cgi-bin/cuu/Value?mdu"
+  },
+  "deuteron_molar_mass": {
+    "name": "Deuteron molar mass",
+    "codata": "https://physics.nist.gov/cgi-bin/cuu/Value?mmd"
+  },
+  "deuteron_relative_atomic_mass": {
+    "name": "Deuteron relative atomic mass",
+    "codata": "https://physics.nist.gov/cgi-bin/cuu/Value?ard"
+  },
+  "deuteron_rms_charge_radius": {
+    "name": "Deuteron rms charge radius",
+    "codata": "https://physics.nist.gov/cgi-bin/cuu/Value?rd"
+  },
+  "deuteron_electron_magnetic_moment_ratio": {
+    "name": "Deuteron-electron magnetic moment ratio",
+    "codata": "https://physics.nist.gov/cgi-bin/cuu/Value?mudsmuem"
+  },
+  "deuteron_electron_mass_ratio": {
+    "name": "Deuteron-electron mass ratio",
+    "codata": "https://physics.nist.gov/cgi-bin/cuu/Value?mdsme"
+  },
+  "deuteron_neutron_magnetic_moment_ratio": {
+    "name": "Deuteron-neutron magnetic moment ratio",
+    "codata": "https://physics.nist.gov/cgi-bin/cuu/Value?mudsmunn"
+  },
+  "deuteron_proton_magnetic_moment_ratio": {
+    "name": "Deuteron-proton magnetic moment ratio",
+    "codata": "https://physics.nist.gov/cgi-bin/cuu/Value?mudsmup"
+  },
+  "deuteron_proton_mass_ratio": {
+    "name": "Deuteron-proton mass ratio",
+    "codata": "https://physics.nist.gov/cgi-bin/cuu/Value?mdsmp"
+  },
+  "electron_charge_to_mass_quotient": {
+    "name": "Electron charge to mass quotient",
+    "codata": "https://physics.nist.gov/cgi-bin/cuu/Value?esme"
+  },
+  "electron_g_factor": {
+    "name": "Electron g factor",
+    "codata": "https://physics.nist.gov/cgi-bin/cuu/Value?gem"
+  },
+  "electron_gyromagnetic_ratio": {
+    "name": "Electron gyromagnetic ratio",
+    "codata": "https://physics.nist.gov/cgi-bin/cuu/Value?gammae"
+  },
+  "electron_gyromagnetic_ratio_in_mhz_t": {
+    "name": "Electron gyromagnetic ratio in mhz/t",
+    "codata": "https://physics.nist.gov/cgi-bin/cuu/Value?gammaebar"
+  },
+  "electron_magnetic_moment": {
+    "name": "Electron magnetic moment",
+    "codata": "https://physics.nist.gov/cgi-bin/cuu/Value?muem"
+  },
+  "electron_magnetic_moment_anomaly": {
+    "name": "Electron magnetic moment anomaly",
+    "codata": "https://physics.nist.gov/cgi-bin/cuu/Value?ae"
+  },
+  "electron_magnetic_moment_to_bohr_magneton_ratio": {
+    "name": "Electron magnetic moment to bohr magneton ratio",
+    "codata": "https://physics.nist.gov/cgi-bin/cuu/Value?muemsmub"
+  },
+  "electron_magnetic_moment_to_nuclear_magneton_ratio": {
+    "name": "Electron magnetic moment to nuclear magneton ratio",
+    "codata": "https://physics.nist.gov/cgi-bin/cuu/Value?muemsmun"
+  },
+  "electron_mass": {
+    "name": "Electron mass",
+    "codata": "https://physics.nist.gov/cgi-bin/cuu/Value?me"
+  },
+  "electron_mass_energy_equivalent": {
+    "name": "Electron mass energy equivalent",
+    "codata": "https://physics.nist.gov/cgi-bin/cuu/Value?mec2"
+  },
+  "electron_mass_energy_equivalent_in_mev": {
+    "name": "Electron mass energy equivalent in mev",
+    "codata": "https://physics.nist.gov/cgi-bin/cuu/Value?mec2mev"
+  },
+  "electron_mass_in_u": {
+    "name": "Electron mass in u",
+    "codata": "https://physics.nist.gov/cgi-bin/cuu/Value?meu"
+  },
+  "electron_molar_mass": {
+    "name": "Electron molar mass",
+    "codata": "https://physics.nist.gov/cgi-bin/cuu/Value?mme"
+  },
+  "electron_relative_atomic_mass": {
+    "name": "Electron relative atomic mass",
+    "codata": "https://physics.nist.gov/cgi-bin/cuu/Value?are"
+  },
+  "electron_to_alpha_particle_mass_ratio": {
+    "name": "Electron to alpha particle mass ratio",
+    "codata": "https://physics.nist.gov/cgi-bin/cuu/Value?mesmalpha"
+  },
+  "electron_to_shielded_helion_magnetic_moment_ratio": {
+    "name": "Electron to shielded helion magnetic moment ratio",
+    "codata": "https://physics.nist.gov/cgi-bin/cuu/Value?muemsmuhp"
+  },
+  "electron_to_shielded_proton_magnetic_moment_ratio": {
+    "name": "Electron to shielded proton magnetic moment ratio",
+    "codata": "https://physics.nist.gov/cgi-bin/cuu/Value?muemsmupp"
+  },
+  "electron_volt": {
+    "name": "Electron volt",
+    "codata": "https://physics.nist.gov/cgi-bin/cuu/Value?evj"
+  },
+  "electron_volt_atomic_mass_unit_relationship": {
+    "name": "Electron volt-atomic mass unit relationship",
+    "codata": "https://physics.nist.gov/cgi-bin/cuu/Value?evu"
+  },
+  "electron_volt_hartree_relationship": {
+    "name": "Electron volt-hartree relationship",
+    "codata": "https://physics.nist.gov/cgi-bin/cuu/Value?evhr"
+  },
+  "electron_volt_hertz_relationship": {
+    "name": "Electron volt-hertz relationship",
+    "codata": "https://physics.nist.gov/cgi-bin/cuu/Value?evhz"
+  },
+  "electron_volt_inverse_meter_relationship": {
+    "name": "Electron volt-inverse meter relationship",
+    "codata": "https://physics.nist.gov/cgi-bin/cuu/Value?evminv"
+  },
+  "electron_volt_joule_relationship": {
+    "name": "Electron volt-joule relationship",
+    "codata": "https://physics.nist.gov/cgi-bin/cuu/Value?Revj"
+  },
+  "electron_volt_kelvin_relationship": {
+    "name": "Electron volt-kelvin relationship",
+    "codata": "https://physics.nist.gov/cgi-bin/cuu/Value?evk"
+  },
+  "electron_volt_kilogram_relationship": {
+    "name": "Electron volt-kilogram relationship",
+    "codata": "https://physics.nist.gov/cgi-bin/cuu/Value?evkg"
+  },
+  "electron_deuteron_magnetic_moment_ratio": {
+    "name": "Electron-deuteron magnetic moment ratio",
+    "codata": "https://physics.nist.gov/cgi-bin/cuu/Value?muemsmud"
+  },
+  "electron_deuteron_mass_ratio": {
+    "name": "Electron-deuteron mass ratio",
+    "codata": "https://physics.nist.gov/cgi-bin/cuu/Value?mesmd"
+  },
+  "electron_helion_mass_ratio": {
+    "name": "Electron-helion mass ratio",
+    "codata": "https://physics.nist.gov/cgi-bin/cuu/Value?mesmh"
+  },
+  "electron_muon_magnetic_moment_ratio": {
+    "name": "Electron-muon magnetic moment ratio",
+    "codata": "https://physics.nist.gov/cgi-bin/cuu/Value?muemsmumum"
+  },
+  "electron_muon_mass_ratio": {
+    "name": "Electron-muon mass ratio",
+    "codata": "https://physics.nist.gov/cgi-bin/cuu/Value?mesmmu"
+  },
+  "electron_neutron_magnetic_moment_ratio": {
+    "name": "Electron-neutron magnetic moment ratio",
+    "codata": "https://physics.nist.gov/cgi-bin/cuu/Value?muemsmunn"
+  },
+  "electron_neutron_mass_ratio": {
+    "name": "Electron-neutron mass ratio",
+    "codata": "https://physics.nist.gov/cgi-bin/cuu/Value?mesmn"
+  },
+  "electron_proton_magnetic_moment_ratio": {
+    "name": "Electron-proton magnetic moment ratio",
+    "codata": "https://physics.nist.gov/cgi-bin/cuu/Value?muemsmup"
+  },
+  "electron_proton_mass_ratio": {
+    "name": "Electron-proton mass ratio",
+    "codata": "https://physics.nist.gov/cgi-bin/cuu/Value?mesmp"
+  },
+  "electron_tau_mass_ratio": {
+    "name": "Electron-tau mass ratio",
+    "codata": "https://physics.nist.gov/cgi-bin/cuu/Value?mesmtau"
+  },
+  "electron_triton_mass_ratio": {
+    "name": "Electron-triton mass ratio",
+    "codata": "https://physics.nist.gov/cgi-bin/cuu/Value?mesmt"
+  },
+  "elementary_charge": {
+    "name": "Elementary charge",
+    "codata": "https://physics.nist.gov/cgi-bin/cuu/Value?e"
+  },
+  "elementary_charge_over_h_bar": {
+    "name": "Elementary charge over h-bar",
+    "codata": "https://physics.nist.gov/cgi-bin/cuu/Value?eshbar"
+  },
+  "faraday_constant": {
+    "name": "Faraday constant",
+    "codata": "https://physics.nist.gov/cgi-bin/cuu/Value?f"
+  },
+  "fermi_coupling_constant": {
+    "name": "Fermi coupling constant",
+    "codata": "https://physics.nist.gov/cgi-bin/cuu/Value?gf"
+  },
+  "fine_structure_constant": {
+    "name": "Fine-structure constant",
+    "codata": "https://physics.nist.gov/cgi-bin/cuu/Value?alph"
+  },
+  "first_radiation_constant": {
+    "name": "First radiation constant",
+    "codata": "https://physics.nist.gov/cgi-bin/cuu/Value?c11strc"
+  },
+  "first_radiation_constant_for_spectral_radiance": {
+    "name": "First radiation constant for spectral radiance",
+    "codata": "https://physics.nist.gov/cgi-bin/cuu/Value?c1l"
+  },
+  "hartree_energy": {
+    "name": "Hartree energy",
+    "codata": "https://physics.nist.gov/cgi-bin/cuu/Value?hr"
+  },
+  "hartree_energy_in_ev": {
+    "name": "Hartree energy in ev",
+    "codata": "https://physics.nist.gov/cgi-bin/cuu/Value?hrev"
+  },
+  "hartree_atomic_mass_unit_relationship": {
+    "name": "Hartree-atomic mass unit relationship",
+    "codata": "https://physics.nist.gov/cgi-bin/cuu/Value?hru"
+  },
+  "hartree_electron_volt_relationship": {
+    "name": "Hartree-electron volt relationship",
+    "codata": "https://physics.nist.gov/cgi-bin/cuu/Value?Rhrev"
+  },
+  "hartree_hertz_relationship": {
+    "name": "Hartree-hertz relationship",
+    "codata": "https://physics.nist.gov/cgi-bin/cuu/Value?hrhz"
+  },
+  "hartree_inverse_meter_relationship": {
+    "name": "Hartree-inverse meter relationship",
+    "codata": "https://physics.nist.gov/cgi-bin/cuu/Value?hrminv"
+  },
+  "hartree_joule_relationship": {
+    "name": "Hartree-joule relationship",
+    "codata": "https://physics.nist.gov/cgi-bin/cuu/Value?hrj"
+  },
+  "hartree_kelvin_relationship": {
+    "name": "Hartree-kelvin relationship",
+    "codata": "https://physics.nist.gov/cgi-bin/cuu/Value?hrk"
+  },
+  "hartree_kilogram_relationship": {
+    "name": "Hartree-kilogram relationship",
+    "codata": "https://physics.nist.gov/cgi-bin/cuu/Value?hrkg"
+  },
+  "helion_g_factor": {
+    "name": "Helion g factor",
+    "codata": "https://physics.nist.gov/cgi-bin/cuu/Value?ghn"
+  },
+  "helion_magnetic_moment": {
+    "name": "Helion magnetic moment",
+    "codata": "https://physics.nist.gov/cgi-bin/cuu/Value?muh"
+  },
+  "helion_magnetic_moment_to_bohr_magneton_ratio": {
+    "name": "Helion magnetic moment to bohr magneton ratio",
+    "codata": "https://physics.nist.gov/cgi-bin/cuu/Value?muhsmub"
+  },
+  "helion_magnetic_moment_to_nuclear_magneton_ratio": {
+    "name": "Helion magnetic moment to nuclear magneton ratio",
+    "codata": "https://physics.nist.gov/cgi-bin/cuu/Value?muhsmun"
+  },
+  "helion_mass": {
+    "name": "Helion mass",
+    "codata": "https://physics.nist.gov/cgi-bin/cuu/Value?mh"
+  },
+  "helion_mass_energy_equivalent": {
+    "name": "Helion mass energy equivalent",
+    "codata": "https://physics.nist.gov/cgi-bin/cuu/Value?mhc2"
+  },
+  "helion_mass_energy_equivalent_in_mev": {
+    "name": "Helion mass energy equivalent in mev",
+    "codata": "https://physics.nist.gov/cgi-bin/cuu/Value?mhc2mev"
+  },
+  "helion_mass_in_u": {
+    "name": "Helion mass in u",
+    "codata": "https://physics.nist.gov/cgi-bin/cuu/Value?mhu"
+  },
+  "helion_molar_mass": {
+    "name": "Helion molar mass",
+    "codata": "https://physics.nist.gov/cgi-bin/cuu/Value?mmh"
+  },
+  "helion_relative_atomic_mass": {
+    "name": "Helion relative atomic mass",
+    "codata": "https://physics.nist.gov/cgi-bin/cuu/Value?arh"
+  },
+  "helion_shielding_shift": {
+    "name": "Helion shielding shift",
+    "codata": "https://physics.nist.gov/cgi-bin/cuu/Value?sigmah"
+  },
+  "helion_electron_mass_ratio": {
+    "name": "Helion-electron mass ratio",
+    "codata": "https://physics.nist.gov/cgi-bin/cuu/Value?mhsme"
+  },
+  "helion_proton_mass_ratio": {
+    "name": "Helion-proton mass ratio",
+    "codata": "https://physics.nist.gov/cgi-bin/cuu/Value?mhsmp"
+  },
+  "hertz_atomic_mass_unit_relationship": {
+    "name": "Hertz-atomic mass unit relationship",
+    "codata": "https://physics.nist.gov/cgi-bin/cuu/Value?hzu"
+  },
+  "hertz_electron_volt_relationship": {
+    "name": "Hertz-electron volt relationship",
+    "codata": "https://physics.nist.gov/cgi-bin/cuu/Value?hzev"
+  },
+  "hertz_hartree_relationship": {
+    "name": "Hertz-hartree relationship",
+    "codata": "https://physics.nist.gov/cgi-bin/cuu/Value?hzhr"
+  },
+  "hertz_inverse_meter_relationship": {
+    "name": "Hertz-inverse meter relationship",
+    "codata": "https://physics.nist.gov/cgi-bin/cuu/Value?hzminv"
+  },
+  "hertz_joule_relationship": {
+    "name": "Hertz-joule relationship",
+    "codata": "https://physics.nist.gov/cgi-bin/cuu/Value?hzj"
+  },
+  "hertz_kelvin_relationship": {
+    "name": "Hertz-kelvin relationship",
+    "codata": "https://physics.nist.gov/cgi-bin/cuu/Value?hzk"
+  },
+  "hertz_kilogram_relationship": {
+    "name": "Hertz-kilogram relationship",
+    "codata": "https://physics.nist.gov/cgi-bin/cuu/Value?hzkg"
+  },
+  "hyperfine_transition_frequency_of_cs_133": {
+    "name": "Hyperfine transition frequency of cs-133",
+    "codata": "https://physics.nist.gov/cgi-bin/cuu/Value?nucs"
+  },
+  "inverse_fine_structure_constant": {
+    "name": "Inverse fine-structure constant",
+    "codata": "https://physics.nist.gov/cgi-bin/cuu/Value?alphinv"
+  },
+  "inverse_meter_atomic_mass_unit_relationship": {
+    "name": "Inverse meter-atomic mass unit relationship",
+    "codata": "https://physics.nist.gov/cgi-bin/cuu/Value?minvu"
+  },
+  "inverse_meter_electron_volt_relationship": {
+    "name": "Inverse meter-electron volt relationship",
+    "codata": "https://physics.nist.gov/cgi-bin/cuu/Value?minvev"
+  },
+  "inverse_meter_hartree_relationship": {
+    "name": "Inverse meter-hartree relationship",
+    "codata": "https://physics.nist.gov/cgi-bin/cuu/Value?minvhr"
+  },
+  "inverse_meter_hertz_relationship": {
+    "name": "Inverse meter-hertz relationship",
+    "codata": "https://physics.nist.gov/cgi-bin/cuu/Value?minvhz"
+  },
+  "inverse_meter_joule_relationship": {
+    "name": "Inverse meter-joule relationship",
+    "codata": "https://physics.nist.gov/cgi-bin/cuu/Value?minvj"
+  },
+  "inverse_meter_kelvin_relationship": {
+    "name": "Inverse meter-kelvin relationship",
+    "codata": "https://physics.nist.gov/cgi-bin/cuu/Value?minvk"
+  },
+  "inverse_meter_kilogram_relationship": {
+    "name": "Inverse meter-kilogram relationship",
+    "codata": "https://physics.nist.gov/cgi-bin/cuu/Value?minvkg"
+  },
+  "inverse_of_conductance_quantum": {
+    "name": "Inverse of conductance quantum",
+    "codata": "https://physics.nist.gov/cgi-bin/cuu/Value?invconqu"
+  },
+  "josephson_constant": {
+    "name": "Josephson constant",
+    "codata": "https://physics.nist.gov/cgi-bin/cuu/Value?kjos"
+  },
+  "joule_atomic_mass_unit_relationship": {
+    "name": "Joule-atomic mass unit relationship",
+    "codata": "https://physics.nist.gov/cgi-bin/cuu/Value?ju"
+  },
+  "joule_electron_volt_relationship": {
+    "name": "Joule-electron volt relationship",
+    "codata": "https://physics.nist.gov/cgi-bin/cuu/Value?jev"
+  },
+  "joule_hartree_relationship": {
+    "name": "Joule-hartree relationship",
+    "codata": "https://physics.nist.gov/cgi-bin/cuu/Value?jhr"
+  },
+  "joule_hertz_relationship": {
+    "name": "Joule-hertz relationship",
+    "codata": "https://physics.nist.gov/cgi-bin/cuu/Value?jhz"
+  },
+  "joule_inverse_meter_relationship": {
+    "name": "Joule-inverse meter relationship",
+    "codata": "https://physics.nist.gov/cgi-bin/cuu/Value?jminv"
+  },
+  "joule_kelvin_relationship": {
+    "name": "Joule-kelvin relationship",
+    "codata": "https://physics.nist.gov/cgi-bin/cuu/Value?jk"
+  },
+  "joule_kilogram_relationship": {
+    "name": "Joule-kilogram relationship",
+    "codata": "https://physics.nist.gov/cgi-bin/cuu/Value?jkg"
+  },
+  "kelvin_atomic_mass_unit_relationship": {
+    "name": "Kelvin-atomic mass unit relationship",
+    "codata": "https://physics.nist.gov/cgi-bin/cuu/Value?ku"
+  },
+  "kelvin_electron_volt_relationship": {
+    "name": "Kelvin-electron volt relationship",
+    "codata": "https://physics.nist.gov/cgi-bin/cuu/Value?Rkev"
+  },
+  "kelvin_hartree_relationship": {
+    "name": "Kelvin-hartree relationship",
+    "codata": "https://physics.nist.gov/cgi-bin/cuu/Value?khr"
+  },
+  "kelvin_hertz_relationship": {
+    "name": "Kelvin-hertz relationship",
+    "codata": "https://physics.nist.gov/cgi-bin/cuu/Value?khz"
+  },
+  "kelvin_inverse_meter_relationship": {
+    "name": "Kelvin-inverse meter relationship",
+    "codata": "https://physics.nist.gov/cgi-bin/cuu/Value?kminv"
+  },
+  "kelvin_joule_relationship": {
+    "name": "Kelvin-joule relationship",
+    "codata": "https://physics.nist.gov/cgi-bin/cuu/Value?kj"
+  },
+  "kelvin_kilogram_relationship": {
+    "name": "Kelvin-kilogram relationship",
+    "codata": "https://physics.nist.gov/cgi-bin/cuu/Value?kkg"
+  },
+  "kilogram_atomic_mass_unit_relationship": {
+    "name": "Kilogram-atomic mass unit relationship",
+    "codata": "https://physics.nist.gov/cgi-bin/cuu/Value?kgu"
+  },
+  "kilogram_electron_volt_relationship": {
+    "name": "Kilogram-electron volt relationship",
+    "codata": "https://physics.nist.gov/cgi-bin/cuu/Value?kgev"
+  },
+  "kilogram_hartree_relationship": {
+    "name": "Kilogram-hartree relationship",
+    "codata": "https://physics.nist.gov/cgi-bin/cuu/Value?kghr"
+  },
+  "kilogram_hertz_relationship": {
+    "name": "Kilogram-hertz relationship",
+    "codata": "https://physics.nist.gov/cgi-bin/cuu/Value?kghz"
+  },
+  "kilogram_inverse_meter_relationship": {
+    "name": "Kilogram-inverse meter relationship",
+    "codata": "https://physics.nist.gov/cgi-bin/cuu/Value?kgminv"
+  },
+  "kilogram_joule_relationship": {
+    "name": "Kilogram-joule relationship",
+    "codata": "https://physics.nist.gov/cgi-bin/cuu/Value?kgj"
+  },
+  "kilogram_kelvin_relationship": {
+    "name": "Kilogram-kelvin relationship",
+    "codata": "https://physics.nist.gov/cgi-bin/cuu/Value?kgk"
+  },
+  "lattice_parameter_of_silicon": {
+    "name": "Lattice parameter of silicon",
+    "codata": "https://physics.nist.gov/cgi-bin/cuu/Value?asil"
+  },
+  "lattice_spacing_of_ideal_si_(220)": {
+    "name": "Lattice spacing of ideal si (220)",
+    "codata": "https://physics.nist.gov/cgi-bin/cuu/Value?d220sil"
+  },
+  "loschmidt_constant_(273.15_k,_100_kpa)": {
+    "name": "Loschmidt constant (273.15 k, 100 kpa)",
+    "codata": "https://physics.nist.gov/cgi-bin/cuu/Value?n0"
+  },
+  "loschmidt_constant_(273.15_k,_101.325_kpa)": {
+    "name": "Loschmidt constant (273.15 k, 101.325 kpa)",
+    "codata": "https://physics.nist.gov/cgi-bin/cuu/Value?n0std"
+  },
+  "luminous_efficacy": {
+    "name": "Luminous efficacy",
+    "codata": "https://physics.nist.gov/cgi-bin/cuu/Value?kcd"
+  },
+  "magnetic_flux_quantum": {
+    "name": "Magnetic flux quantum",
+    "codata": "https://physics.nist.gov/cgi-bin/cuu/Value?flxquhs2e"
+  },
+  "molar_gas_constant": {
+    "name": "Molar gas constant",
+    "codata": "https://physics.nist.gov/cgi-bin/cuu/Value?r"
+  },
+  "molar_mass_constant": {
+    "name": "Molar mass constant",
+    "codata": "https://physics.nist.gov/cgi-bin/cuu/Value?mu"
+  },
+  "molar_mass_of_carbon_12": {
+    "name": "Molar mass of carbon-12",
+    "codata": "https://physics.nist.gov/cgi-bin/cuu/Value?mm12c"
+  },
+  "molar_planck_constant": {
+    "name": "Molar planck constant",
+    "codata": "https://physics.nist.gov/cgi-bin/cuu/Value?nah"
+  },
+  "molar_volume_of_ideal_gas_(273.15_k,_100_kpa)": {
+    "name": "Molar volume of ideal gas (273.15 k, 100 kpa)",
+    "codata": "https://physics.nist.gov/cgi-bin/cuu/Value?mvol"
+  },
+  "molar_volume_of_ideal_gas_(273.15_k,_101.325_kpa)": {
+    "name": "Molar volume of ideal gas (273.15 k, 101.325 kpa)",
+    "codata": "https://physics.nist.gov/cgi-bin/cuu/Value?mvolstd"
+  },
+  "molar_volume_of_silicon": {
+    "name": "Molar volume of silicon",
+    "codata": "https://physics.nist.gov/cgi-bin/cuu/Value?mvolsil"
+  },
+  "molybdenum_x_unit": {
+    "name": "Molybdenum x unit",
+    "codata": "https://physics.nist.gov/cgi-bin/cuu/Value?xumokalph1"
+  },
+  "muon_compton_wavelength": {
+    "name": "Muon compton wavelength",
+    "codata": "https://physics.nist.gov/cgi-bin/cuu/Value?mcomwl"
+  },
+  "muon_g_factor": {
+    "name": "Muon g factor",
+    "codata": "https://physics.nist.gov/cgi-bin/cuu/Value?gmum"
+  },
+  "muon_magnetic_moment": {
+    "name": "Muon magnetic moment",
+    "codata": "https://physics.nist.gov/cgi-bin/cuu/Value?mumum"
+  },
+  "muon_magnetic_moment_anomaly": {
+    "name": "Muon magnetic moment anomaly",
+    "codata": "https://physics.nist.gov/cgi-bin/cuu/Value?amu"
+  },
+  "muon_magnetic_moment_to_bohr_magneton_ratio": {
+    "name": "Muon magnetic moment to bohr magneton ratio",
+    "codata": "https://physics.nist.gov/cgi-bin/cuu/Value?mumumsmub"
+  },
+  "muon_magnetic_moment_to_nuclear_magneton_ratio": {
+    "name": "Muon magnetic moment to nuclear magneton ratio",
+    "codata": "https://physics.nist.gov/cgi-bin/cuu/Value?mumumsmun"
+  },
+  "muon_mass": {
+    "name": "Muon mass",
+    "codata": "https://physics.nist.gov/cgi-bin/cuu/Value?mmu"
+  },
+  "muon_mass_energy_equivalent": {
+    "name": "Muon mass energy equivalent",
+    "codata": "https://physics.nist.gov/cgi-bin/cuu/Value?mmuc2"
+  },
+  "muon_mass_energy_equivalent_in_mev": {
+    "name": "Muon mass energy equivalent in mev",
+    "codata": "https://physics.nist.gov/cgi-bin/cuu/Value?mmuc2mev"
+  },
+  "muon_mass_in_u": {
+    "name": "Muon mass in u",
+    "codata": "https://physics.nist.gov/cgi-bin/cuu/Value?mmuu"
+  },
+  "muon_molar_mass": {
+    "name": "Muon molar mass",
+    "codata": "https://physics.nist.gov/cgi-bin/cuu/Value?mmmu"
+  },
+  "muon_electron_mass_ratio": {
+    "name": "Muon-electron mass ratio",
+    "codata": "https://physics.nist.gov/cgi-bin/cuu/Value?mmusme"
+  },
+  "muon_neutron_mass_ratio": {
+    "name": "Muon-neutron mass ratio",
+    "codata": "https://physics.nist.gov/cgi-bin/cuu/Value?mmusmn"
+  },
+  "muon_proton_magnetic_moment_ratio": {
+    "name": "Muon-proton magnetic moment ratio",
+    "codata": "https://physics.nist.gov/cgi-bin/cuu/Value?mumumsmup"
+  },
+  "muon_proton_mass_ratio": {
+    "name": "Muon-proton mass ratio",
+    "codata": "https://physics.nist.gov/cgi-bin/cuu/Value?mmusmp"
+  },
+  "muon_tau_mass_ratio": {
+    "name": "Muon-tau mass ratio",
+    "codata": "https://physics.nist.gov/cgi-bin/cuu/Value?mmusmtau"
+  },
+  "natural_unit_of_action": {
+    "name": "Natural unit of action",
+    "codata": "https://physics.nist.gov/cgi-bin/cuu/Value?Nhbar"
+  },
+  "natural_unit_of_action_in_ev_s": {
+    "name": "Natural unit of action in ev s",
+    "codata": "https://physics.nist.gov/cgi-bin/cuu/Value?Nhbarev"
+  },
+  "natural_unit_of_energy": {
+    "name": "Natural unit of energy",
+    "codata": "https://physics.nist.gov/cgi-bin/cuu/Value?Nmec2"
+  },
+  "natural_unit_of_energy_in_mev": {
+    "name": "Natural unit of energy in mev",
+    "codata": "https://physics.nist.gov/cgi-bin/cuu/Value?Nmec2mev"
+  },
+  "natural_unit_of_length": {
+    "name": "Natural unit of length",
+    "codata": "https://physics.nist.gov/cgi-bin/cuu/Value?Necomwlbar"
+  },
+  "natural_unit_of_mass": {
+    "name": "Natural unit of mass",
+    "codata": "https://physics.nist.gov/cgi-bin/cuu/Value?Nme"
+  },
+  "natural_unit_of_momentum": {
+    "name": "Natural unit of momentum",
+    "codata": "https://physics.nist.gov/cgi-bin/cuu/Value?mec"
+  },
+  "natural_unit_of_momentum_in_mev_c": {
+    "name": "Natural unit of momentum in mev/c",
+    "codata": "https://physics.nist.gov/cgi-bin/cuu/Value?mecmevsc"
+  },
+  "natural_unit_of_time": {
+    "name": "Natural unit of time",
+    "codata": "https://physics.nist.gov/cgi-bin/cuu/Value?nut"
+  },
+  "natural_unit_of_velocity": {
+    "name": "Natural unit of velocity",
+    "codata": "https://physics.nist.gov/cgi-bin/cuu/Value?Nc"
+  },
+  "neutron_compton_wavelength": {
+    "name": "Neutron compton wavelength",
+    "codata": "https://physics.nist.gov/cgi-bin/cuu/Value?ncomwl"
+  },
+  "neutron_g_factor": {
+    "name": "Neutron g factor",
+    "codata": "https://physics.nist.gov/cgi-bin/cuu/Value?gnn"
+  },
+  "neutron_gyromagnetic_ratio": {
+    "name": "Neutron gyromagnetic ratio",
+    "codata": "https://physics.nist.gov/cgi-bin/cuu/Value?gamman"
+  },
+  "neutron_gyromagnetic_ratio_in_mhz_t": {
+    "name": "Neutron gyromagnetic ratio in mhz/t",
+    "codata": "https://physics.nist.gov/cgi-bin/cuu/Value?gammanbar"
+  },
+  "neutron_magnetic_moment": {
+    "name": "Neutron magnetic moment",
+    "codata": "https://physics.nist.gov/cgi-bin/cuu/Value?munn"
+  },
+  "neutron_magnetic_moment_to_bohr_magneton_ratio": {
+    "name": "Neutron magnetic moment to bohr magneton ratio",
+    "codata": "https://physics.nist.gov/cgi-bin/cuu/Value?munsmub"
+  },
+  "neutron_magnetic_moment_to_nuclear_magneton_ratio": {
+    "name": "Neutron magnetic moment to nuclear magneton ratio",
+    "codata": "https://physics.nist.gov/cgi-bin/cuu/Value?munsmun"
+  },
+  "neutron_mass": {
+    "name": "Neutron mass",
+    "codata": "https://physics.nist.gov/cgi-bin/cuu/Value?mn"
+  },
+  "neutron_mass_energy_equivalent": {
+    "name": "Neutron mass energy equivalent",
+    "codata": "https://physics.nist.gov/cgi-bin/cuu/Value?mnc2"
+  },
+  "neutron_mass_energy_equivalent_in_mev": {
+    "name": "Neutron mass energy equivalent in mev",
+    "codata": "https://physics.nist.gov/cgi-bin/cuu/Value?mnc2mev"
+  },
+  "neutron_mass_in_u": {
+    "name": "Neutron mass in u",
+    "codata": "https://physics.nist.gov/cgi-bin/cuu/Value?mnu"
+  },
+  "neutron_molar_mass": {
+    "name": "Neutron molar mass",
+    "codata": "https://physics.nist.gov/cgi-bin/cuu/Value?mmn"
+  },
+  "neutron_relative_atomic_mass": {
+    "name": "Neutron relative atomic mass",
+    "codata": "https://physics.nist.gov/cgi-bin/cuu/Value?arn"
+  },
+  "neutron_to_shielded_proton_magnetic_moment_ratio": {
+    "name": "Neutron to shielded proton magnetic moment ratio",
+    "codata": "https://physics.nist.gov/cgi-bin/cuu/Value?munsmupp"
+  },
+  "neutron_electron_magnetic_moment_ratio": {
+    "name": "Neutron-electron magnetic moment ratio",
+    "codata": "https://physics.nist.gov/cgi-bin/cuu/Value?munsmue"
+  },
+  "neutron_electron_mass_ratio": {
+    "name": "Neutron-electron mass ratio",
+    "codata": "https://physics.nist.gov/cgi-bin/cuu/Value?mnsme"
+  },
+  "neutron_muon_mass_ratio": {
+    "name": "Neutron-muon mass ratio",
+    "codata": "https://physics.nist.gov/cgi-bin/cuu/Value?mnsmmu"
+  },
+  "neutron_proton_magnetic_moment_ratio": {
+    "name": "Neutron-proton magnetic moment ratio",
+    "codata": "https://physics.nist.gov/cgi-bin/cuu/Value?munsmup"
+  },
+  "neutron_proton_mass_difference": {
+    "name": "Neutron-proton mass difference",
+    "codata": "https://physics.nist.gov/cgi-bin/cuu/Value?mnmmp"
+  },
+  "neutron_proton_mass_difference_energy_equivalent": {
+    "name": "Neutron-proton mass difference energy equivalent",
+    "codata": "https://physics.nist.gov/cgi-bin/cuu/Value?mnmmpc2"
+  },
+  "neutron_proton_mass_difference_energy_equivalent_in_mev": {
+    "name": "Neutron-proton mass difference energy equivalent in mev",
+    "codata": "https://physics.nist.gov/cgi-bin/cuu/Value?mnmmpc2mev"
+  },
+  "neutron_proton_mass_difference_in_u": {
+    "name": "Neutron-proton mass difference in u",
+    "codata": "https://physics.nist.gov/cgi-bin/cuu/Value?mnmmpu"
+  },
+  "neutron_proton_mass_ratio": {
+    "name": "Neutron-proton mass ratio",
+    "codata": "https://physics.nist.gov/cgi-bin/cuu/Value?mnsmp"
+  },
+  "neutron_tau_mass_ratio": {
+    "name": "Neutron-tau mass ratio",
+    "codata": "https://physics.nist.gov/cgi-bin/cuu/Value?mnsmtau"
+  },
+  "newtonian_constant_of_gravitation": {
+    "name": "Newtonian constant of gravitation",
+    "codata": "https://physics.nist.gov/cgi-bin/cuu/Value?bg"
+  },
+  "newtonian_constant_of_gravitation_over_h_bar_c": {
+    "name": "Newtonian constant of gravitation over h-bar c",
+    "codata": "https://physics.nist.gov/cgi-bin/cuu/Value?bgspu"
+  },
+  "nuclear_magneton": {
+    "name": "Nuclear magneton",
+    "codata": "https://physics.nist.gov/cgi-bin/cuu/Value?mun"
+  },
+  "nuclear_magneton_in_ev_t": {
+    "name": "Nuclear magneton in ev/t",
+    "codata": "https://physics.nist.gov/cgi-bin/cuu/Value?munev"
+  },
+  "nuclear_magneton_in_inverse_meter_per_tesla": {
+    "name": "Nuclear magneton in inverse meter per tesla",
+    "codata": "https://physics.nist.gov/cgi-bin/cuu/Value?munshcminv"
+  },
+  "nuclear_magneton_in_k_t": {
+    "name": "Nuclear magneton in k/t",
+    "codata": "https://physics.nist.gov/cgi-bin/cuu/Value?munskk"
+  },
+  "nuclear_magneton_in_mhz_t": {
+    "name": "Nuclear magneton in mhz/t",
+    "codata": "https://physics.nist.gov/cgi-bin/cuu/Value?munshhz"
+  },
+  "planck_constant": {
+    "name": "Planck constant",
+    "codata": "https://physics.nist.gov/cgi-bin/cuu/Value?h"
+  },
+  "planck_constant_in_ev_hz": {
+    "name": "Planck constant in ev/hz",
+    "codata": "https://physics.nist.gov/cgi-bin/cuu/Value?hev"
+  },
+  "planck_length": {
+    "name": "Planck length",
+    "codata": "https://physics.nist.gov/cgi-bin/cuu/Value?plkl"
+  },
+  "planck_mass": {
+    "name": "Planck mass",
+    "codata": "https://physics.nist.gov/cgi-bin/cuu/Value?plkm"
+  },
+  "planck_mass_energy_equivalent_in_gev": {
+    "name": "Planck mass energy equivalent in gev",
+    "codata": "https://physics.nist.gov/cgi-bin/cuu/Value?plkmc2gev"
+  },
+  "planck_temperature": {
+    "name": "Planck temperature",
+    "codata": "https://physics.nist.gov/cgi-bin/cuu/Value?plktmp"
+  },
+  "planck_time": {
+    "name": "Planck time",
+    "codata": "https://physics.nist.gov/cgi-bin/cuu/Value?plkt"
+  },
+  "proton_charge_to_mass_quotient": {
+    "name": "Proton charge to mass quotient",
+    "codata": "https://physics.nist.gov/cgi-bin/cuu/Value?esmp"
+  },
+  "proton_compton_wavelength": {
+    "name": "Proton compton wavelength",
+    "codata": "https://physics.nist.gov/cgi-bin/cuu/Value?pcomwl"
+  },
+  "proton_g_factor": {
+    "name": "Proton g factor",
+    "codata": "https://physics.nist.gov/cgi-bin/cuu/Value?gp"
+  },
+  "proton_gyromagnetic_ratio": {
+    "name": "Proton gyromagnetic ratio",
+    "codata": "https://physics.nist.gov/cgi-bin/cuu/Value?gammap"
+  },
+  "proton_gyromagnetic_ratio_in_mhz_t": {
+    "name": "Proton gyromagnetic ratio in mhz/t",
+    "codata": "https://physics.nist.gov/cgi-bin/cuu/Value?gammapbar"
+  },
+  "proton_magnetic_moment": {
+    "name": "Proton magnetic moment",
+    "codata": "https://physics.nist.gov/cgi-bin/cuu/Value?mup"
+  },
+  "proton_magnetic_moment_to_bohr_magneton_ratio": {
+    "name": "Proton magnetic moment to bohr magneton ratio",
+    "codata": "https://physics.nist.gov/cgi-bin/cuu/Value?mupsmub"
+  },
+  "proton_magnetic_moment_to_nuclear_magneton_ratio": {
+    "name": "Proton magnetic moment to nuclear magneton ratio",
+    "codata": "https://physics.nist.gov/cgi-bin/cuu/Value?mupsmun"
+  },
+  "proton_magnetic_shielding_correction": {
+    "name": "Proton magnetic shielding correction",
+    "codata": "https://physics.nist.gov/cgi-bin/cuu/Value?sigmapp"
+  },
+  "proton_mass": {
+    "name": "Proton mass",
+    "codata": "https://physics.nist.gov/cgi-bin/cuu/Value?mp"
+  },
+  "proton_mass_energy_equivalent": {
+    "name": "Proton mass energy equivalent",
+    "codata": "https://physics.nist.gov/cgi-bin/cuu/Value?mpc2"
+  },
+  "proton_mass_energy_equivalent_in_mev": {
+    "name": "Proton mass energy equivalent in mev",
+    "codata": "https://physics.nist.gov/cgi-bin/cuu/Value?mpc2mev"
+  },
+  "proton_mass_in_u": {
+    "name": "Proton mass in u",
+    "codata": "https://physics.nist.gov/cgi-bin/cuu/Value?mpu"
+  },
+  "proton_molar_mass": {
+    "name": "Proton molar mass",
+    "codata": "https://physics.nist.gov/cgi-bin/cuu/Value?mmp"
+  },
+  "proton_relative_atomic_mass": {
+    "name": "Proton relative atomic mass",
+    "codata": "https://physics.nist.gov/cgi-bin/cuu/Value?arp"
+  },
+  "proton_rms_charge_radius": {
+    "name": "Proton rms charge radius",
+    "codata": "https://physics.nist.gov/cgi-bin/cuu/Value?rp"
+  },
+  "proton_electron_mass_ratio": {
+    "name": "Proton-electron mass ratio",
+    "codata": "https://physics.nist.gov/cgi-bin/cuu/Value?mpsme"
+  },
+  "proton_muon_mass_ratio": {
+    "name": "Proton-muon mass ratio",
+    "codata": "https://physics.nist.gov/cgi-bin/cuu/Value?mpsmmu"
+  },
+  "proton_neutron_magnetic_moment_ratio": {
+    "name": "Proton-neutron magnetic moment ratio",
+    "codata": "https://physics.nist.gov/cgi-bin/cuu/Value?mupsmunn"
+  },
+  "proton_neutron_mass_ratio": {
+    "name": "Proton-neutron mass ratio",
+    "codata": "https://physics.nist.gov/cgi-bin/cuu/Value?mpsmn"
+  },
+  "proton_tau_mass_ratio": {
+    "name": "Proton-tau mass ratio",
+    "codata": "https://physics.nist.gov/cgi-bin/cuu/Value?mpsmtau"
+  },
+  "quantum_of_circulation": {
+    "name": "Quantum of circulation",
+    "codata": "https://physics.nist.gov/cgi-bin/cuu/Value?qucirchs2me"
+  },
+  "quantum_of_circulation_times_2": {
+    "name": "Quantum of circulation times 2",
+    "codata": "https://physics.nist.gov/cgi-bin/cuu/Value?hsme"
+  },
+  "reduced_compton_wavelength": {
+    "name": "Reduced compton wavelength",
+    "codata": "https://physics.nist.gov/cgi-bin/cuu/Value?ecomwlbar"
+  },
+  "reduced_muon_compton_wavelength": {
+    "name": "Reduced muon compton wavelength",
+    "codata": "https://physics.nist.gov/cgi-bin/cuu/Value?mcomwlbar"
+  },
+  "reduced_neutron_compton_wavelength": {
+    "name": "Reduced neutron compton wavelength",
+    "codata": "https://physics.nist.gov/cgi-bin/cuu/Value?ncomwlbar"
+  },
+  "reduced_planck_constant": {
+    "name": "Reduced planck constant",
+    "codata": "https://physics.nist.gov/cgi-bin/cuu/Value?hbar"
+  },
+  "reduced_planck_constant_in_ev_s": {
+    "name": "Reduced planck constant in ev s",
+    "codata": "https://physics.nist.gov/cgi-bin/cuu/Value?hbarev"
+  },
+  "reduced_planck_constant_times_c_in_mev_fm": {
+    "name": "Reduced planck constant times c in mev fm",
+    "codata": "https://physics.nist.gov/cgi-bin/cuu/Value?hbcmevf"
+  },
+  "reduced_proton_compton_wavelength": {
+    "name": "Reduced proton compton wavelength",
+    "codata": "https://physics.nist.gov/cgi-bin/cuu/Value?pcomwlbar"
+  },
+  "reduced_tau_compton_wavelength": {
+    "name": "Reduced tau compton wavelength",
+    "codata": "https://physics.nist.gov/cgi-bin/cuu/Value?tcomwlbar"
+  },
+  "rydberg_constant": {
+    "name": "Rydberg constant",
+    "codata": "https://physics.nist.gov/cgi-bin/cuu/Value?ryd"
+  },
+  "rydberg_constant_times_c_in_hz": {
+    "name": "Rydberg constant times c in hz",
+    "codata": "https://physics.nist.gov/cgi-bin/cuu/Value?rydchz"
+  },
+  "rydberg_constant_times_hc_in_ev": {
+    "name": "Rydberg constant times hc in ev",
+    "codata": "https://physics.nist.gov/cgi-bin/cuu/Value?rydhcev"
+  },
+  "rydberg_constant_times_hc_in_j": {
+    "name": "Rydberg constant times hc in j",
+    "codata": "https://physics.nist.gov/cgi-bin/cuu/Value?rydhcj"
+  },
+  "sackur_tetrode_constant_(1_k,_100_kpa)": {
+    "name": "Sackur-tetrode constant (1 k, 100 kpa)",
+    "codata": "https://physics.nist.gov/cgi-bin/cuu/Value?s0sr"
+  },
+  "sackur_tetrode_constant_(1_k,_101.325_kpa)": {
+    "name": "Sackur-tetrode constant (1 k, 101.325 kpa)",
+    "codata": "https://physics.nist.gov/cgi-bin/cuu/Value?s0srstd"
+  },
+  "second_radiation_constant": {
+    "name": "Second radiation constant",
+    "codata": "https://physics.nist.gov/cgi-bin/cuu/Value?c22ndrc"
+  },
+  "shielded_helion_gyromagnetic_ratio": {
+    "name": "Shielded helion gyromagnetic ratio",
+    "codata": "https://physics.nist.gov/cgi-bin/cuu/Value?gammahp"
+  },
+  "shielded_helion_gyromagnetic_ratio_in_mhz_t": {
+    "name": "Shielded helion gyromagnetic ratio in mhz/t",
+    "codata": "https://physics.nist.gov/cgi-bin/cuu/Value?gammahpbar"
+  },
+  "shielded_helion_magnetic_moment": {
+    "name": "Shielded helion magnetic moment",
+    "codata": "https://physics.nist.gov/cgi-bin/cuu/Value?muhp"
+  },
+  "shielded_helion_magnetic_moment_to_bohr_magneton_ratio": {
+    "name": "Shielded helion magnetic moment to bohr magneton ratio",
+    "codata": "https://physics.nist.gov/cgi-bin/cuu/Value?muhpsmub"
+  },
+  "shielded_helion_magnetic_moment_to_nuclear_magneton_ratio": {
+    "name": "Shielded helion magnetic moment to nuclear magneton ratio",
+    "codata": "https://physics.nist.gov/cgi-bin/cuu/Value?muhpsmun"
+  },
+  "shielded_helion_to_proton_magnetic_moment_ratio": {
+    "name": "Shielded helion to proton magnetic moment ratio",
+    "codata": "https://physics.nist.gov/cgi-bin/cuu/Value?muhpsmup"
+  },
+  "shielded_helion_to_shielded_proton_magnetic_moment_ratio": {
+    "name": "Shielded helion to shielded proton magnetic moment ratio",
+    "codata": "https://physics.nist.gov/cgi-bin/cuu/Value?muhpsmupp"
+  },
+  "shielded_proton_gyromagnetic_ratio": {
+    "name": "Shielded proton gyromagnetic ratio",
+    "codata": "https://physics.nist.gov/cgi-bin/cuu/Value?gammapp"
+  },
+  "shielded_proton_gyromagnetic_ratio_in_mhz_t": {
+    "name": "Shielded proton gyromagnetic ratio in mhz/t",
+    "codata": "https://physics.nist.gov/cgi-bin/cuu/Value?gammappbar"
+  },
+  "shielded_proton_magnetic_moment": {
+    "name": "Shielded proton magnetic moment",
+    "codata": "https://physics.nist.gov/cgi-bin/cuu/Value?mupp"
+  },
+  "shielded_proton_magnetic_moment_to_bohr_magneton_ratio": {
+    "name": "Shielded proton magnetic moment to bohr magneton ratio",
+    "codata": "https://physics.nist.gov/cgi-bin/cuu/Value?muppsmub"
+  },
+  "shielded_proton_magnetic_moment_to_nuclear_magneton_ratio": {
+    "name": "Shielded proton magnetic moment to nuclear magneton ratio",
+    "codata": "https://physics.nist.gov/cgi-bin/cuu/Value?muppsmun"
+  },
+  "shielding_difference_of_d_and_p_in_hd": {
+    "name": "Shielding difference of d and p in hd",
+    "codata": "https://physics.nist.gov/cgi-bin/cuu/Value?sdp"
+  },
+  "shielding_difference_of_t_and_p_in_ht": {
+    "name": "Shielding difference of t and p in ht",
+    "codata": "https://physics.nist.gov/cgi-bin/cuu/Value?stp"
+  },
+  "speed_of_light_in_vacuum": {
+    "name": "Speed of light in vacuum",
+    "codata": "https://physics.nist.gov/cgi-bin/cuu/Value?c"
+  },
+  "standard_acceleration_of_gravity": {
+    "name": "Standard acceleration of gravity",
+    "codata": "https://physics.nist.gov/cgi-bin/cuu/Value?gn"
+  },
+  "standard_atmosphere": {
+    "name": "Standard atmosphere",
+    "codata": "https://physics.nist.gov/cgi-bin/cuu/Value?stdatm"
+  },
+  "standard_state_pressure": {
+    "name": "Standard-state pressure",
+    "codata": "https://physics.nist.gov/cgi-bin/cuu/Value?stdspr"
+  },
+  "stefan_boltzmann_constant": {
+    "name": "Stefan-boltzmann constant",
+    "codata": "https://physics.nist.gov/cgi-bin/cuu/Value?sigma"
+  },
+  "tau_compton_wavelength": {
+    "name": "Tau compton wavelength",
+    "codata": "https://physics.nist.gov/cgi-bin/cuu/Value?tcomwl"
+  },
+  "tau_energy_equivalent": {
+    "name": "Tau energy equivalent",
+    "codata": "https://physics.nist.gov/cgi-bin/cuu/Value?mtauc2mev"
+  },
+  "tau_mass": {
+    "name": "Tau mass",
+    "codata": "https://physics.nist.gov/cgi-bin/cuu/Value?mtau"
+  },
+  "tau_mass_energy_equivalent": {
+    "name": "Tau mass energy equivalent",
+    "codata": "https://physics.nist.gov/cgi-bin/cuu/Value?mtauc2"
+  },
+  "tau_mass_in_u": {
+    "name": "Tau mass in u",
+    "codata": "https://physics.nist.gov/cgi-bin/cuu/Value?mtauu"
+  },
+  "tau_molar_mass": {
+    "name": "Tau molar mass",
+    "codata": "https://physics.nist.gov/cgi-bin/cuu/Value?mmtau"
+  },
+  "tau_electron_mass_ratio": {
+    "name": "Tau-electron mass ratio",
+    "codata": "https://physics.nist.gov/cgi-bin/cuu/Value?mtausme"
+  },
+  "tau_muon_mass_ratio": {
+    "name": "Tau-muon mass ratio",
+    "codata": "https://physics.nist.gov/cgi-bin/cuu/Value?mtausmmu"
+  },
+  "tau_neutron_mass_ratio": {
+    "name": "Tau-neutron mass ratio",
+    "codata": "https://physics.nist.gov/cgi-bin/cuu/Value?mtausmn"
+  },
+  "tau_proton_mass_ratio": {
+    "name": "Tau-proton mass ratio",
+    "codata": "https://physics.nist.gov/cgi-bin/cuu/Value?mtausmp"
+  },
+  "thomson_cross_section": {
+    "name": "Thomson cross section",
+    "codata": "https://physics.nist.gov/cgi-bin/cuu/Value?sigmae"
+  },
+  "triton_g_factor": {
+    "name": "Triton g factor",
+    "codata": "https://physics.nist.gov/cgi-bin/cuu/Value?gtn"
+  },
+  "triton_magnetic_moment": {
+    "name": "Triton magnetic moment",
+    "codata": "https://physics.nist.gov/cgi-bin/cuu/Value?mut"
+  },
+  "triton_magnetic_moment_to_bohr_magneton_ratio": {
+    "name": "Triton magnetic moment to bohr magneton ratio",
+    "codata": "https://physics.nist.gov/cgi-bin/cuu/Value?mutsmub"
+  },
+  "triton_magnetic_moment_to_nuclear_magneton_ratio": {
+    "name": "Triton magnetic moment to nuclear magneton ratio",
+    "codata": "https://physics.nist.gov/cgi-bin/cuu/Value?mutsmun"
+  },
+  "triton_mass": {
+    "name": "Triton mass",
+    "codata": "https://physics.nist.gov/cgi-bin/cuu/Value?mt"
+  },
+  "triton_mass_energy_equivalent": {
+    "name": "Triton mass energy equivalent",
+    "codata": "https://physics.nist.gov/cgi-bin/cuu/Value?mtc2"
+  },
+  "triton_mass_energy_equivalent_in_mev": {
+    "name": "Triton mass energy equivalent in mev",
+    "codata": "https://physics.nist.gov/cgi-bin/cuu/Value?mtc2mev"
+  },
+  "triton_mass_in_u": {
+    "name": "Triton mass in u",
+    "codata": "https://physics.nist.gov/cgi-bin/cuu/Value?mtu"
+  },
+  "triton_molar_mass": {
+    "name": "Triton molar mass",
+    "codata": "https://physics.nist.gov/cgi-bin/cuu/Value?mmt"
+  },
+  "triton_relative_atomic_mass": {
+    "name": "Triton relative atomic mass",
+    "codata": "https://physics.nist.gov/cgi-bin/cuu/Value?art"
+  },
+  "triton_to_proton_magnetic_moment_ratio": {
+    "name": "Triton to proton magnetic moment ratio",
+    "codata": "https://physics.nist.gov/cgi-bin/cuu/Value?mutsmup"
+  },
+  "triton_electron_mass_ratio": {
+    "name": "Triton-electron mass ratio",
+    "codata": "https://physics.nist.gov/cgi-bin/cuu/Value?mtsme"
+  },
+  "triton_proton_mass_ratio": {
+    "name": "Triton-proton mass ratio",
+    "codata": "https://physics.nist.gov/cgi-bin/cuu/Value?mtsmp"
+  },
+  "unified_atomic_mass_unit": {
+    "name": "Unified atomic mass unit",
+    "codata": "https://physics.nist.gov/cgi-bin/cuu/Value?ukg"
+  },
+  "vacuum_electric_permittivity": {
+    "name": "Vacuum electric permittivity",
+    "codata": "https://physics.nist.gov/cgi-bin/cuu/Value?ep0"
+  },
+  "vacuum_magnetic_permeability": {
+    "name": "Vacuum magnetic permeability",
+    "codata": "https://physics.nist.gov/cgi-bin/cuu/Value?mu0"
+  },
+  "von_klitzing_constant": {
+    "name": "Von klitzing constant",
+    "codata": "https://physics.nist.gov/cgi-bin/cuu/Value?rk"
+  },
+  "w_to_z_mass_ratio": {
+    "name": "W to z mass ratio",
+    "codata": "https://physics.nist.gov/cgi-bin/cuu/Value?rmwmz"
+  },
+  "weak_mixing_angle": {
+    "name": "Weak mixing angle",
+    "codata": "https://physics.nist.gov/cgi-bin/cuu/Value?sin2th"
+  },
+  "wien_frequency_displacement_law_constant": {
+    "name": "Wien frequency displacement law constant",
+    "codata": "https://physics.nist.gov/cgi-bin/cuu/Value?bpwien"
+  },
+  "wien_wavelength_displacement_law_constant": {
+    "name": "Wien wavelength displacement law constant",
+    "codata": "https://physics.nist.gov/cgi-bin/cuu/Value?bwien"
+  }
+}

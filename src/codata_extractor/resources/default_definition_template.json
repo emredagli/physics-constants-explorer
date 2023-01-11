@@ -1,0 +1,174 @@
+{
+  "dimensional_constants": {
+    "speed_of_light_in_vacuum": {},
+    "vacuum_magnetic_permeability": {},
+    "vacuum_electric_permittivity": {},
+    "characteristic_impedance_of_vacuum": {},
+    "newtonian_constant_of_gravitation": {},
+    "planck_constant": {},
+    "reduced_planck_constant": {},
+
+    "elementary_charge": {},
+    "magnetic_flux_quantum": {},
+    "conductance_quantum": {},
+    "josephson_constant": {},
+    "von_klitzing_constant": {},
+    "bohr_magneton": {},
+    "nuclear_magneton": {},
+
+    "rydberg_constant": {},
+    "bohr_radius": {},
+    "hartree_energy": {},
+    "quantum_of_circulation": {},
+    "fermi_coupling_constant": {
+      "numeric_value": "4.5437957(23)e+14",
+      "unit": "s^4 kg^-2 m^-4"
+    },
+    "electron_mass": {},
+
+    "proton_mass": {},
+    "proton_molar_mass": {
+      "symbol": "M_p"
+    },
+
+    "muon_mass": {},
+    "muon_molar_mass": {
+      "symbol": "M_μ",
+      "latex": "M_{\\rm \\mu}"
+    },
+
+    "avogadro_constant": {},
+    "boltzmann_constant": {},
+    "atomic_mass_constant": {},
+    "molar_gas_constant": {},
+    "faraday_constant": {},
+    "stefan_boltzmann_constant": {},
+    "molar_mass_of_carbon_12": {
+        "symbol": "M(^12C)",
+        "latex": "M(^{12}C)"
+    },
+
+    "planck_mass": {},
+    "planck_temperature": {},
+    "planck_length": {},
+    "planck_time": {},
+
+    "angstrom_star": {
+      "symbol": "Å*"
+    },
+    "atomic_unit_of_1st_hyperpolarizability": {
+      "symbol": "(e^3⋅a_0^3/E_h^2)"
+    },
+    "atomic_unit_of_2nd_hyperpolarizability": {
+      "symbol": "(e^4⋅a_0^4/E_h^3)"
+    },
+    "atomic_unit_of_current": {
+      "symbol": "(e⋅E_h/ħ)"
+    },
+    "atomic_unit_of_electric_dipole_moment": {
+      "symbol": "(e⋅a_0)"
+    },
+    "atomic_unit_of_electric_field": {
+      "symbol": "(E_h/e⋅a_0)"
+    },
+    "atomic_unit_of_electric_field_gradient": {
+      "symbol": "(E_h/e⋅a_0^2)"
+    },
+    "atomic_unit_of_electric_polarizability": {
+      "symbol": "(e^2⋅a_0^2/E_h)"
+    },
+    "atomic_unit_of_electric_quadrupole_moment": {
+      "symbol": "(e⋅a_0^2)"
+    },
+    "atomic_unit_of_magnetic_dipole_moment": {
+      "symbol": "(ħ⋅e/m_e)"
+    },
+    "atomic_unit_of_magnetic_flux_density": {
+      "symbol": "(ħ/e⋅a_0^2)"
+    },
+    "atomic_unit_of_magnetizability": {
+      "symbol": "(e^2⋅a_0^2/m_e)"
+    },
+    "atomic_unit_of_permittivity": {
+      "symbol": "(e^2/a_0⋅E_h)"
+    },
+    "atomic_unit_of_velocity": {
+      "symbol": "(a_0⋅E_h/ħ)"
+    },
+    "electron_volt": {
+      "symbol": "eV"
+    },
+    "molar_planck_constant": {
+      "symbol": "(N_A⋅h)"
+    },
+    "molar_volume_of_silicon": {
+      "symbol": "V_m(Si)"
+    },
+    "natural_unit_of_energy": {
+      "symbol": "(m_e⋅c^2)"
+    },
+    "natural_unit_of_length": {
+      "symbol": "ƛ_C"
+    },
+    "natural_unit_of_momentum": {
+      "symbol": "(m_e⋅c)"
+    },
+    "natural_unit_of_time": {
+      "symbol": "(ħ/m_e⋅c^2)"
+    },
+    "neutron_compton_wavelength": {
+      "symbol": "λ_C,n"
+    },
+    "neutron_proton_mass_difference": {
+      "symbol": "(m_n-m_p)"
+    },
+    "proton_compton_wavelength": {
+      "symbol": "λ_C,p"
+    },
+    "reduced_compton_wavelength": {
+      "symbol": "ƛ_C,n"
+    },
+    "reduced_muon_compton_wavelength": {
+      "symbol": "ƛ_C,μ"
+    },
+    "reduced_proton_compton_wavelength": {
+      "symbol": "ƛ_C,p"
+    },
+    "reduced_tau_compton_wavelength": {
+      "symbol": "ƛ_C,τ"
+    },
+    "tau_compton_wavelength": {
+      "symbol": "λ_C,τ"
+    },
+    "wien_frequency_displacement_law_constant": {
+      "symbol": "b'"
+    }
+  },
+  "dimensionless_constants": {
+    "pi": {
+      "numeric_value": "3.1415926535897932384626433832795028841971693993751",
+      "symbol": "π"
+    },
+    "eulers_number": {
+      "numeric_value": "2.7182818284590452353602874713526624977572470936999",
+      "symbol": "e"
+    },
+    "fine_structure_constant": {},
+    "proton_electron_mass_ratio": {},
+    "w_u": {
+      "numeric_value": "2.8214393721220788934031913302944851953458817440731",
+      "info": "the solution to (u-3)*exp(u)+3 = 0 => u = W(3/exp(3))+3",
+      "symbol": "w_u"
+    },
+    "avogadro_number": {
+      "numeric_value": "6.02214076e+23",
+      "symbol": "N"
+    },
+    "proton_magnetic_shielding_correction": {
+      "symbol": "σ'_p"
+    },
+    "weak_mixing_angle": {
+      "symbol": "(sin(θ_W)^2)"
+    }
+  }
+}

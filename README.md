@@ -299,16 +299,15 @@ The program uses its [default config file](src/resources/default_config.json), i
 The default config file is prepared by exploring some physical constants. These explorations are located under [the research part](/research).
 
 The config file has the following parameters:
-* `method`
 * `dimensional_constants`
 * `dimensionless_constants`
+* `settings`
 
 #### 4.3.1 The Power Ranges
 
-Each `constant` collection has its own `key`, `value` pairs, for example:
+Each `..._constants` collection has its own `key`, `value` pairs, for example:
 ```json
 {
-  "method": "brute_force",
   "dimensional_constants": {
     "speed_of_light_in_vacuum": [-2, 6],
     "vacuum_magnetic_permeability": {"range": [0, 2], "step": "1/3"},
@@ -317,7 +316,8 @@ Each `constant` collection has its own `key`, `value` pairs, for example:
   "dimensionless_constants": {
     "pi": 4,
     ...
-  }
+  },
+  ... 
 }
 ```
 
@@ -344,14 +344,24 @@ Power range values can be in 3 format as given the example above:
 
 If `0` is not given on the range (or in the converted ranges), the program adds `0` on the default. 
 
-#### 4.3.2 The Execution Method
+#### 4.3.2 The Settings
 
-The `method` parameter can be set one of these:
+The `method` parameter under settings can be set one of these:
 * "brute_force"
   * It is a pure brute force implementation
 * "brute_force_with_memorization"
   * It contains memorization implementation by pre-calculating the "some" group of quantities. The performance is better than `brute_force`.
-
+* "buckingham_pi"
+  * If it is set, "[Buckingham π theorem](https://en.wikipedia.org/wiki/Buckingham_%CF%80_theorem)" implementation of pint library "[pi_theorem](https://pint.readthedocs.io/en/0.10.1/pitheorem.html)" is used.
+  * It calculates all pi terms and calculates the all power combinations of found pi terms. So, the usage of this method requires the following settings:
+```json
+  "settings": {
+    "method": "buckingham_pi",
+    "buckingham_pi_ranges": [-2, 2]
+  },
+```
+  * You can set power range settings as explained above.
+  
 ## 5 The Program Outputs
 
 The program prints the outputs to console. 

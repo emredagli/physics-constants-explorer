@@ -27,7 +27,7 @@
             "properties": {
                 "numeric_value": {
                     "type": "string",
-                    "pattern": "^([1-9])(\\.\\d*)?(\\(\\d*\\))?([eE][+\\-]?\\d+)?$",
+                    "pattern": "^([0-9]\\d*)(\\.\\d*)?(\\(\\d*\\))?([eE][+\\-]?\\d+)?$",
                     "error_msg": "Please provide 'numeric_value' in scientific notation, for example '1.234(..)e3'"
                 },
                 "unit": {
@@ -39,6 +39,15 @@
                    "type": "string"
                 },
                 "info": {
+                   "type": "string"
+                },
+                "name": {
+                   "type": "string"
+                },
+                "latex": {
+                   "type": "string"
+                },
+                "codata": {
                    "type": "string"
                 }
             },
@@ -52,13 +61,22 @@
             "properties": {
                 "numeric_value": {
                     "type": "string",
-                    "pattern": "^([1-9])(\\.\\d*)?(\\(\\d*\\))?([eE][+\\-]?\\d+)?$",
+                    "pattern": "^([0-9]\\d*)(\\.\\d*)?(\\(\\d*\\))?([eE][+\\-]?\\d+)?$",
                     "error_msg": "Please provide 'numeric_value' in scientific notation, for example '1.234(..)e3'"
                 },
                 "symbol": {
                    "type": "string"
                 },
                 "info": {
+                   "type": "string"
+                },
+                "name": {
+                   "type": "string"
+                },
+                "latex": {
+                   "type": "string"
+                },
+                "codata": {
                    "type": "string"
                 }
             },

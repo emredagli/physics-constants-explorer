@@ -2,8 +2,8 @@ Explore the target:
 	{ 1.41060679736(60) e-26 } [ A·m² ] = Target
 in terms of the given,
 	dimensional constants:   
-		c = { 2.99792458e+8 } [ m/s ], powers = [-2, -1, 0, 1, 2]
-		ℎ = { 6.62607015e-34 } [ kg·m²/s ], powers = [-3, -2, -1, 0, 1, 2, 3]
+		c = { 299792458 } [ m/s ], powers = [-2, -1, 0, 1, 2]
+		h = { 6.62607015e-34 } [ kg·m²/s ], powers = [-3, -2, -1, 0, 1, 2, 3]
 		k = { 1.380649e-23 } [ kg·m²/K/s² ], powers = [-4, -3, -2, -1, 0, 1, 2, 3, 4]
 		e = { 1.602176634e-19 } [ A·s ], powers = [-4, -3, -2, -1, 0, 1, 2, 3, 4]
 		ε_0 = { 8.8541878128(13)e-12 } [ A²·s⁴/kg/m³ ], powers = [-2, -1, 0, 1, 2]
@@ -14,32 +14,32 @@ in terms of the given,
 		3, powers = [-1, 0, 1]
 		5, powers = [-1, 0, 1]
 		π, powers = [-5, -4, -3, -2, -1, 0, 1, 2, 3, 4, 5]
-		wien_u, powers = [-1, 0, 1]
-		μ, powers = [-1, 0, 1]
+		w_u, powers = [-1, 0, 1]
+		(m_p/m_e), powers = [-1, 0, 1]
 		g_e, powers = [-1, 0, 1]
 		g_p, powers = [-1, 0, 1]
 by using buckingham_pi methodology...
 
 Dimensionless π terms found from the Buckingham π Theorem:
 - Containing Target:
-	π_1 = Target⋅m_e / (e⋅ℎ)
+	π_1 = Target⋅m_e / (e⋅h)
 - Not containing Target:
-	π_2 = e² / (ℎ⋅c⋅ε_0)
+	π_2 = e² / (h⋅c⋅ε_0)
 
 Found 4 candidates the resultant unit matched with the target's unit:
 	{ Q } [ A·m² ] = e³ / (m_e⋅c⋅ε_0)
 	  ├── 👍 In range!
 	  └── Min (~7E-36) < Q (~2E-24) < Max (~3E-17) 
 
-	{ Q } [ A·m² ] = e⋅ℎ / m_e
+	{ Q } [ A·m² ] = e⋅h / m_e
 	  ├── 👍 In range!
 	  └── Min (~7E-36) < Q (~1E-22) < Max (~3E-17) 
 
-	{ Q } [ A·m² ] = ℎ²⋅c⋅ε_0 / (m_e⋅e)
+	{ Q } [ A·m² ] = h²⋅c⋅ε_0 / (m_e⋅e)
 	  ├── 👍 In range!
 	  └── Min (~7E-36) < Q (~8E-21) < Max (~3E-17) 
 
-	{ Q } [ A·m² ] = ℎ³⋅c²⋅ε_0² / (m_e⋅e³)
+	{ Q } [ A·m² ] = h³⋅c²⋅ε_0² / (m_e⋅e³)
 	  ├── 👍 In range!
 	  └── Min (~7E-36) < Q (~5E-19) < Max (~3E-17) 
 
@@ -47,11 +47,11 @@ Totally, unique 56133 dimensionless multiplications are calculated!
 
 Result(s) that overlap with the target:
 	{ 1.41060679736(60) e-26 } [ A·m² ] = Target
-	{ 1.41060679738(92) e-26 } [ A·m² ] = (g_p / (2³⋅π⋅μ)) ⋅ (e⋅ℎ / m_e)
+	{ 1.41060679738(92) e-26 } [ A·m² ] = (g_p / (2³⋅π⋅(m_p/m_e))) ⋅ (e⋅h / m_e)
 
 Where
-* μ: proton electron mass ratio, m_p / m_e
+* (m_p/m_e): proton electron mass ratio
 * g_p: proton g factor
 * m_e: electron mass
 * e: elementary charge
-* ℎ: planck constant
+* h: planck constant

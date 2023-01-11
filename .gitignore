@@ -166,3 +166,6 @@ cython_debug/
 #.idea/
 .DS_STORE
 .pytest_cache
+
+# CODATA scrapped pages caches
+src/codata_extractor/pages/*

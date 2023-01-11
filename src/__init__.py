@@ -33,7 +33,7 @@ def _default_faction_exponent(num):
 
 
 @register_unit_format("FU")
-def format_pretty(unit, registry, **options):
+def format_fraction_units(unit, registry, **options):
     return formatter(
         unit.items(),
         as_ratio=True,
@@ -48,7 +48,7 @@ def format_pretty(unit, registry, **options):
 
 
 @register_unit_format("FD")
-def format_default(unit, registry, **options):
+def format_default_fraction(unit, registry, **options):
     return formatter(
         unit.items(),
         as_ratio=True,

@@ -25,7 +25,7 @@ logger = logging.getLogger(__name__)
         ("Molar gas constant", "8.314462618E0", "(kg m^2)/(K mol s^2)",
          "kg·m²/K/mol/s²", "N_A⋅k"),
         ("Wien frequency displacement law constant", "5.878925757E+10", "1/(K s)",
-         "1/K/s", "wien_u ⋅ (k / ℎ)"),
+         "1/K/s", "w_u ⋅ (k / ℎ)"),
         ("Impedance of free space", "3.76730313668(57)E+2", "(kg m^2)/(s^3 A^2)",
          "kg·m²/A²/s³", "1 / (c⋅ε_0)"),
         ("Josephson constant", "4.835978484E+14", "(A s^2)/(kg m^2)",
@@ -79,7 +79,7 @@ def test_derived_constants(constant_name, target_value, target_unit, expected_un
         ("3", "3.00000000", ""),
         ("5", "5.00000000", ""),
         ("pi", "3.14159265358979323", ""),
-        ("wien_u", "2.821439372122078", ""),
+        ("w_u", "2.821439372122078", ""),
 
         # With given error
         ("speed_of_light_in_vacuum", "2.997924(42)e+8", "m/s"),
@@ -93,7 +93,7 @@ def test_derived_constants(constant_name, target_value, target_unit, expected_un
         ("3", "3.000000(42)", ""),
         ("5", "5.000000(42)", ""),
         ("pi", "3.141592653589793(42)", ""),
-        ("wien_u", "2.8214393721220(42)", "")
+        ("w_u", "2.8214393721220(42)", "")
     ]
 )
 @pytest.mark.parametrize("method", ["buckingham_pi", "brute_force", "brute_force_with_memorization"])
@@ -119,7 +119,7 @@ def test_constants_itself(constant_name, target_value, target_unit, method):
             "3": 1,
             "5": 1,
             "pi": 1,
-            "wien_u": 1
+            "w_u": 1
         }
     }
     _, definition = get_test_resources()

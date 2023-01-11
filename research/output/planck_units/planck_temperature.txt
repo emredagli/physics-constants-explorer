@@ -2,8 +2,8 @@ Explore the target:
 	{ 1.416784(16) e+32 } [ K ] = Target
 in terms of the given,
 	dimensional constants:   
-		c = { 2.99792458e+8 } [ m/s ], powers = [-3, -5/2, -2, -3/2, -1, -1/2, 0, 1/2, 1, 3/2, 2, 5/2, 3]
-		ℎ = { 6.62607015e-34 } [ kg·m²/s ], powers = [-1, -1/2, 0, 1/2, 1]
+		c = { 299792458 } [ m/s ], powers = [-3, -5/2, -2, -3/2, -1, -1/2, 0, 1/2, 1, 3/2, 2, 5/2, 3]
+		h = { 6.62607015e-34 } [ kg·m²/s ], powers = [-1, -1/2, 0, 1/2, 1]
 		G = { 6.67430(15)e-11 } [ m³/kg/s² ], powers = [-1, -1/2, 0, 1/2, 1]
 		k = { 1.380649e-23 } [ kg·m²/K/s² ], powers = [-1, -1/2, 0, 1/2, 1]
 	dimensionless constants: 
@@ -13,10 +13,10 @@ by using buckingham_pi methodology...
 
 Dimensionless π terms found from the Buckingham π Theorem:
 - Containing Target:
-	π_1 = Target²⋅k²⋅G / (ℎ⋅c⁵)
+	π_1 = Target²⋅k²⋅G / (h⋅c⁵)
 
 Found 1 candidates the resultant unit matched with the target's unit:
-	{ Q } [ K ] = ℎ¹ᐟ²⋅c⁵ᐟ² / (k⋅G¹ᐟ²)
+	{ Q } [ K ] = h¹ᐟ²⋅c⁵ᐟ² / (k⋅G¹ᐟ²)
 	  ├── 👍 In range!
 	  └── Min (~4E+30) < Q (~4E+32) < Max (~6E+33) 
 
@@ -24,10 +24,10 @@ Totally, unique 81 dimensionless multiplications are calculated!
 
 Result(s) that overlap with the target:
 	{ 1.416784(16) e+32 } [ K ] = Target
-	{ 1.416784(16) e+32 } [ K ] = (1 / (2¹ᐟ²⋅π¹ᐟ²)) ⋅ (ℎ¹ᐟ²⋅c⁵ᐟ² / (k⋅G¹ᐟ²))
+	{ 1.416784(16) e+32 } [ K ] = (1 / (2¹ᐟ²⋅π¹ᐟ²)) ⋅ (h¹ᐟ²⋅c⁵ᐟ² / (k⋅G¹ᐟ²))
 
 Where
 * k: boltzmann constant
 * G: newtonian constant of gravitation
-* ℎ: planck constant
+* h: planck constant
 * c: speed of light in vacuum

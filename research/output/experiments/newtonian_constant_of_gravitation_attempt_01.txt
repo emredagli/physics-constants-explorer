@@ -2,8 +2,8 @@ Explore the target:
 	{ 6.67430(15) e-11 } [ m³/kg/s² ] = Target
 in terms of the given,
 	dimensional constants:   
-		c = { 2.99792458e+8 } [ m/s ], powers = [-8, -7, -6, -5, -4, -3, -2, -1, 0, 1, 2, 3, 4, 5, 6, 7, 8]
-		ℎ = { 6.62607015e-34 } [ kg·m²/s ], powers = [-6, -5, -4, -3, -2, -1, 0, 1, 2, 3, 4, 5, 6]
+		c = { 299792458 } [ m/s ], powers = [-8, -7, -6, -5, -4, -3, -2, -1, 0, 1, 2, 3, 4, 5, 6, 7, 8]
+		h = { 6.62607015e-34 } [ kg·m²/s ], powers = [-6, -5, -4, -3, -2, -1, 0, 1, 2, 3, 4, 5, 6]
 		e = { 1.602176634e-19 } [ A·s ], powers = [-12, -11, -10, -9, -8, -7, -6, -5, -4, -3, -2, -1, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
 		m_e = { 9.1093837015(28)e-31 } [ kg ], powers = [-2, -1, 0, 1, 2]
 		ε_0 = { 8.8541878128(13)e-12 } [ A²·s⁴/kg/m³ ], powers = [-6, -5, -4, -3, -2, -1, 0, 1, 2, 3, 4, 5, 6]
@@ -12,33 +12,33 @@ in terms of the given,
 		3, powers = [-3, -2, -1, 0, 1, 2, 3]
 		5, powers = [-3, -2, -1, 0, 1, 2, 3]
 		π, powers = [-4, -3, -2, -1, 0, 1, 2, 3, 4]
-		μ, powers = [-10, -9, -8, -7, -6, -5, -4, -3, -2, -1, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+		(m_p/m_e), powers = [-10, -9, -8, -7, -6, -5, -4, -3, -2, -1, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 by using buckingham_pi methodology...
 
 Dimensionless π terms found from the Buckingham π Theorem:
 - Containing Target:
-	π_1 = Target⋅m_e² / (ℎ⋅c)
+	π_1 = Target⋅m_e² / (h⋅c)
 - Not containing Target:
-	π_2 = e² / (ℎ⋅c⋅ε_0)
+	π_2 = e² / (h⋅c⋅ε_0)
 
 Found 12 candidates the resultant unit matched with the target's unit:
-	{ Q } [ m³/kg/s² ] = e¹² / (m_e²⋅ℎ⁵⋅c⁵⋅ε_0⁶)
+	{ Q } [ m³/kg/s² ] = e¹² / (m_e²⋅h⁵⋅c⁵⋅ε_0⁶)
 	  ├── 👍 In range!
 	  └── Min (~2E-51) < Q (~2E+24) < Max (~2E+30) 
 
-	{ Q } [ m³/kg/s² ] = e¹⁰ / (m_e²⋅ℎ⁴⋅c⁴⋅ε_0⁵)
+	{ Q } [ m³/kg/s² ] = e¹⁰ / (m_e²⋅h⁴⋅c⁴⋅ε_0⁵)
 	  ├── 👍 In range!
 	  └── Min (~2E-51) < Q (~2E+26) < Max (~2E+30) 
 
-	{ Q } [ m³/kg/s² ] = e⁸ / (m_e²⋅ℎ³⋅c³⋅ε_0⁴)
+	{ Q } [ m³/kg/s² ] = e⁸ / (m_e²⋅h³⋅c³⋅ε_0⁴)
 	  ├── 👍 In range!
 	  └── Min (~2E-51) < Q (~1E+28) < Max (~2E+30) 
 
-	{ Q } [ m³/kg/s² ] = e⁶ / (m_e²⋅ℎ²⋅c²⋅ε_0³)
+	{ Q } [ m³/kg/s² ] = e⁶ / (m_e²⋅h²⋅c²⋅ε_0³)
 	  ├── 👍 In range!
 	  └── Min (~2E-51) < Q (~7E+29) < Max (~2E+30) 
 
-	{ Q } [ m³/kg/s² ] = e⁴ / (m_e²⋅ℎ⋅c⋅ε_0²)
+	{ Q } [ m³/kg/s² ] = e⁴ / (m_e²⋅h⋅c⋅ε_0²)
 	  ├── 👎 Not in range.
 	  └── Min (~2E-51) < Max (~2E+30) < Q (~5E+31) 
 
@@ -46,27 +46,27 @@ Found 12 candidates the resultant unit matched with the target's unit:
 	  ├── 👎 Not in range.
 	  └── Min (~2E-51) < Max (~2E+30) < Q (~3E+33) 
 
-	{ Q } [ m³/kg/s² ] = ℎ⋅c / m_e²
+	{ Q } [ m³/kg/s² ] = h⋅c / m_e²
 	  ├── 👎 Not in range.
 	  └── Min (~2E-51) < Max (~2E+30) < Q (~2E+35) 
 
-	{ Q } [ m³/kg/s² ] = ℎ²⋅c²⋅ε_0 / (m_e²⋅e²)
+	{ Q } [ m³/kg/s² ] = h²⋅c²⋅ε_0 / (m_e²⋅e²)
 	  ├── 👎 Not in range.
 	  └── Min (~2E-51) < Max (~2E+30) < Q (~2E+37) 
 
-	{ Q } [ m³/kg/s² ] = ℎ³⋅c³⋅ε_0² / (m_e²⋅e⁴)
+	{ Q } [ m³/kg/s² ] = h³⋅c³⋅ε_0² / (m_e²⋅e⁴)
 	  ├── 👎 Not in range.
 	  └── Min (~2E-51) < Max (~2E+30) < Q (~1E+39) 
 
-	{ Q } [ m³/kg/s² ] = ℎ⁴⋅c⁴⋅ε_0³ / (m_e²⋅e⁶)
+	{ Q } [ m³/kg/s² ] = h⁴⋅c⁴⋅ε_0³ / (m_e²⋅e⁶)
 	  ├── 👎 Not in range.
 	  └── Min (~2E-51) < Max (~2E+30) < Q (~8E+40) 
 
-	{ Q } [ m³/kg/s² ] = ℎ⁵⋅c⁵⋅ε_0⁴ / (m_e²⋅e⁸)
+	{ Q } [ m³/kg/s² ] = h⁵⋅c⁵⋅ε_0⁴ / (m_e²⋅e⁸)
 	  ├── 👎 Not in range.
 	  └── Min (~2E-51) < Max (~2E+30) < Q (~5E+42) 
 
-	{ Q } [ m³/kg/s² ] = ℎ⁶⋅c⁶⋅ε_0⁵ / (m_e²⋅e¹⁰)
+	{ Q } [ m³/kg/s² ] = h⁶⋅c⁶⋅ε_0⁵ / (m_e²⋅e¹⁰)
 	  ├── 👎 Not in range.
 	  └── Min (~2E-51) < Max (~2E+30) < Q (~4E+44) 
 
@@ -74,12 +74,12 @@ Totally, unique 157437 dimensionless multiplications are calculated!
 
 Result(s) that overlap with the target:
 	{ 6.67430(15) e-11 } [ m³/kg/s² ] = Target
-	{ 6.674224928(14) e-11 } [ m³/kg/s² ] = (1 / (2²⋅3⋅5³⋅π⁴⋅μ⁹)) ⋅ (e¹² / (m_e²⋅ℎ⁵⋅c⁵⋅ε_0⁶))
+	{ 6.674224928(14) e-11 } [ m³/kg/s² ] = (1 / (2²⋅3⋅5³⋅π⁴⋅(m_p/m_e)⁹)) ⋅ (e¹² / (m_e²⋅h⁵⋅c⁵⋅ε_0⁶))
 
 Where
-* μ: proton electron mass ratio, m_p / m_e
+* (m_p/m_e): proton electron mass ratio
 * m_e: electron mass
 * e: elementary charge
-* ℎ: planck constant
+* h: planck constant
 * c: speed of light in vacuum
 * ε_0: vacuum electric permittivity
