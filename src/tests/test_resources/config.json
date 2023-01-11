@@ -1,5 +1,8 @@
 {
-  "method": "brute_force",
+  "settings": {
+    "method": "brute_force",
+    "buckingham_pi_ranges": [-2, 2]
+  },
   "dimensional_constants": {
     "speed_of_light_in_vacuum": [-2, 0],
     "planck_constant": [-3, 1],
@@ -14,6 +17,6 @@
     "3": [-1, -1],
     "5": [-1, -1],
     "pi": [5, 5],
-    "wien_u": [0, 1]
+    "w_u": [0, 1]
   }
 }

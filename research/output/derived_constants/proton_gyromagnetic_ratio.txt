@@ -2,8 +2,8 @@ Explore the target:
 	{ 2.6752218744(11) e+8 } [ A·s/kg ] = Target
 in terms of the given,
 	dimensional constants:   
-		c = { 2.99792458e+8 } [ m/s ], powers = [-2, -1, 0, 1, 2]
-		ℎ = { 6.62607015e-34 } [ kg·m²/s ], powers = [-3, -2, -1, 0, 1, 2, 3]
+		c = { 299792458 } [ m/s ], powers = [-2, -1, 0, 1, 2]
+		h = { 6.62607015e-34 } [ kg·m²/s ], powers = [-3, -2, -1, 0, 1, 2, 3]
 		k = { 1.380649e-23 } [ kg·m²/K/s² ], powers = [-4, -3, -2, -1, 0, 1, 2, 3, 4]
 		e = { 1.602176634e-19 } [ A·s ], powers = [-4, -3, -2, -1, 0, 1, 2, 3, 4]
 		ε_0 = { 8.8541878128(13)e-12 } [ A²·s⁴/kg/m³ ], powers = [-2, -1, 0, 1, 2]
@@ -14,14 +14,14 @@ in terms of the given,
 		3, powers = [-1, 0, 1]
 		5, powers = [-1, 0, 1]
 		π, powers = [-5, -4, -3, -2, -1, 0, 1, 2, 3, 4, 5]
-		wien_u, powers = [-1, 0, 1]
-		μ, powers = [-1, 0, 1]
+		w_u, powers = [-1, 0, 1]
+		(m_p/m_e), powers = [-1, 0, 1]
 		g_e, powers = [-1, 0, 1]
 		g_p, powers = [-1, 0, 1]
 by using brute_force methodology...
 
 Found 4 candidates the resultant unit matched with the target's unit:
-	{ Q } [ A·s/kg ] = e³ / (c⋅ℎ⋅ε_0⋅m_e)
+	{ Q } [ A·s/kg ] = e³ / (m_e⋅h⋅c⋅ε_0)
 	  ├── 👍 In range!
 	  └── Min (~1E-1) < Q (~3E+9) < Max (~6E+17) 
 
@@ -29,11 +29,11 @@ Found 4 candidates the resultant unit matched with the target's unit:
 	  ├── 👍 In range!
 	  └── Min (~1E-1) < Q (~2E+11) < Max (~6E+17) 
 
-	{ Q } [ A·s/kg ] = c⋅ℎ⋅ε_0 / (e⋅m_e)
+	{ Q } [ A·s/kg ] = h⋅c⋅ε_0 / (m_e⋅e)
 	  ├── 👍 In range!
 	  └── Min (~1E-1) < Q (~1E+13) < Max (~6E+17) 
 
-	{ Q } [ A·s/kg ] = c²⋅ℎ²⋅ε_0² / (e³⋅m_e)
+	{ Q } [ A·s/kg ] = h²⋅c²⋅ε_0² / (m_e⋅e³)
 	  ├── 👍 In range!
 	  └── Min (~1E-1) < Q (~8E+14) < Max (~6E+17) 
 
@@ -41,10 +41,10 @@ Totally, unique 56133 dimensionless multiplications are calculated!
 
 Result(s) that overlap with the target:
 	{ 2.6752218744(11) e+8 } [ A·s/kg ] = Target
-	{ 2.6752218745(17) e+8 } [ A·s/kg ] = g_p⋅e / (2⋅μ⋅m_e)
+	{ 2.6752218745(17) e+8 } [ A·s/kg ] = (g_p / (2⋅(m_p/m_e))) ⋅ (e / m_e)
 
 Where
+* (m_p/m_e): proton electron mass ratio
+* g_p: proton g factor
 * m_e: electron mass
 * e: elementary charge
-* μ: proton electron mass ratio, m_p / m_e
-* g_p: proton g factor

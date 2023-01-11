@@ -2,8 +2,8 @@ Explore the target:
 	{ 7.2973525693(11) e-3 } [ dimensionless ] = Target
 in terms of the given,
 	dimensional constants:   
-		c = { 2.99792458e+8 } [ m/s ], powers = [-2, -1, 0, 1, 2]
-		ℎ = { 6.62607015e-34 } [ kg·m²/s ], powers = [-3, -2, -1, 0, 1, 2, 3]
+		c = { 299792458 } [ m/s ], powers = [-2, -1, 0, 1, 2]
+		h = { 6.62607015e-34 } [ kg·m²/s ], powers = [-3, -2, -1, 0, 1, 2, 3]
 		k = { 1.380649e-23 } [ kg·m²/K/s² ], powers = [-4, -3, -2, -1, 0, 1, 2, 3, 4]
 		e = { 1.602176634e-19 } [ A·s ], powers = [-4, -3, -2, -1, 0, 1, 2, 3, 4]
 		ε_0 = { 8.8541878128(13)e-12 } [ A²·s⁴/kg/m³ ], powers = [-2, -1, 0, 1, 2]
@@ -14,18 +14,18 @@ in terms of the given,
 		3, powers = [-1, 0, 1]
 		5, powers = [-1, 0, 1]
 		π, powers = [-5, -4, -3, -2, -1, 0, 1, 2, 3, 4, 5]
-		wien_u, powers = [-1, 0, 1]
-		μ, powers = [-1, 0, 1]
+		w_u, powers = [-1, 0, 1]
+		(m_p/m_e), powers = [-1, 0, 1]
 		g_e, powers = [-1, 0, 1]
 		g_p, powers = [-1, 0, 1]
 by using brute_force methodology...
 
 Found 5 candidates the resultant unit matched with the target's unit:
-	{ Q } [ dimensionless ] = e⁴ / (c²⋅ℎ²⋅ε_0²)
+	{ Q } [ dimensionless ] = e⁴ / (h²⋅c²⋅ε_0²)
 	  ├── 👍 In range!
 	  └── Min (~3E-12) < Q (~2E-4) < Max (~2E+7) 
 
-	{ Q } [ dimensionless ] = e² / (c⋅ℎ⋅ε_0)
+	{ Q } [ dimensionless ] = e² / (h⋅c⋅ε_0)
 	  ├── 👍 In range!
 	  └── Min (~3E-12) < Q (~1E-2) < Max (~2E+7) 
 
@@ -33,11 +33,11 @@ Found 5 candidates the resultant unit matched with the target's unit:
 	  ├── 👍 In range!
 	  └── Min (~3E-12) < Q (~1E+0) < Max (~2E+7) 
 
-	{ Q } [ dimensionless ] = c⋅ℎ⋅ε_0 / e²
+	{ Q } [ dimensionless ] = h⋅c⋅ε_0 / e²
 	  ├── 👍 In range!
 	  └── Min (~3E-12) < Q (~7E+1) < Max (~2E+7) 
 
-	{ Q } [ dimensionless ] = c²⋅ℎ²⋅ε_0² / e⁴
+	{ Q } [ dimensionless ] = h²⋅c²⋅ε_0² / e⁴
 	  ├── 👍 In range!
 	  └── Min (~3E-12) < Q (~5E+3) < Max (~2E+7) 
 
@@ -45,10 +45,10 @@ Totally, unique 56133 dimensionless multiplications are calculated!
 
 Result(s) that overlap with the target:
 	{ 7.2973525693(11) e-3 } [ dimensionless ] = Target
-	{ 7.2973525693(11) e-3 } [ dimensionless ] = e² / (2⋅c⋅ℎ⋅ε_0)
+	{ 7.2973525693(11) e-3 } [ dimensionless ] = 1 / 2 ⋅ (e² / (h⋅c⋅ε_0))
 
 Where
 * e: elementary charge
+* h: planck constant
 * c: speed of light in vacuum
-* ℎ: planck constant
 * ε_0: vacuum electric permittivity

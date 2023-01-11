@@ -9,12 +9,23 @@ The exploration of some well-known physical constants by using this program is s
 <!-- TOC -->
 * [1 Motivation & Concept](#1-motivation--concept)
 * [2 Methodology](#2-methodology)
+  * [2.1 Technical Problems & Solutions](#21-technical-problems--solutions)
 * [3 Python Installation](#3-python-installation)
 * [4 The Program Usage](#4-the-program-usage)
   * [4.1 Running The Program](#41-running-the-program)
+    * [4.1.1 The Inputs](#411-the-inputs)
   * [4.2 The Definition File](#42-the-definition-file)
+    * [4.2.1 Dimensional Constants Collection](#421-dimensional-constants-collection)
+    * [4.2.2 Dimensionless Constants Collection](#422-dimensionless-constants-collection)
   * [4.3 The Config File](#43-the-config-file)
+    * [4.3.1 The Power Ranges](#431-the-power-ranges)
+    * [4.3.2 The Settings](#432-the-settings)
 * [5 The Program Outputs](#5-the-program-outputs)
+  * [5.1 Store Results into a File](#51-store-results-into-a-file)
+  * [5.2 Output Format](#52-output-format)
+    * [5.2.1 Summarizing the Inputs](#521-summarizing-the-inputs)
+    * [5.2.2 Listing the Candidates](#522-listing-the-candidates)
+    * [5.2.3 Results](#523-results)
 * [6 Tests](#6-tests)
 * [7 Researches](#7-researches)
 * [8 Resources & Libraries](#8-resources--libraries)
@@ -216,13 +227,13 @@ options:
   -c, --config-file 
                         Relative path of the config file.
                         It is a JSON file that contains the list of dimensional and dimensionless constants
-                        with their power range. This file is validated by "src/resources/config_schema.json"
+                        with their power range. This file is validated by "src/resources/schema/config_schema.json"
                         If it is not provided the program uses the default config file, located:
                         ./src/resources/default_config.json
   -d, --definition-file 
                         Relative path of the definition file.
                         It is a JSON file that contains the definition of dimensional and dimensionless constants.
-                        This file is validated by "src/resources/definition_schema.json"
+                        This file is validated by "src/resources/schema/definition_schema.json"
                         If it is not provided the program uses the default definition file, located:
                         ./src/resources/default_definition.json
 ```
@@ -299,16 +310,15 @@ The program uses its [default config file](src/resources/default_config.json), i
 The default config file is prepared by exploring some physical constants. These explorations are located under [the research part](/research).
 
 The config file has the following parameters:
-* `method`
 * `dimensional_constants`
 * `dimensionless_constants`
+* `settings`
 
 #### 4.3.1 The Power Ranges
 
-Each `constant` collection has its own `key`, `value` pairs, for example:
+Each `..._constants` collection has its own `key`, `value` pairs, for example:
 ```json
 {
-  "method": "brute_force",
   "dimensional_constants": {
     "speed_of_light_in_vacuum": [-2, 6],
     "vacuum_magnetic_permeability": {"range": [0, 2], "step": "1/3"},
@@ -317,7 +327,8 @@ Each `constant` collection has its own `key`, `value` pairs, for example:
   "dimensionless_constants": {
     "pi": 4,
     ...
-  }
+  },
+  ... 
 }
 ```
 
@@ -344,14 +355,24 @@ Power range values can be in 3 format as given the example above:
 
 If `0` is not given on the range (or in the converted ranges), the program adds `0` on the default. 
 
-#### 4.3.2 The Execution Method
+#### 4.3.2 The Settings
 
-The `method` parameter can be set one of these:
+The `method` parameter under settings can be set one of these:
 * "brute_force"
   * It is a pure brute force implementation
 * "brute_force_with_memorization"
   * It contains memorization implementation by pre-calculating the "some" group of quantities. The performance is better than `brute_force`.
-
+* "buckingham_pi"
+  * If it is set, "[Buckingham π theorem](https://en.wikipedia.org/wiki/Buckingham_%CF%80_theorem)" implementation of pint library "[pi_theorem](https://pint.readthedocs.io/en/0.10.1/pitheorem.html)" is used.
+  * It calculates all pi terms and calculates the all power combinations of found pi terms. So, the usage of this method requires the following settings:
+```json
+  "settings": {
+    "method": "buckingham_pi",
+    "buckingham_pi_ranges": [-2, 2]
+  },
+```
+  * You can set power range settings as explained above.
+  
 ## 5 The Program Outputs
 
 The program prints the outputs to console. 

@@ -1,7 +1,7 @@
 import argparse
 import json
 from argparse import RawTextHelpFormatter
-from decimal import getcontext
+from decimal import getcontext, ROUND_HALF_UP
 
 from src.explore_constant import ExploreConstant
 
@@ -43,7 +43,7 @@ if __name__ == '__main__':
                         metavar='\b',
                         help='Relative path of the config file.\n'
                              'It is a JSON file that contains the list of dimensional and dimensionless constants\n'
-                             'with their power range. This file is validated by "src/resources/config_schema.json"\n'
+                             'with their power range. This file is validated by "src/resources/schema/config_schema.json"\n'
                              'If it is not provided the program uses the default config file, located:\n'
                              './src/resources/default_config.json')
 
@@ -54,7 +54,7 @@ if __name__ == '__main__':
                         metavar='\b',
                         help='Relative path of the definition file.\n'
                              'It is a JSON file that contains the definition of dimensional and dimensionless constants.\n'
-                             'This file is validated by "src/resources/definition_schema.json"\n'
+                             'This file is validated by "src/resources/schema/definition_schema.json"\n'
                              'If it is not provided the program uses the default definition file, located:\n'
                              './src/resources/default_definition.json'
                         )
@@ -63,6 +63,7 @@ if __name__ == '__main__':
 
     # Setting Decimal precision
     getcontext().prec = 50
+    getcontext().rounding = ROUND_HALF_UP
 
     # Reading config
     with open(args.config_file) as f:

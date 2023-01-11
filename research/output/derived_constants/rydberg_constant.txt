@@ -2,8 +2,8 @@ Explore the target:
 	{ 1.0973731568160(21) e+7 } [ 1/m ] = Target
 in terms of the given,
 	dimensional constants:   
-		c = { 2.99792458e+8 } [ m/s ], powers = [-2, -1, 0, 1, 2]
-		ℎ = { 6.62607015e-34 } [ kg·m²/s ], powers = [-3, -2, -1, 0, 1, 2, 3]
+		c = { 299792458 } [ m/s ], powers = [-2, -1, 0, 1, 2]
+		h = { 6.62607015e-34 } [ kg·m²/s ], powers = [-3, -2, -1, 0, 1, 2, 3]
 		k = { 1.380649e-23 } [ kg·m²/K/s² ], powers = [-4, -3, -2, -1, 0, 1, 2, 3, 4]
 		e = { 1.602176634e-19 } [ A·s ], powers = [-4, -3, -2, -1, 0, 1, 2, 3, 4]
 		ε_0 = { 8.8541878128(13)e-12 } [ A²·s⁴/kg/m³ ], powers = [-2, -1, 0, 1, 2]
@@ -14,26 +14,26 @@ in terms of the given,
 		3, powers = [-1, 0, 1]
 		5, powers = [-1, 0, 1]
 		π, powers = [-5, -4, -3, -2, -1, 0, 1, 2, 3, 4, 5]
-		wien_u, powers = [-1, 0, 1]
-		μ, powers = [-1, 0, 1]
+		w_u, powers = [-1, 0, 1]
+		(m_p/m_e), powers = [-1, 0, 1]
 		g_e, powers = [-1, 0, 1]
 		g_p, powers = [-1, 0, 1]
 by using brute_force methodology...
 
 Found 4 candidates the resultant unit matched with the target's unit:
-	{ Q } [ 1/m ] = e⁴⋅m_e / (c⋅ℎ³⋅ε_0²)
+	{ Q } [ 1/m ] = m_e⋅e⁴ / (h³⋅c⋅ε_0²)
 	  ├── 👍 In range!
 	  └── Min (~5E-3) < Q (~9E+7) < Max (~2E+16) 
 
-	{ Q } [ 1/m ] = e²⋅m_e / (ℎ²⋅ε_0)
+	{ Q } [ 1/m ] = m_e⋅e² / (h²⋅ε_0)
 	  ├── 👍 In range!
 	  └── Min (~5E-3) < Q (~6E+9) < Max (~2E+16) 
 
-	{ Q } [ 1/m ] = c⋅m_e / ℎ
+	{ Q } [ 1/m ] = m_e⋅c / h
 	  ├── 👍 In range!
 	  └── Min (~5E-3) < Q (~4E+11) < Max (~2E+16) 
 
-	{ Q } [ 1/m ] = c²⋅ε_0⋅m_e / e²
+	{ Q } [ 1/m ] = m_e⋅c²⋅ε_0 / e²
 	  ├── 👍 In range!
 	  └── Min (~5E-3) < Q (~3E+13) < Max (~2E+16) 
 
@@ -41,11 +41,11 @@ Totally, unique 56133 dimensionless multiplications are calculated!
 
 Result(s) that overlap with the target:
 	{ 1.0973731568160(21) e+7 } [ 1/m ] = Target
-	{ 1.09737315681(66) e+7 } [ 1/m ] = e⁴⋅m_e / (2³⋅c⋅ℎ³⋅ε_0²)
+	{ 1.09737315681(66) e+7 } [ 1/m ] = 1 / 2³ ⋅ (m_e⋅e⁴ / (h³⋅c⋅ε_0²))
 
 Where
-* e: elementary charge
-* c: speed of light in vacuum
 * m_e: electron mass
+* e: elementary charge
+* h: planck constant
+* c: speed of light in vacuum
 * ε_0: vacuum electric permittivity
-* ℎ: planck constant

@@ -20,8 +20,20 @@ def _pretty_faction_exponent(num):
     return ret
 
 
+def _default_faction_exponent(num):
+    f_num = Fraction(num).limit_denominator(1000000)
+    numerator = f_num.numerator
+    denominator = f_num.denominator
+    if denominator == 1:
+        ret = f"{str(numerator)}"
+    else:
+        ret = f"{str(numerator)}/{str(denominator)}"
+
+    return ret
+
+
 @register_unit_format("FU")
-def format_pretty(unit, registry, **options):
+def format_fraction_units(unit, registry, **options):
     return formatter(
         unit.items(),
         as_ratio=True,
@@ -35,9 +47,24 @@ def format_pretty(unit, registry, **options):
     )
 
 
+@register_unit_format("FD")
+def format_default_fraction(unit, registry, **options):
+    return formatter(
+        unit.items(),
+        as_ratio=True,
+        single_denominator=False,
+        product_fmt=" * ",
+        division_fmt=" / ",
+        power_fmt="{} ** {}",
+        parentheses_fmt=r"({})",
+        exp_call=_default_faction_exponent,
+        **options,
+    )
+
+
 # Global pint unit registry instance
 ur = UnitRegistry(
     non_int_type=Fraction
 )
 
-dimensionless_unit = ur("dimensionless").to_base_units().units
+dimensionless_unit = ur("dimensionless").to_base_units()

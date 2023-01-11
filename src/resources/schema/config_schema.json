@@ -2,16 +2,12 @@
     "$schema": "http://json-schema.org/draft-04/schema#",
     "type": "object",
     "required": [
-        "method",
         "dimensional_constants",
-        "dimensionless_constants"
+        "dimensionless_constants",
+        "settings"
     ],
     "additionalProperties": false,
     "properties": {
-        "method": {
-            "enum": ["brute_force", "brute_force_with_memorization"],
-            "additionalProperties": false
-        },
         "dimensional_constants": {
             "type": "object",
             "minProperties": 1,
@@ -21,6 +17,17 @@
             "type": "object",
             "minProperties": 1,
             "additionalProperties": {"$ref": "#/$defs/power_values"}
+        },
+        "settings": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "method": {
+                    "enum": ["buckingham_pi", "brute_force", "brute_force_with_memorization"],
+                    "additionalProperties": false
+                },
+                "buckingham_pi_ranges": {"$ref": "#/$defs/power_values"}
+            }
         }
     },
     "$defs": {

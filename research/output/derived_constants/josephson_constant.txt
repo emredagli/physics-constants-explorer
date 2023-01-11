@@ -2,8 +2,8 @@ Explore the target:
 	{ 4.8359784840(10) e+14 } [ A·s²/kg/m² ] = Target
 in terms of the given,
 	dimensional constants:   
-		c = { 2.99792458e+8 } [ m/s ], powers = [-2, -1, 0, 1, 2]
-		ℎ = { 6.62607015e-34 } [ kg·m²/s ], powers = [-3, -2, -1, 0, 1, 2, 3]
+		c = { 299792458 } [ m/s ], powers = [-2, -1, 0, 1, 2]
+		h = { 6.62607015e-34 } [ kg·m²/s ], powers = [-3, -2, -1, 0, 1, 2, 3]
 		k = { 1.380649e-23 } [ kg·m²/K/s² ], powers = [-4, -3, -2, -1, 0, 1, 2, 3, 4]
 		e = { 1.602176634e-19 } [ A·s ], powers = [-4, -3, -2, -1, 0, 1, 2, 3, 4]
 		ε_0 = { 8.8541878128(13)e-12 } [ A²·s⁴/kg/m³ ], powers = [-2, -1, 0, 1, 2]
@@ -14,18 +14,18 @@ in terms of the given,
 		3, powers = [-1, 0, 1]
 		5, powers = [-1, 0, 1]
 		π, powers = [-5, -4, -3, -2, -1, 0, 1, 2, 3, 4, 5]
-		wien_u, powers = [-1, 0, 1]
-		μ, powers = [-1, 0, 1]
+		w_u, powers = [-1, 0, 1]
+		(m_p/m_e), powers = [-1, 0, 1]
 		g_e, powers = [-1, 0, 1]
 		g_p, powers = [-1, 0, 1]
 by using brute_force methodology...
 
 Found 4 candidates the resultant unit matched with the target's unit:
-	{ Q } [ A·s²/kg/m² ] = e³ / (c⋅ℎ²⋅ε_0)
+	{ Q } [ A·s²/kg/m² ] = e³ / (h²⋅c⋅ε_0)
 	  ├── 👍 In range!
 	  └── Min (~2E+5) < Q (~4E+12) < Max (~1E+24) 
 
-	{ Q } [ A·s²/kg/m² ] = e / ℎ
+	{ Q } [ A·s²/kg/m² ] = e / h
 	  ├── 👍 In range!
 	  └── Min (~2E+5) < Q (~2E+14) < Max (~1E+24) 
 
@@ -33,7 +33,7 @@ Found 4 candidates the resultant unit matched with the target's unit:
 	  ├── 👍 In range!
 	  └── Min (~2E+5) < Q (~2E+16) < Max (~1E+24) 
 
-	{ Q } [ A·s²/kg/m² ] = c²⋅ℎ⋅ε_0² / e³
+	{ Q } [ A·s²/kg/m² ] = h⋅c²⋅ε_0² / e³
 	  ├── 👍 In range!
 	  └── Min (~2E+5) < Q (~1E+18) < Max (~1E+24) 
 
@@ -41,8 +41,8 @@ Totally, unique 56133 dimensionless multiplications are calculated!
 
 Result(s) that overlap with the target:
 	{ 4.8359784840(10) e+14 } [ A·s²/kg/m² ] = Target
-	{ 4.8359784841698... e+14 (exact) } [ A·s²/kg/m² ] = 2⋅e / ℎ
+	{ 4.8359784841698... e+14 (exact) } [ A·s²/kg/m² ] = 2 ⋅ (e / h)
 
 Where
-* ℎ: planck constant
 * e: elementary charge
+* h: planck constant

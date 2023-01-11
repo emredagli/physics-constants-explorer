@@ -8,7 +8,7 @@ def get_test_resources(method="brute_force"):
     # Reading config
     with open(f"{test_resources_path}/config.json") as f:
         config = json.load(f)
-    config["method"] = method
+    config["settings"]["method"] = method
 
     # Reading definition
     with open(f"{test_resources_path}/definition.json") as f:

@@ -1,5 +1,7 @@
 {
-  "method": "brute_force",
+  "settings": {
+    "method": "brute_force"
+  },
   "dimensional_constants": {
     "speed_of_light_in_vacuum": [-2, 2],
     "planck_constant": [-3, 3],
@@ -14,7 +16,7 @@
     "3": [-1, 1],
     "5": [-1, 1],
     "pi": [-5, 5],
-    "wien_u": [-1, 1],
+    "w_u": [-1, 1],
     "proton_electron_mass_ratio": [-1, 1],
     "electron_g_factor": [-1, 1],
     "proton_g_factor": [-1, 1]

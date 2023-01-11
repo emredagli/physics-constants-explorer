@@ -2,8 +2,8 @@ Explore the target:
 	{ 5.391247(60) e-44 } [ s ] = Target
 in terms of the given,
 	dimensional constants:   
-		c = { 2.99792458e+8 } [ m/s ], powers = [-3, -5/2, -2, -3/2, -1, -1/2, 0, 1/2, 1, 3/2, 2, 5/2, 3]
-		ℎ = { 6.62607015e-34 } [ kg·m²/s ], powers = [-1, -1/2, 0, 1/2, 1]
+		c = { 299792458 } [ m/s ], powers = [-3, -5/2, -2, -3/2, -1, -1/2, 0, 1/2, 1, 3/2, 2, 5/2, 3]
+		h = { 6.62607015e-34 } [ kg·m²/s ], powers = [-1, -1/2, 0, 1/2, 1]
 		G = { 6.67430(15)e-11 } [ m³/kg/s² ], powers = [-1, -1/2, 0, 1/2, 1]
 		k = { 1.380649e-23 } [ kg·m²/K/s² ], powers = [-1, -1/2, 0, 1/2, 1]
 	dimensionless constants: 
@@ -12,7 +12,7 @@ in terms of the given,
 by using brute_force methodology...
 
 Found 1 candidates the resultant unit matched with the target's unit:
-	{ Q } [ s ] = ℎ¹ᐟ²⋅G¹ᐟ² / c⁵ᐟ²
+	{ Q } [ s ] = G¹ᐟ²⋅h¹ᐟ² / c⁵ᐟ²
 	  ├── 👍 In range!
 	  └── Min (~1E-45) < Q (~1E-43) < Max (~2E-42) 
 
@@ -20,9 +20,9 @@ Totally, unique 81 dimensionless multiplications are calculated!
 
 Result(s) that overlap with the target:
 	{ 5.391247(60) e-44 } [ s ] = Target
-	{ 5.391246(61) e-44 } [ s ] = ℎ¹ᐟ²⋅G¹ᐟ² / (2¹ᐟ²⋅π¹ᐟ²⋅c⁵ᐟ²)
+	{ 5.391246(61) e-44 } [ s ] = (1 / (2¹ᐟ²⋅π¹ᐟ²)) ⋅ (G¹ᐟ²⋅h¹ᐟ² / c⁵ᐟ²)
 
 Where
-* ℎ: planck constant
-* c: speed of light in vacuum
 * G: newtonian constant of gravitation
+* h: planck constant
+* c: speed of light in vacuum

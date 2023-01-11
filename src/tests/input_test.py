@@ -92,7 +92,7 @@ def test_invalid_target_values(target_value, target_unit):
             "dimensionless_constants": {"2": {"numeric_value": "2"}}
         }),
         ("12- 'numeric_value' must be in scientific format", {
-            "dimensional_constants": {"c": {"numeric_value": "321", "unit": "m/s"}},
+            "dimensional_constants": {"c": {"numeric_value": "321abc", "unit": "m/s"}},
             "dimensionless_constants": {"2": {"numeric_value": "2"}}
         }),
         ("13- 'unit' must defined for dimensional constants", {
@@ -137,7 +137,7 @@ def test_invalid_definitions(info, definition):
     logger.info(f"Testing invalid definition={definition} when {info}")
 
     config = {
-        "method": "brute_force",
+        "settings": {"method": "brute_force"},
         "dimensional_constants": {"c": 1},
         "dimensionless_constants": {"2": 1}
     }
@@ -156,132 +156,132 @@ def test_invalid_definitions(info, definition):
         ("1", {}),
         ("2", {"dimensional_constants": {}, "dimensionless_constants": {}}),
         ("3", {
-            "method": "brute_force",
+            "settings": {"method": "brute_force"},
             "dimensional_constants": {},
             "dimensionless_constants": {}
         }),
-        ("4", {
-            "method": "brute_force",
+        ("4-should have at least one dimensionless_constants", {
+            "settings": {"method": "brute_force"},
             "dimensional_constants": {"planck_constant": 1},
             "dimensionless_constants": {}
         }),
-        ("5", {
-            "method": "brute_force",
+        ("5-should have at least one dimensional_constants", {
+            "settings": {"method": "brute_force"},
             "dimensional_constants": {},
             "dimensionless_constants": {"pi": 1}
         }),
         ("6", {
-            "method": "brute_force",
+            "settings": {"method": "brute_force"},
             "dimensional_constants": {"not_defined": 1},
             "dimensionless_constants": {"pi": 1}
         }),
         ("7-range order is invalid", {
-            "method": "brute_force",
+            "settings": {"method": "brute_force"},
             "dimensional_constants": {"planck_constant": [1, 0]},
             "dimensionless_constants": {"pi": 1}
         }),
         ("8-range must have 2 numbers", {
-            "method": "brute_force",
+            "settings": {"method": "brute_force"},
             "dimensional_constants": {"planck_constant": [-3, 3, 0.5]},
             "dimensionless_constants": {"pi": 1}
         }),
         ("9-range must have 2 numbers", {
-            "method": "brute_force",
+            "settings": {"method": "brute_force"},
             "dimensional_constants": {"planck_constant": [3]},
             "dimensionless_constants": {"pi": 1}
         }),
         ("10-range must have 2 numbers", {
-            "method": "brute_force",
+            "settings": {"method": "brute_force"},
             "dimensional_constants": {"planck_constant": 3},
             "dimensionless_constants": {"pi": [1]}
         }),
         ("11-range must have 2 numbers", {
-            "method": "brute_force",
+            "settings": {"method": "brute_force"},
             "dimensional_constants": {"planck_constant": 3},
             "dimensionless_constants": {"pi": [1, 2, 0.5]}
         }),
         ("12-range must have 2 numbers", {
-            "method": "brute_force",
+            "settings": {"method": "brute_force"},
             "dimensional_constants": {"planck_constant": ["1", "2"]},
             "dimensionless_constants": {"pi": 1}
         }),
         ("13-single int", {
-            "method": "brute_force",
+            "settings": {"method": "brute_force"},
             "dimensional_constants": {"planck_constant": "2"},
             "dimensionless_constants": {"pi": 1}
         }),
         ("14-single int", {
-            "method": "brute_force",
+            "settings": {"method": "brute_force"},
             "dimensional_constants": {"planck_constant": True},
             "dimensionless_constants": {"pi": 1}
         }),
         ("15-object must have range and step", {
-            "method": "brute_force",
+            "settings": {"method": "brute_force"},
             "dimensional_constants": {"planck_constant": {"range": [1, 2]}},
             "dimensionless_constants": {"pi": 1}
         }),
         ("16-object must have range and step", {
-            "method": "brute_force",
+            "settings": {"method": "brute_force"},
             "dimensional_constants": {"planck_constant": {"step": "1/2"}},
             "dimensionless_constants": {"pi": 1}
         }),
         ("17-object must have valid step", {
-            "method": "brute_force",
+            "settings": {"method": "brute_force"},
             "dimensional_constants": {"planck_constant": {"range": [1, 2], "step": "fdds"}},
             "dimensionless_constants": {"pi": 1}
         }),
         ("18-object must have valid step", {
-            "method": "brute_force",
+            "settings": {"method": "brute_force"},
             "dimensional_constants": {"planck_constant": {"range": [1, 2], "step": True}},
             "dimensionless_constants": {"pi": 1}
         }),
         ("19-object's step property must be in string", {
-            "method": "brute_force",
+            "settings": {"method": "brute_force"},
             "dimensional_constants": {"planck_constant": {"range": [1, 2], "step": 1.5}},
             "dimensionless_constants": {"pi": 1}
         }),
         ("20-object must have valid range", {
-            "method": "brute_force",
+            "settings": {"method": "brute_force"},
             "dimensional_constants": {"planck_constant": {"range": [1], "step": "1/3"}},
             "dimensionless_constants": {"pi": 1}
         }),
         ("21-object must have valid range", {
-            "method": "brute_force",
+            "settings": {"method": "brute_force"},
             "dimensional_constants": {"planck_constant": {"range": [1, 2, 0.5], "step": "1/3"}},
             "dimensionless_constants": {"pi": 1}
         }),
         ("22-range first value should be less than the second one", {
-            "method": "brute_force",
+            "settings": {"method": "brute_force"},
             "dimensional_constants": {"planck_constant": {"range": [3, -3], "step": "1/3"}},
             "dimensionless_constants": {"pi": 1}
         }),
         ("23-range first value should be less than the second one", {
-            "method": "brute_force",
+            "settings": {"method": "brute_force"},
             "dimensional_constants": {"planck_constant": [3, -3]},
             "dimensionless_constants": {"pi": 1}
         }),
         ("24-range first value should be less than the second one", {
-            "method": "brute_force",
+            "settings": {"method": "brute_force"},
             "dimensional_constants": {"planck_constant": 1},
             "dimensionless_constants": {"pi": {"range": [3, -3], "step": "1/3"}}
         }),
         ("25-range first value should be less than the second one", {
-            "method": "brute_force",
+            "settings": {"method": "brute_force"},
             "dimensional_constants": {"planck_constant": 1},
             "dimensionless_constants": {"pi": [3, -3]}
         }),
         ("26-integer range values must be greater than 0", {
-            "method": "brute_force",
+            "settings": {"method": "brute_force"},
             "dimensional_constants": {"planck_constant": -1},
             "dimensionless_constants": {"pi": 1}
         }),
         ("27-integer range values must be greater than 0", {
-            "method": "brute_force",
+            "settings": {"method": "brute_force"},
             "dimensional_constants": {"planck_constant": 1},
             "dimensionless_constants": {"pi": -1}
         }),
         ("28-step values must be in in fraction form", {
-            "method": "brute_force",
+            "settings": {"method": "brute_force"},
             "dimensional_constants": {"planck_constant": {"range": [1, 3], "step": "0.3333"}},
             "dimensionless_constants": {"pi": 1}
         }),
@@ -335,7 +335,7 @@ def test_valid_definition_and_config():
     }
 
     config = {
-        "method": "brute_force",
+        "settings": {"method": "brute_force"},
         "dimensional_constants": {
             "speed_of_light_in_vacuum": {"range": [-2, 3], "step": "1/3"}
         },

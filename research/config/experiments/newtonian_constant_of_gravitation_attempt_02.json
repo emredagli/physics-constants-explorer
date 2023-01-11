@@ -1,18 +1,21 @@
 {
-  "method": "brute_force_with_memorization",
+  "settings": {
+    "method": "buckingham_pi",
+    "buckingham_pi_ranges": {"range": [-2, 2], "step": "1/4"}
+  },
   "dimensional_constants": {
-    "planck_constant": {"range": [-4, 4], "step": "1/2"},
-    "elementary_charge": {"range": [-4, 4], "step": "1/2"},
-    "electron_mass": {"range": [-3, 3], "step": "1/2"},
-    "vacuum_magnetic_permeability": {"range": [-4, 4], "step": "1/2"},
-    "vacuum_electric_permittivity": {"range": [-4, 4], "step": "1/2"},
-    "fermi_coupling_constant": {"range": [-4, 4], "step": "1/2"}
+    "planck_constant": {"range": [-6, 6], "step": "1/2"},
+    "elementary_charge": {"range": [-12, 12], "step": "1/2"},
+    "electron_mass": {"range": [-4, 4], "step": "1/2"},
+    "vacuum_magnetic_permeability": {"range": [-6, 6], "step": "1/2"},
+    "vacuum_electric_permittivity": {"range": [-6, 6], "step": "1/2"},
+    "fermi_coupling_constant": {"range": [-6, 6], "step": "1/2"}
   },
   "dimensionless_constants": {
     "2": 8,
     "3": 3,
     "5": 3,
     "pi": 5,
-    "proton_electron_mass_ratio": {"range": [-6, 6], "step": "1/2"}
+    "proton_electron_mass_ratio": {"range": [-10, 10], "step": "1/2"}
   }
 }

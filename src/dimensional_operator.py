@@ -1,12 +1,10 @@
-import collections
-import operator
+from collections import OrderedDict
 from enum import Enum
-from functools import reduce
-from itertools import product
 
-from tqdm import tqdm
-
-from src.quantity import Quantity
+from src.methodologies.base_methodology import BaseMethodology
+from src.methodologies.brute_force import BruteForce
+from src.methodologies.brute_force_with_memorization import BruteForceWithMemorization
+from src.methodologies.buckingham_pi import BuckinghamPI
 
 
 class NumericPosition(Enum):
@@ -16,49 +14,53 @@ class NumericPosition(Enum):
 
 
 class DimensionalOperator:
+    methodology: BaseMethodology = None
+    candidates: OrderedDict = None
+    _candidates_in_range: OrderedDict = None
 
-    def __init__(self, method, scope, target, dimensionless_numeric_range):
+    def __init__(self, settings, scope, target, dimensionless_numeric_range):
         self.scope = scope
-        self.method = method
+        self.settings = settings
         self.target = target
         self.dimensionless_numeric_range = dimensionless_numeric_range
-        self.candidates = dict()
-        self.candidates_in_range = dict()
+        self._set_methodology()
 
-    def _find_matched_by_brute_force(self, powered_quantities):
-        total_len = reduce(operator.mul, map(len, powered_quantities), 1)
-        candidates = dict()
-        candidates_in_range = dict()
-        target_dimensionality = self.target.unit.dimensionality
-        for quantities in tqdm(product(*powered_quantities),
-                               desc=f"Combinations of dimensional constants are being searched...",
-                               unit=" Iteration",
-                               total=total_len):
+    @property
+    def candidates(self):
+        if self.methodology is None:
+            return None
 
-            units = [q.unit.dimensionality for q in quantities]
-            resultant_unit = reduce(operator.mul, units[1:], units[0])
+        return self.methodology.candidates
 
-            if resultant_unit == target_dimensionality:
-                quantity = Quantity(value=list(quantities))
-                candidates.setdefault(quantity.value, quantity)
-                position, _, _ = self._dimensionless_numeric_range_position(quantity.value)
-                if position == NumericPosition.IN_RANGE:
-                    candidates_in_range.setdefault(quantity.value, quantity)
+    @property
+    def candidates_in_range(self):
+        if self._candidates_in_range is not None:
+            return self._candidates_in_range
 
-        self.candidates = collections.OrderedDict(sorted(candidates.items()))
-        self.candidates_in_range = collections.OrderedDict(sorted(candidates_in_range.items()))
+        if self.candidates is None:
+            return None
 
-    def _find_matched_by_brute_force_with_memorization(self):
-        grouped_quantities = self.scope.get_grouped_quantities()
-        self._find_matched_by_brute_force(grouped_quantities)
+        self._candidates_in_range = OrderedDict()
+        for key, item in self.candidates.items():
+            position, _, _ = self._dimensionless_numeric_range_position(item.value)
+            if position == NumericPosition.IN_RANGE:
+                self._candidates_in_range.setdefault(key, item)
+
+        return self._candidates_in_range
+
+    def _set_methodology(self):
+        # TODO: is there way to use dot notation of validated jsonschema object?
+        if self.settings.get("method") == "buckingham_pi":
+            self.methodology = BuckinghamPI(target=self.target, scope=self.scope, settings=self.settings)
+        elif self.settings.get("method") == "brute_force":
+            self.methodology = BruteForce(target=self.target, scope=self.scope, settings=self.settings)
+        elif self.settings.get("method") == "brute_force_with_memorization":
+            self.methodology = BruteForceWithMemorization(target=self.target, scope=self.scope, settings=self.settings)
+        else:
+            raise ValueError("Search method (config.settings.method) is invalid!")
 
     def explore_constant(self):
-        if self.method == "brute_force":
-            self._find_matched_by_brute_force(self.scope.powered_quantities.values())
-        elif self.method == "brute_force_with_memorization":
-            self._find_matched_by_brute_force_with_memorization()
-        else:
-            raise ValueError("Search method (config.method) is invalid!")
+        self.methodology.find_matched()
 
         if len(self.candidates.items()) == 0:
             print("Could not find a candidate that has the same unit as the targets!")
