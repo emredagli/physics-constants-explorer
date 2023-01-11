@@ -215,7 +215,7 @@ The program found some candidates that the resultant unit matched with the targe
 
 If you look at the found candidates, there is a pattern between these (the first 2 candidates):
 ```text
-	{ Q1 } [ m³/kg/s² ] = e¹² / (m_e²⋅h⁵⋅c⁵⋅ε_0⁶)
+    { Q1 } [ m³/kg/s² ] = e¹² / (m_e²⋅h⁵⋅c⁵⋅ε_0⁶)
     { Q2 } [ m³/kg/s² ] = e¹⁰ / (m_e²⋅h⁴⋅c⁴⋅ε_0⁵)
 ...
 
