@@ -6,8 +6,8 @@ from decimal import getcontext, ROUND_HALF_UP
 from src.explore_constant import ExploreConstant
 
 if __name__ == '__main__':
-    parser = argparse.ArgumentParser(description='It will explore the nearest representation of the given physical quantity\n'
-                                                 'in terms of the given other quantity definitions and the scope.',
+    parser = argparse.ArgumentParser(description='It explores the nearest representation of the given physical quantity\n'
+                                                 'in terms of the given other quantity definitions with their power scope.',
                                      formatter_class=RawTextHelpFormatter)
     parser.add_argument('-v',
                         '--target-value',

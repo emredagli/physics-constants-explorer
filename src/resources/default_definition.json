@@ -1707,6 +1707,13 @@
       "symbol": "(m_W/m_Z)",
       "latex": "(m_{\\rm W}/m_{\\rm Z})",
       "codata": "https://physics.nist.gov/cgi-bin/cuu/Value?rmwmz"
+    },
+    "the_ratio_of_the_electrical_to_gravitational_forces_between_two_protons": {
+      "name": "The ratio of the electrical to gravitational forces between two protons (e^2/(4πε_0 G m_p^2))",
+      "numeric_value": "1.23555163576(1)E+36",
+      "symbol": "γ",
+      "latex": "",
+      "codata": ""
     }
   }
 }

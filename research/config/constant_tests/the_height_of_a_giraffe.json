@@ -1,0 +1,12 @@
+{
+  "settings": {
+    "method": "brute_force"
+  },
+  "dimensional_constants": {
+    "bohr_radius": [-1, 1]
+  },
+  "dimensionless_constants": {
+    "proton_electron_mass_ratio": {"range": [-1, 1], "step": "1/20"},
+    "the_ratio_of_the_electrical_to_gravitational_forces_between_two_protons":{"range": [-1, 1], "step": "1/10"}
+  }
+}

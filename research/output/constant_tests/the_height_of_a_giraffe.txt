@@ -1,0 +1,25 @@
+Explore the target:
+	{ 2.440(10)  } [ m ] = Target
+in terms of the given,
+	dimensional constants:   
+		a_0 = { 5.29177210903(80)e-11 } [ m ], powers = [-1, 0, 1]
+	dimensionless constants: 
+		(m_p/m_e), powers = [-1, -19/20, -9/10, -17/20, -4/5, -3/4, -7/10, -13/20, -3/5, -11/20, -1/2, -9/20, -2/5, -7/20, -3/10, -1/4, -1/5, -3/20, -1/10, -1/20, 0, 1/20, 1/10, 3/20, 1/5, 1/4, 3/10, 7/20, 2/5, 9/20, 1/2, 11/20, 3/5, 13/20, 7/10, 3/4, 4/5, 17/20, 9/10, 19/20, 1]
+		γ, powers = [-1, -9/10, -4/5, -7/10, -3/5, -1/2, -2/5, -3/10, -1/5, -1/10, 0, 1/10, 1/5, 3/10, 2/5, 1/2, 3/5, 7/10, 4/5, 9/10, 1]
+by using brute_force methodology...
+
+Found 1 candidates the resultant unit matched with the target's unit:
+	{ Q } [ m ] = a_0
+	  ├── 👍 In range!
+	  └── Min (~1E-39) < Q (~5E-11) < Max (~6E+39) 
+
+Totally, unique 861 dimensionless multiplications are calculated!
+
+Result(s) that overlap with the target:
+	{ 2.440(10)  } [ m ] = Target
+	{ 2.44322781228(38)  } [ m ] = (γ³ᐟ¹⁰ / (m_p/m_e)¹ᐟ²⁰) ⋅ (a_0)
+
+Where
+* (m_p/m_e): proton electron mass ratio
+* γ: the ratio of the electrical to gravitational forces between two protons
+* a_0: bohr radius
