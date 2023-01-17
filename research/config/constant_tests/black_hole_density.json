@@ -1,0 +1,17 @@
+{
+  "settings": {
+    "method": "brute_force"
+  },
+  "dimensional_constants": {
+    "speed_of_light_in_vacuum": {"range": [-8, 8], "step": "1/2"},
+    "planck_constant": {"range": [-2, 2], "step": "1/2"},
+    "proton_mass": [-2, 2],
+    "newtonian_constant_of_gravitation": {"range": [-2, 2], "step": "1/2"}
+  },
+  "dimensionless_constants": {
+    "2": [-10, 10],
+    "3": [-2, 2],
+    "5": [-1, 1],
+    "pi": {"range": [-8, 8], "step": "1/2"}
+  }
+}

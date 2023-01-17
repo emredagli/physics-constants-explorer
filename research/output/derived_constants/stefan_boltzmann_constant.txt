@@ -22,15 +22,15 @@ by using brute_force methodology...
 
 Found 3 candidates the resultant unit matched with the target's unit:
 	{ Q } [ kg/K⁴/s³ ] = k⁴ / (h³⋅c²)
-	  ├── 👍 In range!
+	  ├── 👍 The target can be reachable with the provided dimensionless constants!
 	  └── Min (~3E-17) < Q (~1E-9) < Max (~1E+2) 
 
 	{ Q } [ kg/K⁴/s³ ] = k⁴⋅ε_0 / (e²⋅h²⋅c)
-	  ├── 👍 In range!
+	  ├── 👍 The target can be reachable with the provided dimensionless constants!
 	  └── Min (~3E-17) < Q (~1E-7) < Max (~1E+2) 
 
 	{ Q } [ kg/K⁴/s³ ] = k⁴⋅ε_0² / (e⁴⋅h)
-	  ├── 👍 In range!
+	  ├── 👍 The target can be reachable with the provided dimensionless constants!
 	  └── Min (~3E-17) < Q (~7E-6) < Max (~1E+2) 
 
 Totally, unique 56133 dimensionless multiplications are calculated!

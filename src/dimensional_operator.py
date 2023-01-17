@@ -93,10 +93,10 @@ class DimensionalOperator:
         ratio_max_info = f" Max (~{ratio_max:.0E}) "
         ratio_min_info = f" Min (~{ratio_min:.0E}) "
         quantity_info = f" Q (~{candidate_numeric_value:.0E}) "
-        in_range_info = "👎 Not in range."
+        in_range_info = "👎 The target can NOT be reachable with the provided dimensionless constants."
 
         if position == NumericPosition.IN_RANGE:
-            in_range_info = "👍 In range!"
+            in_range_info = "👍 The target can be reachable with the provided dimensionless constants!"
             quantity_info = f"{ratio_min_info}<{quantity_info}<{ratio_max_info}"
         elif position == NumericPosition.RIGHT:
             quantity_info = f"{ratio_min_info}<{ratio_max_info}<{quantity_info}"

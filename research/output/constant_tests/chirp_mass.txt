@@ -15,15 +15,15 @@ by using brute_force methodology...
 
 Found 3 candidates the resultant unit matched with the target's unit:
 	{ Q } [ kg/s ] = m_p²⋅c² / h
-	  ├── 👎 Not in range.
+	  ├── 👎 The target can NOT be reachable with the provided dimensionless constants.
 	  └── Q (~4E-4) < Min (~9E+30) < Max (~1E+37) 
 
 	{ Q } [ kg/s ] = m_p⋅c⁵ᐟ² / (G¹ᐟ²⋅h¹ᐟ²)
-	  ├── 👎 Not in range.
+	  ├── 👎 The target can NOT be reachable with the provided dimensionless constants.
 	  └── Q (~1E+16) < Min (~9E+30) < Max (~1E+37) 
 
 	{ Q } [ kg/s ] = c³ / G
-	  ├── 👍 In range!
+	  ├── 👍 The target can be reachable with the provided dimensionless constants!
 	  └── Min (~9E+30) < Q (~4E+35) < Max (~1E+37) 
 
 Totally, unique 78771 dimensionless multiplications are calculated!

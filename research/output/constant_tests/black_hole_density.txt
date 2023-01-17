@@ -1,0 +1,45 @@
+Explore the target:
+	{ 2.0826698222790(10) e+56 } [ kg·m³/s⁴ ] = Target
+in terms of the given,
+	dimensional constants:   
+		c = { 299792458 } [ m/s ], powers = [-8, -15/2, -7, -13/2, -6, -11/2, -5, -9/2, -4, -7/2, -3, -5/2, -2, -3/2, -1, -1/2, 0, 1/2, 1, 3/2, 2, 5/2, 3, 7/2, 4, 9/2, 5, 11/2, 6, 13/2, 7, 15/2, 8]
+		h = { 6.62607015e-34 } [ kg·m²/s ], powers = [-2, -3/2, -1, -1/2, 0, 1/2, 1, 3/2, 2]
+		m_p = { 1.67262192369(51)e-27 } [ kg ], powers = [-2, -1, 0, 1, 2]
+		G = { 6.67430(15)e-11 } [ m³/kg/s² ], powers = [-2, -3/2, -1, -1/2, 0, 1/2, 1, 3/2, 2]
+	dimensionless constants: 
+		2, powers = [-10, -9, -8, -7, -6, -5, -4, -3, -2, -1, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+		3, powers = [-2, -1, 0, 1, 2]
+		5, powers = [-1, 0, 1]
+		π, powers = [-8, -15/2, -7, -13/2, -6, -11/2, -5, -9/2, -4, -7/2, -3, -5/2, -2, -3/2, -1, -1/2, 0, 1/2, 1, 3/2, 2, 5/2, 3, 7/2, 4, 9/2, 5, 11/2, 6, 13/2, 7, 15/2, 8]
+by using brute_force methodology...
+
+Found 5 candidates the resultant unit matched with the target's unit:
+	{ Q } [ kg·m³/s⁴ ] = m_p²⋅c⁵ / h
+	  ├── 👎 The target can NOT be reachable with the provided dimensionless constants.
+	  └── Q (~1E+22) < Min (~5E+47) < Max (~9E+64) 
+
+	{ Q } [ kg·m³/s⁴ ] = m_p⋅c¹¹ᐟ² / (G¹ᐟ²⋅h¹ᐟ²)
+	  ├── 👎 The target can NOT be reachable with the provided dimensionless constants.
+	  └── Q (~3E+41) < Min (~5E+47) < Max (~9E+64) 
+
+	{ Q } [ kg·m³/s⁴ ] = c⁶ / G
+	  ├── 👍 The target can be reachable with the provided dimensionless constants!
+	  └── Min (~5E+47) < Q (~1E+61) < Max (~9E+64) 
+
+	{ Q } [ kg·m³/s⁴ ] = h¹ᐟ²⋅c¹³ᐟ² / (G³ᐟ²⋅m_p)
+	  ├── 👎 The target can NOT be reachable with the provided dimensionless constants.
+	  └── Min (~5E+47) < Max (~9E+64) < Q (~4E+80) 
+
+	{ Q } [ kg·m³/s⁴ ] = h⋅c⁷ / (G²⋅m_p²)
+	  ├── 👎 The target can NOT be reachable with the provided dimensionless constants.
+	  └── Min (~5E+47) < Max (~9E+64) < Q (~1E+100) 
+
+Totally, unique 10395 dimensionless multiplications are calculated!
+
+Result(s) that overlap with the target:
+	{ 2.0826698222790(10) e+56 } [ kg·m³/s⁴ ] = Target
+	{ 2.082670(47) e+56 } [ kg·m³/s⁴ ] = (3 / (2⁹⋅π⁵)) ⋅ (c⁶ / G)
+
+Where
+* G: newtonian constant of gravitation
+* c: speed of light in vacuum
