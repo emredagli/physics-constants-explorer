@@ -12,7 +12,7 @@ python ./main.py --target-value "2.44" \
                  --config-file "$config_folder/the_height_of_a_giraffe.json" \
                  > $output_folder/the_height_of_a_giraffe.txt &
 
-# Chirpy mass - Ref: Observation of Gravitational Waves from a Binary Black Hole Merger / B. P. Abbott et al
+# Chirp mass - Ref: Observation of Gravitational Waves from a Binary Black Hole Merger / B. P. Abbott et al
 python ./main.py --target-value "1.098084728279E+34" \
                  --target-unit "kg/s" \
                  --config-file "$config_folder/chirp_mass.json" \
