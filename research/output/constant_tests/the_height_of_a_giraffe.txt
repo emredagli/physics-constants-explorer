@@ -10,7 +10,7 @@ by using brute_force methodology...
 
 Found 1 candidates the resultant unit matched with the target's unit:
 	{ Q } [ m ] = a_0
-	  ├── 👍 In range!
+	  ├── 👍 The target can be reachable with the provided dimensionless constants!
 	  └── Min (~1E-39) < Q (~5E-11) < Max (~6E+39) 
 
 Totally, unique 861 dimensionless multiplications are calculated!

@@ -26,327 +26,327 @@ Dimensionless π terms found from the Buckingham π Theorem:
 
 Found 81 candidates the resultant unit matched with the target's unit:
 	{ Q } [ m³/kg/s² ] = m_e³⋅e²⋅(G_F/(ħc)^3)⁵ᐟ² / (ε_0⁶⋅μ_0⁵)
-	  ├── 👍 In range!
+	  ├── 👍 The target can be reachable with the provided dimensionless constants!
 	  └── Min (~6E-52) < Q (~6E+4) < Max (~8E+30) 
 
 	{ Q } [ m³/kg/s² ] = m_e³⋅(G_F/(ħc)^3)⁵ᐟ²⋅h / (ε_0¹¹ᐟ²⋅μ_0¹¹ᐟ²)
-	  ├── 👍 In range!
+	  ├── 👍 The target can be reachable with the provided dimensionless constants!
 	  └── Min (~6E-52) < Q (~4E+6) < Max (~8E+30) 
 
 	{ Q } [ m³/kg/s² ] = m_e²⋅e⁶⋅(G_F/(ħc)^3)² / (h²⋅ε_0⁶⋅μ_0³)
-	  ├── 👍 In range!
+	  ├── 👍 The target can be reachable with the provided dimensionless constants!
 	  └── Min (~6E-52) < Q (~7E+6) < Max (~8E+30) 
 
 	{ Q } [ m³/kg/s² ] = m_e³⋅(G_F/(ħc)^3)⁵ᐟ²⋅h² / (e²⋅ε_0⁵⋅μ_0⁶)
-	  ├── 👍 In range!
+	  ├── 👍 The target can be reachable with the provided dimensionless constants!
 	  └── Min (~6E-52) < Q (~3E+8) < Max (~8E+30) 
 
 	{ Q } [ m³/kg/s² ] = m_e²⋅e⁴⋅(G_F/(ħc)^3)² / (h⋅ε_0¹¹ᐟ²⋅μ_0⁷ᐟ²)
-	  ├── 👍 In range!
+	  ├── 👍 The target can be reachable with the provided dimensionless constants!
 	  └── Min (~6E-52) < Q (~5E+8) < Max (~8E+30) 
 
 	{ Q } [ m³/kg/s² ] = m_e⋅e¹⁰⋅(G_F/(ħc)^3)³ᐟ² / (h⁴⋅ε_0⁶⋅μ_0)
-	  ├── 👍 In range!
+	  ├── 👍 The target can be reachable with the provided dimensionless constants!
 	  └── Min (~6E-52) < Q (~8E+8) < Max (~8E+30) 
 
 	{ Q } [ m³/kg/s² ] = m_e²⋅e²⋅(G_F/(ħc)^3)² / (ε_0⁵⋅μ_0⁴)
-	  ├── 👍 In range!
+	  ├── 👍 The target can be reachable with the provided dimensionless constants!
 	  └── Min (~6E-52) < Q (~3E+10) < Max (~8E+30) 
 
 	{ Q } [ m³/kg/s² ] = m_e⋅e⁸⋅(G_F/(ħc)^3)³ᐟ² / (h³⋅ε_0¹¹ᐟ²⋅μ_0³ᐟ²)
-	  ├── 👍 In range!
+	  ├── 👍 The target can be reachable with the provided dimensionless constants!
 	  └── Min (~6E-52) < Q (~6E+10) < Max (~8E+30) 
 
 	{ Q } [ m³/kg/s² ] = m_e²⋅(G_F/(ħc)^3)²⋅h / (ε_0⁹ᐟ²⋅μ_0⁹ᐟ²)
-	  ├── 👍 In range!
+	  ├── 👍 The target can be reachable with the provided dimensionless constants!
 	  └── Min (~6E-52) < Q (~2E+12) < Max (~8E+30) 
 
 	{ Q } [ m³/kg/s² ] = m_e⋅e⁶⋅(G_F/(ħc)^3)³ᐟ² / (h²⋅ε_0⁵⋅μ_0²)
-	  ├── 👍 In range!
+	  ├── 👍 The target can be reachable with the provided dimensionless constants!
 	  └── Min (~6E-52) < Q (~4E+12) < Max (~8E+30) 
 
 	{ Q } [ m³/kg/s² ] = e¹²⋅(G_F/(ħc)^3)⋅μ_0¹ᐟ² / (h⁵⋅ε_0¹¹ᐟ²)
-	  ├── 👍 In range!
+	  ├── 👍 The target can be reachable with the provided dimensionless constants!
 	  └── Min (~6E-52) < Q (~7E+12) < Max (~8E+30) 
 
 	{ Q } [ m³/kg/s² ] = m_e²⋅(G_F/(ħc)^3)²⋅h² / (e²⋅ε_0⁴⋅μ_0⁵)
-	  ├── 👍 In range!
+	  ├── 👍 The target can be reachable with the provided dimensionless constants!
 	  └── Min (~6E-52) < Q (~2E+14) < Max (~8E+30) 
 
 	{ Q } [ m³/kg/s² ] = m_e⋅e⁴⋅(G_F/(ħc)^3)³ᐟ² / (h⋅ε_0⁹ᐟ²⋅μ_0⁵ᐟ²)
-	  ├── 👍 In range!
+	  ├── 👍 The target can be reachable with the provided dimensionless constants!
 	  └── Min (~6E-52) < Q (~3E+14) < Max (~8E+30) 
 
 	{ Q } [ m³/kg/s² ] = e¹⁰⋅(G_F/(ħc)^3) / (h⁴⋅ε_0⁵)
-	  ├── 👍 In range!
+	  ├── 👍 The target can be reachable with the provided dimensionless constants!
 	  └── Min (~6E-52) < Q (~5E+14) < Max (~8E+30) 
 
 	{ Q } [ m³/kg/s² ] = m_e²⋅(G_F/(ħc)^3)²⋅h³ / (e⁴⋅ε_0⁷ᐟ²⋅μ_0¹¹ᐟ²)
-	  ├── 👍 In range!
+	  ├── 👍 The target can be reachable with the provided dimensionless constants!
 	  └── Min (~6E-52) < Q (~1E+16) < Max (~8E+30) 
 
 	{ Q } [ m³/kg/s² ] = m_e⋅e²⋅(G_F/(ħc)^3)³ᐟ² / (ε_0⁴⋅μ_0³)
-	  ├── 👍 In range!
+	  ├── 👍 The target can be reachable with the provided dimensionless constants!
 	  └── Min (~6E-52) < Q (~2E+16) < Max (~8E+30) 
 
 	{ Q } [ m³/kg/s² ] = e⁸⋅(G_F/(ħc)^3) / (h³⋅ε_0⁹ᐟ²⋅μ_0¹ᐟ²)
-	  ├── 👍 In range!
+	  ├── 👍 The target can be reachable with the provided dimensionless constants!
 	  └── Min (~6E-52) < Q (~3E+16) < Max (~8E+30) 
 
 	{ Q } [ m³/kg/s² ] = m_e²⋅(G_F/(ħc)^3)²⋅h⁴ / (e⁶⋅ε_0³⋅μ_0⁶)
-	  ├── 👍 In range!
+	  ├── 👍 The target can be reachable with the provided dimensionless constants!
 	  └── Min (~6E-52) < Q (~7E+17) < Max (~8E+30) 
 
 	{ Q } [ m³/kg/s² ] = m_e⋅(G_F/(ħc)^3)³ᐟ²⋅h / (ε_0⁷ᐟ²⋅μ_0⁷ᐟ²)
-	  ├── 👍 In range!
+	  ├── 👍 The target can be reachable with the provided dimensionless constants!
 	  └── Min (~6E-52) < Q (~1E+18) < Max (~8E+30) 
 
 	{ Q } [ m³/kg/s² ] = e⁶⋅(G_F/(ħc)^3) / (h²⋅ε_0⁴⋅μ_0)
-	  ├── 👍 In range!
+	  ├── 👍 The target can be reachable with the provided dimensionless constants!
 	  └── Min (~6E-52) < Q (~2E+18) < Max (~8E+30) 
 
 	{ Q } [ m³/kg/s² ] = e¹²⋅(G_F/(ħc)^3)¹ᐟ²⋅μ_0³ᐟ² / (m_e⋅h⁵⋅ε_0⁹ᐟ²)
-	  ├── 👍 In range!
+	  ├── 👍 The target can be reachable with the provided dimensionless constants!
 	  └── Min (~6E-52) < Q (~4E+18) < Max (~8E+30) 
 
 	{ Q } [ m³/kg/s² ] = m_e⋅(G_F/(ħc)^3)³ᐟ²⋅h² / (e²⋅ε_0³⋅μ_0⁴)
-	  ├── 👍 In range!
+	  ├── 👍 The target can be reachable with the provided dimensionless constants!
 	  └── Min (~6E-52) < Q (~9E+19) < Max (~8E+30) 
 
 	{ Q } [ m³/kg/s² ] = e⁴⋅(G_F/(ħc)^3) / (h⋅ε_0⁷ᐟ²⋅μ_0³ᐟ²)
-	  ├── 👍 In range!
+	  ├── 👍 The target can be reachable with the provided dimensionless constants!
 	  └── Min (~6E-52) < Q (~2E+20) < Max (~8E+30) 
 
 	{ Q } [ m³/kg/s² ] = e¹⁰⋅(G_F/(ħc)^3)¹ᐟ²⋅μ_0 / (m_e⋅h⁴⋅ε_0⁴)
-	  ├── 👍 In range!
+	  ├── 👍 The target can be reachable with the provided dimensionless constants!
 	  └── Min (~6E-52) < Q (~3E+20) < Max (~8E+30) 
 
 	{ Q } [ m³/kg/s² ] = m_e⋅(G_F/(ħc)^3)³ᐟ²⋅h³ / (e⁴⋅ε_0⁵ᐟ²⋅μ_0⁹ᐟ²)
-	  ├── 👍 In range!
+	  ├── 👍 The target can be reachable with the provided dimensionless constants!
 	  └── Min (~6E-52) < Q (~6E+21) < Max (~8E+30) 
 
 	{ Q } [ m³/kg/s² ] = e²⋅(G_F/(ħc)^3) / (ε_0³⋅μ_0²)
-	  ├── 👍 In range!
+	  ├── 👍 The target can be reachable with the provided dimensionless constants!
 	  └── Min (~6E-52) < Q (~1E+22) < Max (~8E+30) 
 
 	{ Q } [ m³/kg/s² ] = e⁸⋅(G_F/(ħc)^3)¹ᐟ²⋅μ_0¹ᐟ² / (m_e⋅h³⋅ε_0⁷ᐟ²)
-	  ├── 👍 In range!
+	  ├── 👍 The target can be reachable with the provided dimensionless constants!
 	  └── Min (~6E-52) < Q (~2E+22) < Max (~8E+30) 
 
 	{ Q } [ m³/kg/s² ] = m_e⋅(G_F/(ħc)^3)³ᐟ²⋅h⁴ / (e⁶⋅ε_0²⋅μ_0⁵)
-	  ├── 👍 In range!
+	  ├── 👍 The target can be reachable with the provided dimensionless constants!
 	  └── Min (~6E-52) < Q (~4E+23) < Max (~8E+30) 
 
 	{ Q } [ m³/kg/s² ] = (G_F/(ħc)^3)⋅h / (ε_0⁵ᐟ²⋅μ_0⁵ᐟ²)
-	  ├── 👍 In range!
+	  ├── 👍 The target can be reachable with the provided dimensionless constants!
 	  └── Min (~6E-52) < Q (~7E+23) < Max (~8E+30) 
 
 	{ Q } [ m³/kg/s² ] = e⁶⋅(G_F/(ħc)^3)¹ᐟ² / (m_e⋅h²⋅ε_0³)
-	  ├── 👍 In range!
+	  ├── 👍 The target can be reachable with the provided dimensionless constants!
 	  └── Min (~6E-52) < Q (~1E+24) < Max (~8E+30) 
 
 	{ Q } [ m³/kg/s² ] = e¹²⋅μ_0⁵ᐟ² / (m_e²⋅h⁵⋅ε_0⁷ᐟ²)
-	  ├── 👍 In range!
+	  ├── 👍 The target can be reachable with the provided dimensionless constants!
 	  └── Min (~6E-52) < Q (~2E+24) < Max (~8E+30) 
 
 	{ Q } [ m³/kg/s² ] = m_e⋅(G_F/(ħc)^3)³ᐟ²⋅h⁵ / (e⁸⋅ε_0³ᐟ²⋅μ_0¹¹ᐟ²)
-	  ├── 👍 In range!
+	  ├── 👍 The target can be reachable with the provided dimensionless constants!
 	  └── Min (~6E-52) < Q (~3E+25) < Max (~8E+30) 
 
 	{ Q } [ m³/kg/s² ] = (G_F/(ħc)^3)⋅h² / (e²⋅ε_0²⋅μ_0³)
-	  ├── 👍 In range!
+	  ├── 👍 The target can be reachable with the provided dimensionless constants!
 	  └── Min (~6E-52) < Q (~5E+25) < Max (~8E+30) 
 
 	{ Q } [ m³/kg/s² ] = e⁴⋅(G_F/(ħc)^3)¹ᐟ² / (m_e⋅h⋅ε_0⁵ᐟ²⋅μ_0¹ᐟ²)
-	  ├── 👍 In range!
+	  ├── 👍 The target can be reachable with the provided dimensionless constants!
 	  └── Min (~6E-52) < Q (~9E+25) < Max (~8E+30) 
 
 	{ Q } [ m³/kg/s² ] = e¹⁰⋅μ_0² / (m_e²⋅h⁴⋅ε_0³)
-	  ├── 👍 In range!
+	  ├── 👍 The target can be reachable with the provided dimensionless constants!
 	  └── Min (~6E-52) < Q (~2E+26) < Max (~8E+30) 
 
 	{ Q } [ m³/kg/s² ] = m_e⋅(G_F/(ħc)^3)³ᐟ²⋅h⁶ / (e¹⁰⋅ε_0⋅μ_0⁶)
-	  ├── 👍 In range!
+	  ├── 👍 The target can be reachable with the provided dimensionless constants!
 	  └── Min (~6E-52) < Q (~2E+27) < Max (~8E+30) 
 
 	{ Q } [ m³/kg/s² ] = (G_F/(ħc)^3)⋅h³ / (e⁴⋅ε_0³ᐟ²⋅μ_0⁷ᐟ²)
-	  ├── 👍 In range!
+	  ├── 👍 The target can be reachable with the provided dimensionless constants!
 	  └── Min (~6E-52) < Q (~3E+27) < Max (~8E+30) 
 
 	{ Q } [ m³/kg/s² ] = e²⋅(G_F/(ħc)^3)¹ᐟ² / (m_e⋅ε_0²⋅μ_0)
-	  ├── 👍 In range!
+	  ├── 👍 The target can be reachable with the provided dimensionless constants!
 	  └── Min (~6E-52) < Q (~6E+27) < Max (~8E+30) 
 
 	{ Q } [ m³/kg/s² ] = e⁸⋅μ_0³ᐟ² / (m_e²⋅h³⋅ε_0⁵ᐟ²)
-	  ├── 👍 In range!
+	  ├── 👍 The target can be reachable with the provided dimensionless constants!
 	  └── Min (~6E-52) < Q (~1E+28) < Max (~8E+30) 
 
 	{ Q } [ m³/kg/s² ] = (G_F/(ħc)^3)⋅h⁴ / (e⁶⋅ε_0⋅μ_0⁴)
-	  ├── 👍 In range!
+	  ├── 👍 The target can be reachable with the provided dimensionless constants!
 	  └── Min (~6E-52) < Q (~2E+29) < Max (~8E+30) 
 
 	{ Q } [ m³/kg/s² ] = (G_F/(ħc)^3)¹ᐟ²⋅h / (m_e⋅ε_0³ᐟ²⋅μ_0³ᐟ²)
-	  ├── 👍 In range!
+	  ├── 👍 The target can be reachable with the provided dimensionless constants!
 	  └── Min (~6E-52) < Q (~4E+29) < Max (~8E+30) 
 
 	{ Q } [ m³/kg/s² ] = e⁶⋅μ_0 / (m_e²⋅h²⋅ε_0²)
-	  ├── 👍 In range!
+	  ├── 👍 The target can be reachable with the provided dimensionless constants!
 	  └── Min (~6E-52) < Q (~7E+29) < Max (~8E+30) 
 
 	{ Q } [ m³/kg/s² ] = e¹²⋅μ_0⁷ᐟ² / (m_e³⋅(G_F/(ħc)^3)¹ᐟ²⋅h⁵⋅ε_0⁵ᐟ²)
-	  ├── 👍 In range!
+	  ├── 👍 The target can be reachable with the provided dimensionless constants!
 	  └── Min (~6E-52) < Q (~1E+30) < Max (~8E+30) 
 
 	{ Q } [ m³/kg/s² ] = (G_F/(ħc)^3)⋅h⁵ / (e⁸⋅ε_0¹ᐟ²⋅μ_0⁹ᐟ²)
-	  ├── 👎 Not in range.
+	  ├── 👎 The target can NOT be reachable with the provided dimensionless constants.
 	  └── Min (~6E-52) < Max (~8E+30) < Q (~2E+31) 
 
 	{ Q } [ m³/kg/s² ] = (G_F/(ħc)^3)¹ᐟ²⋅h² / (m_e⋅e²⋅ε_0⋅μ_0²)
-	  ├── 👎 Not in range.
+	  ├── 👎 The target can NOT be reachable with the provided dimensionless constants.
 	  └── Min (~6E-52) < Max (~8E+30) < Q (~3E+31) 
 
 	{ Q } [ m³/kg/s² ] = e⁴⋅μ_0¹ᐟ² / (m_e²⋅h⋅ε_0³ᐟ²)
-	  ├── 👎 Not in range.
+	  ├── 👎 The target can NOT be reachable with the provided dimensionless constants.
 	  └── Min (~6E-52) < Max (~8E+30) < Q (~5E+31) 
 
 	{ Q } [ m³/kg/s² ] = e¹⁰⋅μ_0³ / (m_e³⋅(G_F/(ħc)^3)¹ᐟ²⋅h⁴⋅ε_0²)
-	  ├── 👎 Not in range.
+	  ├── 👎 The target can NOT be reachable with the provided dimensionless constants.
 	  └── Min (~6E-52) < Max (~8E+30) < Q (~9E+31) 
 
 	{ Q } [ m³/kg/s² ] = (G_F/(ħc)^3)⋅h⁶ / (e¹⁰⋅μ_0⁵)
-	  ├── 👎 Not in range.
+	  ├── 👎 The target can NOT be reachable with the provided dimensionless constants.
 	  └── Min (~6E-52) < Max (~8E+30) < Q (~1E+33) 
 
 	{ Q } [ m³/kg/s² ] = (G_F/(ħc)^3)¹ᐟ²⋅h³ / (m_e⋅e⁴⋅ε_0¹ᐟ²⋅μ_0⁵ᐟ²)
-	  ├── 👎 Not in range.
+	  ├── 👎 The target can NOT be reachable with the provided dimensionless constants.
 	  └── Min (~6E-52) < Max (~8E+30) < Q (~2E+33) 
 
 	{ Q } [ m³/kg/s² ] = e² / (m_e²⋅ε_0)
-	  ├── 👎 Not in range.
+	  ├── 👎 The target can NOT be reachable with the provided dimensionless constants.
 	  └── Min (~6E-52) < Max (~8E+30) < Q (~3E+33) 
 
 	{ Q } [ m³/kg/s² ] = e⁸⋅μ_0⁵ᐟ² / (m_e³⋅(G_F/(ħc)^3)¹ᐟ²⋅h³⋅ε_0³ᐟ²)
-	  ├── 👎 Not in range.
+	  ├── 👎 The target can NOT be reachable with the provided dimensionless constants.
 	  └── Min (~6E-52) < Max (~8E+30) < Q (~6E+33) 
 
 	{ Q } [ m³/kg/s² ] = (G_F/(ħc)^3)¹ᐟ²⋅h⁴ / (m_e⋅e⁶⋅μ_0³)
-	  ├── 👎 Not in range.
+	  ├── 👎 The target can NOT be reachable with the provided dimensionless constants.
 	  └── Min (~6E-52) < Max (~8E+30) < Q (~1E+35) 
 
 	{ Q } [ m³/kg/s² ] = h / (m_e²⋅ε_0¹ᐟ²⋅μ_0¹ᐟ²)
-	  ├── 👎 Not in range.
+	  ├── 👎 The target can NOT be reachable with the provided dimensionless constants.
 	  └── Min (~6E-52) < Max (~8E+30) < Q (~2E+35) 
 
 	{ Q } [ m³/kg/s² ] = e⁶⋅μ_0² / (m_e³⋅(G_F/(ħc)^3)¹ᐟ²⋅h²⋅ε_0)
-	  ├── 👎 Not in range.
+	  ├── 👎 The target can NOT be reachable with the provided dimensionless constants.
 	  └── Min (~6E-52) < Max (~8E+30) < Q (~4E+35) 
 
 	{ Q } [ m³/kg/s² ] = e¹²⋅μ_0⁹ᐟ² / (m_e⁴⋅(G_F/(ħc)^3)⋅h⁵⋅ε_0³ᐟ²)
-	  ├── 👎 Not in range.
+	  ├── 👎 The target can NOT be reachable with the provided dimensionless constants.
 	  └── Min (~6E-52) < Max (~8E+30) < Q (~8E+35) 
 
 	{ Q } [ m³/kg/s² ] = (G_F/(ħc)^3)¹ᐟ²⋅h⁵⋅ε_0¹ᐟ² / (m_e⋅e⁸⋅μ_0⁷ᐟ²)
-	  ├── 👎 Not in range.
+	  ├── 👎 The target can NOT be reachable with the provided dimensionless constants.
 	  └── Min (~6E-52) < Max (~8E+30) < Q (~9E+36) 
 
 	{ Q } [ m³/kg/s² ] = h² / (m_e²⋅e²⋅μ_0)
-	  ├── 👎 Not in range.
+	  ├── 👎 The target can NOT be reachable with the provided dimensionless constants.
 	  └── Min (~6E-52) < Max (~8E+30) < Q (~2E+37) 
 
 	{ Q } [ m³/kg/s² ] = e⁴⋅μ_0³ᐟ² / (m_e³⋅(G_F/(ħc)^3)¹ᐟ²⋅h⋅ε_0¹ᐟ²)
-	  ├── 👎 Not in range.
+	  ├── 👎 The target can NOT be reachable with the provided dimensionless constants.
 	  └── Min (~6E-52) < Max (~8E+30) < Q (~3E+37) 
 
 	{ Q } [ m³/kg/s² ] = e¹⁰⋅μ_0⁴ / (m_e⁴⋅(G_F/(ħc)^3)⋅h⁴⋅ε_0)
-	  ├── 👎 Not in range.
+	  ├── 👎 The target can NOT be reachable with the provided dimensionless constants.
 	  └── Min (~6E-52) < Max (~8E+30) < Q (~5E+37) 
 
 	{ Q } [ m³/kg/s² ] = (G_F/(ħc)^3)¹ᐟ²⋅h⁶⋅ε_0 / (m_e⋅e¹⁰⋅μ_0⁴)
-	  ├── 👎 Not in range.
+	  ├── 👎 The target can NOT be reachable with the provided dimensionless constants.
 	  └── Min (~6E-52) < Max (~8E+30) < Q (~6E+38) 
 
 	{ Q } [ m³/kg/s² ] = h³⋅ε_0¹ᐟ² / (m_e²⋅e⁴⋅μ_0³ᐟ²)
-	  ├── 👎 Not in range.
+	  ├── 👎 The target can NOT be reachable with the provided dimensionless constants.
 	  └── Min (~6E-52) < Max (~8E+30) < Q (~1E+39) 
 
 	{ Q } [ m³/kg/s² ] = e²⋅μ_0 / (m_e³⋅(G_F/(ħc)^3)¹ᐟ²)
-	  ├── 👎 Not in range.
+	  ├── 👎 The target can NOT be reachable with the provided dimensionless constants.
 	  └── Min (~6E-52) < Max (~8E+30) < Q (~2E+39) 
 
 	{ Q } [ m³/kg/s² ] = e⁸⋅μ_0⁷ᐟ² / (m_e⁴⋅(G_F/(ħc)^3)⋅h³⋅ε_0¹ᐟ²)
-	  ├── 👎 Not in range.
+	  ├── 👎 The target can NOT be reachable with the provided dimensionless constants.
 	  └── Min (~6E-52) < Max (~8E+30) < Q (~4E+39) 
 
 	{ Q } [ m³/kg/s² ] = h⁴⋅ε_0 / (m_e²⋅e⁶⋅μ_0²)
-	  ├── 👎 Not in range.
+	  ├── 👎 The target can NOT be reachable with the provided dimensionless constants.
 	  └── Min (~6E-52) < Max (~8E+30) < Q (~8E+40) 
 
 	{ Q } [ m³/kg/s² ] = h⋅ε_0¹ᐟ²⋅μ_0¹ᐟ² / (m_e³⋅(G_F/(ħc)^3)¹ᐟ²)
-	  ├── 👎 Not in range.
+	  ├── 👎 The target can NOT be reachable with the provided dimensionless constants.
 	  └── Min (~6E-52) < Max (~8E+30) < Q (~1E+41) 
 
 	{ Q } [ m³/kg/s² ] = e⁶⋅μ_0³ / (m_e⁴⋅(G_F/(ħc)^3)⋅h²)
-	  ├── 👎 Not in range.
+	  ├── 👎 The target can NOT be reachable with the provided dimensionless constants.
 	  └── Min (~6E-52) < Max (~8E+30) < Q (~2E+41) 
 
 	{ Q } [ m³/kg/s² ] = h⁵⋅ε_0³ᐟ² / (m_e²⋅e⁸⋅μ_0⁵ᐟ²)
-	  ├── 👎 Not in range.
+	  ├── 👎 The target can NOT be reachable with the provided dimensionless constants.
 	  └── Min (~6E-52) < Max (~8E+30) < Q (~5E+42) 
 
 	{ Q } [ m³/kg/s² ] = h²⋅ε_0 / (m_e³⋅e²⋅(G_F/(ħc)^3)¹ᐟ²)
-	  ├── 👎 Not in range.
+	  ├── 👎 The target can NOT be reachable with the provided dimensionless constants.
 	  └── Min (~6E-52) < Max (~8E+30) < Q (~9E+42) 
 
 	{ Q } [ m³/kg/s² ] = e⁴⋅ε_0¹ᐟ²⋅μ_0⁵ᐟ² / (m_e⁴⋅(G_F/(ħc)^3)⋅h)
-	  ├── 👎 Not in range.
+	  ├── 👎 The target can NOT be reachable with the provided dimensionless constants.
 	  └── Min (~6E-52) < Max (~8E+30) < Q (~2E+43) 
 
 	{ Q } [ m³/kg/s² ] = h⁶⋅ε_0² / (m_e²⋅e¹⁰⋅μ_0³)
-	  ├── 👎 Not in range.
+	  ├── 👎 The target can NOT be reachable with the provided dimensionless constants.
 	  └── Min (~6E-52) < Max (~8E+30) < Q (~4E+44) 
 
 	{ Q } [ m³/kg/s² ] = h³⋅ε_0³ᐟ² / (m_e³⋅e⁴⋅(G_F/(ħc)^3)¹ᐟ²⋅μ_0¹ᐟ²)
-	  ├── 👎 Not in range.
+	  ├── 👎 The target can NOT be reachable with the provided dimensionless constants.
 	  └── Min (~6E-52) < Max (~8E+30) < Q (~6E+44) 
 
 	{ Q } [ m³/kg/s² ] = e²⋅ε_0⋅μ_0² / (m_e⁴⋅(G_F/(ħc)^3))
-	  ├── 👎 Not in range.
+	  ├── 👎 The target can NOT be reachable with the provided dimensionless constants.
 	  └── Min (~6E-52) < Max (~8E+30) < Q (~1E+45) 
 
 	{ Q } [ m³/kg/s² ] = h⁴⋅ε_0² / (m_e³⋅e⁶⋅(G_F/(ħc)^3)¹ᐟ²⋅μ_0)
-	  ├── 👎 Not in range.
+	  ├── 👎 The target can NOT be reachable with the provided dimensionless constants.
 	  └── Min (~6E-52) < Max (~8E+30) < Q (~4E+46) 
 
 	{ Q } [ m³/kg/s² ] = h⋅ε_0³ᐟ²⋅μ_0³ᐟ² / (m_e⁴⋅(G_F/(ħc)^3))
-	  ├── 👎 Not in range.
+	  ├── 👎 The target can NOT be reachable with the provided dimensionless constants.
 	  └── Min (~6E-52) < Max (~8E+30) < Q (~8E+46) 
 
 	{ Q } [ m³/kg/s² ] = h⁵⋅ε_0⁵ᐟ² / (m_e³⋅e⁸⋅(G_F/(ħc)^3)¹ᐟ²⋅μ_0³ᐟ²)
-	  ├── 👎 Not in range.
+	  ├── 👎 The target can NOT be reachable with the provided dimensionless constants.
 	  └── Min (~6E-52) < Max (~8E+30) < Q (~3E+48) 
 
 	{ Q } [ m³/kg/s² ] = h²⋅ε_0²⋅μ_0 / (m_e⁴⋅e²⋅(G_F/(ħc)^3))
-	  ├── 👎 Not in range.
+	  ├── 👎 The target can NOT be reachable with the provided dimensionless constants.
 	  └── Min (~6E-52) < Max (~8E+30) < Q (~5E+48) 
 
 	{ Q } [ m³/kg/s² ] = h⁶⋅ε_0³ / (m_e³⋅e¹⁰⋅(G_F/(ħc)^3)¹ᐟ²⋅μ_0²)
-	  ├── 👎 Not in range.
+	  ├── 👎 The target can NOT be reachable with the provided dimensionless constants.
 	  └── Min (~6E-52) < Max (~8E+30) < Q (~2E+50) 
 
 	{ Q } [ m³/kg/s² ] = h³⋅ε_0⁵ᐟ²⋅μ_0¹ᐟ² / (m_e⁴⋅e⁴⋅(G_F/(ħc)^3))
-	  ├── 👎 Not in range.
+	  ├── 👎 The target can NOT be reachable with the provided dimensionless constants.
 	  └── Min (~6E-52) < Max (~8E+30) < Q (~4E+50) 
 
 	{ Q } [ m³/kg/s² ] = h⁴⋅ε_0³ / (m_e⁴⋅e⁶⋅(G_F/(ħc)^3))
-	  ├── 👎 Not in range.
+	  ├── 👎 The target can NOT be reachable with the provided dimensionless constants.
 	  └── Min (~6E-52) < Max (~8E+30) < Q (~3E+52) 
 
 	{ Q } [ m³/kg/s² ] = h⁵⋅ε_0⁷ᐟ² / (m_e⁴⋅e⁸⋅(G_F/(ħc)^3)⋅μ_0¹ᐟ²)
-	  ├── 👎 Not in range.
+	  ├── 👎 The target can NOT be reachable with the provided dimensionless constants.
 	  └── Min (~6E-52) < Max (~8E+30) < Q (~2E+54) 
 
 	{ Q } [ m³/kg/s² ] = h⁶⋅ε_0⁴ / (m_e⁴⋅e¹⁰⋅(G_F/(ħc)^3)⋅μ_0)
-	  ├── 👎 Not in range.
+	  ├── 👎 The target can NOT be reachable with the provided dimensionless constants.
 	  └── Min (~6E-52) < Max (~8E+30) < Q (~1E+56) 
 
 Totally, unique 375683 dimensionless multiplications are calculated!

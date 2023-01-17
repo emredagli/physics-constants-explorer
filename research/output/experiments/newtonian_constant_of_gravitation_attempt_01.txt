@@ -23,51 +23,51 @@ Dimensionless π terms found from the Buckingham π Theorem:
 
 Found 12 candidates the resultant unit matched with the target's unit:
 	{ Q } [ m³/kg/s² ] = e¹² / (m_e²⋅h⁵⋅c⁵⋅ε_0⁶)
-	  ├── 👍 In range!
+	  ├── 👍 The target can be reachable with the provided dimensionless constants!
 	  └── Min (~2E-51) < Q (~2E+24) < Max (~2E+30) 
 
 	{ Q } [ m³/kg/s² ] = e¹⁰ / (m_e²⋅h⁴⋅c⁴⋅ε_0⁵)
-	  ├── 👍 In range!
+	  ├── 👍 The target can be reachable with the provided dimensionless constants!
 	  └── Min (~2E-51) < Q (~2E+26) < Max (~2E+30) 
 
 	{ Q } [ m³/kg/s² ] = e⁸ / (m_e²⋅h³⋅c³⋅ε_0⁴)
-	  ├── 👍 In range!
+	  ├── 👍 The target can be reachable with the provided dimensionless constants!
 	  └── Min (~2E-51) < Q (~1E+28) < Max (~2E+30) 
 
 	{ Q } [ m³/kg/s² ] = e⁶ / (m_e²⋅h²⋅c²⋅ε_0³)
-	  ├── 👍 In range!
+	  ├── 👍 The target can be reachable with the provided dimensionless constants!
 	  └── Min (~2E-51) < Q (~7E+29) < Max (~2E+30) 
 
 	{ Q } [ m³/kg/s² ] = e⁴ / (m_e²⋅h⋅c⋅ε_0²)
-	  ├── 👎 Not in range.
+	  ├── 👎 The target can NOT be reachable with the provided dimensionless constants.
 	  └── Min (~2E-51) < Max (~2E+30) < Q (~5E+31) 
 
 	{ Q } [ m³/kg/s² ] = e² / (m_e²⋅ε_0)
-	  ├── 👎 Not in range.
+	  ├── 👎 The target can NOT be reachable with the provided dimensionless constants.
 	  └── Min (~2E-51) < Max (~2E+30) < Q (~3E+33) 
 
 	{ Q } [ m³/kg/s² ] = h⋅c / m_e²
-	  ├── 👎 Not in range.
+	  ├── 👎 The target can NOT be reachable with the provided dimensionless constants.
 	  └── Min (~2E-51) < Max (~2E+30) < Q (~2E+35) 
 
 	{ Q } [ m³/kg/s² ] = h²⋅c²⋅ε_0 / (m_e²⋅e²)
-	  ├── 👎 Not in range.
+	  ├── 👎 The target can NOT be reachable with the provided dimensionless constants.
 	  └── Min (~2E-51) < Max (~2E+30) < Q (~2E+37) 
 
 	{ Q } [ m³/kg/s² ] = h³⋅c³⋅ε_0² / (m_e²⋅e⁴)
-	  ├── 👎 Not in range.
+	  ├── 👎 The target can NOT be reachable with the provided dimensionless constants.
 	  └── Min (~2E-51) < Max (~2E+30) < Q (~1E+39) 
 
 	{ Q } [ m³/kg/s² ] = h⁴⋅c⁴⋅ε_0³ / (m_e²⋅e⁶)
-	  ├── 👎 Not in range.
+	  ├── 👎 The target can NOT be reachable with the provided dimensionless constants.
 	  └── Min (~2E-51) < Max (~2E+30) < Q (~8E+40) 
 
 	{ Q } [ m³/kg/s² ] = h⁵⋅c⁵⋅ε_0⁴ / (m_e²⋅e⁸)
-	  ├── 👎 Not in range.
+	  ├── 👎 The target can NOT be reachable with the provided dimensionless constants.
 	  └── Min (~2E-51) < Max (~2E+30) < Q (~5E+42) 
 
 	{ Q } [ m³/kg/s² ] = h⁶⋅c⁶⋅ε_0⁵ / (m_e²⋅e¹⁰)
-	  ├── 👎 Not in range.
+	  ├── 👎 The target can NOT be reachable with the provided dimensionless constants.
 	  └── Min (~2E-51) < Max (~2E+30) < Q (~4E+44) 
 
 Totally, unique 157437 dimensionless multiplications are calculated!

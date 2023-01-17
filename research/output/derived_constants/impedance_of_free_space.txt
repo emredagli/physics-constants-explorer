@@ -22,19 +22,19 @@ by using brute_force methodology...
 
 Found 4 candidates the resultant unit matched with the target's unit:
 	{ Q } [ kg·m²/A²/s³ ] = e² / (h⋅c²⋅ε_0²)
-	  ├── 👍 In range!
+	  ├── 👍 The target can be reachable with the provided dimensionless constants!
 	  └── Min (~2E-7) < Q (~5E+0) < Max (~8E+11) 
 
 	{ Q } [ kg·m²/A²/s³ ] = 1 / (c⋅ε_0)
-	  ├── 👍 In range!
+	  ├── 👍 The target can be reachable with the provided dimensionless constants!
 	  └── Min (~2E-7) < Q (~4E+2) < Max (~8E+11) 
 
 	{ Q } [ kg·m²/A²/s³ ] = h / e²
-	  ├── 👍 In range!
+	  ├── 👍 The target can be reachable with the provided dimensionless constants!
 	  └── Min (~2E-7) < Q (~3E+4) < Max (~8E+11) 
 
 	{ Q } [ kg·m²/A²/s³ ] = h²⋅c⋅ε_0 / e⁴
-	  ├── 👍 In range!
+	  ├── 👍 The target can be reachable with the provided dimensionless constants!
 	  └── Min (~2E-7) < Q (~2E+6) < Max (~8E+11) 
 
 Totally, unique 56133 dimensionless multiplications are calculated!

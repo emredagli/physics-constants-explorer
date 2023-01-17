@@ -21,15 +21,15 @@ Dimensionless π terms found from the Buckingham π Theorem:
 
 Found 3 candidates the resultant unit matched with the target's unit:
 	{ Q } [ kg²·m⁴/A⁴/s⁶ ] = h⁵ᐟ²⋅R_∞¹ᐟ² / (m_e¹ᐟ²⋅e⁴⋅c¹ᐟ²)
-	  ├── 👍 In range!
+	  ├── 👍 The target can be reachable with the provided dimensionless constants!
 	  └── Min (~3E-7) < Q (~3E+6) < Max (~8E+16) 
 
 	{ Q } [ kg²·m⁴/A⁴/s⁶ ] = h² / e⁴
-	  ├── 👍 In range!
+	  ├── 👍 The target can be reachable with the provided dimensionless constants!
 	  └── Min (~3E-7) < Q (~7E+8) < Max (~8E+16) 
 
 	{ Q } [ kg²·m⁴/A⁴/s⁶ ] = m_e¹ᐟ²⋅h³ᐟ²⋅c¹ᐟ² / (e⁴⋅R_∞¹ᐟ²)
-	  ├── 👍 In range!
+	  ├── 👍 The target can be reachable with the provided dimensionless constants!
 	  └── Min (~3E-7) < Q (~1E+11) < Max (~8E+16) 
 
 Totally, unique 4913 dimensionless multiplications are calculated!
