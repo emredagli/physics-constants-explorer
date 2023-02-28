@@ -20,6 +20,8 @@ Where,
 * Set $K$ : Scope of dimensionless constants. These constants are provided to the program.
 * Set $L$ : Scope of dimensional constants. Again these constants are provided to the program.
 
+The program searches a possible representation of a given target quantity with its absolute error in terms of $C_i$, $m_i$, $Q_j$, and $n_j$ for provided $K$ and $L$ and their power sets.
+
 ## Table of Content
 
 <!-- TOC -->
