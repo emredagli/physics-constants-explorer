@@ -13,7 +13,7 @@ T = \prod_{i\in K} C_i^{m_i} \cdot \prod_{j\in L} Q_j^{n_j}
 ```
 
 Where,
-* $C_i$ : Provided rational dimensionless constant (2, 3, 5, etc.) or irrational numbers ($\pi$, euler number, etc.) with high significant digits representations
+* $C_i$ : Rational dimensionless constant (2, 3, 5, etc.) or irrational number ($\pi$, euler number, etc.) with high significant digits representation
 * $m_i$ : Power of i.th dimensionless constant. 
 * $Q_j$ : Dimensional physical constant with its error ranges
 * $n_j$ : Power of j.th dimensional constant. 
