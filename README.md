@@ -13,12 +13,12 @@ T = \prod_{i\in K} C_i^{m_i} \cdot \prod_{j\in L} Q_j^{n_j}
 ```
 
 Where,
-* $C_i$ : Rational dimensionless constant (2, 3, 5, etc.) or irrational number ($\pi$, euler number, etc.) with high significant digits representation
-* $m_i$ : Power of i.th dimensionless constant. 
-* $Q_j$ : Dimensional physical constant with its error ranges
-* $n_j$ : Power of j.th dimensional constant. 
-* Set $K$ : Scope of dimensionless constants. These constants are provided to the program
-* Set $L$ : Scope of dimensional constants. Again these constants are provided to the program
+* $C_i$ : Rational dimensionless constant (2, 3, 5, etc.) or irrational number ($\pi$, euler number, etc.) with high significant digits representation.
+* $m_i$ : Rational number. Power of i-th dimensionless constant. 
+* $Q_j$ : Dimensional physical constant with its error ranges.
+* $n_j$ : Rational number. Power of j-th dimensional constant. 
+* Set $K$ : Scope of dimensionless constants. These constants are provided to the program.
+* Set $L$ : Scope of dimensional constants. Again these constants are provided to the program.
 
 ## Table of Content
 
