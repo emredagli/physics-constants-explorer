@@ -4,6 +4,24 @@ This work contains a python program to explore physical constants in terms of gi
 
 The exploration of some well-known physical constants by using this program is summarized under [research](research) folder.
 
+## Problem Statement
+
+The program investigate the possible representations for a given dimensional target quantity (e.g. T) in the following form:
+
+```math
+T = \prod_{i\in K} C_i^{m_i} \cdot \prod_{j\in L} Q_j^{n_j}
+```
+
+Where,
+* $C_i$ : Rational dimensionless constant (2, 3, 5, etc.) or irrational number ($\pi$, euler number, etc.) with high significant digits representation.
+* $m_i$ : Rational number. Power of i-th dimensionless constant. 
+* $Q_j$ : Dimensional physical constant with its error ranges.
+* $n_j$ : Rational number. Power of j-th dimensional constant. 
+* Set $K$ : Scope of dimensionless constants. These constants are provided to the program.
+* Set $L$ : Scope of dimensional constants. Again these constants are provided to the program.
+
+The program searches a possible representation of a given target quantity with its absolute error in terms of $C_i$, $m_i$, $Q_j$, and $n_j$ for provided $K$ and $L$ and their power sets.
+
 ## Table of Content
 
 <!-- TOC -->
