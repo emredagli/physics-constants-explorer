@@ -1100,6 +1100,12 @@
       "latex": "b",
       "codata": "https://physics.nist.gov/cgi-bin/cuu/Value?bwien",
       "unit": "K m"
+    },
+    "hubble_constant": {
+      "name": "Hubble Constant",
+      "numeric_value": "2.1927(136)e-18",
+      "symbol": "H_0",
+      "unit": "s^-1"
     }
   },
   "dimensionless_constants": {
@@ -1709,11 +1715,16 @@
       "codata": "https://physics.nist.gov/cgi-bin/cuu/Value?rmwmz"
     },
     "the_ratio_of_the_electrical_to_gravitational_forces_between_two_protons": {
-      "name": "The ratio of the electrical to gravitational forces between two protons (e^2/(4πε_0 G m_p^2))",
+      "name": "The ratio of the electrical to gravitational forces between two protons (e^2/(4 π ε_0 G m_p^2))",
       "numeric_value": "1.23555163576(1)E+36",
       "symbol": "γ",
       "latex": "",
       "codata": ""
+    },
+    "plank_units": {
+      "name": "Plank Units",
+      "numeric_value": "0.6889(56)",
+      "symbol": "Ω_Λ"
     }
   }
 }

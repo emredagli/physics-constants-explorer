@@ -1,0 +1,13 @@
+{
+  "settings": {
+    "method": "brute_force"
+  },
+  "dimensional_constants": {
+    "speed_of_light_in_vacuum": [-2, 2],
+    "hubble_constant": [-2, 2]
+  },
+  "dimensionless_constants": {
+    "3": [-1, 1],
+    "plank_units": [-1, 1]
+  }
+}
