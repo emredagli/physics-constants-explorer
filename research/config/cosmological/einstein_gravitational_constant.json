@@ -1,0 +1,13 @@
+{
+  "settings": {
+    "method": "brute_force"
+  },
+  "dimensional_constants": {
+    "speed_of_light_in_vacuum": [-4, 4],
+    "newtonian_constant_of_gravitation": [-2, 2]
+  },
+  "dimensionless_constants": {
+    "2": [-3, 3],
+    "pi": [-1, 1]
+  }
+}

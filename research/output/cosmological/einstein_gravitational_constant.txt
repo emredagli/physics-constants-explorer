@@ -1,0 +1,25 @@
+Explore the target:
+	{ 2.076647440(10) e-43 } [ s²/kg/m ] = Target
+in terms of the given,
+	dimensional constants:   
+		c = { 299792458 } [ m/s ], powers = [-4, -3, -2, -1, 0, 1, 2, 3, 4]
+		G = { 6.67430(15)e-11 } [ m³/kg/s² ], powers = [-2, -1, 0, 1, 2]
+	dimensionless constants: 
+		2, powers = [-3, -2, -1, 0, 1, 2, 3]
+		π, powers = [-1, 0, 1]
+by using brute_force methodology...
+
+Found 1 candidates the resultant unit matched with the target's unit:
+	{ Q } [ s²/kg/m ] = G / c⁴
+	  ├── 👍 The target can be reachable with the provided dimensionless constants!
+	  └── Min (~8E-45) < Q (~8E-45) < Max (~5E-42) 
+
+Totally, unique 21 dimensionless multiplications are calculated!
+
+Result(s) that overlap with the target:
+	{ 2.076647440(10) e-43 } [ s²/kg/m ] = Target
+	{ 2.076647(47) e-43 } [ s²/kg/m ] = (2³⋅π) ⋅ (G / c⁴)
+
+Where
+* G: newtonian constant of gravitation
+* c: speed of light in vacuum
