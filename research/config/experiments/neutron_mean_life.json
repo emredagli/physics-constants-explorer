@@ -1,0 +1,18 @@
+{
+  "settings": {
+    "method": "brute_force"
+  },
+  "dimensional_constants": {
+    "speed_of_light_in_vacuum": [-10, 10],
+    "reduced_planck_constant": [-14, 14],
+    "electron_mass": [-5, 5],
+    "fermi_coupling_constant": [-3, 3]
+  },
+  "dimensionless_constants": {
+    "2": 8,
+    "3": 3,
+    "5": 3,
+    "pi": 4,
+    "proton_electron_mass_ratio": [-5, 5]
+  }
+}
