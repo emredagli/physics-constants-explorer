@@ -1,0 +1,54 @@
+Explore the target:
+	{ 8.7960(80) e+2 } [ s ] = Target
+in terms of the given,
+	dimensional constants:   
+		c = { 299792458 } [ m/s ], powers = [-10, -9, -8, -7, -6, -5, -4, -3, -2, -1, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+		ħ = { 1.054571817e-34 } [ kg·m²/s ], powers = [-14, -13, -12, -11, -10, -9, -8, -7, -6, -5, -4, -3, -2, -1, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14]
+		m_e = { 9.1093837015(28)e-31 } [ kg ], powers = [-5, -4, -3, -2, -1, 0, 1, 2, 3, 4, 5]
+		(G_F/(ħc)^3) = { 4.5437957(23)e+14 } [ s⁴/kg²/m⁴ ], powers = [-3, -2, -1, 0, 1, 2, 3]
+	dimensionless constants: 
+		2, powers = [-8, -7, -6, -5, -4, -3, -2, -1, 0, 1, 2, 3, 4, 5, 6, 7, 8]
+		3, powers = [-3, -2, -1, 0, 1, 2, 3]
+		5, powers = [-3, -2, -1, 0, 1, 2, 3]
+		π, powers = [-4, -3, -2, -1, 0, 1, 2, 3, 4]
+		(m_p/m_e), powers = [-5, -4, -3, -2, -1, 0, 1, 2, 3, 4, 5]
+by using brute_force methodology...
+
+Found 6 candidates the resultant unit matched with the target's unit:
+	{ Q } [ s ] = m_e⁵⋅(G_F/(ħc)^3)³⋅ħ⋅c¹⁰
+	  ├── 👎 The target can NOT be reachable with the provided dimensionless constants.
+	  └── Q (~4E-56) < Min (~5E-22) < Max (~2E+27) 
+
+	{ Q } [ s ] = m_e³⋅(G_F/(ħc)^3)²⋅ħ⋅c⁶
+	  ├── 👎 The target can NOT be reachable with the provided dimensionless constants.
+	  └── Q (~1E-44) < Min (~5E-22) < Max (~2E+27) 
+
+	{ Q } [ s ] = m_e⋅(G_F/(ħc)^3)⋅ħ⋅c²
+	  ├── 👎 The target can NOT be reachable with the provided dimensionless constants.
+	  └── Q (~4E-33) < Min (~5E-22) < Max (~2E+27) 
+
+	{ Q } [ s ] = ħ / (m_e⋅c²)
+	  ├── 👍 The target can be reachable with the provided dimensionless constants!
+	  └── Min (~5E-22) < Q (~1E-21) < Max (~2E+27) 
+
+	{ Q } [ s ] = ħ / (m_e³⋅(G_F/(ħc)^3)⋅c⁶)
+	  ├── 👍 The target can be reachable with the provided dimensionless constants!
+	  └── Min (~5E-22) < Q (~4E-10) < Max (~2E+27) 
+
+	{ Q } [ s ] = ħ / (m_e⁵⋅(G_F/(ħc)^3)²⋅c¹⁰)
+	  ├── 👍 The target can be reachable with the provided dimensionless constants!
+	  └── Min (~5E-22) < Q (~1E+2) < Max (~2E+27) 
+
+Totally, unique 82467 dimensionless multiplications are calculated!
+
+Result(s) that overlap with the target:
+	{ 8.7960(80) e+2 } [ s ] = Target
+	{ 8.7936026(89) e+2 } [ s ] = (5³ / (2⋅π²)) ⋅ (ħ / (m_e⁵⋅(G_F/(ħc)^3)²⋅c¹⁰))
+	{ 8.7934370(89) e+2 } [ s ] = (3⋅5³⋅π³ / (m_p/m_e)) ⋅ (ħ / (m_e⁵⋅(G_F/(ħc)^3)²⋅c¹⁰))
+
+Where
+* (m_p/m_e): proton electron mass ratio
+* m_e: electron mass
+* (G_F/(ħc)^3): fermi coupling constant
+* ħ: reduced planck constant
+* c: speed of light in vacuum

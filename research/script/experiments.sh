@@ -20,3 +20,15 @@ python ./main.py --target-value "6.67430(15)e-11" \
                  --target-unit "m^3/(kg s^2)" \
                  --config-file "$config_folder/newtonian_constant_of_gravitation_attempt_02.json" \
                  > $output_folder/newtonian_constant_of_gravitation_attempt_02.txt &
+
+# Newtonian Constant of Gravitation - Attempt 02 with Brute Force
+#python ./main.py --target-value "6.67430(15)e-11" \
+#                 --target-unit "m^3/(kg s^2)" \
+#                 --config-file "$config_folder/newtonian_constant_of_gravitation_attempt_02_brute.json" \
+#                 > $output_folder/newtonian_constant_of_gravitation_attempt_02_brute.txt &
+
+# Neutron mean life Article - http://aesop.phys.utk.edu/ph611/2012/projects/Hayes.pdf
+python ./main.py --target-value "8.796(8)e2" \
+                 --target-unit "s" \
+                 --config-file "$config_folder/neutron_mean_life.json" \
+                 > $output_folder/neutron_mean_life.txt &
