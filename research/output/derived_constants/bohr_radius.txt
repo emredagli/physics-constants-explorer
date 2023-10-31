@@ -2,8 +2,8 @@ Explore the target:
 	{ 5.29177210903(80) e-11 } [ m ] = Target
 in terms of the given,
 	dimensional constants:   
-		c = { 299792458 } [ m/s ], powers = [-2, -1, 0, 1, 2]
-		h = { 6.62607015e-34 } [ kg·m²/s ], powers = [-3, -2, -1, 0, 1, 2, 3]
+		c = { 299792458 } [ m/s ], powers = [-4, -3, -2, -1, 0, 1, 2, 3, 4]
+		h = { 6.62607015e-34 } [ kg·m²/s ], powers = [-4, -3, -2, -1, 0, 1, 2, 3, 4]
 		k = { 1.380649e-23 } [ kg·m²/K/s² ], powers = [-4, -3, -2, -1, 0, 1, 2, 3, 4]
 		e = { 1.602176634e-19 } [ A·s ], powers = [-4, -3, -2, -1, 0, 1, 2, 3, 4]
 		ε_0 = { 8.8541878128(13)e-12 } [ A²·s⁴/kg/m³ ], powers = [-2, -1, 0, 1, 2]
@@ -20,7 +20,11 @@ in terms of the given,
 		g_p, powers = [-1, 0, 1]
 by using brute_force methodology...
 
-Found 4 candidates the resultant unit matched with the target's unit:
+Found 5 candidates the resultant unit matched with the target's unit:
+	{ Q } [ m ] = e⁴ / (m_e⋅h⋅c³⋅ε_0²)
+	  ├── 👍 The target can be reachable with the provided dimensionless constants!
+	  └── Min (~2E-20) < Q (~5E-16) < Max (~1E-1) 
+
 	{ Q } [ m ] = e² / (m_e⋅c²⋅ε_0)
 	  ├── 👍 The target can be reachable with the provided dimensionless constants!
 	  └── Min (~2E-20) < Q (~4E-14) < Max (~1E-1) 

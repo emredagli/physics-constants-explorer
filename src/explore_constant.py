@@ -83,13 +83,13 @@ class ExploreConstant:
                                                               relative_error=relative_error):
                         results.append((numeric_value, Quantity(value=[dimensionless_quantity, dimensional_quantity])))
 
-        self.results = results
+        self._set_results(results)
 
         # Print the results
-        if len(results) > 0:
+        if len(self.results) > 0:
             print(f"Result(s) that overlap with the target:")
             print(f"\t{self.target.to_string()}")
-            for resultant_numeric_value, expression in results:
+            for resultant_numeric_value, expression in self.results:
                 print(f"\t{expression.to_string(self.target)}")
             print(f"{self._get_where_statement_of_results()}")
         else:
@@ -118,3 +118,7 @@ class ExploreConstant:
         return f"\nWhere" \
                f"{self.dimensionless_scope.get_where_statement(existing_dimensionless_constants)}" \
                f"{self.dimensional_scope.get_where_statement(existing_dimensional_constants)}"
+
+    def _set_results(self, results:list):
+        target_value = self.target.value
+        self.results = sorted(results, key=lambda r: abs(target_value - r[0]))

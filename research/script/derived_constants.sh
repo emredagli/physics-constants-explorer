@@ -53,3 +53,8 @@ python ./main.py --target-value "4.3597447222071(85)E-18" --target-unit "kg m^2/
 # Compton wavelength. Ref: https://physics.nist.gov/cgi-bin/cuu/Value?ecomwl
 python ./main.py --target-value "2.42631023867(73)E-12" --target-unit "m" > ./$output_folder/compton_wavelength.txt &
 
+# Classical electron radius. Ref: https://physics.nist.gov/cgi-bin/cuu/Value?re
+python ./main.py --target-value "2.8179403262(13)E-15" --target-unit "m" > ./$output_folder/classical_electron_radius.txt &
+
+# Thomson cross section. Ref: https://physics.nist.gov/cgi-bin/cuu/Value?sigmae
+python ./main.py --target-value "6.6524587321(60)E-29" --target-unit "m^2" > ./$output_folder/thomson_cross_section.txt &

@@ -46,7 +46,7 @@ class Quantity:
 
     def _init_with_quantities(self, list_of_quantities):
         self.unit = dimensionless_unit
-        self.value = 1
+        self.value = Decimal(1)
         self.relative_error = 0
         self.terms = []
         for quantity in list_of_quantities:

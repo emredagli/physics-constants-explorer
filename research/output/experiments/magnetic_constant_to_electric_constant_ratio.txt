@@ -19,6 +19,7 @@ Dimensionless π terms found from the Buckingham π Theorem:
 - Not containing Target:
 	π_2 = m_e⋅c / (h⋅R_∞)
 
+Total combinations of dimensionless pi terms 9
 Found 3 candidates the resultant unit matched with the target's unit:
 	{ Q } [ kg²·m⁴/A⁴/s⁶ ] = h⁵ᐟ²⋅R_∞¹ᐟ² / (m_e¹ᐟ²⋅e⁴⋅c¹ᐟ²)
 	  ├── 👍 The target can be reachable with the provided dimensionless constants!
@@ -36,9 +37,9 @@ Totally, unique 4913 dimensionless multiplications are calculated!
 
 Result(s) that overlap with the target:
 	{ 1.4192572923(42) e+5 } [ kg²·m⁴/A⁴/s⁶ ] = Target
-	{ 1.41925729237(43) e+5 } [ kg²·m⁴/A⁴/s⁶ ] = (2⁵ᐟ²⋅α) ⋅ (h⁵ᐟ²⋅R_∞¹ᐟ² / (m_e¹ᐟ²⋅e⁴⋅c¹ᐟ²))
-	{ 1.41925729236(43) e+5 } [ kg²·m⁴/A⁴/s⁶ ] = (2²⋅α²) ⋅ (h² / e⁴)
 	{ 1.41925729236(86) e+5 } [ kg²·m⁴/A⁴/s⁶ ] = (2³ᐟ²⋅α³) ⋅ (m_e¹ᐟ²⋅h³ᐟ²⋅c¹ᐟ² / (e⁴⋅R_∞¹ᐟ²))
+	{ 1.41925729236(43) e+5 } [ kg²·m⁴/A⁴/s⁶ ] = (2²⋅α²) ⋅ (h² / e⁴)
+	{ 1.41925729237(43) e+5 } [ kg²·m⁴/A⁴/s⁶ ] = (2⁵ᐟ²⋅α) ⋅ (h⁵ᐟ²⋅R_∞¹ᐟ² / (m_e¹ᐟ²⋅e⁴⋅c¹ᐟ²))
 
 Where
 * α: fine structure constant

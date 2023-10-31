@@ -66,7 +66,9 @@ class Scope:
         if isinstance(power_setting, dict):
             """ "constant_x": {"range": [-2, 2], "step": "1/2"} """
             min_power, max_power = power_setting.get("range")
-            step = power_setting.get("step", "1/1")
+            step:str = power_setting.get("step", "1/1")
+            if "/" not in step:
+                step = step + "/1"
             numerator, denominator = list(map(int, step.split("/")))
             power_range_numerator = list(
                 range(int(min_power * denominator), int(max_power * denominator) + 1, numerator))

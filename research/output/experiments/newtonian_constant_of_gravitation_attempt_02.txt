@@ -24,6 +24,7 @@ Dimensionless π terms found from the Buckingham π Theorem:
 	π_3 = m_e²⋅(G_F/(ħc)^3)⋅h⁴ / (e⁸⋅μ_0⁴)
 	π_4 = m_e²⋅e⁸⋅(G_F/(ħc)^3) / (h⁴⋅ε_0⁴)
 
+Total combinations of dimensionless pi terms 51
 Found 81 candidates the resultant unit matched with the target's unit:
 	{ Q } [ m³/kg/s² ] = m_e³⋅e²⋅(G_F/(ħc)^3)⁵ᐟ² / (ε_0⁶⋅μ_0⁵)
 	  ├── 👍 The target can be reachable with the provided dimensionless constants!
@@ -353,9 +354,9 @@ Totally, unique 375683 dimensionless multiplications are calculated!
 
 Result(s) that overlap with the target:
 	{ 6.67430(15) e-11 } [ m³/kg/s² ] = Target
+	{ 6.674224928(14) e-11 } [ m³/kg/s² ] = (1 / (2²⋅3⋅5³⋅π⁴⋅(m_p/m_e)⁹)) ⋅ (e¹²⋅μ_0⁵ᐟ² / (m_e²⋅h⁵⋅ε_0⁷ᐟ²))
 	{ 6.6742189(34) e-11 } [ m³/kg/s² ] = (2⁴ / (3³⋅π⁴⋅(m_p/m_e)¹⁵ᐟ²)) ⋅ (e⁸⋅(G_F/(ħc)^3) / (h³⋅ε_0⁹ᐟ²⋅μ_0¹ᐟ²))
 	{ 6.6743971(51) e-11 } [ m³/kg/s² ] = (3³⋅π / (2⁸⋅5³⋅(m_p/m_e)⁹)) ⋅ (m_e⋅(G_F/(ħc)^3)³ᐟ²⋅h³ / (e⁴⋅ε_0⁵ᐟ²⋅μ_0⁹ᐟ²))
-	{ 6.674224928(14) e-11 } [ m³/kg/s² ] = (1 / (2²⋅3⋅5³⋅π⁴⋅(m_p/m_e)⁹)) ⋅ (e¹²⋅μ_0⁵ᐟ² / (m_e²⋅h⁵⋅ε_0⁷ᐟ²))
 
 Where
 * (m_p/m_e): proton electron mass ratio

@@ -21,6 +21,7 @@ Dimensionless π terms found from the Buckingham π Theorem:
 - Not containing Target:
 	π_2 = e² / (h⋅c⋅ε_0)
 
+Total combinations of dimensionless pi terms 13
 Found 12 candidates the resultant unit matched with the target's unit:
 	{ Q } [ m³/kg/s² ] = e¹² / (m_e²⋅h⁵⋅c⁵⋅ε_0⁶)
 	  ├── 👍 The target can be reachable with the provided dimensionless constants!
