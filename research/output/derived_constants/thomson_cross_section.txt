@@ -1,5 +1,5 @@
 Explore the target:
-	{ 4.8359784840(10) e+14 } [ A·s²/kg/m² ] = Target
+	{ 6.6524587321(60) e-29 } [ m² ] = Target
 in terms of the given,
 	dimensional constants:   
 		c = { 299792458 } [ m/s ], powers = [-4, -3, -2, -1, 0, 1, 2, 3, 4]
@@ -20,29 +20,35 @@ in terms of the given,
 		g_p, powers = [-1, 0, 1]
 by using brute_force methodology...
 
-Found 4 candidates the resultant unit matched with the target's unit:
-	{ Q } [ A·s²/kg/m² ] = e³ / (h²⋅c⋅ε_0)
+Found 5 candidates the resultant unit matched with the target's unit:
+	{ Q } [ m² ] = e⁴ / (m_e²⋅c⁴⋅ε_0²)
 	  ├── 👍 The target can be reachable with the provided dimensionless constants!
-	  └── Min (~2E+5) < Q (~4E+12) < Max (~1E+24) 
+	  └── Min (~3E-38) < Q (~1E-27) < Max (~1E-19) 
 
-	{ Q } [ A·s²/kg/m² ] = e / h
+	{ Q } [ m² ] = e²⋅h / (m_e²⋅c³⋅ε_0)
 	  ├── 👍 The target can be reachable with the provided dimensionless constants!
-	  └── Min (~2E+5) < Q (~2E+14) < Max (~1E+24) 
+	  └── Min (~3E-38) < Q (~9E-26) < Max (~1E-19) 
 
-	{ Q } [ A·s²/kg/m² ] = c⋅ε_0 / e
+	{ Q } [ m² ] = h² / (m_e²⋅c²)
 	  ├── 👍 The target can be reachable with the provided dimensionless constants!
-	  └── Min (~2E+5) < Q (~2E+16) < Max (~1E+24) 
+	  └── Min (~3E-38) < Q (~6E-24) < Max (~1E-19) 
 
-	{ Q } [ A·s²/kg/m² ] = h⋅c²⋅ε_0² / e³
+	{ Q } [ m² ] = h³⋅ε_0 / (m_e²⋅e²⋅c)
 	  ├── 👍 The target can be reachable with the provided dimensionless constants!
-	  └── Min (~2E+5) < Q (~1E+18) < Max (~1E+24) 
+	  └── Min (~3E-38) < Q (~4E-22) < Max (~1E-19) 
+
+	{ Q } [ m² ] = h⁴⋅ε_0² / (m_e²⋅e⁴)
+	  ├── 👍 The target can be reachable with the provided dimensionless constants!
+	  └── Min (~3E-38) < Q (~3E-20) < Max (~1E-19) 
 
 Totally, unique 56133 dimensionless multiplications are calculated!
 
 Result(s) that overlap with the target:
-	{ 4.8359784840(10) e+14 } [ A·s²/kg/m² ] = Target
-	{ 4.8359784841698... e+14 (exact) } [ A·s²/kg/m² ] = 2 ⋅ (e / h)
+	{ 6.6524587321(60) e-29 } [ m² ] = Target
+	{ 6.6524587322(60) e-29 } [ m² ] = (1 / (2⋅3⋅π)) ⋅ (e⁴ / (m_e²⋅c⁴⋅ε_0²))
 
 Where
+* m_e: electron mass
 * e: elementary charge
-* h: planck constant
+* c: speed of light in vacuum
+* ε_0: vacuum electric permittivity

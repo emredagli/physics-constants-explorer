@@ -45,9 +45,9 @@ Totally, unique 56133 dimensionless multiplications are calculated!
 
 Result(s) that overlap with the target:
 	{ 1.836120(50) e+3 } [ dimensionless ] = Target
-	{ 1.83615267343(11) e+3 } [ dimensionless ] = (m_p/m_e)
 	{ 1.836118109... e+3 (exact) } [ dimensionless ] = 2⋅3⋅π⁵
 	{ 1.8361042749(12) e+3 } [ dimensionless ] = ((m_p/m_e)⋅w_u / (2³⋅3⋅5⋅g_e⋅π²⋅g_p)) ⋅ (h²⋅c²⋅ε_0² / e⁴)
+	{ 1.83615267343(11) e+3 } [ dimensionless ] = (m_p/m_e)
 
 Where
 * g_e: electron g factor, The absolute value of the constant

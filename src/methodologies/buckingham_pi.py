@@ -1,7 +1,9 @@
 import math
+import operator
 from collections import OrderedDict
 from copy import deepcopy
 from fractions import Fraction
+from functools import reduce
 from itertools import product, combinations
 
 from pint import pi_theorem
@@ -70,10 +72,12 @@ class BuckinghamPI(BaseMethodology):
         candidate_terms = []
         if len(pi_results_without_target) > 0:
             pi_products = [buckingham_pi_ranges] * len(pi_results_without_target)
+            total_len = reduce(operator.mul, map(len, pi_products), 1)
+            print(f"Total combinations of dimensionless pi terms {len(buckingham_pi_ranges) * len(pi_results_without_target)}")
             for pi_product in tqdm(product(*pi_products),
                                    desc=f"Combinations of dimensionless pi terms are being calculated...",
                                    unit=" Iteration",
-                                   total=len(buckingham_pi_ranges) * len(pi_results_without_target)):
+                                   total=total_len):
                 candidate_term = self._extract_target_from_pi_term(pi_result_with_target)
                 for index, pi_power in enumerate(pi_product):
                     powered_pi_term = self._power_of_term(pi_results_without_target[index], pi_power)

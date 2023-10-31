@@ -3,8 +3,8 @@
     "method": "brute_force"
   },
   "dimensional_constants": {
-    "speed_of_light_in_vacuum": [-2, 2],
-    "planck_constant": [-3, 3],
+    "speed_of_light_in_vacuum": [-4, 4],
+    "planck_constant": [-4, 4],
     "boltzmann_constant": [-4, 4],
     "elementary_charge": [-4, 4],
     "vacuum_electric_permittivity": [-2, 2],
